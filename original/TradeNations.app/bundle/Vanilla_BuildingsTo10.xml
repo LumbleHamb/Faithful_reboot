@@ -1,0 +1,833 @@
+
+
+<Objects>
+	<!-- TOWN HALLS -->
+	<Object id="1" name="Town Hall" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="0" >
+	<TownHall level="0" />
+		<IdleAnim name="TOWNHALL">44</IdleAnim>
+		<Info>The humble Town Hall.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="2" name="Tower" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="450" >
+		<TownHall level="1" />
+		<IdleAnim name="TOWER">38</IdleAnim>
+		<BuildMenuAnim name="TOWER">159</BuildMenuAnim>
+		<Info>The Tower is an upgrade to the Town Hall.  It allows you to build more advanced buildings.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="building">1</Prerequisite>
+		<Cost>
+			<Resource id="1">500</Resource>
+			<Resource id="10">300</Resource>
+			<Resource id="20">200</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">1</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="3" name="Keep" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="1000" >
+		<TownHall level="2" />
+		<BuildMenuAnim name="KEEP">159</BuildMenuAnim>
+		<IdleAnim name="KEEP">37</IdleAnim>
+	    <Info>The Keep is an upgrade to the Tower.  It allows you to build more advanced buildings.</Info>		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="level">6</Prerequisite>
+		<Prerequisite type="building">2</Prerequisite>
+		<Cost>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="20">1200</Resource>
+			<Resource id="40">500</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">2</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="4" name="Fort" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="2500" >
+		<TownHall level="3" />
+		<BuildMenuAnim name="FORT">159</BuildMenuAnim>
+		<IdleAnim name="FORT">36</IdleAnim>
+        <Info>The Fort is an upgrade to the Keep.  It allows you to build more advanced buildings.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="level">10</Prerequisite>
+		<Prerequisite type="building">3</Prerequisite>
+
+
+		<Cost>
+			<Resource id="1">10000</Resource>
+			<Resource id="11">4000</Resource>
+			<Resource id="21">1500</Resource>
+
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">3</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- CAMP -->
+	<!-- This building has Tutorial Prereq! -->
+	<Object id="8" name="Logging Camp" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="30" >
+		<Action>Chops</Action>
+        <Info>Assign a villager to the Logging Camp to collect Wood.  Must be placed on a Forest.</Info>
+		<IdleAnim name="CAMP">49</IdleAnim>
+		<BuildMenuAnim name="CAMPACTIVEMALE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="CAMPACTIVEMALE" female="CAMPACTIVEFEMALE" maleIdle="CAMPACTIVEMALEIDLE" femaleIdle="CAMPACTIVEFEMALEIDLE"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<!--Sale>50</Sale-->
+		<Cost>
+			<Resource id="1">10</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">3</BuildTime>
+		<WorkerType>Wood Cutter</WorkerType>
+		<Workers workerMax="1" haulerMax="1" />
+		<Produce hurryCost="1">
+			<Output resource_id="10" maxOutputStackSize="150" />
+			<Rate resourcesPerHour="0.0" villagerResourcesPerHour="50.0" mayorResources="50" mayorResourcesNoEnergy="0"/> <!-- NoEnergy should be 5 once energy works -->
+		</Produce>
+		<!-- Upgrade only = true means the building can only be built as an upgrade -->
+		<UpgradeOf upgradeOnly="true">6</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <!-- QUARRY -->
+	<Object id="9" name="Quarry" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="125" >
+		<Action>Collects</Action>
+        <Info>Assign a villager to the Quarry to collect Rock.  Must be placed on a Mountain.</Info>
+		<IdleAnim name="QUARRY">48</IdleAnim>
+		<BuildMenuAnim name="QUARRYACTIVE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="QUARRYACTIVE" female="QUARRYACTIVE" maleIdle="QUARRYIDLE" femaleIdle="QUARRYIDLE"/>
+		<Sounds select="12"/>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">100</Resource>
+			<Resource id="10">150</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">10</Resource>
+			<Resource id="10">15</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">30</BuildTime>
+		<!--BuildTime>75</BuildTime-->
+		<WorkerType>Quarryman</WorkerType>
+		<Workers workerMax="1" haulerMax="1"/>
+		<Produce hurryCost="1">
+			<Output resource_id="20" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0"  villagerResourcesPerHour="20.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<UpgradeOf upgradeOnly="true">7</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- PEN -->
+	<Object id="36" name="Pen" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="600" >
+		<Action>Shears</Action>
+        <Info>Assign a villager to the Pen to collect Wool!</Info>
+		<IdleAnim name="PEN">32</IdleAnim>
+		<BuildMenuAnim name="PENACTIVEFEMALE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="PENACTIVEMALE" female="PENACTIVEFEMALE" maleIdle="PENACTIVEMALEIDLE" femaleIdle="PENACTIVEFEMALEIDLE"/>
+		<Sounds select="11"/>
+		<Prerequisite type="level">10</Prerequisite>
+		<Prerequisite type="building">3</Prerequisite>
+		<Cost>
+			<Resource id="1">200</Resource>
+			<Resource id="10">100</Resource>
+			<Resource id="20">100</Resource>
+			<Resource id="40">250</Resource>
+		</Cost>
+		<BuildTime>57600</BuildTime>
+		<Sell>
+			<Resource id="1">20</Resource>
+			<Resource id="10">10</Resource>
+			<Resource id="20">10</Resource>
+			<Resource id="40">25</Resource>
+		</Sell>
+		<WorkerType>Shearer</WorkerType>
+		<Workers workerMax="1" haulerMax="1" />
+		<Produce hurryCost="1">
+			<Output resource_id="50" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0"  villagerResourcesPerHour="30.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- SMALL COTTAGE -->
+	<Object id="12" name="Small Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="75" >
+		<Description>Houses one villager</Description>
+		<Info>The Small Cottage houses one villager.</Info>
+		<IdleAnim name="LITTLECOTTAGE">115</IdleAnim>
+
+		<Sounds select="15"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">75</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource>
+		</Cost>
+		<BuildTime>3</BuildTime>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="10">5</Resource>
+			<Resource id="40">3</Resource>
+		</Sell>
+		<Villagers default="1" purchasable="1"/>
+		<Tax interval="14400.0">
+			<Resources xp="2">
+            	<Resource id="1">5</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="138" name="Red Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="75" >
+		<Description>Houses one villager</Description>
+        <Info>The Red Cottage houses one villager.</Info>
+		<IdleAnim name="LITTLECOTTAGE1">128</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<MagicBeans>6</MagicBeans>
+			<!-- <Resource id="1">75</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource> -->
+		</Cost>
+		<BuildTime>10</BuildTime>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="10">5</Resource>
+			<Resource id="40">3</Resource>
+		</Sell>
+		<Villagers default="1" purchasable="1"/>
+		<Tax interval="14400.0">
+			<Resources xp="2">
+            	<Resource id="1">5</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="139" name="Brown Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="75" >
+		<Description>Houses one villager</Description>
+        <Info>The Brown Cottage houses one villager.</Info>
+		<IdleAnim name="LITTLECOTTAGE2">129</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<MagicBeans>5</MagicBeans>
+			<!-- <Resource id="1">75</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource> -->
+		</Cost>
+		<BuildTime>10</BuildTime>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="10">5</Resource>
+			<Resource id="40">3</Resource>
+		</Sell>
+		<Villagers default="1" purchasable="1"/>
+		<Tax interval="14400.0">
+			<Resources xp="2">
+            	<Resource id="1">5</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- COTTAGE 2 -->
+	<Object id="37" name="Large Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="300" >
+		<Description>Houses two villagers</Description>
+        <Info>The Large Cottage houses two villagers.</Info>
+		<IdleAnim name="COTTAGE">33</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">200</Resource>
+			<Resource id="10">250</Resource>
+			<Resource id="20">50</Resource>
+			<Resource id="40">100</Resource>
+		</Cost>
+		<BuildTime>10800</BuildTime>
+		<!--BuildTime>5400</BuildTime-->
+		<Sell>
+			<Resource id="1">20</Resource>
+			<Resource id="10">25</Resource>
+			<Resource id="20">5</Resource>
+			<Resource id="40">10</Resource>
+		</Sell>
+		<Villagers default="2" purchasable="1"/>
+		<Tax interval="21600.0">
+			<Resources xp="4">
+            	<Resource id="1">8</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>12</UpgradeOf>
+		<UpgradeOf>138</UpgradeOf>
+		<UpgradeOf>139</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="140" name="Green Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="300" >
+		<Description>Houses two villagers</Description>
+        <Info>The Green Cottage houses two villagers.</Info>
+		<IdleAnim name="COTTAGE1">130</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+			<!-- <Resource id="1">200</Resource>
+			<Resource id="10">250</Resource>
+			<Resource id="20">50</Resource>
+			<Resource id="40">100</Resource> -->
+		</Cost>
+		<BuildTime>10800</BuildTime>
+		<!--BuildTime>5400</BuildTime-->
+		<Sell>
+			<Resource id="1">20</Resource>
+			<Resource id="10">25</Resource>
+			<Resource id="20">5</Resource>
+			<Resource id="40">10</Resource>
+		</Sell>
+		<Villagers default="2" purchasable="1"/>
+		<Tax interval="21600.0">
+			<Resources xp="4">
+            	<Resource id="1">8</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>12</UpgradeOf>
+		<UpgradeOf>138</UpgradeOf>
+		<UpgradeOf>139</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="141" name="Purple Cottage" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="300" >
+		<Description>Houses two villagers</Description>
+        <Info>The Purple Cottage houses two villagers.</Info>
+		<IdleAnim name="COTTAGE2">131</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<MagicBeans>11</MagicBeans>
+			<!-- <Resource id="1">200</Resource>
+			<Resource id="10">250</Resource>
+			<Resource id="20">50</Resource>
+			<Resource id="40">100</Resource> -->
+		</Cost>
+		<BuildTime>10800</BuildTime>
+		<!--BuildTime>5400</BuildTime-->
+		<Sell>
+			<Resource id="1">20</Resource>
+			<Resource id="10">25</Resource>
+			<Resource id="20">5</Resource>
+			<Resource id="40">10</Resource>
+		</Sell>
+		<Villagers default="2" purchasable="1"/>
+		<Tax interval="21600.0">
+			<Resources xp="4">
+            	<Resource id="1">8</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>12</UpgradeOf>
+		<UpgradeOf>138</UpgradeOf>
+		<UpgradeOf>139</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- HOUSE -->
+	<Object id="13" name="Blue House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="750" >
+		<Description>Houses three villagers</Description>
+        <Info>The Blue House houses three villagers.</Info>
+		<IdleAnim name="HOUSE">43</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">3</Prerequisite>
+		<Prerequisite type="level">8</Prerequisite>
+		<Cost>
+			<MagicBeans>26</MagicBeans>
+		<!-- <Resource id="1">500</Resource>
+			<Resource id="11">600</Resource>
+			<Resource id="20">150</Resource>
+			<Resource id="40">250</Resource> -->
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">50</Resource>
+			<Resource id="11">60</Resource>
+			<Resource id="20">15</Resource>
+			<Resource id="40">25</Resource>
+		</Sell>
+		<Villagers default="3" purchasable="1"/>
+		<Tax interval="28800.0">
+			<Resources xp="6">
+            	<Resource id="1">12</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>37</UpgradeOf>
+		<UpgradeOf>140</UpgradeOf>
+		<UpgradeOf>141</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="142" name="Brown House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="750" >
+		<Description>Houses three villagers</Description>
+        <Info>The Brown House houses three villagers.</Info>
+		<IdleAnim name="HOUSE1">132</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">3</Prerequisite>
+		<Prerequisite type="level">8</Prerequisite>
+		<Cost>
+			<Resource id="1">500</Resource>
+			<Resource id="11">600</Resource>
+			<Resource id="20">150</Resource>
+			<Resource id="40">250</Resource>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">50</Resource>
+			<Resource id="11">60</Resource>
+			<Resource id="20">15</Resource>
+			<Resource id="40">25</Resource>
+		</Sell>
+		<Villagers default="3" purchasable="1"/>
+		<Tax interval="28800.0">
+			<Resources xp="6">
+            	<Resource id="1">12</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>37</UpgradeOf>
+		<UpgradeOf>140</UpgradeOf>
+		<UpgradeOf>141</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="143" name="Yellow House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="750" >
+		<Description>Houses three villagers</Description>
+        <Info>The Yellow House houses three villagers.</Info>
+		<IdleAnim name="HOUSE2">133</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">3</Prerequisite>
+		<Prerequisite type="level">8</Prerequisite>
+		<Cost>
+			<MagicBeans>24</MagicBeans>
+		<!-- <Resource id="1">500</Resource>
+			<Resource id="11">600</Resource>
+			<Resource id="20">150</Resource>
+			<Resource id="40">250</Resource> -->
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">50</Resource>
+			<Resource id="11">60</Resource>
+			<Resource id="20">15</Resource>
+			<Resource id="40">25</Resource>
+		</Sell>
+		<Villagers default="3" purchasable="1"/>
+		<Tax interval="28800.0">
+			<Resources xp="6">
+            	<Resource id="1">12</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>37</UpgradeOf>
+		<UpgradeOf>140</UpgradeOf>
+		<UpgradeOf>141</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- LUMBER YARD -->
+	<Object id="15" name="Lumber Yard" width="7" height="5" type="plant" availableFromStore="1" upgradeID="1" xpValue="550" >
+		<Description>Mills Wood into Lumber</Description>
+        <Info>The Lumber Yard processes Wood into Lumber.  Lumber is used for more advanced buildings and jobs in the Carpenter Shop.</Info>
+		<Action>Mills</Action>
+		<IdleAnim name="LUMBERYARD">26</IdleAnim>
+		<BuildingWorkAnim male="LUMBERYARDACTIVE" female="LUMBERYARDACTIVE" maleIdle="LUMBERYARDACTIVE" femaleIdle="LUMBERYARDACTIVE"/>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<Resource id="1">500</Resource>
+			<Resource id="10">400</Resource>
+			<Resource id="20">150</Resource>
+		</Cost>
+		<BuildTime>21600</BuildTime>
+		<Sell>
+			<Resource id="1">50</Resource>
+			<Resource id="10">40</Resource>
+			<Resource id="20">15</Resource>
+		</Sell>
+		<WorkerType>Lumber Cutter</WorkerType>
+		<Workers workerMax="2" haulerMax="2" />
+		<Produce hurryCost="2">
+			<!-- amount is the amount of input for 1 output. If not included, 1 is assumed -->
+			<Input resource_id="10" amount="2" maxInputStackSize="150"></Input>
+			<Output resource_id="11" maxOutputStackSize="150"></Output>
+			<Rate resourcesPerHour="0.0" villagerResourcesPerHour="30.0" mayorResources="50" mayorResourcesNoEnergy="0"></Rate>
+		</Produce>
+		<Item>25</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- STOCKPILE -->
+	<!-- This building has Tutorial Prereq! -->
+	<Object id="25" name="Stockpile" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="380" >
+		<Description>Stores a small amount of resources</Description>
+        <Info>The Small Stockpile stores up to 1000 of each resource.</Info>
+		<IdleAnim name="STOCKPILEUNDER">25</IdleAnim>
+		<OverAnim name="STOCKPILEOVER">74</OverAnim>
+		<CustomDraw>resources</CustomDraw>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">300</Resource>
+			<Resource id="10">450</Resource>
+		</Cost>
+		<BuildTime>5</BuildTime>
+		<!--BuildTime>600</BuildTime-->
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="10">45</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="1000"></Resource>
+			<Resource id="20" qty="1000"></Resource>
+			<Resource id="40" qty="1000"></Resource>
+			<Resource id="50" qty="1000"></Resource>
+			<Resource id="11" qty="1000"></Resource>
+			<Resource id="21" qty="1000"></Resource>
+			<Resource id="51" qty="1000"></Resource>
+		</Resources>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- Large Stockpile -->
+	<Object id="26" name="Large Stockpile" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="675" >
+		<Description>Stores a large amount of resources</Description>
+        <Info>The Large Stockpile stores up to 3500 of each resource.</Info>
+		<IdleAnim name="LARGESTOCKPILEUNDER">127</IdleAnim>
+		<OverAnim name="LARGESTOCKPILEOVER">126</OverAnim>
+		<CustomDraw>resourcesLarge</CustomDraw>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<Resource id="1">750</Resource>
+			<Resource id="11">500</Resource>
+		</Cost>
+		<BuildTime>28800</BuildTime>
+		<Sell>
+			<Resource id="1">75</Resource>
+			<Resource id="11">50</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="3500"></Resource>
+			<Resource id="20" qty="3500"></Resource>
+			<Resource id="40" qty="3500"></Resource>
+			<Resource id="50" qty="3500"></Resource>
+			<Resource id="11" qty="3500"></Resource>
+			<Resource id="21" qty="3500"></Resource>
+			<Resource id="51" qty="3500"></Resource>
+		</Resources>
+		<UpgradeOf>25</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+
+    <!-- Market -->
+	<Object id="27" name="Market" width="8" height="8" type="market" availableFromStore="0" upgradeID="0" xpValue="850" >
+		<Description>Buys and sell resources</Description>
+        <Info>Buy and sell resources at the Market!</Info>
+		<IdleAnim name="MARKET">52</IdleAnim>
+		<Sell>false</Sell>
+		<Sounds select="-1" buy="17" sell="17"/>
+		<Prerequisite type="level">2</Prerequisite>
+		<Cost>
+			<Resource id="10">150</Resource>
+			<Resource id="10">150</Resource>
+		</Cost>
+		<BuildTime>5</BuildTime>
+		<Sell>
+			<Resource id="10">10</Resource>
+		</Sell>
+		<UnitOfTrade>1</UnitOfTrade>
+		<ResourcePrices sellPriceDifference="0.85">
+			<Resource id="10" price="50"></Resource>
+			<Resource id="40" price="60"></Resource>
+			<Resource id="20" price="72"></Resource>
+			<Resource id="50" price="60"></Resource>
+			<Resource id="11" price="150"></Resource>
+			<Resource id="51" price="275"></Resource>
+			<Resource id="21" price="300"></Resource>
+		</ResourcePrices>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- SHOPS -->
+	<Object id="30" name="Wizard Tower" width="8" height="8" type="powerup" availableFromStore="0" upgradeID="0" xpValue="4500" >
+		<Description>Many marvelous magical mysteries</Description>
+		<Info>The Wizard Tower provides enhancements to resource production and is acquired with Z2Points, earned by playing Z2Live games, and grants a bonus to the XP and Gold received from all Shops by 5% (500% Maximum)</Info>
+		<IdleAnim name="WIZARDTOWER">141</IdleAnim>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+		    <Z2Points>99</Z2Points>
+		</Cost>
+		<BuildTime>28800</BuildTime>
+		<Sell>
+			<Resource id="1">5000</Resource>
+		</Sell>
+		<Item>135</Item>
+		<Item>128</Item>
+		<Item>136</Item>
+		<Item>129</Item>
+		<Item>137</Item>
+		<Item>130</Item>
+		<Item>138</Item>
+		<Item>131</Item>
+		<Item>139</Item>
+		<Item>132</Item>
+		<Item>140</Item>
+		<Item>133</Item>
+		<Item>141</Item>
+		<Item>134</Item>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="5">
+            	<Resource id="1" percent="5"/>
+			</Resources>
+        </Buffer>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="32" name="Carpenter Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="600" >
+		<Description>Makes useful and decorative woodwork for sale</Description>
+        <Info>Use the Carpenter Shop to complete jobs using Wood and Lumber.</Info>
+		<IdleAnim name="CARVERSHALL">12</IdleAnim>
+		<BuildingWorkAnim male="CARVERSHALLACTIVE" female="CARVERSHALLACTIVE" maleIdle="CARVERSHALLACTIVE" femaleIdle="CARVERSHALLACTIVE"/>
+		<Sounds select="7"/>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<Resource id="1">600</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="20">250</Resource>
+		</Cost>
+		<BuildTime>28800</BuildTime>
+		<Sell>
+			<Resource id="1">60</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="20">25</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>10</Item>
+		<Item>32</Item> <!-- Nutcrac<Item>33</Item>ker -->
+		<Item>12</Item>
+		<Item>14</Item>
+		<Item>13</Item>
+		<Item>11</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="34" name="Tailor Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="2000" >
+		<Description>Makes stylish Clothes for sale</Description>
+        <Info>Use the Tailor Shop to complete jobs using Wool and Cloth.</Info>
+		<IdleAnim name="TAILORSSHOP">19</IdleAnim>
+		<BuildingWorkAnim male="TAILORSSHOPACTIVE" female="TAILORSSHOPACTIVE" maleIdle="TAILORSSHOPACTIVE" femaleIdle="TAILORSSHOPACTIVE"/>
+		<Sounds select="14"/>
+		<Prerequisite type="building">3</Prerequisite>
+		<Prerequisite type="level">10</Prerequisite>
+		<Cost>
+			<Resource id="1">1500</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="20">800</Resource>
+			<Resource id="50">500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">150</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="20">80</Resource>
+			<Resource id="50">50</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>31</Item> <!-- Stocking -->
+		<Item>50</Item>
+		<Item>52</Item>
+		<Item>51</Item>
+		<Item>53</Item>
+		<Item>54</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="35" name="Baker Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="280" >
+		<Description>Bake a delicious treat for sale</Description>
+        <Info>Use the Baker Shop to complete jobs using Wheat.</Info>
+		<IdleAnim name="BAKERSSHOP">18</IdleAnim>
+		<BuildingWorkAnim male="BAKERSHOPACTIVE" female="BAKERSHOPACTIVE" maleIdle="BAKERSHOPACTIVE" femaleIdle="BAKERSHOPACTIVE"/>
+		<Sounds select="6"/>
+		<Prerequisite type="level">2</Prerequisite>
+		<Cost>
+			<Resource id="1">300</Resource>
+			<Resource id="10">250</Resource>
+		</Cost>
+		<BuildTime>3600</BuildTime>
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="10">25</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>40</Item>
+		<Item>41</Item>
+		<Item>33</Item> <!-- Gingerbread Man -->
+		<Item>42</Item>
+		<Item>44</Item>
+		<Item>43</Item>
+		<Item>45</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="199" name="Flower Shop" width="6" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="280" >
+		<Description>Arrange beautiful flowers for sale</Description>
+        <Info>Use the Flower Shop to complete jobs using Gold.</Info>
+		<IdleAnim name="FLOWERSHOP">18</IdleAnim>
+		<BuildingWorkAnim male="FLOWERSHOPACTIVE" female="FLOWERSHOPACTIVE" maleIdle="FLOWERSHOPACTIVE" femaleIdle="FLOWERSHOPACTIVE"/>
+		<Sounds select="44"/>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">300</Resource>
+			<Resource id="10">250</Resource>
+		</Cost>
+		<BuildTime>3600.0</BuildTime>
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="10">25</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>69</Item>
+		<Item>70</Item>
+		<Item>71</Item>
+        <Item>72</Item>
+        <Item>73</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	  <Object id="233" name="Traveling Merchant" width="8" height="5" type="decoration" availableFromStore="0" upgradeID="0" xpValue="0">
+		<IdleAnim name="W_BrightSunfair"></IdleAnim>
+		<Info>The Traveling Merchant has returned and brought back something special from the North Pole! He also still has wares from earlier travels to the Far East. The Traveling Merchant grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="W_BrightSunfair"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">500</Resource>
+		</Cost>
+		<Cost>
+			<Resource id="1">50</Resource>
+		</Cost>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1">
+            	<Resource id="1" percent="1"/>
+			</Resources>
+        </Buffer>
+		<BuildTime fadeAnim="y">3</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="332" name="Frosty the Snowman" width="3" height="3" type="skinswitch" availableFromStore="0" upgradeID="0" xpValue="850" >
+        <Info>Frosty the Snowman makes your land a Winter Wonderland! Frosty also grants a bonus to the XP and Gold received from all Shops by 5% (500% Maximum)</Info>
+		<Description>Makes your land a Winter Wonderland!</Description>
+		<IdleAnim name="frosty">52</IdleAnim>
+		<BuildMenuAnim name="frosty"></BuildMenuAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="building">233</Prerequisite>
+		<Sounds select="58"/>
+		<Cost>
+			<MagicBeans>65</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">650</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+			<Resource id="1">650</Resource>
+        <Limit>1</Limit>
+		<BuildTime fadeAnim="y">30</BuildTime>
+		<SkinSwitch target="Winter"></SkinSwitch>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="5.0">
+            	<Resource id="1" percent="5.0"/>
+			</Resources>
+        </Buffer>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+</Objects>
+

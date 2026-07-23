@@ -1,0 +1,22 @@
+{
+    "purchase_already_pending": "This purchase is already pending.",
+    "purchase_cant_make_payments": "Your device is not allowed to make payments. Please verify your Parental Controls settings.",
+    "purchase_error_cancelled": "Your purchase has encountered an error. Please verify your network connection and try again.",
+    "purchase_internet_required": "Internet connection required to purchase product.",
+    "purchase_process_failed": "Failed to process your purchase.",
+    "purchase_processing_body": "Your purchase is being processed.",
+    "purchase_processing_title": "Processing",
+    "purchase_restore_failed_body": "An error occured while restoring your transactions. Please verify your internet connection, check your iTunes account information, and try again.",
+    "purchase_restore_failed_title": "Restoration Failed",
+    "purchase_restored_body": "Your purchase has been restored.",
+    "purchase_restored_title": "Purchase Restored",
+    "purchase_restoring_body": "Restoring your purchase...",
+    "purchase_restoring_title": "Restoring",
+    "purchase_thank_you_body": "Your purchase has been processed.",
+    "purchase_thank_you_title": "Thank You",
+    "purchase_unable_to_find_for_verify": "Unable to find product to verify.",
+    "purchase_unable_to_verify_body": "Your purchase could not be verified. Please try your purchase again when you have an internet connection or at a later time.",
+    "purchase_unable_to_verify_title": "Unable to Verify Purchase",
+    "purchase_verifying_body": "Verifying your purchase...",
+    "purchase_verifying_title": "Verifying"
+}

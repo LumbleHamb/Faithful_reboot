@@ -1,0 +1,316 @@
+
+<Objects>
+	<!-- FOREST -->
+	<Object id="6" name="Forest" width="6" height="6" type="resourcetile" availableFromStore="0" upgradeID="0" xpValue="0" >
+		<IdleAnim name="FOREST">45</IdleAnim>
+		<Description>Build Logging Camps here to gather wood</Description>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+
+    <!-- STONE -->
+	<Object id="7" name="Mountain" width="6" height="6" type="resourcetile" availableFromStore="0" upgradeID="0" xpValue="0" >
+		<IdleAnim name="MOUNTAIN">46</IdleAnim>
+		<Description>Build Quarries here to gather rock</Description>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<!-- FARM -->
+	<!-- This building has Tutorial Prereq! -->
+	<Object id="11" name="Farm" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="65" >
+		<Action>Harvests</Action>
+        <Info>Assign a villager to the Farm to harvest Wheat!</Info>
+		<IdleAnim name="FARM">31</IdleAnim>
+		<BuildMenuAnim name="FARMACTIVEFEMALE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="FARMACTIVEMALE" female="FARMACTIVEFEMALE" maleIdle="FARMACTIVEIDLE" femaleIdle="FARMACTIVEIDLE"/>
+		<Sounds select="8"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">75</Resource>
+			<Resource id="10">50</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="10">5</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="wheat"/>
+			</Categories>
+        </Buffable>
+		<BuildTime>3</BuildTime>
+		<WorkerType>Farmer</WorkerType>
+		<Workers workerMax="1" haulerMax="1" />
+		<Produce hurryCost="1">
+			<Output resource_id="40" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0"  villagerResourcesPerHour="25.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<Object id="164" name="Windmill" width="8" height="8" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250" >
+		<Description>Increases production of Farms</Description>
+        <Info>The Windmill increases the production abilities of up to three nearby Farms by 33%</Info>
+		<IdleAnim name="WINDMILL">17</IdleAnim>
+		<BuildMenuAnim name="WINDMILL">159</BuildMenuAnim>
+        <Prerequisite type="building">5</Prerequisite>
+        <Prerequisite type="level">20</Prerequisite>
+        <Buffer onlyOne="1" category="wheat">
+			<Area width="8" height="8">
+				<Directions>
+					<Direction>north</Direction>
+					<Direction>east</Direction>
+					<Direction>west</Direction>
+				</Directions>
+			</Area>
+			<Resources>
+            	<Resource id="40" percent="33.3333"/>
+			</Resources>
+        </Buffer>
+		<Cost>
+			<MagicBeans>25</MagicBeans>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">100</Resource>
+		</Sell>
+        <Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<Object id="166" name="Big Top" width="14" height="18" type="shop" availableFromStore="0" upgradeID="0" disableTrade="1" xpValue="7000" >
+		<Description>Daring Tricks and Awe-Inspiring Feats</Description>
+        <Info>Use the Big Top to put on shows and earn lots of Experience. Requires a Ringmaster.</Info>
+		<IdleAnim name="CARNIVAL_EMPTY">12</IdleAnim>
+		<BuildMenuAnim name="CARNIVAL_WORKING_M">159</BuildMenuAnim>
+		<BuildingWorkAnim male="CARNIVAL_WORKING_M" female="CARNIVAL_WORKING_F" maleIdle="CARNIVAL_IDLE_M" femaleIdle="CARNIVAL_IDLE_F"/>
+		<Sounds select="41"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">30</Prerequisite>
+		<Cost>
+			<Resource id="1">6000</Resource>
+			<Resource id="51">5000</Resource>
+		</Cost>
+		<BuildTime fadeAnim="y">86400</BuildTime>
+		<Sell>
+			<Resource id="1">600</Resource>
+			<Resource id="51">500</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+				<Category name="carnival"/>
+			</Categories>
+        </Buffable>
+		<Item>65</Item>
+		<Item>66</Item>
+		<Item>67</Item>
+		<Item>68</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Ringmaster</WorkerType>
+        <Limit>1</Limit>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+
+    <Object id="167" name="Theater" width="8" height="8" type="shop" availableFromStore="0" upgradeID="0" disableTrade="1" xpValue="6500" >
+		<Description>Put on works of comedy and drama</Description>
+        <Info>Use the Theater to put on performances and earn lots of Experience.  Requires an Actor.</Info>
+		<IdleAnim name="THEATER_EMPTY">12</IdleAnim>
+		<BuildMenuAnim name="THEATER_WORKING_F">159</BuildMenuAnim>
+		<BuildingWorkAnim male="THEATER_WORKING_M" female="THEATER_WORKING_F" maleIdle="THEATER_IDLE_M" femaleIdle="THEATER_IDLE_F"/>
+		<Sounds select="43"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+			<Resource id="1">5500</Resource>
+			<Resource id="11">5000</Resource>
+            <Resource id="51">2500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">550</Resource>
+			<Resource id="11">500</Resource>
+            <Resource id="51">250</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+				<Category name="carnival"/>
+			</Categories>
+        </Buffable>
+		<Item>60</Item>
+		<Item>61</Item>
+		<Item>62</Item>
+		<Item>63</Item>
+        <Item>64</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Actor</WorkerType>
+        <Limit>1</Limit>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+
+	<Object id="168" name="Juggler" width="4" height="4" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<Description>All this time, not a single ball dropped.</Description>
+        <Info>Assign a villager to be a Juggler and earn gold and experience for their stellar performance!</Info>
+		<IdleAnim name="JUGGLERSTAND">147</IdleAnim>
+		<BuildMenuAnim name="JUGGLER">159</BuildMenuAnim>
+        <Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">24</Prerequisite>
+		<BuildingWorkAnim male="JUGGLER" female="JUGGLER" maleIdle="JUGGLER" femaleIdle="JUGGLER"/>
+		<Cost>
+			<MagicBeans>25</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<BuildTime>3600.0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Juggler Performer</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="275">
+            	<Resource id="1">225</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	<Object id="156" name="Trampoline" width="3" height="3" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<Description>Truly terrific trampoline tricks</Description>
+        <Info>Assign a villager to the Trampoline and earn gold and experience for their stellar performance!</Info>
+		<IdleAnim name="TRAMPOLINEIDLE">147</IdleAnim>
+		<BuildMenuAnim name="TRAMPOLINEMALE">159</BuildMenuAnim>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">28</Prerequisite>
+		<BuildingWorkAnim male="TRAMPOLINEMALE" female="TRAMPOLINEFEMALE" maleIdle="TRAMPOLINEMALE" femaleIdle="TRAMPOLINEFEMALE"/>
+		<Cost>
+			<MagicBeans>25</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<BuildTime>3600.0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Trampoline Performer</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="300">
+            	<Resource id="1">275</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<Object id="209" name="Silo" width="4" height="4" type="store" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<Description>Stores a large amount of Wheat</Description>
+		<Info>The Silo holds up to 6000 Wheat.</Info>
+		<IdleAnim name="SILO"></IdleAnim>
+		<BuildMenuAnim name="SILO"></BuildMenuAnim>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">36</Prerequisite>
+		<Cost>
+			<Resource id="1">1000</Resource>
+			<Resource id="11">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+			<Resource id="11">100</Resource>
+		</Sell>
+		<BuildTime>21600.0</BuildTime>
+			<Resources>
+				<Resource id="1" qty="unlimited"></Resource>
+				<Resource id="40" qty="6000"></Resource>
+			</Resources>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<Object id="246" name="Fishing Hole" width="15" height="13" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="5000">
+		<Description>A serene fishing hole.</Description>
+        <Info>Assign a villager to the Fishing Hole and earn gold and experience as they catch fish!  Increases XP and Gold for all Shops by 6.5% (500% Maximum)</Info>
+		<IdleAnim name="waterfall_idle"></IdleAnim>
+		<BubbleIcon name="FISHSTAND_ICON" />
+		<BuildMenuAnim name="waterfall_idle">159</BuildMenuAnim>
+		<Prerequisite type="level">27</Prerequisite>
+		<BuildingWorkAnim male="waterfall_activemale" female="waterfall_activefemale" maleIdle="waterfall_activemale" femaleIdle="waterfall_activefemale"/>
+		<Cost>
+			<MagicBeans>100</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="6.5">
+            	<Resource id="1" percent="6.5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Fisherman</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="275">
+            	<Resource id="1">300</Resource>
+			</Resources>
+		</Tax>
+		<Decoration type="river" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+    <Object id="272" name="Schoolhouse" width="7" height="8" type="shop" availableFromStore="0" upgradeID="0" disableTrade="1" xpValue="1800">
+		<IdleAnim name="schoolhouse_idle"></IdleAnim>
+		<Description>Don't be a fool, stay in school!</Description>
+        <Info>Use the Schoolhouse to teach your villagers life skills and earn lots of Experience. Requires a Teacher.</Info>
+		<Sounds select="54"/>
+		<Prerequisite type="level">8</Prerequisite>
+		<Prerequisite type="building">3</Prerequisite>
+        <BuildMenuAnim name="schoolhouse"></BuildMenuAnim>
+        <BuildingWorkAnim male="schoolhouse" female="schoolhouse" maleIdle="schoolhouse_idle" femaleIdle="schoolhouse_idle"/>
+		<BuildTime>86400</BuildTime>
+		<Cost>
+			<Resource id="1">1200</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="20">400</Resource>
+			<Resource id="50">100</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">120</Resource>
+			<Resource id="11">30</Resource>
+			<Resource id="20">40</Resource>
+			<Resource id="50">10</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+				<Category name="school"/>
+			</Categories>
+        </Buffable>
+		<Item>110</Item>
+		<Item>111</Item>
+		<Item>112</Item>
+		<Item>113</Item>
+		<Item>114</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Teacher</WorkerType>
+        <Limit>1</Limit>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	<Object id="301" name="Hot Air Balloon" width="6" height="6" type="hotairballoon" availableFromStore="0" upgradeID="0" xpValue="10000">
+		<IdleAnim name="F_HotAirBalloon"></IdleAnim>
+        <BuildMenuAnim name="F_HotAirBalloon"></BuildMenuAnim>
+        <Info>The Hot Air Balloon brings you to amazing far away lands!</Info>
+        <Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">20</Prerequisite>
+<!--		<Sell>false</Sell> -->
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="51">25000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="51">2500</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">604800</BuildTime>
+        <Limit>1</Limit>
+		<CompatibleLand>All</CompatibleLand>
+		<HotAirBalloon destination="Frontier"></HotAirBalloon>
+	</Object>
+</Objects>
+

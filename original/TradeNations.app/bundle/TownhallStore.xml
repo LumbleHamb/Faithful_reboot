@@ -1,0 +1,10 @@
+<!--
+	Item:
+		type - gold: purchasing gives <value> gold
+			   energy: purchasing gives <value> energy
+			   building: purchasing gives a building of type <value>, where <value> is the name of the building
+ -->
+
+<Item type="gold" value="100" cost="1000" description="Add gold to your town." icon="805"></Item>
+<Item type="energy" value="10" cost="1000" description="Give your Mayor more energy." icon="805"></Item>
+<Item type="building" value="Cottage" cost="2" description="A humble cottage." icon="805"></Item>

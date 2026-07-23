@@ -1,0 +1,290 @@
+
+
+<Objects>
+    <Object id="282" name="Sabrina" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="14250">
+		<IdleAnim name="witch"></IdleAnim>
+		<Info>Double, double, toil and trouble. Fire burn, and cauldron bubble! Sabrina the witch grants a bonus to the XP and Gold received from all Shops by 18%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="witch"></BuildMenuAnim>
+		<Sounds select="58"/>
+		<Cost>
+			<MagicBeans>285</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">2850</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="18">
+            	<Resource id="1" percent="18"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	 <Object id="283" name="Halloween Treat" width="2" height="2" type="present" availableFromStore="0" upgradeID="0" xpValue="0">
+		<HurryCost timeInterval="86400">12</HurryCost>
+		<IdleAnim name="brownbat"></IdleAnim>
+		<Info>Trick or treat!</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="halloween_present"></BuildMenuAnim>
+		<ConstructionAnim name="halloween_present">159</ConstructionAnim>
+		<Cost>
+			<Resource id="1">0</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">0</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<FinishTime>1320019260</FinishTime> <!-- OCT 31, 2011 -->
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no" />
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="284" name="Flappy" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3750">
+		<IdleAnim name="blackbat"></IdleAnim>
+		<Info>Flappy the bat lives in a very large belfrey. Flappy grants a bonus to the XP and Gold received from all Shops by 3.25%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="blackbat"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>75</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">750</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="3.25">
+            	<Resource id="1" percent="3.25"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="285" name="Mummy" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="14250">
+		<IdleAnim name="mummy"></IdleAnim>
+		<Info>This mummy has never actually been to Egypt. The Mummy grants a bonus to the XP and Gold received from all Shops by 18%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="mummy"></BuildMenuAnim>
+		<Sounds select="57"/>
+		<Cost>
+			<MagicBeans>285</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">2850</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="18">
+            	<Resource id="1" percent="18"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="286" name="Surprise O' Lantern" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2900">
+		<IdleAnim name="pumpkinjack"></IdleAnim>
+		<Info>This Jack O' Lantern has a surprise... he includes Jack! Surprise O' Lantern grants a bonus to the XP and Gold received from all Shops by 2.4%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="pumpkinjack"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>58</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">580</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2.4">
+            	<Resource id="1" percent="2.4"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="287" name="Apparition" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="8750">
+		<IdleAnim name="ghost"></IdleAnim>
+		<Info>I ain't afraid of no ghost! The Apparition grants a bonus to the XP and Gold received from all Shops by 12.2%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="ghost"></BuildMenuAnim>
+		<Sounds select="56"/>
+		<Cost>
+			<MagicBeans>175</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1750</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="12.2">
+            	<Resource id="1" percent="12.2"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="288" name="Black Cat" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="8250">
+		<IdleAnim name="blackcat"></IdleAnim>
+		<Info>Don't cross his path! The Black Cat grants a bonus to the XP and Gold received from all Shops by 12%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="blackcat"></BuildMenuAnim>
+		<Sounds select="47"/>
+		<Cost>
+			<MagicBeans>165</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1650</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="12">
+            	<Resource id="1" percent="12"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="289" name="Creepy Tomb" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="800">
+		<IdleAnim name="tombstone1"></IdleAnim>
+		<Info>This tombstone is very creepy. The villagers speak of strange noises in its vicinity.</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="tombstone1"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">1000</Resource>
+			<Resource id="21">150</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+			<Resource id="21">15</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="290" name="Ghoulish Tomb" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2200">
+		<IdleAnim name="tombstone3"></IdleAnim>
+		<Info>Some villagers have reported seeing ghosts and other apparitions near this tombstone.</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="tombstone3"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">2500</Resource>
+			<Resource id="21">380</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+			<Resource id="21">38</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="291" name="Sinister Tomb" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="6500">
+		<IdleAnim name="tombstone2"></IdleAnim>
+		<Info>Here Lies StockOption...</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="tombstone2"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">10000</Resource>
+			<Resource id="21">1200</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1000</Resource>
+			<Resource id="21">120</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+		
+	<Object id="296" name="Mike" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="30000">
+		<IdleAnim name="Zombie_dancer"></IdleAnim>
+		<Info>Mike is a scary zombie... who also likes to dance. Mike grants a bonus to the XP and Gold received from all Shops by 35%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="Zombie_dancer"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>500</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">5000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="35">
+            	<Resource id="1" percent="35"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="297" name="Meryl" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="14250">
+		<IdleAnim name="Zombie_lady"></IdleAnim>
+		<Info>Meryl is a zombie. Death becomes her. Meryl grants a bonus to the XP and Gold received from all Shops by 21%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="Zombie_lady"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>285</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">2850</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="21">
+            	<Resource id="1" percent="21"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="298" name="Conehead" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="7500">
+		<IdleAnim name="Zombie_conehead"></IdleAnim>
+		<Info>Conehead is a zombie with an irrational fear of flora. Conehead grants a bonus to the XP and Gold received from all Shops by 10.5%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="Zombie_conehead"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>150</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="10.5">
+            	<Resource id="1" percent="10.5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="299" name="Scared Man" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="250">
+		<IdleAnim name="Zombie_ScaredVillagerM"></IdleAnim>
+		<Info>This villager ain't afraid of no ghost! Wait, yes he is.</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="Zombie_ScaredVillagerM"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="300" name="Scared Woman" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="250">
+		<IdleAnim name="Zombie_ScaredVillagerF"></IdleAnim>
+		<Info>This villager saw something go bump in the night.</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="Zombie_ScaredVillagerF"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+</Objects>
+

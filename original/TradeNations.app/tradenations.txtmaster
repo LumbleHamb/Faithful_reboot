@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Textpool[
+<!ELEMENT Textpool (Text)*>
+
+<!ELEMENT Text (#PCDATA)>
+<!ATTLIST Text
+Label CDATA #REQUIRED
+>
+]>
+
+<Textpool>
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- Generics -->
+<Text Label="Yes">Yes</Text>
+<Text Label="No">No</Text>
+<Text Label="On">ON</Text>
+<Text Label="Off">OFF</Text>
+<Text Label="Locked">Locked</Text>
+<!-- Generics -->
+<!-- -->
+<!-- -->
+<!-- -->
+
+
+
+<!-- -->
+<!-- -->
+<!-- -->
+<!-- Titles -->
+<Text Label="Main Menu Title">Trade Nations</Text>
+<Text Label="Main Login Network">Login Network</Text>
+<Text Label="Main Login Button">Login Local</Text>
+<Text Label="Login Menu Title">Login</Text>
+<Text Label="Login Play Button">Play</Text>
+<Text Label="Login Button">Login</Text>
+<Text Label="New Game">New Game</Text>
+<Text Label="Build Menu">Build Menu</Text>
+
+<Text Label="Gather Button">Hurry</Text>
+<Text Label="Resource Stack Carry">Collect</Text>
+<Text Label="Mill Button">Mill</Text>
+<Text Label="Sell Button">Sell</Text>
+<Text Label="Villager Work Place">Give Job</Text>
+<Text Label="Villager Worker">Worker</Text>
+<Text Label="Villager Hauler">Hauler</Text>
+<Text Label="Build Mine">Build Mine</Text>
+<Text Label="MarketTitle">The Global Market</Text>
+<Text Label="BuyAndSellMarketSubtitle">Buy and sell resources online</Text>
+<Text Label="Reorganize Text">Tap a building to move or sell it</Text>
+<Text Label="Place Building Text">Drag the building to move it and tap to place it</Text>
+<Text Label="Place Building Upgrade Only1">Drag the</Text>
+<Text Label="Place Building Upgrade Only2">onto a</Text>
+<Text Label="Place Building Upgrade Only3">and tap to place it</Text>
+<Text Label="Market Buy">Buy</Text>
+<Text Label="Market Sell">Sell</Text>
+
+<!-- Under Construction Menu -->
+<Text Label="Build Time Remaining">Build Time:</Text>
+
+<!-- Blank Spot in list text -->
+<Text Label="Empty Text">Empty</Text>
+
+<!-- Villager Menu -->
+<Text Label="Villager Occupation">Job:</Text>
+<Text Label="Villager Activity">Doing:</Text>
+<Text Label="Mayor Energy">Magic Beans:</Text>
+
+<!-- Dropdown button text - in order-->
+<Text Label="Dropdown Nations">Friends</Text>
+<Text Label="Dropdown Logout">Logout</Text>
+<Text Label="Dropdown Debug">Debug</Text> <!-- should be last in list -->
+
+<!-- Nations Dropdown button text - in order-->
+<Text Label="Nations Dropdown MyLand">My Land</Text>
+<Text Label="Nations Dropdown Logout">Logout</Text>
+
+<!-- Nations Dropdown button text - in order-->
+<Text Label="View Friends Land Dropdown MyLand">My Land</Text>
+<Text Label="View Friends Land Dropdown Nations">Friends</Text>
+<Text Label="View Friends Land Dropdown Logout">Logout</Text>
+
+<!-- Create Nation Menu -->
+<Text Label="Create Nation">Create Nation</Text>
+
+<!-- Resource Stack -->
+<Text Label="Stack Size">Stack Size:</Text>
+
+<Text Label="Mill Trade Sell">You Receive </Text>
+
+<!-- <Text Label="Shop Sell">Sells for </Text> -->
+<Text Label="Shop Sell">Earns</Text>
+<Text Label="Shop Cost">Costs </Text>
+<Text Label="Shop Ready">Ready in</Text>
+
+<Text Label="Powerup Lasts">Lasts for</Text>
+
+<Text Label="Camp Collect">Collect</Text>
+<Text Label="Camp Supply">Supply</Text>
+
+<Text Label="Warehouse Subtitle">Stored resources</Text>
+
+<Text Label="Adopt Villager">Adopt a Villager</Text>
+<Text Label="House Taxes">in taxes</Text>
+<Text Label="Gold Earned In">Gold earned in</Text>
+
+<Text Label="Build Text">Building!</Text>
+<Text Label="Build Energy Button">Hurry</Text>
+
+<Text Label="Shop Energy Button">Hurry</Text>
+
+<Text Label="Place Villager Text">Tap a building to give the villager a job</Text>
+<Text Label="Select Job">Select a job</Text>
+
+<Text Label="Mayor">Mayor</Text>
+<Text Label="Mayor Gain Energy">Gain Magic Beans in</Text>
+
+<!-- Popup message text -->
+<Text Label="Assign No Openings">No Openings!</Text>
+<Text Label="Assign Full">This building doesn't need any more</Text>
+<Text Label="Not Enough Energy">Not Enough Magic Beans!</Text>
+<Text Label="Resources Full">Resources Full!</Text>
+<Text Label="Need Resource">Needs</Text>
+<Text Label="Add A Worker">Add a Worker!</Text>
+<Text Label="No Energy Text">You need more Magic Beans to hurry.</Text>
+<Text Label="No Energy Powerup Text">You need more Magic Beans to purchase that.</Text>
+<Text Label="Resource Full Text1">Collect your</Text>
+<Text Label="Resource Full Text2">to make more.</Text>
+<Text Label="Need Resource Text1">You need more</Text>
+<Text Label="Need Resource Text2">to make more</Text>
+<Text Label="Add A Worker Text">You need a worker before you can hurry them.</Text>
+<Text Label="Cant Afford Item">Can't Afford</Text>
+
+<Text Label="Tutorial Reward">Reward</Text>
+<Text Label="Get More Coins">Get More</Text>
+
+<Text Label="Your Nation">Your Nation</Text>
+<Text Label="My Town">My Town</Text>
+
+<Text Label="Level Up">Level Up!</Text>
+<Text Label="Level Up Max">Congratulations, you've reached the last level! We're working on new levels right now!</Text>
+<Text Label="Level Up Unlocked">You have unlocked</Text>
+<Text Label="Level Up Unlocked Nothing">no new buildings or shop items.</Text>
+
+<Text Label="Assign No Worker Title">Nothing to Haul!</Text>
+<Text Label="Assign No Worker">Assign a worker first.</Text>
+
+<Text Label="Hurrying">Hurrying!</Text>
+
+<Text Label="Market Sell Fail">Cannot Sell</Text>
+<Text Label="Market Buy Fail">Cannot Buy</Text>
+<Text Label="Market Sell Fail2">to Market</Text>
+<Text Label="Market Buy Fail2">from Market</Text>
+
+<Text Label="Market Under Construction">Market still under construction.</Text>
+<Text Label="Market Sale Price Zero">Sale price is 0.</Text>
+<Text Label="Market Buy Price Zero">Buy price is 0.</Text>
+
+<Text Label="Market Storage Full">Not enough space for more</Text>
+
+<Text Label="Market Awaiting Rates Title">Market Unavailable</Text>
+<Text Label="Market Awaiting Rates">Retrieving market rates from server. Please wait a few minutes.</Text>
+
+<Text Label="Market No Goods">Not enough</Text>
+<Text Label="Market No Goods2">. Need</Text>
+<Text Label="Market No Goods3">more.</Text>
+
+<Text Label="Sell Last Store Title">Cannot Sell Stockpile!</Text>
+<Text Label="Sell Last Store">This is your last stockpile, you cannot sell it.</Text>
+
+<Text Label="Stash Last Store Title">Cannot Stash Stockpile!</Text>
+<Text Label="Stash Last Store">This is your last stockpile, you cannot place it in your inventory.</Text>
+    
+<Text Label="Stash Inventory Full Title">Inventory Full!</Text>
+<Text Label="Stash Inventory Full">Your inventory is full. View your inventory to purchase more slots.</Text>
+    
+<Text Label="Stash Job In Progress Title">Job In Progress</Text>
+<Text Label="Stash Job In Progress">You cannot place a shop in your inventory when a job is in progress.</Text>    
+    
+<!-- Trades -->
+<Text Label="Trade Time">Time</Text>
+<Text Label="Trade Reward">Reward</Text>
+<Text Label="Trade Returned">Returned</Text>
+<Text Label="Trade Accept">Accept!</Text>
+<Text Label="Trade Reject">Reject!</Text>
+
+<Text Label="Trade Request1">has just ordered</Text>
+<Text Label="Trade Request2">at your</Text>
+
+<Text Label="Trade Expired Title">Expired!</Text>
+<Text Label="Trade Expired Owner1">ordered</Text>
+<Text Label="Trade Expired Owner2">but the offer has expired.</Text>
+
+<Text Label="Trade Expired Other1">didn't respond to your</Text>
+<Text Label="Trade Expired Other2">request. Your resources have been returned.</Text>
+
+<Text Label="Trade Declined Title">Declined!</Text>
+<Text Label="Trade Declined1">has declined your</Text>
+<Text Label="Trade Declined2">request</Text>
+<Text Label="Trade Declined3">. Your resources have been returned.</Text>
+
+<Text Label="Trade Done Title">Arrived!</Text>
+<Text Label="Trade Done1">Your</Text>
+<Text Label="Trade Done2">request to</Text>
+<Text Label="Trade Done3">finished and the reward has arrived.</Text>
+
+<Text Label="Trade In Progress">Trade In Progress</Text>
+<Text Label="Trade Cannot Sell">You cannot sell a shop while a trade is in progress. Wait until the trade is finished.</Text>
+<Text Label="Trade Cannot Stash">You cannot place a shop in your inventory while a trade is in progress. Wait until the trade is finished.</Text>
+    
+<Text Label="Build Menu Prereqs">Requires:</Text>
+
+<Text Label="Build Already">Already</Text>
+<Text Label="Build Owned">Owned</Text>
+
+<Text Label="Place Upgrade Home Title">Cannot Build</Text>
+<Text Label="Place Upgrade Home">Gain more levels to build additional homes, or upgrade an older home.</Text>
+
+<Text Label="Collect No Room Title">Cannot Collect</Text>
+<Text Label="Collect No Room">No storage space available! Build a Stockpile or use up resources in an existing Stockpile.</Text>
+
+<Text Label="Sell Confirm Title">Sell </Text>
+<Text Label="Sell Confirm1">Selling the </Text>
+<Text Label="Sell Confirm2"> will return </Text>
+<Text Label="Sell Confirm3">. Are you sure you want to sell?</Text>
+<Text Label="Sell Confirm Nothing">no resources</Text>
+
+<!-- Push Notifications -->
+<Text Label="Push Stock Full1">Your stockpile cannot hold any more </Text>
+<Text Label="Push Stock Full2">.</Text>
+<Text Label="Push Full1">Your </Text>
+<Text Label="Push Full2"> is full.</Text>
+<Text Label="Push Empty1">Your </Text>
+<Text Label="Push Empty2"> is out of supplies.</Text>
+<Text Label="Push Shop Done1">Your </Text>
+<Text Label="Push Shop Done2"> has finished making </Text>
+<Text Label="Push Shop Done3">.</Text>
+
+<Text Label="Lost Connection Title">Connection Lost</Text>
+<Text Label="Lost Connection">Attempting to reconnect to server...</Text>
+
+<Text Label="Item of the Day">Item of the Day</Text>
+<Text Label="Item of the Day No">No Thanks</Text>
+<Text Label="Item of the Day Buy">Buy Item</Text>
+
+<Text Label="Featured App">Featured Offer</Text>
+<Text Label="Featured App Award">Awards:</Text>
+<Text Label="Featured App No">No Thanks</Text>
+<Text Label="Featured App Yes">Download</Text> 
+
+<Text Label="Facebook Share">Post</Text>
+<Text Label="Twitter Share">Tweet</Text>
+
+<Text Label="Spending Beans">Using Magic Beans...</Text>
+
+</Textpool>

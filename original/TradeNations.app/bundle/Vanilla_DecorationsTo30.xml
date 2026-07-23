@@ -1,0 +1,1147 @@
+
+
+<Objects>
+	<!-- DECORATIONS -->
+	<Object id="101" name="Poplar" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="5">
+		<IdleAnim name="POPLAR">63</IdleAnim>
+		 <BuildMenuAnim name="POPLAR"></BuildMenuAnim>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">5</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">1</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="102" name="Spruce" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="80">
+		<IdleAnim name="SPRUCE">64</IdleAnim>
+		<BuildMenuAnim name="SPRUCE"></BuildMenuAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Resource id="1">10</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">1</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="103" name="Birch" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="60">
+		<IdleAnim name="BIRCH">65</IdleAnim>
+		<BuildMenuAnim name="BIRCH"></BuildMenuAnim>
+		<Prerequisite type="level">5</Prerequisite>
+		<Cost>
+			<Resource id="1">120</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">24</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="104" name="Maple" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="80">
+		<IdleAnim name="MAPLE">66</IdleAnim>
+		<BuildMenuAnim name="MAPLE"></BuildMenuAnim>
+		<Prerequisite type="level">7</Prerequisite>
+		<Cost>
+			<Resource id="1">160</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">32</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="105" name="Oak" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+		<Info>Oak Trees grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)</Info>
+		<IdleAnim name="OAK">67</IdleAnim>
+		<BuildMenuAnim name="OAK"></BuildMenuAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+			<!-- <Resource id="1">220</Resource> -->
+		</Cost>
+		<Sell>
+			<Resource id="10">44</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.4">
+            	<Resource id="1" percent="0.4"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="106" name="Daisies" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2">
+		<IdleAnim name="DAISIES">68</IdleAnim>
+		<Prerequisite type="level">2</Prerequisite>
+		<Cost>
+			<Resource id="1">5</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="107" name="Tulips" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="90">
+		<IdleAnim name="TULIPS">69</IdleAnim>
+		<Prerequisite type="level">8</Prerequisite>
+		<Cost>
+			<Resource id="1">180</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">18</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="108" name="Buttercups" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="15">
+		<IdleAnim name="BUTTERCUPS">70</IdleAnim>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">10</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="109" name="Pansies" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="47">
+		<IdleAnim name="PANSIES">71</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">95</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">9</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="111" name="Holiday Tree" width="5" height="5" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1750">
+		<Info>Get in the holiday spirit with the Holiday Tree! The Holiday Tree grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<IdleAnim name="CHRISTMASTREE">158</IdleAnim>
+		<BuildMenuAnim name="CHRISTMASTREE">-4000</BuildMenuAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Resource id="1">3500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">350</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1">
+            	<Resource id="1" percent="1"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="113" name="Present" width="4" height="4" type="present" availableFromStore="0" upgradeID="0" xpValue="5">
+		<HurryCost timeInterval="86400">5</HurryCost>
+		<IdleAnim name="DOGHOUSE">0</IdleAnim>
+		<BuildMenuAnim name="DOGHOUSE">0</BuildMenuAnim>
+		<Sounds select="39"/>
+		<ConstructionAnim name="PRESENT">159</ConstructionAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Resource id="1">0</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">0</Resource>
+		</Sell>
+		<BuildTime>10</BuildTime>
+		<FinishTime>1293235200</FinishTime> <!-- DEC 25, 2010 -->
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="122" name="Stone Wall" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="75">
+        <BuildMenuAnim name="FENCESTONE">159</BuildMenuAnim>
+		<IdleAnim name="FENCESTONE">101</IdleAnim>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<Resource id="1">75</Resource>
+			<Resource id="20">40</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="20">4</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="wall" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="123" name="Mossy Wall" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="100">
+        <BuildMenuAnim name="FENCESTONEMOSS">159</BuildMenuAnim>
+		<IdleAnim name="FENCESTONEMOSS">102</IdleAnim>
+		<Prerequisite type="level">12</Prerequisite>
+		<Cost>
+			<Resource id="1">150</Resource>
+			<Resource id="21">50</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">15</Resource>
+			<Resource id="21">5</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="wall" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="124" name="Potted Pansies" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="100">
+		<Prerequisite type="level">10</Prerequisite>
+		<IdleAnim name="POTPANSIES">103</IdleAnim>
+		<Cost>
+			<Resource id="1">200</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">20</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="125" name="Potted Daisies" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="75">
+		<IdleAnim name="POTDAISIES">104</IdleAnim>
+		<Prerequisite type="level">9</Prerequisite>
+		<Cost>
+			<Resource id="1">150</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">15</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	
+
+	<Object id="129" name="Yellow Pot" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="20">
+		<IdleAnim name="YELLOWPOT">108</IdleAnim>
+		<Prerequisite type="level">2</Prerequisite>
+		<Cost>
+			<Resource id="1">8</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- 138 - 143 IN USE -->
+
+	<Object id="144" name="Lion Statue" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="525">
+		<IdleAnim name="LIONSTATUE">134</IdleAnim>
+		<Prerequisite type="level">17</Prerequisite>
+		<Cost>
+			<Resource id="1">850</Resource>
+			<Resource id="20">280</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">85</Resource>
+			<Resource id="20">28</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="145" name="Large Statue" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="225">
+		<IdleAnim name="LARGESTATUE">135</IdleAnim>
+		<BuildMenuAnim name="LARGESTATUE">135</BuildMenuAnim>
+		<Prerequisite type="level">11</Prerequisite>
+		<Cost>
+			<Resource id="1">300</Resource>
+			<Resource id="20">100</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="20">10</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="146" name="Bird Bath" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="150">
+		<IdleAnim name="BIRDBATH">136</IdleAnim>
+		<Prerequisite type="level">8</Prerequisite>
+		<Cost>
+			<Resource id="1">230</Resource>
+			<Resource id="20">75</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">23</Resource>
+			<Resource id="20">7</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="147" name="Lawn Gnome" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+		<Info>Lawn Gnomes grant a bonus to the XP and Gold received from all Shops by 1.5% (500% Maximum)</Info>
+		<IdleAnim name="LAWNSTATUE">137</IdleAnim>
+		<Prerequisite type="level">10</Prerequisite>
+		<Cost>
+			<MagicBeans>30</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+			<Resource id="20">1</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.5">
+            	<Resource id="1" percent="1.5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="148" name="Pond" width="5" height="8" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2000">
+		<Info>The Pond is acquired with Z2Points, earned by playing Z2Live games, and grants a bonus to the XP and Gold received from all Shops by 2.25% (500% Maximum)</Info>
+		<IdleAnim name="POND">138</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Z2Points>49</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="1">2500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2.25">
+            	<Resource id="1" percent="2.25"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="149" name="Roundabout" width="14" height="14" type="decoration" availableFromStore="0" upgradeID="0" xpValue="150">
+		<IdleAnim name="ROUNDABOUT">140</IdleAnim>
+		<Prerequisite type="level">12</Prerequisite>
+		<Cost>
+			<Resource id="1">250</Resource>
+			<Resource id="20">80</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">25</Resource>
+			<Resource id="20">8</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="150" name="Fountain" width="7" height="7" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1750">
+		<Info>Fountains grant a bonus to the XP and Gold received from all Shops by 2% (500% Maximum)</Info>
+		<IdleAnim name="FOUNTAIN">139</IdleAnim>
+		<Prerequisite type="level">14</Prerequisite>
+		<Cost>
+			<MagicBeans>35</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">80</Resource>
+			<Resource id="20">26</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2.0">
+            	<Resource id="1" percent="2.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="151" name="Bench" width="2" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="750">
+		<Info>Benches grant a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<IdleAnim name="BENCH">142</IdleAnim>
+		<Prerequisite type="level">11</Prerequisite>
+		<Cost>
+			<MagicBeans>20</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">8</Resource>
+			<Resource id="10">2</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            	<Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="152" name="Blue Birdhouse" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="160">
+		<Info>Rockin' robin, tweet. The Blue Birdhouse grant a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<IdleAnim name="BIRDHOUSEBLUE">143</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Z2Points>5</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="1">80</Resource>
+			<Resource id="10">2</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            	<Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="153" name="Pink Birdhouse" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="160">
+		<IdleAnim name="BIRDHOUSEPINK">144</IdleAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Z2Points>5</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="1">80</Resource>
+			<Resource id="10">2</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            	<Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="154" name="Yellow Birdhouse" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="160">
+		<IdleAnim name="BIRDHOUSEYELLOW">145</IdleAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Z2Points>5</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="1">80</Resource>
+			<Resource id="10">2</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            	<Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="155" name="White Birdhouse" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="160">
+		<IdleAnim name="BIRDHOUSEWHITE">146</IdleAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<MagicBeans>50</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">8</Resource>
+			<Resource id="10">2</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="162" name="Jack O' Lantern" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="900">
+		<Info>Scare all the neighborhood kids with a Jack O' Lantern this Halloween! The Jack O' Lantern grants a bonus to the XP and Gold received from all Shops by 0.6% (500% Maximum)</Info>
+		<IdleAnim name="JACKOLANTERN">155</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="JACKOLANTERN"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>18</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">180</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.60">
+            	<Resource id="1" percent="0.60"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="173" name="Campfire" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="5">
+		<Info>Got marshmallows? Campfire grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<IdleAnim name="CAMPFIRE"></IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Z2Points>5</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="10">50</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            	<Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    	<Object id="174" name="Brick Road Straight" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="200">
+	 <Info>Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="BRICKROAD_STRAIGHT"></IdleAnim>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<Resource id="1">200</Resource>
+			<Resource id="21">50</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">20</Resource>
+			<Resource id="21">5</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.001">
+            	<Resource id="1" percent="0.001"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<UpgradeOf>133</UpgradeOf>
+		<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="175" name="Brick Road Right" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="200">
+		 <Info>Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="BRICKROAD_RIGHT"></IdleAnim>
+			<Prerequisite type="level">22</Prerequisite>
+			<Cost>
+				<Resource id="1">200</Resource>
+				<Resource id="21">50</Resource>
+			</Cost>
+			<Sell>
+				<Resource id="1">20</Resource>
+				<Resource id="21">5</Resource>
+			</Sell>
+			<Buffer onlyOne="0" category="shops">
+				<Resources xpPercent="0.001">
+	            	<Resource id="1" percent="0.001"/>
+				</Resources>
+	        </Buffer>
+			<BuildTime>0</BuildTime>
+					<UpgradeOf>137</UpgradeOf>
+			<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="176" name="Brick Road Left" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="200">
+		 <Info>Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="BRICKROAD_LEFT"></IdleAnim>
+			<Prerequisite type="level">22</Prerequisite>
+			<Cost>
+				<Resource id="1">200</Resource>
+				<Resource id="21">50</Resource>
+			</Cost>
+			<Sell>
+				<Resource id="1">20</Resource>
+				<Resource id="21">5</Resource>
+			</Sell>
+			<Buffer onlyOne="0" category="shops">
+				<Resources xpPercent="0.001">
+	            	<Resource id="1" percent="0.001"/>
+				</Resources>
+	        </Buffer>
+			<BuildTime>0</BuildTime>
+				<UpgradeOf>136</UpgradeOf>
+			<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+			<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="177" name="Brick Road Down" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="200">
+		 <Info>Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="BRICKROAD_DOWN"></IdleAnim>
+			<Prerequisite type="level">22</Prerequisite>
+			<Cost>
+				<Resource id="1">200</Resource>
+				<Resource id="21">50</Resource>
+			</Cost>
+			<Sell>
+				<Resource id="1">20</Resource>
+				<Resource id="21">5</Resource>
+			</Sell>
+			<Buffer onlyOne="0" category="shops">
+				<Resources xpPercent="0.001">
+	            	<Resource id="1" percent="0.001"/>
+				</Resources>
+	        </Buffer>
+			<BuildTime>0</BuildTime>
+				<UpgradeOf>134</UpgradeOf>
+			<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+			<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="178" name="Brick Road Up" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="200">
+			 <Info>Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount.(500% Maximum) </Info>
+		<IdleAnim name="BRICKROAD_UP"></IdleAnim>
+			<Prerequisite type="level">22</Prerequisite>
+			<Cost>
+				<Resource id="1">200</Resource>
+				<Resource id="21">50</Resource>
+			</Cost>
+			<Sell>
+				<Resource id="1">20</Resource>
+				<Resource id="21">5</Resource>
+			</Sell>
+			<Buffer onlyOne="0" category="shops">
+				<Resources xpPercent="0.001">
+	            	<Resource id="1" percent="0.001"/>
+				</Resources>
+	        </Buffer>
+			<BuildTime>0</BuildTime>
+			<UpgradeOf>135</UpgradeOf>
+			<Decoration type="road" select="no" reposition="yes" blockVillager="no"/>
+			<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="182" name="Dogwood" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+	<Info>This is a Dogwood.  You can tell it's a Dogwood because of the way it is. Grants a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)</Info>
+		<IdleAnim name="DOGWOOD"></IdleAnim>
+		<BuildMenuAnim name="DOGWOOD"></BuildMenuAnim>
+		<Prerequisite type="level">16</Prerequisite>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="10">50</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.4">
+            	<Resource id="1" percent="0.4"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="183" name="Camphor" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1000">
+				 <Info>Camphor Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="COMPHOR"></IdleAnim>
+		<BuildMenuAnim name="COMPHOR"></BuildMenuAnim>
+		<Prerequisite type="level">19</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">200</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.01">
+            	<Resource id="1" percent="0.01"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="184" name="Cypress" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+					 <Info>Cypress Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="CYPRESS"></IdleAnim>
+		<BuildMenuAnim name="CYPRESS"></BuildMenuAnim>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">250</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.0125">
+            	<Resource id="1" percent="0.0125"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="185" name="Olive" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+					 <Info>Olive Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="OLIVE"></IdleAnim>
+		<BuildMenuAnim name="OLIVE"></BuildMenuAnim>
+		<Prerequisite type="level">24</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">300</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.015">
+            	<Resource id="1" percent="0.015"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+     <Object id="186" name="Willow" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+					 <Info>Willow Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="WILLOW"></IdleAnim>
+		<BuildMenuAnim name="WILLOW"></BuildMenuAnim>
+		<Prerequisite type="level">27</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">300</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.015">
+            	<Resource id="1" percent="0.015"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="187" name="Sycamore" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2000">
+					 <Info>Sycamore Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="SYCAMORE"></IdleAnim>
+		<BuildMenuAnim name="SYCAMORE"></BuildMenuAnim>
+		<Prerequisite type="level">30</Prerequisite>
+		<Cost>
+			<Resource id="1">4000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">400</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.02">
+            	<Resource id="1" percent="0.02"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="188" name="Bluebells" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1000">
+					 <Info>Bluebells grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="BLUEBELLS_FENCE"></IdleAnim>
+		<Prerequisite type="level">18</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">200</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.01">
+            	<Resource id="1" percent="0.01"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="194" name="Marigolds" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="1500">
+					 <Info>Marigolds grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="MERRIGOLD_FENCE"></IdleAnim>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">300</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.015">
+            	<Resource id="1" percent="0.015"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="196" name="Roses" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+					 <Info>Roses grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<IdleAnim name="ROSES_FENCE"></IdleAnim>
+		<Prerequisite type="level">29</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">300</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.015">
+            	<Resource id="1" percent="0.015"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="198" name="Sunflowers" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="500">
+					 <Info>Sunflowers grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)</Info>
+		<IdleAnim name="SUNFLOWERS_FENCE"></IdleAnim>
+		<Prerequisite type="level">17</Prerequisite>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">50</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.4">
+            	<Resource id="1" percent="0.4"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="flower" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="200" name="Valentine" width="3" height="3" type="present" availableFromStore="0" upgradeID="0" xpValue="5">
+		<Info>Happy Valentine's Day from the Trade Nations team! Do not open before 2/14/2011! (Unless you're in a hurry...)</Info>
+		<HurryCost timeInterval="86400">5</HurryCost>
+		<IdleAnim name="STATUE_VDAY">160</IdleAnim>
+		<ConstructionAnim name="PRESENT_VDAY">159</ConstructionAnim>
+		<BuildMenuAnim name="STATUE_VDAY">0</BuildMenuAnim>
+		<Prerequisite type="level">3</Prerequisite>
+		<Cost>
+			<Resource id="1">10</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime>10</BuildTime>
+		<FinishTime>1297670400</FinishTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="204" name="Blue Doghouse" width="5" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3500">
+		<Info>Man's Best Friend.  The Doghouse grants a bonus to the XP and Gold received from all Shops by 4.25% (500% Maximum)</Info>
+		<IdleAnim name="DOGHOUSE_2"></IdleAnim>
+		<Sounds select="39"/>
+         <BuildMenuAnim name="DOGHOUSE_2"></BuildMenuAnim>
+		<Prerequisite type="level">15</Prerequisite>
+		<Cost>
+			<MagicBeans>70</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="4.25">
+            	<Resource id="1" percent="4.25"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	    <Object id="208" name="Hedges" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+		<IdleAnim name="BUSH4"></IdleAnim>
+		<Info>Hedges grant a bonus to the XP and Gold received from all Shops by .4% (500% Maximum)</Info>
+		<Prerequisite type="level">21</Prerequisite>
+        <BuildMenuAnim name="BUSH4"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.4">
+            	<Resource id="1" percent="0.4"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	   <!-- GATES -->
+	<Object id="215" name="Mossy Gate" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="100">
+        <BuildMenuAnim name="MOSSYGATE">159</BuildMenuAnim>
+		<IdleAnim name="MOSSYGATE">63</IdleAnim>
+		<Prerequisite type="level">12</Prerequisite>
+		<Cost>
+			<Resource id="1">150</Resource>
+			<Resource id="21">50</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">15</Resource>
+			<Resource id="21">5</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="wall" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="216" name="Wood Gate" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="30">
+        <BuildMenuAnim name="WOODGATE">159</BuildMenuAnim>
+		<IdleAnim name="WOODGATE">63</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">50</Resource>
+			<Resource id="10">30</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">5</Resource>
+			<Resource id="10">3</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="wall" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+
+	<Object id="217" name="Stone Gate" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="75">
+        <BuildMenuAnim name="STONEGATE">159</BuildMenuAnim>
+		<IdleAnim name="STONEGATE">63</IdleAnim>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<Resource id="1">75</Resource>
+			<Resource id="20">40</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">7</Resource>
+			<Resource id="20">4</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="wall" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="226" name="Cherry Blossom" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3250">
+		<IdleAnim name="CherryTree"></IdleAnim>
+		<Info>Cherry Blossoms grant a bonus to the XP and Gold received from all Shops by 4% (500% Maximum)</Info>
+		<Prerequisite type="level">13</Prerequisite>
+        <BuildMenuAnim name="CherryTree"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>65</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="4.0">
+            	<Resource id="1" percent="4.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+    <Object id="236" name="Chicken Coop" width="4" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2500">
+		<IdleAnim name="Coop"></IdleAnim>
+		<Info>Chicken Coops grant a bonus to the XP and Gold received from all Shops by 2.75% (500% Maximum)</Info>
+		<Prerequisite type="level">19</Prerequisite>
+		<Sounds select="46"/>
+        <BuildMenuAnim name="Coop"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>50</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2.75">
+            	<Resource id="1" percent="2.75"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+	
+	<Object id="240" name="Well" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+		<IdleAnim name="well"></IdleAnim>
+		<Info>Build a well in your village and the proceeds will be donated to charity: water to build wells in developing nations!</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="well"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>95</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1000</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>All</CompatibleLand>
+	</Object>
+    <Object id="258" name="Dragon" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="0">
+		<IdleAnim name="dragon_active"></IdleAnim>
+		<Info>Release the Dragon! The Dragon grants a bonus to the XP and Gold received from all Shops by 3% amount. (500% Maximum)</Info>
+		<Prerequisite type="level">1</Prerequisite>
+		<Prerequisite type="rewardUnlockable" />
+        <BuildMenuAnim name="dragon_active"></BuildMenuAnim>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="3.0">
+            	<Resource id="1" percent="3.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="259" name="Bamboo" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="900">
+		<IdleAnim name="bamboo"></IdleAnim>
+		<Info>Bamboo, fresh from Asia! Bamboo grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">29</Prerequisite>
+        <BuildMenuAnim name="bamboo"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">1800</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">180</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.02">
+            	<Resource id="1" percent="0.02"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+    <Object id="270" name="Magic Stallion" width="2" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="5000">
+		<IdleAnim name="horse_pink_active"></IdleAnim>
+		<Info>Magic Stallion, may all your days be bright! Magic Stallion grants a bonus to the XP and Gold received from all Shops by 30%! (500% Maximum)</Info>
+		<Sounds select="51"/>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="horse_pink_active"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>295</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">2950</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="30.0">
+            	<Resource id="1" percent="30.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+    <Object id="280" name="Turtle" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="0">
+		<IdleAnim name="turtle"></IdleAnim>
+		<Info>I like turtles. The Turtle grants a bonus to the XP and Gold received from all Shops by 3% amount. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="rewardUnlockable" />
+        <BuildMenuAnim name="turtle"></BuildMenuAnim>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="3.0">
+            	<Resource id="1" percent="3.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="295" name="Turkey" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2500">
+		<IdleAnim name="turkey"></IdleAnim>
+		<Info>Gobble, gobble! The Turkey grants a bonus to the XP and Gold received from all Shops by 1%. (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="turkey"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">5000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1">
+            	<Resource id="1" percent="1"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="342" name="Large Granite Statue" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="225">
+		<Info>The Large Granite Statue (limit 4) is acquired with Z2Points, earned by playing Z2Live games, and grants a bonus to the XP and Gold received from all Shops by 0.5% (500% Maximum)</Info>
+		<IdleAnim name="LARGESTATUE">135</IdleAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+		    <Z2Points>3</Z2Points>
+		</Cost>
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="20">10</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.5">
+            	<Resource id="1" percent="0.5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="statue" select="no" reposition="yes" blockVillager="no"/>
+		<Limit>4</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+</Objects>
+

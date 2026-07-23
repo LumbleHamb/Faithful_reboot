@@ -1,0 +1,1856 @@
+
+<Item id="1" type="landUpgrade" value="56" name="Increase Land 1" text="">
+    <Prerequisite type="level">1</Prerequisite>
+    <Cost>
+        <Resource id="1">50</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>5</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="2" type="landUpgrade" value="64" name="Increase Land 2" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">1</Prerequisite>
+    <!--Sale>50</Sale-->
+    <Cost>
+        <Resource id="1">5000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>10</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="3" type="landUpgrade" value="72" name="Increase Land 3" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">2</Prerequisite>
+    <Cost>
+        <Resource id="1">10000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>20</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="4" type="landUpgrade" value="80" name="Increase Land 4" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">3</Prerequisite>
+    <Cost>
+        <Resource id="1">50000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>30</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="5" type="landUpgrade" value="88" name="Increase Land 5" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">4</Prerequisite>
+    <Cost>
+        <Resource id="1">100000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>40</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="6" type="landUpgrade" value="104" name="Increase Land 6" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">5</Prerequisite>
+    <Cost>
+        <Resource id="1">500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>50</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="7" type="landUpgrade" value="112" name="Increase Land 7" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">6</Prerequisite>
+    <Cost>
+        <Resource id="1">1000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>60</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="8" type="landUpgrade" value="120" name="Increase Land 8" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">7</Prerequisite>
+    <Cost>
+        <Resource id="1">1500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>70</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="9" type="landUpgrade" value="128" name="Increase Land 9" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">8</Prerequisite>
+    <Cost>
+        <Resource id="1">2500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>80</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="99" type="landUpgrade" value="136" name="Increase Land 10" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">9</Prerequisite>
+    <Cost>
+        <Resource id="1">5000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>90</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="115" type="landUpgrade" value="144" name="Increase Land 11" text="">
+    <Prerequisite type="level">4</Prerequisite>
+    <Prerequisite type="landUpgrade">99</Prerequisite>
+    <Cost>
+        <Resource id="1">10000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>100</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+
+<Item id="122" type="landUpgrade" value="56" name="Increase Land 1 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Cost>
+        <Resource id="1">1000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>3</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="123" type="landUpgrade" value="64" name="Increase Land 2 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">122</Prerequisite>
+    <Cost>
+        <Resource id="1">5000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>5</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="124" type="landUpgrade" value="72" name="Increase Land 3 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">123</Prerequisite>
+    <Cost>
+        <Resource id="1">15000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>8</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="125" type="landUpgrade" value="80" name="Increase Land 4 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">124</Prerequisite>
+    <Cost>
+        <Resource id="1">150000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>10</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="126" type="landUpgrade" value="88" name="Increase Land 5 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">125</Prerequisite>
+    <Cost>
+        <Resource id="1">500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>15</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="127" type="landUpgrade" value="104" name="Increase Land 6 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">126</Prerequisite>
+    <Cost>
+        <Resource id="1">1000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>25</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="142" type="landUpgrade" value="112" name="Increase Land 7 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">127</Prerequisite>
+    <Cost>
+        <Resource id="1">1500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>35</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="143" type="landUpgrade" value="120" name="Increase Land 8 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">142</Prerequisite>
+    <Cost>
+        <Resource id="1">2500000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>50</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="144" type="landUpgrade" value="128" name="Increase Land 9 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">143</Prerequisite>
+    <Cost>
+        <Resource id="1">5000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>65</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="145" type="landUpgrade" value="136" name="Increase Land 10 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">144</Prerequisite>
+    <Cost>
+        <Resource id="1">20000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>80</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="146" type="landUpgrade" value="144" name="Increase Land 11 " text="">
+    <Prerequisite type="level">20</Prerequisite>
+    <Prerequisite type="landUpgrade">145</Prerequisite>
+    <Cost>
+        <Resource id="1">100000000</Resource>
+    </Cost>
+    <AlternateCost>
+        <MagicBeans>105</MagicBeans>
+    </AlternateCost>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+
+<Item id="135" type="bonusItem" time="3600.0" modifier="1.5" resource="10" name="Sharpened Axes" text="Boost to wood production!">
+    <MenuIcon name="RESSOURCE_WOOD">651</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWOOD">658</FloatMenuIcon>
+    <BuffIcon name="BUFF_WOOD_0">1200</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="128" type="bonusItem" time="43200.0" modifier="2.0" resource="10" name="Enchanted Axes" text="Double wood production!">
+    <MenuIcon name="RESSOURCE_WOOD">651</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWOOD">658</FloatMenuIcon>
+    <BuffIcon name="BUFF_WOOD_1">1201</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="136" type="bonusItem" time="3600.0" modifier="1.5" resource="20" name="Sharpened Picks" text="Boost to rock production!">
+    <MenuIcon name="RESSOURCE_STONE">649</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLSTONE">656</FloatMenuIcon>
+    <BuffIcon name="BUFF_ROCK_0">1220</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="129" type="bonusItem" time="43200.0" modifier="2.0" resource="20" name="Magic Picks" text="Double rock production!">
+    <MenuIcon name="RESSOURCE_STONE">649</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLSTONE">656</FloatMenuIcon>
+    <BuffIcon name="BUFF_ROCK_1">1221</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="137" type="bonusItem" time="3600.0" modifier="1.5" resource="40" name="Sharpened Scythes" text="Boost to wheat production!">
+    <MenuIcon name="RESSOURCE_WHEAT">650</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWHEAT">657</FloatMenuIcon>
+    <BuffIcon name="BUFF_WHEAT_0">1210</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="130" type="bonusItem" time="43200.0" modifier="2.0" resource="40" name="Golden Scythes" text="Double wheat production!">
+    <MenuIcon name="RESSOURCE_WHEAT">650</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWHEAT">657</FloatMenuIcon>
+    <BuffIcon name="BUFF_WHEAT_1">1211</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="138" type="bonusItem" time="3600.0" modifier="1.5" resource="50" name="Sharpened Shears" text="Boost to wool production!">
+    <MenuIcon name="RESSOURCE_WOOL">652</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWOOL">659</FloatMenuIcon>
+    <BuffIcon name="BUFF_WOOL_0">1230</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="131" type="bonusItem" time="43200.0" modifier="2.0" resource="50" name="Steel Shears" text="Double wool production!">
+    <MenuIcon name="RESSOURCE_WOOL">652</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLWOOL">659</FloatMenuIcon>
+    <BuffIcon name="BUFF_WOOL_1">1231</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="139" type="bonusItem" time="3600.0" modifier="1.5" resource="11" name="Sharpened Saws" text="Boost to lumber production!">
+    <MenuIcon name="RESSOURCE_LUMBER">648</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLLUMBER">655</FloatMenuIcon>
+    <BuffIcon name="BUFF_LUMBER_0">1240</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="132" type="bonusItem" time="43200.0" modifier="2.0" resource="11" name="Super Saws" text="Double lumber production!">
+    <MenuIcon name="RESSOURCE_LUMBER">648</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLLUMBER">655</FloatMenuIcon>
+    <BuffIcon name="BUFF_LUMBER_1">1241</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="140" type="bonusItem" time="3600.0" modifier="1.5" resource="21" name="Sharpened Chisels" text="Boost to cut stone production!">
+    <MenuIcon name="RESSOURCE_CUTSTONE">647</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCUTSTONE">654</FloatMenuIcon>
+    <BuffIcon name="BUFF_STONE_0">1250</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="133" type="bonusItem" time="43200.0" modifier="2.0" resource="21" name="Diamond Chisels" text="Double cut stone production!">
+    <MenuIcon name="RESSOURCE_CUTSTONE">647</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCUTSTONE">654</FloatMenuIcon>
+    <BuffIcon name="BUFF_STONE_1">1251</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="141" type="bonusItem" time="3600.0" modifier="1.5" resource="51" name="Sharpened Needles" text="Boost to cloth production!">
+    <MenuIcon name="RESSOURCE_CLOTH">646</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCLOTH">653</FloatMenuIcon>
+    <BuffIcon name="BUFF_CLOTH_0">1260</BuffIcon>
+    <Cost>
+        <Resource id="1">10</Resource>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="134" type="bonusItem" time="43200.0" modifier="2.0" resource="51" name="Magic Needles" text="Double cloth production!">
+    <MenuIcon name="RESSOURCE_CLOTH">646</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCLOTH">653</FloatMenuIcon>
+    <BuffIcon name="BUFF_CLOTH_1">1261</BuffIcon>
+    <Cost>
+        <MagicBeans>10</MagicBeans>
+    </Cost>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- Baker's Shop Items -->
+<Item id="40" type="shopItem" time="45.0" name="Cookies" text="Cookies">
+    <MenuIcon name="Bakery_Cookie">605</MenuIcon>
+    <FloatMenuIcon name="Bakery_Cookie">610</FloatMenuIcon>
+    <Prerequisite type="level">1</Prerequisite>
+    <!--HurryCost: value is energy/coins used for each timeInterval (in seconds) -->
+    <HurryCost timeInterval="45">1</HurryCost>
+    <Cost>
+        <Resource id="40">1</Resource>
+    </Cost>
+    <Reward xp="5">
+        <Resource id="1">10</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="41" type="shopItem" time="300.0" name="Tarts" text="Tarts">
+    <MenuIcon name="Bakery_Tart">614</MenuIcon>
+    <FloatMenuIcon name="Bakery_Tart">613</FloatMenuIcon>
+    <Prerequisite type="level">1</Prerequisite>
+    <HurryCost timeInterval="300">1</HurryCost>
+    <Cost>
+        <Resource id="40">4</Resource>
+    </Cost>
+    <Reward xp="15">
+        <Resource id="1">25</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="42" type="shopItem" time="3600.0" name="Donuts" text="Donuts">
+    <MenuIcon name="Bakery_Donut">607</MenuIcon>
+    <FloatMenuIcon name="Bakery_Donut">612</FloatMenuIcon>
+    <Prerequisite type="level">3</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="40">30</Resource>
+    </Cost>
+    <Reward xp="60">
+        <Resource id="1">110</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="44" type="shopItem" time="14400.0" name="Cupcakes" text="Cupcake">
+    <MenuIcon name="Bakery_Cupcakes">606</MenuIcon>
+    <FloatMenuIcon name="Bakery_Cupcakes">611</FloatMenuIcon>
+    <Prerequisite type="level">4</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="40">200</Resource>
+    </Cost>
+    <Reward xp="200">
+        <Resource id="1">200</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="43" type="shopItem" time="43200.0" name="Eclair" text="Eclair">
+    <MenuIcon name="Bakery_Eclair">608</MenuIcon>
+    <FloatMenuIcon name="Bakery_Eclair">615</FloatMenuIcon>
+    <Prerequisite type="level">3</Prerequisite>
+    <HurryCost timeInterval="17280">3</HurryCost>
+    <Cost>
+        <Resource id="40">350</Resource>
+    </Cost>
+    <Reward xp="350">
+        <Resource id="1">480</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="45" type="shopItem" time="86400.0" name="Cake" text="Cake">
+    <MenuIcon name="Bakery_Cake">604</MenuIcon>
+    <FloatMenuIcon name="Bakery_Cake">609</FloatMenuIcon>
+    <Prerequisite type="level">5</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="40">600</Resource>
+    </Cost>
+    <Reward xp="650">
+        <Resource id="1">750</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- Wood Worker's Shop Items -->
+<Item id="10" type="shopItem" time="300.0" name="Table" text="Table">
+    <MenuIcon name="Carpenter_table">618</MenuIcon>
+    <FloatMenuIcon name="Carpenter_table">622</FloatMenuIcon>
+    <Prerequisite type="level">6</Prerequisite>
+    <HurryCost timeInterval="300">1</HurryCost>
+    <Cost>
+        <Resource id="10">6</Resource>
+    </Cost>
+    <Reward xp="20">
+        <Resource id="1">40</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="12" type="shopItem" time="7200.0" name="Bird House" text="Bird House">
+    <MenuIcon name="Carpenter_BirdHouse">617</MenuIcon>
+    <FloatMenuIcon name="Carpenter_BirdHouse">621</FloatMenuIcon>
+    <Prerequisite type="level">7</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="11">25</Resource>
+    </Cost>
+    <Reward xp="95">
+        <Resource id="1">150</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="14" type="shopItem" time="14400.0" name="Bed" text="Bed">
+    <MenuIcon name="Carpenter_Bedframe">625</MenuIcon>
+    <FloatMenuIcon name="Carpenter_Bedframe">624</FloatMenuIcon>
+    <Prerequisite type="level">11</Prerequisite>
+    <HurryCost timeInterval="9598">3</HurryCost>
+    <Cost>
+        <Resource id="11">75</Resource>
+    </Cost>
+    <Reward xp="200">
+        <Resource id="1">300</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="13" type="shopItem" time="28800.0" name="Chairs" text="Chairs">
+    <MenuIcon name="Carpenter_RockingChair">619</MenuIcon>
+    <FloatMenuIcon name="Carpenter_RockingChair">623</FloatMenuIcon>
+    <Prerequisite type="level">9</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="11">110</Resource>
+    </Cost>
+    <Reward xp="250">
+        <Resource id="1">400</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="11" type="shopItem" time="43200.0" name="Bench" text="Bench">
+    <MenuIcon name="Carpenter_Bench">616</MenuIcon>
+    <FloatMenuIcon name="Carpenter_Bench">620</FloatMenuIcon>
+    <Prerequisite type="level">6</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="11">140</Resource>
+    </Cost>
+    <Reward xp="425">
+        <Resource id="1">500</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- Tailor's Shop Items -->
+<Item id="50" type="shopItem" time="3600.0" name="Tunic" text="Tunic">
+    <MenuIcon name="Tailor_Tunic">635</MenuIcon>
+    <FloatMenuIcon name="Tailor_Tunic">633</FloatMenuIcon>
+    <Prerequisite type="level">10</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="50">20</Resource>
+    </Cost>
+    <Reward xp="150">
+        <Resource id="1">125</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="52" type="shopItem" time="7200" name="Trousers" text="Trousers">
+    <MenuIcon name="Tailor_Trousers">634</MenuIcon>
+    <FloatMenuIcon name="Tailor_Trousers">632</FloatMenuIcon>
+    <Prerequisite type="level">13</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="50">160</Resource>
+    </Cost>
+    <Reward xp="170">
+        <Resource id="1">225</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="51" type="shopItem" time="21600" name="Coat" text="Coat">
+    <MenuIcon name="Tailor_Coat">626</MenuIcon>
+    <FloatMenuIcon name="Tailor_Coat">629</FloatMenuIcon>
+    <Prerequisite type="level">10</Prerequisite>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="50">225</Resource>
+    </Cost>
+    <Reward xp="350">
+        <Resource id="1">275</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="53" type="shopItem" time="57600" name="Fancy Suit" text="Fancy Suit">
+    <MenuIcon name="Tailor_FancySuit">628</MenuIcon>
+    <FloatMenuIcon name="Tailor_FancySuit">631</FloatMenuIcon>
+    <Prerequisite type="level">15</Prerequisite>
+    <HurryCost timeInterval="16457">3</HurryCost>
+    <Cost>
+        <Resource id="51">150</Resource>
+    </Cost>
+    <Reward xp="500">
+        <Resource id="1">850</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="54" type="shopItem" time="86400" name="Fancy Dress" text="Fancy Dress">
+    <MenuIcon name="Tailor_FancyDress">627</MenuIcon>
+    <FloatMenuIcon name="Tailor_FancyDress">630</FloatMenuIcon>
+    <Prerequisite type="level">17</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="51">240</Resource>
+    </Cost>
+    <Reward xp="1000">
+        <Resource id="1">650</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- Sculpture's Shop Items -->
+<Item id="20" type="shopItem" time="900.0" name="Bird Bath" text="Bird Bath">
+    <MenuIcon name="Sculptor_BirdBath">636</MenuIcon>
+    <FloatMenuIcon name="Sculptor_BirdBath">641</FloatMenuIcon>
+    <Prerequisite type="level">14</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="21">5</Resource>
+    </Cost>
+    <Reward xp="50">
+        <Resource id="1">60</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="23" type="shopItem" time="10800" name="Lawn Gnome" text="Lawn Gnome">
+    <MenuIcon name="Sculptor_LawnStatue">639</MenuIcon>
+    <FloatMenuIcon name="Sculptor_LawnStatue">645</FloatMenuIcon>
+    <Prerequisite type="level">15</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="21">55</Resource>
+    </Cost>
+    <Reward xp="400">
+        <Resource id="1">300</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="22" type="shopItem" time="43200.0" name="Bust" text="Bust">
+    <MenuIcon name="Sculptor_Bust">637</MenuIcon>
+    <FloatMenuIcon name="Sculptor_Bust">642</FloatMenuIcon>
+    <Prerequisite type="level">17</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="21">70</Resource>
+    </Cost>
+    <Reward xp="500">
+        <Resource id="1">500</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="24" type="shopItem" time="54000.0" name="Lion Statue" text="Lion Statue">
+    <MenuIcon name="Sculptor_LionStatue">640</MenuIcon>
+    <FloatMenuIcon name="Sculptor_LionStatue">644</FloatMenuIcon>
+    <Prerequisite type="level">19</Prerequisite>
+    <HurryCost timeInterval="15429">3</HurryCost>
+    <Cost>
+        <Resource id="21">80</Resource>
+    </Cost>
+    <Reward xp="550">
+        <Resource id="1">650</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="21" type="shopItem" time="86400.0" name="Worker Statue" text="Large Statue">
+    <MenuIcon name="Sculptor_LargeStatue">638</MenuIcon>
+    <FloatMenuIcon name="Sculptor_LargeStatue">643</FloatMenuIcon>
+    <Prerequisite type="level">14</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="21">125</Resource>
+    </Cost>
+    <Reward xp="760">
+        <Resource id="1">900</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="25" type="shopItem" time="21600.0" name="200 Lumber" text="Order 200 Lumber">
+    <MenuIcon name="RESSOURCE_LUMBER">648</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLLUMBER">655</FloatMenuIcon>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="10">400</Resource>
+    </Cost>
+    <Reward xp="120">
+        <Resource id="11">200</Resource>
+    </Reward>
+    <TradeReward>
+        <Resource id="1">180</Resource>
+    </TradeReward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="26" type="shopItem" time="21600.0" name="100 Cut Stone" text="Order 100 Cut Stone">
+    <MenuIcon name="RESSOURCE_CUTSTONE">647</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCUTSTONE">654</FloatMenuIcon>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="20">200</Resource>
+    </Cost>
+    <Reward xp="140">
+        <Resource id="21">100</Resource>
+    </Reward>
+    <TradeReward>
+        <Resource id="1">200</Resource>
+    </TradeReward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="27" type="shopItem" time="21600.0" name="150 Cloth" text="Order 150 Cloth">
+    <MenuIcon name="RESSOURCE_CLOTH">646</MenuIcon>
+    <FloatMenuIcon name="RESOURCE_SMALLCLOTH">653</FloatMenuIcon>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="50">300</Resource>
+    </Cost>
+    <Reward xp="170">
+        <Resource id="51">150</Resource>
+    </Reward>
+    <TradeReward>
+        <Resource id="1">250</Resource>
+    </TradeReward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- Pub Shop Items -->
+<Item id="16" type="shopItem" time="600.0" name="Grog" text="Grog">
+    <MenuIcon name="Pub_BeerBarrel">660</MenuIcon>
+    <FloatMenuIcon name="Pub_BeerBarrel">663</FloatMenuIcon>
+    <Prerequisite type="level">16</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="40">30</Resource>
+    </Cost>
+    <Reward xp="40">
+        <Resource id="1">40</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="17" type="shopItem" time="86400.0" name="Lager" text="Lager">
+    <MenuIcon name="Pub_BeerGlass">661</MenuIcon>
+    <FloatMenuIcon name="Pub_BeerGlass">664</FloatMenuIcon>
+    <Prerequisite type="level">24</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="40">650</Resource>
+    </Cost>
+    <Reward xp="850">
+        <Resource id="1">900</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="18" type="shopItem" time="14400.0" name="Mead" text="Mead">
+    <MenuIcon name="Pub_Jug">662</MenuIcon>
+    <FloatMenuIcon name="Pub_Jug">665</FloatMenuIcon>
+    <Prerequisite type="level">20</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="40">150</Resource>
+    </Cost>
+    <Reward xp="375">
+        <Resource id="1">350</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="19" type="shopItem" time="7200.0" name="Ale" text="Ale">
+    <MenuIcon name="Pub_Tankard">667</MenuIcon>
+    <FloatMenuIcon name="Pub_Tankard">666</FloatMenuIcon>
+    <Prerequisite type="level">18</Prerequisite>
+    <HurryCost timeInterval="7200.0">3</HurryCost>
+    <Cost>
+        <Resource id="40">100</Resource>
+    </Cost>
+    <Reward xp="225">
+        <Resource id="1">200</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="30" type="shopItem" time="43200.0" name="Malt" text="Malt">
+    <MenuIcon name="Pub_Bottle">669</MenuIcon>
+    <FloatMenuIcon name="Pub_Bottle">668</FloatMenuIcon>
+    <Prerequisite type="level">22</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="40">300</Resource>
+    </Cost>
+    <Reward xp="400">
+        <Resource id="1">485</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- special holiday items -->
+<Item id="31" type="shopItem" time="600.0" name="Stocking" text="Stocking">
+    <MenuIcon name="HOLIDAYS_STOCKING">670</MenuIcon>
+    <FloatMenuIcon name="HOLIDAYS_SMALLSTOCKING">675</FloatMenuIcon>
+    <Prerequisite type="level">10</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="50">5</Resource>
+    </Cost>
+    <Reward xp="35">
+        <Resource id="1">50</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="32" type="shopItem" time="600.0" name="Nutcracker" text="Nutcracker">
+    <MenuIcon name="HOLIDAYS_NUTCRACKER">672</MenuIcon>
+    <FloatMenuIcon name="HOLIDAYS_SMALLNUTCRACKER">674</FloatMenuIcon>
+    <Prerequisite type="level">14</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="11">5</Resource>
+    </Cost>
+    <Reward xp="30">
+        <Resource id="1">50</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="33" type="shopItem" time="600.0" name="Gingerbread Man" text="Gingerbread Man">
+    <MenuIcon name="HOLIDAYS_GINGERBREADMAN">671</MenuIcon>
+    <FloatMenuIcon name="HOLIDAYS_SMALLGINGERBREADMAN">673</FloatMenuIcon>
+    <Prerequisite type="level">3</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="40">5</Resource>
+    </Cost>
+    <Reward xp="25">
+        <Resource id="1">45</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!--BOOK SHOP ITEMS -->
+<Item id="34" type="shopItem" time="600.0" name="Beanonomics" text="Beanonomics">
+    <MenuIcon name="book_Beanonomics">675</MenuIcon>
+    <FloatMenuIcon name="book_Beanonomics">676</FloatMenuIcon>
+    <Prerequisite type="level">22</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="10">30</Resource>
+        <Resource id="51">5</Resource>
+    </Cost>
+    <Reward xp="50">
+        <Resource id="1">75</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="35" type="shopItem" time="7200.0" name="Of Sheep and Haulers" text="Of Sheep and Haulers">
+    <MenuIcon name="book_SheepHaulers">677</MenuIcon>
+    <FloatMenuIcon name="book_SheepHaulers">678</FloatMenuIcon>
+    <Prerequisite type="level">23</Prerequisite>
+    <HurryCost timeInterval="7200.0">3</HurryCost>
+    <Cost>
+        <Resource id="10">100</Resource>
+        <Resource id="51">6</Resource>
+    </Cost>
+    <Reward xp="250">
+        <Resource id="1">250</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="36" type="shopItem" time="14400.0" name="Villager's Travels" text="Villager's Travels">
+    <MenuIcon name="book_VillagersTravels">679</MenuIcon>
+    <FloatMenuIcon name="book_VillagersTravels">680</FloatMenuIcon>
+    <Prerequisite type="level">25</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="10">125</Resource>
+        <Resource id="51">7</Resource>
+    </Cost>
+    <Reward xp="325">
+        <Resource id="1">325</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="37" type="shopItem" time="28800.0" name="The Lord of the Donuts" text="The Lord of the Donuts">
+    <MenuIcon name="book_LordDonuts">681</MenuIcon>
+    <FloatMenuIcon name="book_LordDonuts">682</FloatMenuIcon>
+    <Prerequisite type="level">27</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="10">300</Resource>
+        <Resource id="51">15</Resource>
+    </Cost>
+    <Reward xp="375">
+        <Resource id="1">485</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="38" type="shopItem" time="86400.0" name="Playing the Market" text="Playing the Market">
+    <MenuIcon name="book_PlayingMarket">683</MenuIcon>
+    <FloatMenuIcon name="book_PlayingMarket">684</FloatMenuIcon>
+    <Prerequisite type="level">29</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="10">400</Resource>
+        <Resource id="51">25</Resource>
+    </Cost>
+    <Reward xp="1100">
+        <Resource id="1">750</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--THEATER JOBS -->
+<Item id="60" type="shopItem" time="3600.0" name="One Act" text="One Act">
+    <MenuIcon name="theater_oneact">683</MenuIcon>
+    <FloatMenuIcon name="theater_oneact">684</FloatMenuIcon>
+    <Prerequisite type="level">26</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">175</Resource>
+    </Cost>
+    <Reward xp="600">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="61" type="shopItem" time="7200.0" name="Fiddler on the Woof" text="Fiddler on the Woof">
+    <MenuIcon name="theater_fiddler">683</MenuIcon>
+    <FloatMenuIcon name="theater_fiddler">684</FloatMenuIcon>
+    <Prerequisite type="level">28</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">225</Resource>
+    </Cost>
+    <Reward xp="675">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="62" type="shopItem" time="18000.0" name="Twelfth Evening" text="Twelfth Evening">
+    <MenuIcon name="theater_twelfth">683</MenuIcon>
+    <FloatMenuIcon name="theater_twelfth">684</FloatMenuIcon>
+    <Prerequisite type="level">30</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">450</Resource>
+    </Cost>
+    <Reward xp="1300">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="63" type="shopItem" time="36000.0" name="The Merchant of Nations" text="Merchant of Nations">
+    <MenuIcon name="theater_merchant">683</MenuIcon>
+    <FloatMenuIcon name="theater_merchant">684</FloatMenuIcon>
+    <Prerequisite type="level">31</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">900</Resource>
+    </Cost>
+    <Reward xp="2300">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="64" type="shopItem" time="72000.0" name="King Mayor" text="King Mayor">
+    <MenuIcon name="theater_kingmayor">683</MenuIcon>
+    <FloatMenuIcon name="theater_kingmayor">684</FloatMenuIcon>
+    <Prerequisite type="level">33</Prerequisite>
+    <HurryCost timeInterval="7200.0">3</HurryCost>
+    <Cost>
+        <Resource id="1">1250</Resource>
+    </Cost>
+    <Reward xp="3000">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="65" type="shopItem" time="3600.0" name="Firebreather" text="Firebreather">
+    <MenuIcon name="bigtop_fire">683</MenuIcon>
+    <FloatMenuIcon name="bigtop_fire">684</FloatMenuIcon>
+    <Prerequisite type="level">30</Prerequisite>
+    <HurryCost timeInterval="7200.0">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+    </Cost>
+    <Reward xp="500">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="66" type="shopItem" time="10800.0" name="Clown" text="Clown">
+    <MenuIcon name="bigtop_clown">683</MenuIcon>
+    <FloatMenuIcon name="bigtop_clown">684</FloatMenuIcon>
+    <Prerequisite type="level">32</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">350</Resource>
+    </Cost>
+    <Reward xp="1050">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="67" type="shopItem" time="28800.0" name="Juggler" text="Juggler">
+    <MenuIcon name="bigtop_juggler">683</MenuIcon>
+    <FloatMenuIcon name="bigtop_juggler">684</FloatMenuIcon>
+    <Prerequisite type="level">34</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="1">900</Resource>
+    </Cost>
+    <Reward xp="2250">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="68" type="shopItem" time="86400.0" name="Trapeze" text="Trapeze">
+    <MenuIcon name="bigtop_trapeze">683</MenuIcon>
+    <FloatMenuIcon name="bigtop_trapeze">684</FloatMenuIcon>
+    <Prerequisite type="level">35</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">1500</Resource>
+    </Cost>
+    <Reward xp="3500">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+
+<!-- Flower Shop Items -->
+<Item id="69" type="shopItem" time="45.0" name="Lilies" text="Lilies">
+    <MenuIcon name="flowershop_lilies">605</MenuIcon>
+    <FloatMenuIcon name="flowershop_lilies">610</FloatMenuIcon>
+    <Prerequisite type="level">1</Prerequisite>
+    <HurryCost timeInterval="45">1</HurryCost>
+    <Cost>
+        <Resource id="1">1</Resource>
+    </Cost>
+    <Reward xp="5">
+        <Resource id="1">10</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="70" type="shopItem" time="300.0" name="Marigolds" text="Marigolds">
+    <MenuIcon name="flowershop_merrigold">614</MenuIcon>
+    <FloatMenuIcon name="flowershop_merrigold">613</FloatMenuIcon>
+    <Prerequisite type="level">1</Prerequisite>
+    <HurryCost timeInterval="300">1</HurryCost>
+    <Cost>
+        <Resource id="1">2</Resource>
+    </Cost>
+    <Reward xp="15">
+        <Resource id="1">25</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="71" type="shopItem" time="3600.0" name="Sunflowers" text="Sunflowers">
+    <MenuIcon name="flowershop_sunflowers">607</MenuIcon>
+    <FloatMenuIcon name="flowershop_sunflowers">612</FloatMenuIcon>
+    <Prerequisite type="level">3</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">18</Resource>
+    </Cost>
+    <Reward xp="60">
+        <Resource id="1">110</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="72" type="shopItem" time="43200.0" name="Lilacs" text="Lilacs">
+    <MenuIcon name="flowershop_lilacs">608</MenuIcon>
+    <FloatMenuIcon name="flowershop_lilacs">615</FloatMenuIcon>
+    <Prerequisite type="level">3</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">210</Resource>
+    </Cost>
+    <Reward xp="350">
+        <Resource id="1">480</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="73" type="shopItem" time="86400.0" name="Roses" text="Roses">
+    <MenuIcon name="flowershop_roses">604</MenuIcon>
+    <FloatMenuIcon name="flowershop_roses">609</FloatMenuIcon>
+    <Prerequisite type="level">5</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">360</Resource>
+    </Cost>
+    <Reward xp="650">
+        <Resource id="1">750</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!-- Creamery Shop Items -->
+<Item id="74" type="shopItem" time="10800.0" name="Swiss Cheese" text="Swiss Cheese">
+    <MenuIcon name="CREAMERY_SWISS_42X42" />
+    <FloatMenuIcon name="CREAMERY_SWISS_21X21">1</FloatMenuIcon>
+    <Prerequisite type="level">36</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="40">335</Resource>
+    </Cost>
+    <Reward xp="280">
+        <Resource id="1">475</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="75" type="shopItem" time="900.0" name="Glass of Milk" text="Glass of Milk">
+    <MenuIcon name="CREAMERY_MILK_42X42" />
+    <FloatMenuIcon name="CREAMERY_MILK_21X21">1</FloatMenuIcon>
+	<Prerequisite type="level">34</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="40">210</Resource>
+    </Cost>
+    <Reward xp="35">
+        <Resource id="1">150</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="76" type="shopItem" time="86400.0" name="Rainbow Ice Cream" text="Rainbow Ice Cream">
+    <MenuIcon name="CREAMERY_RAINBOW_ICE_CREAM_42X42" />
+	<FloatMenuIcon name="CREAMERY_RAINBOW_ICE_CREAM_21X21">1</FloatMenuIcon>
+	<Prerequisite type="level">40</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="40">1000</Resource>
+    </Cost>
+    <Reward xp="1200">
+        <Resource id="1">1000</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="77" type="shopItem" time="21600.0" name="Chocolate Ice Cream" text="Chocolate Ice Cream">
+    <MenuIcon name="CREAMERY_CHOCOLATE_ICE_CREAM_42X42" />
+    <FloatMenuIcon name="CREAMERY_CHOCOLATE_ICE_CREAM_21X21">1</FloatMenuIcon>
+	<Prerequisite type="level">38</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="40">500</Resource>
+    </Cost>
+    <Reward xp="450">
+        <Resource id="1">725</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="78" type="shopItem" time="43200.0" name="Cheddar Cheese" text="Cheddar Cheese">
+    <MenuIcon name="CREAMERY_CHEDDAR_42X42" />
+	<FloatMenuIcon name="CREAMERY_CHEDDAR_21X21">1</FloatMenuIcon>
+    <Prerequisite type="level">39</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="40">750</Resource>
+    </Cost>
+    <Reward xp="500">
+        <Resource id="1">900</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--Toy Shop Jobs -->
+
+<Item id="79" type="shopItem" time="79200.0" name="Blocks" text="Blocks">
+    <MenuIcon name="toyshop_blocks">618</MenuIcon>
+    <FloatMenuIcon name="toyshop_blocks">622</FloatMenuIcon>
+    <Prerequisite type="level">24</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="10">900</Resource>
+    </Cost>
+    <Reward xp="925">
+        <Resource id="1">975</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="80" type="shopItem" time="50400.0" name="Ragdoll" text="Ragdoll">
+    <MenuIcon name="toyshop_ragdoll">618</MenuIcon>
+    <FloatMenuIcon name="toyshop_ragdoll">622</FloatMenuIcon>
+    <Prerequisite type="level">25</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="50">95</Resource>
+        <Resource id="51">110</Resource>
+    </Cost>
+    <Reward xp="910">
+        <Resource id="1">700</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="81" type="shopItem" time="21600.0" name="Toy Train" text="Toy Train">
+    <MenuIcon name="toyshop_train">625</MenuIcon>
+    <FloatMenuIcon name="toyshop_train">624</FloatMenuIcon>
+    <Prerequisite type="level">27</Prerequisite>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="11">180</Resource>
+    </Cost>
+    <Reward xp="375">
+        <Resource id="1">600</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="82" type="shopItem" time="7200.0" name="Teddy Bear" text="Teddy Bear">
+    <MenuIcon name="toyshop_teddybear">625</MenuIcon>
+    <FloatMenuIcon name="toyshop_teddybear">624</FloatMenuIcon>
+    <Prerequisite type="level">29</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="50">95</Resource>
+        <Resource id="51">45</Resource>
+    </Cost>
+    <Reward xp="350">
+        <Resource id="1">250</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="83" type="shopItem" time="900.0" name="Pet Rock" text="Pet Rock">
+    <MenuIcon name="toyshop_petrock">625</MenuIcon>
+    <FloatMenuIcon name="toyshop_petrock">624</FloatMenuIcon>
+    <Prerequisite type="level">31</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="20">125</Resource>
+    </Cost>
+    <Reward xp="70">
+        <Resource id="1">175</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!--Restaurant Jobs -->
+
+<Item id="84" type="shopItem" time="1800.0" name="Fresh Fish" text="Fresh Fish">
+    <MenuIcon name="Restaurant_job_freshfish">618</MenuIcon>
+    <FloatMenuIcon name="Restaurant_job_freshfish">622</FloatMenuIcon>
+    <Prerequisite type="level">38</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">60</Resource>
+    </Cost>
+    <Reward xp="80">
+        <Resource id="1">150</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="85" type="shopItem" time="14400.0" name="Fried Egg" text="Fried Egg">
+    <MenuIcon name="Restaurant_job_friedegg">618</MenuIcon>
+    <FloatMenuIcon name="Restaurant_job_friedegg">622</FloatMenuIcon>
+    <Prerequisite type="level">40</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+    </Cost>
+    <Reward xp="475">
+        <Resource id="1">450</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="86" type="shopItem" time="28800.0" name="Fruit Salad" text="Fruit Salad">
+    <MenuIcon name="Restaurant_job_fruitsalad">625</MenuIcon>
+    <FloatMenuIcon name="Restaurant_job_fruitsalad">624</FloatMenuIcon>
+    <Prerequisite type="level">42</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="1">250</Resource>
+    </Cost>
+    <Reward xp="600">
+        <Resource id="1">625</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="87" type="shopItem" time="43200.0" name="Pumpkin Pie" text="Pumpkin Pie">
+    <MenuIcon name="Restaurant_job_pumpkinpie">625</MenuIcon>
+    <FloatMenuIcon name="Restaurant_job_pumpkinpie">624</FloatMenuIcon>
+    <Prerequisite type="level">44</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">400</Resource>
+    </Cost>
+    <Reward xp="750">
+        <Resource id="1">750</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="88" type="shopItem" time="86400.0" name="T-Bone Steak" text="T-Bone Steak">
+    <MenuIcon name="Restaurant_job_steak">625</MenuIcon>
+    <FloatMenuIcon name="Restaurant_job_steak">624</FloatMenuIcon>
+    <Prerequisite type="level">46</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">700</Resource>
+    </Cost>
+    <Reward xp="1300">
+        <Resource id="1">1250</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--Cobbler Jobs -->
+
+<Item id="89" type="shopItem" time="3600.0" name="Wooly Boots" text="Wooly Boots">
+    <MenuIcon name="Cobbler_woolyboots">618</MenuIcon>
+    <FloatMenuIcon name="Cobbler_woolyboots">622</FloatMenuIcon>
+    <Prerequisite type="level">32</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="50">40</Resource>
+    </Cost>
+    <Reward xp="200">
+        <Resource id="1">175</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="90" type="shopItem" time="7200.0" name="Clogs" text="Clogs">
+    <MenuIcon name="Cobbler_clogs">618</MenuIcon>
+    <FloatMenuIcon name="Cobbler_clogs">622</FloatMenuIcon>
+    <Prerequisite type="level">33</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="10">200</Resource>
+    </Cost>
+    <Reward xp="275">
+        <Resource id="1">300</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="91" type="shopItem" time="21600.0" name="Moccasins" text="Moccasins">
+    <MenuIcon name="Cobbler_moccasins">625</MenuIcon>
+    <FloatMenuIcon name="Cobbler_moccasins">624</FloatMenuIcon>
+    <Prerequisite type="level">35</Prerequisite>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="51">40</Resource>
+    </Cost>
+    <Reward xp="400">
+        <Resource id="1">350</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="92" type="shopItem" time="36000.0" name="Sandals" text="Sandals">
+    <MenuIcon name="Cobbler_sandals">625</MenuIcon>
+    <FloatMenuIcon name="Cobbler_sandals">624</FloatMenuIcon>
+    <Prerequisite type="level">37</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="51">100</Resource>
+    </Cost>
+    <Reward xp="600">
+        <Resource id="1">600</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="93" type="shopItem" time="86400.0" name="Dress Shoes" text="Dress Shoes">
+    <MenuIcon name="Cobbler_dressshoes">625</MenuIcon>
+    <FloatMenuIcon name="Cobbler_dressshoes">624</FloatMenuIcon>
+    <Prerequisite type="level">39</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">700</Resource>
+    </Cost>
+    <Reward xp="1150">
+        <Resource id="1">1400</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--Jewelers Shop Jobs -->
+
+<Item id="94" type="shopItem" time="14400.0" name="Opal Pendant" text="Opal Pendant">
+    <MenuIcon name="JewelersShop_Pendant">618</MenuIcon>
+    <FloatMenuIcon name="JewelersShop_Pendant">622</FloatMenuIcon>
+    <Prerequisite type="level">41</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="20">150</Resource>
+    </Cost>
+    <Reward xp="450">
+        <Resource id="1">475</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="95" type="shopItem" time="18000.0" name="Ruby Necklace" text="Ruby Necklace">
+    <MenuIcon name="JewelersShop_Necklace">618</MenuIcon>
+    <FloatMenuIcon name="JewelersShop_Necklace">622</FloatMenuIcon>
+    <Prerequisite type="level">43</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="20">225</Resource>
+    </Cost>
+    <Reward xp="550">
+        <Resource id="1">500</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="96" type="shopItem" time="28800.0" name="Emerald Ring" text="Emerald Ring">
+    <MenuIcon name="JewelersShop_Ring">625</MenuIcon>
+    <FloatMenuIcon name="JewelersShop_Ring">624</FloatMenuIcon>
+    <Prerequisite type="level">45</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="20">525</Resource>
+    </Cost>
+    <Reward xp="575">
+        <Resource id="1">650</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="97" type="shopItem" time="43200.0" name="Sapphire Earrings" text="Sapphire Earrings">
+    <MenuIcon name="JewelersShop_Earrings">625</MenuIcon>
+    <FloatMenuIcon name="JewelersShop_Earrings">624</FloatMenuIcon>
+    <Prerequisite type="level">47</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="20">550</Resource>
+    </Cost>
+    <Reward xp="700">
+        <Resource id="1">900</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="98" type="shopItem" time="86400.0" name="Diamond Tiara" text="Diamond Tiara">
+    <MenuIcon name="JewelersShop_Tiara">625</MenuIcon>
+    <FloatMenuIcon name="JewelersShop_Tiara">624</FloatMenuIcon>
+    <Prerequisite type="level">49</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="20">1250</Resource>
+    </Cost>
+    <Reward xp="1200">
+        <Resource id="1">1625</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--Tea Shop Jobs -->
+
+<Item id="109" type="shopItem" time="1800.0" name="Black Tea" text="Black Tea">
+    <MenuIcon name="tea_black">618</MenuIcon>
+    <FloatMenuIcon name="tea_black">622</FloatMenuIcon>
+    <Prerequisite type="level">44</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+    </Cost>
+    <Reward xp="120">
+        <Resource id="1">250</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="100" type="shopItem" time="7200.0" name="Ginseng Tea" text="Ginseng Tea">
+    <MenuIcon name="tea_ginseng">618</MenuIcon>
+    <FloatMenuIcon name="tea_ginseng">622</FloatMenuIcon>
+    <Prerequisite type="level">45</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">120</Resource>
+    </Cost>
+    <Reward xp="280">
+        <Resource id="1">420</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="101" type="shopItem" time="14400.0" name="Green Tea" text="Green Tea">
+    <MenuIcon name="tea_green">625</MenuIcon>
+    <FloatMenuIcon name="tea_green">624</FloatMenuIcon>
+    <Prerequisite type="level">46</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">175</Resource>
+    </Cost>
+    <Reward xp="485">
+        <Resource id="1">625</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="102" type="shopItem" time="28800.0" name="Jasmine Tea" text="Jasmine Tea">
+    <MenuIcon name="tea_jasmine">625</MenuIcon>
+    <FloatMenuIcon name="tea_jasmine">624</FloatMenuIcon>
+    <Prerequisite type="level">48</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="1">275</Resource>
+    </Cost>
+    <Reward xp="560">
+        <Resource id="1">700</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="103" type="shopItem" time="86400.0" name="White Tea" text="White Tea">
+    <MenuIcon name="tea_white">625</MenuIcon>
+    <FloatMenuIcon name="tea_white">624</FloatMenuIcon>
+    <Prerequisite type="level">50</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">1150</Resource>
+    </Cost>
+    <Reward xp="1200">
+        <Resource id="1">1700</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<!--Sushi Shop Jobs -->
+
+<Item id="104" type="shopItem" time="600.0" name="Hamachi" text="Hamachi">
+    <MenuIcon name="sushi_hamachi">618</MenuIcon>
+    <FloatMenuIcon name="sushi_hamachi">622</FloatMenuIcon>
+    <Prerequisite type="level">47</Prerequisite>
+    <HurryCost timeInterval="600">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+    </Cost>
+    <Reward xp="65">
+        <Resource id="1">145</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="105" type="shopItem" time="7200.0" name="Maguro" text="Maguro">
+    <MenuIcon name="sushi_maguro">618</MenuIcon>
+    <FloatMenuIcon name="sushi_maguro">622</FloatMenuIcon>
+    <Prerequisite type="level">48</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">150</Resource>
+    </Cost>
+    <Reward xp="375">
+        <Resource id="1">375</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="106" type="shopItem" time="14400.0" name="Sake" text="Sake">
+    <MenuIcon name="sushi_sake">625</MenuIcon>
+    <FloatMenuIcon name="sushi_sake">624</FloatMenuIcon>
+    <Prerequisite type="level">49</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">245</Resource>
+    </Cost>
+    <Reward xp="650">
+        <Resource id="1">575</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="107" type="shopItem" time="28800.0" name="Tamago" text="Tamago">
+    <MenuIcon name="sushi_tomago">625</MenuIcon>
+    <FloatMenuIcon name="sushi_tomago">624</FloatMenuIcon>
+    <Prerequisite type="level">51</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="1">375</Resource>
+    </Cost>
+    <Reward xp="675">
+        <Resource id="1">625</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="108" type="shopItem" time="86400.0" name="Uni" text="Uni">
+    <MenuIcon name="sushi_uni">625</MenuIcon>
+    <FloatMenuIcon name="sushi_uni">624</FloatMenuIcon>
+    <Prerequisite type="level">53</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">975</Resource>
+    </Cost>
+    <Reward xp="1650">
+        <Resource id="1">1325</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+    <!--#109 taken-->
+<Item id="110" type="shopItem" time="300.0" name="Beginner Mining" text="Beginner Mining">
+    <MenuIcon name="schoolhouse_1mining">625</MenuIcon>
+    <FloatMenuIcon name="schoolhouse_1mining">624</FloatMenuIcon>
+    <Prerequisite type="level">8</Prerequisite>
+    <HurryCost timeInterval="300">1</HurryCost>
+    <Cost>
+        <Resource id="20">5</Resource>
+    </Cost>
+    <Reward xp="45">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="111" type="shopItem" time="600.0" name="Advanced Hauling" text="Advanced Hauling">
+    <MenuIcon name="schoolhouse_2hauling">625</MenuIcon>
+    <FloatMenuIcon name="schoolhouse_2hauling">624</FloatMenuIcon>
+    <Prerequisite type="level">9</Prerequisite>
+    <HurryCost timeInterval="600">3</HurryCost>
+    <Cost>
+        <Resource id="11">15</Resource>
+    </Cost>
+    <Reward xp="80">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item><Item id="112" type="shopItem" time="7200.0" name="Trading for Profit" text="Trading for Profit">
+    <MenuIcon name="schoolhouse_3trading">625</MenuIcon>
+    <FloatMenuIcon name="schoolhouse_3trading">624</FloatMenuIcon>
+    <Prerequisite type="level">11</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">120</Resource>
+    </Cost>
+    <Reward xp="400">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item><Item id="113" type="shopItem" time="14400.0" name="Baking with Beans" text="Baking with Beans">
+    <MenuIcon name="schoolhouse_4baking">625</MenuIcon>
+    <FloatMenuIcon name="schoolhouse_4baking">624</FloatMenuIcon>
+    <Prerequisite type="level">13</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">260</Resource>
+    </Cost>
+    <Reward xp="625">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item><Item id="114" type="shopItem" time="43200.0" name="Juggling 101" text="Juggling 101">
+    <MenuIcon name="schoolhouse_5juggling">625</MenuIcon>
+    <FloatMenuIcon name="schoolhouse_5juggling">624</FloatMenuIcon>
+    <Prerequisite type="level">16</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">400</Resource>
+    </Cost>
+    <Reward xp="1150">
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<!-- item ID 115 taken for Land Expand 11 -->
+<!-- item ID 116 taken for Land Expand 12 -->
+<Item id="117" type="shopItem" time="900.0" name="Bob" text="Bob">
+    <MenuIcon name="barbershop_job4">625</MenuIcon>
+    <FloatMenuIcon name="barbershop_job4">624</FloatMenuIcon>
+    <Prerequisite type="level">45</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">120</Resource>
+    </Cost>
+    <Reward xp="80">
+        <Resource id="1">180</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="118" type="shopItem" time="7200.0" name="Pompadour" text="Pompadour">
+    <MenuIcon name="barbershop_job2">625</MenuIcon>
+    <FloatMenuIcon name="barbershop_job2">624</FloatMenuIcon>
+    <Prerequisite type="level">46</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">135</Resource>
+    </Cost>
+    <Reward xp="320">
+        <Resource id="1">400</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="119" type="shopItem" time="14400.0" name="Boufant" text="Boufant">
+    <MenuIcon name="barbershop_job3">625</MenuIcon>
+    <FloatMenuIcon name="barbershop_job3">624</FloatMenuIcon>
+    <Prerequisite type="level">47</Prerequisite>
+    <HurryCost timeInterval="9598">3</HurryCost>
+    <Cost>
+        <Resource id="1">210</Resource>
+    </Cost>
+    <Reward xp="425">
+        <Resource id="1">600</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="120" type="shopItem" time="28800.0" name="Powdered Wig" text="Powdered Wig">
+    <MenuIcon name="barbershop_job1">625</MenuIcon>
+    <FloatMenuIcon name="barbershop_job1">624</FloatMenuIcon>
+    <Prerequisite type="level">49</Prerequisite>
+    <HurryCost timeInterval="14400">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+        <Resource id="50">350</Resource>
+    </Cost>
+    <Reward xp="600">
+        <Resource id="1">670</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+<Item id="121" type="shopItem" time="86400.0" name="Marie Antoinette" text="Marie Antoinette">
+    <MenuIcon name="barbershop_job5">625</MenuIcon>
+    <FloatMenuIcon name="barbershop_job5">624</FloatMenuIcon>
+    <Prerequisite type="level">51</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">250</Resource>
+        <Resource id="50">1230</Resource>
+    </Cost>
+    <Reward xp="1425">
+        <Resource id="1">1520</Resource>
+    </Reward>
+    <CompatibleLand>Vanilla</CompatibleLand>
+</Item>
+
+<Item id="147" type="shopItem" time="45.0" name="Hot Cocoa" text="Hot Cocoa">
+    <MenuIcon name="hotdrink_hotchocolate">618</MenuIcon>
+    <FloatMenuIcon name="hotdrink_hotchocolate">622</FloatMenuIcon>
+    <Prerequisite type="level">20</Prerequisite>
+    <HurryCost timeInterval="45">1</HurryCost>
+    <Cost>
+        <Resource id="1">5</Resource>
+    </Cost>
+    <Reward xp="6">
+        <Resource id="1">12</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="148" type="shopItem" time="300.0" name="Sierra Royale" text="Sierra Royale">
+    <MenuIcon name="hotdrink_sierra">618</MenuIcon>
+    <FloatMenuIcon name="hotdrink_sierra">622</FloatMenuIcon>
+    <Prerequisite type="level">20</Prerequisite>
+    <HurryCost timeInterval="300">1</HurryCost>
+    <Cost>
+        <Resource id="40">15</Resource>
+        <Resource id="10">10</Resource>
+    </Cost>
+    <Reward xp="30">
+        <Resource id="1">50</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="149" type="shopItem" time="3600.0" name="Latte" text="Latte">
+    <MenuIcon name="hotdrink_latte">618</MenuIcon>
+    <FloatMenuIcon name="hotdrink_latte">622</FloatMenuIcon>
+    <Prerequisite type="level">21</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">20</Resource>
+    </Cost>
+    <Reward xp="180">
+        <Resource id="1">160</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="150" type="shopItem" time="14400.0" name="Espresso" text="Espresso">
+    <MenuIcon name="hotdrink_espresso">618</MenuIcon>
+    <FloatMenuIcon name="hotdrink_espresso">622</FloatMenuIcon>
+    <Prerequisite type="level">23</Prerequisite>
+    <HurryCost timeInterval="9600">3</HurryCost>
+    <Cost>
+        <Resource id="1">95</Resource>
+    </Cost>
+    <Reward xp="400">
+        <Resource id="1">340</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="151" type="shopItem" time="28800.0" name="Mountain Delight" text="Mountain Delight">
+    <MenuIcon name="hotdrink_delight">618</MenuIcon>
+    <FloatMenuIcon name="hotdrink_delight">622</FloatMenuIcon>
+    <Prerequisite type="level">25</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="40">200</Resource>
+        <Resource id="11">55</Resource>
+    </Cost>
+    <Reward xp="450">
+        <Resource id="1">475</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="152" type="shopItem" time="600.0" name="Perfume" text="Perfume">
+    <MenuIcon name="apothecary_perfume">618</MenuIcon>
+    <FloatMenuIcon name="apothecary_perfume">622</FloatMenuIcon>
+    <Prerequisite type="level">25</Prerequisite>
+    <HurryCost timeInterval="600">3</HurryCost>
+    <Cost>
+        <Resource id="1">20</Resource>
+    </Cost>
+    <Reward xp="55">
+        <Resource id="1">60</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="153" type="shopItem" time="3600.0" name="Spice Bag" text="Spice Bag">
+    <MenuIcon name="apothecary_spicebag">618</MenuIcon>
+    <FloatMenuIcon name="apothecary_spicebag">622</FloatMenuIcon>
+    <Prerequisite type="level">25</Prerequisite>
+    <HurryCost timeInterval="3600">3</HurryCost>
+    <Cost>
+        <Resource id="1">25</Resource>
+        <Resource id="50">15</Resource>
+    </Cost>
+    <Reward xp="190">
+        <Resource id="1">180</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="154" type="shopItem" time="18000.0" name="Mountain Potion" text="Mountain Potion">
+    <MenuIcon name="apothecary_potion">618</MenuIcon>
+    <FloatMenuIcon name="apothecary_potion">622</FloatMenuIcon>
+    <Prerequisite type="level">26</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">100</Resource>
+        <Resource id="40">45</Resource>
+    </Cost>
+    <Reward xp="400">
+        <Resource id="1">300</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="155" type="shopItem" time="43200.0" name="Snake Oil" text="Snake Oil">
+    <MenuIcon name="apothecary_snakeoil">618</MenuIcon>
+    <FloatMenuIcon name="apothecary_snakeoil">622</FloatMenuIcon>
+    <Prerequisite type="level">28</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">210</Resource>
+    </Cost>
+    <Reward xp="475">
+        <Resource id="1">550</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="156" type="shopItem" time="86400.0" name="Juju Remedy" text="Juju Remedy">
+    <MenuIcon name="apothecary_remedy">618</MenuIcon>
+    <FloatMenuIcon name="apothecary_remedy">622</FloatMenuIcon>
+    <Prerequisite type="level">30</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">300</Resource>
+        <Resource id="51">20</Resource>
+    </Cost>
+    <Reward xp="825">
+        <Resource id="1">875</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="157" type="shopItem" time="600.0" name="Hammer" text="Hammer">
+    <MenuIcon name="blacksmith_hammer">618</MenuIcon>
+    <FloatMenuIcon name="blacksmith_hammer">622</FloatMenuIcon>
+    <Prerequisite type="level">31</Prerequisite>
+    <HurryCost timeInterval="600">3</HurryCost>
+    <Cost>
+        <Resource id="1">25</Resource>
+        <Resource id="10">20</Resource>
+    </Cost>
+    <Reward xp="60">
+        <Resource id="1">80</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="158" type="shopItem" time="7200.0" name="Horseshoe" text="Horseshoe">
+    <MenuIcon name="blacksmith_horseshoe">618</MenuIcon>
+    <FloatMenuIcon name="blacksmith_horseshoe">622</FloatMenuIcon>
+    <Prerequisite type="level">31</Prerequisite>
+    <HurryCost timeInterval="7200">3</HurryCost>
+    <Cost>
+        <Resource id="1">80</Resource>
+    </Cost>
+    <Reward xp="315">
+        <Resource id="1">270</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="159" type="shopItem" time="28800.0" name="Wagon Axle" text="Wagon Axle">
+    <MenuIcon name="blacksmith_axle">618</MenuIcon>
+    <FloatMenuIcon name="blacksmith_axle">622</FloatMenuIcon>
+    <Prerequisite type="level">32</Prerequisite>
+    <HurryCost timeInterval="11520">3</HurryCost>
+    <Cost>
+        <Resource id="1">50</Resource>
+        <Resource id="10">300</Resource>
+    </Cost>
+    <Reward xp="500">
+        <Resource id="1">525</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="160" type="shopItem" time="43200.0" name="Barrel Rings" text="Barrel Rings">
+    <MenuIcon name="blacksmith_rings">618</MenuIcon>
+    <FloatMenuIcon name="blacksmith_rings">622</FloatMenuIcon>
+    <Prerequisite type="level">34</Prerequisite>
+    <HurryCost timeInterval="12343">3</HurryCost>
+    <Cost>
+        <Resource id="1">325</Resource>
+    </Cost>
+    <Reward xp="490">
+        <Resource id="1">725</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>
+<Item id="161" type="shopItem" time="86400.0" name="Wagon Wheel" text="Wagon Wheel">
+    <MenuIcon name="blacksmith_wheel">618</MenuIcon>
+    <FloatMenuIcon name="blacksmith_wheel">622</FloatMenuIcon>
+    <Prerequisite type="level">36</Prerequisite>
+    <HurryCost timeInterval="19200">3</HurryCost>
+    <Cost>
+        <Resource id="1">410</Resource>
+        <Resource id="11">60</Resource>
+    </Cost>
+    <Reward xp="900">
+        <Resource id="1">1100</Resource>
+    </Reward>
+    <CompatibleLand>Frontier</CompatibleLand>
+</Item>

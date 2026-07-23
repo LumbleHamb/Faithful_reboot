@@ -1,0 +1,1422 @@
+<Settings>
+
+    
+        <Lands>
+            <Land>Vanilla</Land>
+            <Land>Frontier</Land>
+        </Lands>
+    
+
+  <FeaturedOffer minValue="100"/>
+	
+  <HurryCancelTime value="5000" />
+	<!-- Energy:
+			worktime - time it takes to gather/mill once
+			carryamount - max amount of resources transported when hauling
+	-->
+	
+		<Energy worktime="3.0" iconFontEnergy="}" carryamount="300" buildingHurryCost="2" buildingHurryInterval="8640" />
+		<Z2Points icon="_" />
+	
+	
+	<!-- Villager:
+			speed - walk speed
+			workrate - affects rate at which villagers haul resources (worker rate is set by buildings (see Objects.xml))
+			homelessmodifier - how much the villager's productivity is affected by homelessness
+			eattime - time spent eating
+			hungerlengthmin/max - how long before become hungry
+	-->
+	<Villager speed="2.0" haulspeed="1.5" workrate="65.0" homelessmodifier="0.5" eattime="2.0" hungerlengthmin="4.0" hungerlengthmax="12.0"/>
+	
+	<!-- VillagerSounds:
+			value is id of sound (see Sounds.xml)
+			gender is m or f
+			weight is the chance for that sound to play out of the total weights of all sounds for that gender
+	-->
+	<VillagerSounds>
+		<Sound gender="m" weight="1">28</Sound>
+		<Sound gender="m" weight="1">18</Sound>
+
+		<Sound gender="f" weight="1">23</Sound>
+		<Sound gender="f" weight="1">24</Sound>
+		<Sound gender="f" weight="1">25</Sound>
+		<Sound gender="f" weight="1">26</Sound>
+		<Sound gender="f" weight="1">27</Sound>
+	</VillagerSounds>
+
+	
+	
+	
+	<PrerequisiteMappings>
+		<Prereq id="1">
+			<Equals land="Frontier" id="303"/> <!-- TOWN HALL = RIDGE POST -->
+		</Prereq>
+		<Prereq id="2">
+			<Equals land="Frontier" id="303"/> <!-- TOWER = RIDGE POST -->
+		</Prereq>
+		<Prereq id="3">
+			<Equals land="Frontier" id="303"/> <!-- KEEP = RIDGE POST -->
+		</Prereq>
+		<Prereq id="4">
+			<Equals land="Frontier" id="303"/> <!-- FORT = RIDGE POST -->
+		</Prereq>
+		<Prereq id="5">
+			<Equals land="Frontier" id="303"/> <!-- CASTLE = RIDGE POST -->
+		</Prereq>
+		<Prereq id="221"> 
+			<Equals land="Frontier" id="304"/> <!-- CITADEL = MOUNTAIN FORT -->
+		</Prereq>
+		<Prereq id="221"> 
+			<Equals land="Frontier" id="305"/> <!-- CITADEL = MOUNTAIN FORT -->
+		</Prereq>
+	</PrerequisiteMappings>
+	
+	
+	<AnimationSheets>
+		<Sheet name="Decorations" land="Vanilla"></Sheet>
+		<Sheet name="TownCenters" land="Vanilla"></Sheet>
+		<Sheet name="Shops" land="Vanilla"></Sheet>
+		<Sheet name="Mills" land="Vanilla"></Sheet>
+		
+		<Sheet name="marketandstorage" land="Vanilla"></Sheet>
+		
+		<Sheet name="Homes" land="Vanilla"></Sheet>
+		<Sheet name="CharacterAnim" land="Vanilla">
+			<Skin for="Vanilla"/>
+		</Sheet>
+		<Sheet name="ResourcesAnim" land="All"></Sheet>
+		<Sheet name="Camps" land="Vanilla"></Sheet>
+		<Sheet name="CircusCharacters" land="Vanilla"></Sheet>
+        <Sheet name="Country" land="Vanilla"></Sheet>
+        <Sheet name="Trees" land="Vanilla"></Sheet>
+        <Sheet name="Flowers" land="Vanilla"></Sheet>
+        <Sheet name="WorldTileDefacto" land="Vanilla"></Sheet>
+        <Sheet name="WorldTileSnow" land="All">
+        	<Skin for="Winter"/>
+        	<Skin for="FrontierWinter"/>
+        </Sheet>
+        <Sheet name="Animals" land="Vanilla"></Sheet>
+        <Sheet name="26" land="Vanilla"></Sheet>
+        <Sheet name="27" land="Vanilla"></Sheet>
+        <Sheet name="31" land="Vanilla"></Sheet>
+        <Sheet name="32" land="All"></Sheet>
+        <Sheet name="33" land="Vanilla"></Sheet>
+        <Sheet name="ShopMenuItems" land="Vanilla"></Sheet>
+        <Sheet name="restflicker" land="Vanilla"></Sheet>
+        <Sheet name="34" land="Vanilla"></Sheet>
+    
+    	<Sheet name="341" land="Vanilla"></Sheet>
+        <Sheet name="35" land="Vanilla"></Sheet>
+	
+        <Sheet name="WINTER" land="All">
+        	<Skin for="Winter"/>
+        	<Skin for="FrontierWinter"/>
+        </Sheet>
+        <Sheet name="WorldTileFall" land="Frontier"></Sheet>
+        <Sheet name="Frontier" land="Frontier"></Sheet>
+        <Sheet name="Crossover" land="All"></Sheet>
+        <Sheet name="FROSTY" land="All"></Sheet>
+	
+	
+        <Sheet name="41Frontier" land="Frontier"></Sheet>
+        <Sheet name="41All" land="All"></Sheet>
+        <Sheet name="Gifts" land="All"></Sheet>
+	
+
+	</AnimationSheets>
+	
+	<AdoptedVillagers>
+		<Villager cost="15"/>
+	</AdoptedVillagers>
+	
+	<BuffSystem>
+		<Categories>
+			<Category name="school"/>
+			<Category name="carnival"/>
+			<Category name="wheat"/>
+			<Category name="shops"/>
+			<Category name="inn"/>
+		</Categories>
+		<MaxBuffer land="Vanilla">
+			<Resources xpPercent="500.0">
+				<Resource id="1" percent="500.0"/>
+				<Resource id="10" percent="500.0"/>
+				<Resource id="20" percent="500.0"/>
+				<Resource id="40" percent="500.0"/>
+				<Resource id="50" percent="500.0"/>
+				<Resource id="11" percent="500.0"/>
+				<Resource id="21" percent="500.0"/>
+				<Resource id="51" percent="500.0"/>
+			</Resources>
+		</MaxBuffer>
+		
+		<MaxBuffer land="Frontier">
+			<Resources xpPercent="500.0">
+				<Resource id="1" percent="500.0"/>
+				<Resource id="10" percent="500.0"/>
+				<Resource id="20" percent="500.0"/>
+				<Resource id="40" percent="500.0"/>
+				<Resource id="50" percent="500.0"/>
+				<Resource id="11" percent="500.0"/>
+				<Resource id="21" percent="500.0"/>
+				<Resource id="51" percent="500.0"/>
+			</Resources>
+		</MaxBuffer>
+        
+	</BuffSystem>
+
+	<Portraits 
+		villagerMale="VILLAGERPORTRAITSMALL" villagerFemale="VILLAGERPORTRAITSMALL_1" mayorMale="MAYORPORTRAITSMALL_0" mayorFemale="MAYORPORTRAITSMALL_1"/>
+	
+	<!-- User:
+			maxlevel - the max level the player can obtain
+			XP: (numbered from 0 to maxlevel)
+				level - which level this exp requirements is for
+				value: The amount of xp required to go to the next level
+	-->
+	<User maxlevel="70">
+		<XP level="0" toNext="1">
+			<MaxBuilding category="house">4</MaxBuilding>
+			<MaxBuilding category="shop">1</MaxBuilding>
+			<DefaultFreeInventorySlots>0</DefaultFreeInventorySlots>
+		</XP>
+		<XP level="1" toNext="550">
+			<MaxBuilding category="house">4</MaxBuilding>
+			<MaxBuilding category="shop">1</MaxBuilding>
+			<Reward energy="11">
+			</Reward>
+		</XP>
+		<XP level="2" toNext="750">
+<!--			<LevelText>Congratulations, you've leveled up.\n\nYou have unlocked the Market and Baker's shop. You've also unlocked the Daisies and Yellow Pot Decorations.\n\nYou may own up to 4 houses and 2 shops.</LevelText> -->
+			<LevelText>Congratulations, you've leveled up!\n\nYou have unlocked new decorations.\n\nYou may build additional houses and shops.</LevelText>
+			<MaxBuilding category="house">4</MaxBuilding>
+			<MaxBuilding category="shop">2</MaxBuilding>
+			<Reward energy="11">
+			</Reward>
+		</XP>
+		<XP level="3" toNext="1100">
+<!--			<LevelText>Superb, you've leveled up again.\n\nYou've unlocked new jobs in the Baker's Shop and may make some tasty Donuts and Eclairs. You have also unlocked 3 new Decorations.\n\nYou may now build up to 6 houses.</LevelText> -->
+			<LevelText>Superb, you've leveled up again.\n\nYou have unlocked new decorations.\n\nYou may now build additional houses.</LevelText>
+			<MaxBuilding category="house">6</MaxBuilding>
+			<MaxBuilding category="shop">2</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="4" toNext="1400">
+<!--			<LevelText>Amazing, you've leveled up again!\n\nYou've unlocked the ability to upgrade your Land further. Also, you can now build Large Cottages, the Quarry, and expand your Town Hall to a Tower. Your townsfolk have discovered the art of road building.\n\nYou may now build up to 3 shops.</LevelText> -->
+			<LevelText>Amazing, you've leveled up again!\n\nYou've unlocked the ability to upgrade your Land further. Also, you can now build new buildings, the Quarry, and expand your Town Hall to a Tower. Your townsfolk have discovered the art of road building.\n\nYou may now build additional shops.</LevelText>
+			<MaxBuilding category="house">6</MaxBuilding>
+			<MaxBuilding category="shop">3</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="5" toNext="2000">
+<!--			<LevelText>Another day, another level!\n\nCelebrate by baking a Cake as one of the newly available Jobs in the Baker's Shop.\n\nYou may now build up to 7 houses.\n\nYou now have Inventory available to store items from your land!</LevelText> -->
+			<LevelText>Another day, another level!\n\nYou may now build additional houses and you now have Inventory available to store items from your land!</LevelText>
+			<MaxBuilding category="house">7</MaxBuilding>
+			<MaxBuilding category="shop">3</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+			<DefaultFreeInventorySlots>8</DefaultFreeInventorySlots>
+		</XP>
+		<XP level="6" toNext="2600">
+<!--			<LevelText>Congratulations, you've leveled up.\n\nYou have unlocked the Wizard Tower, Lumber Yard, Large Stockpile and Carpenter Shop. it is also possible to upgrade your Town Hall to a Keep.\n\nYou may now build up to 4 shops.</LevelText> -->
+			<LevelText>Congratulations, you've leveled up.\n\nYou have unlocked new buildings and it is also possible to upgrade your Town Hall to a Keep.\n\nYou may now build additional shops.</LevelText>
+			<MaxBuilding category="house">7</MaxBuilding>
+			<MaxBuilding category="shop">4</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="7" toNext="3400">
+<!--			<LevelText>Incredible, yet another level under your belt.\n\nYou can now make the Bird House in the Carpenter's Shop and plant Maple Tree decorations.\n\nYou may now build up to 8 houses.</LevelText> -->
+			<LevelText>Incredible, yet another level under your belt.\n\nYou have unlocked new decorations.\n\nYou may now build additional houses.</LevelText>
+			<MaxBuilding category="house">8</MaxBuilding>
+			<MaxBuilding category="shop">4</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="8" toNext="4300">
+<!--			<LevelText>Well done, you've leveled up again.\n\nYou've unlocked Large Houses.\n\nYou may now build up to 5 shops.</LevelText> -->
+			<LevelText>Well done, you've leveled up again.\n\nYou've unlocked new buildings.\n\nYou may now build additional shops.</LevelText>
+			<MaxBuilding category="house">8</MaxBuilding>
+			<MaxBuilding category="shop">5</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="9" toNext="5500">
+<!--			<LevelText>You're on a roll!\n\nYour Carpenter can now create Chairs. You may also build the Pond decoration.\n\nYou may now build up to 9 houses.</LevelText> -->
+			<LevelText>You're on a roll!\n\nYou've unlocked new decorations.\n\nYou may now build up to 9 houses.</LevelText>
+			<MaxBuilding category="house">9</MaxBuilding>
+			<MaxBuilding category="shop">5</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="10" toNext="6500">
+<!--			<LevelText>Another level conquered.\n\nYou've unlocked the Tailor's Shop and Pen. You may also upgrade your Town Hall to a Fort. The Lawn Gnome is now available to purchase. Just don't feed him after midnight.\n\nYou may now build up to 6 shops.</LevelText> -->
+			<LevelText>Another level conquered.\n\nYou've unlocked new buildings and decorations. You may also upgrade your Town Hall to a Fort.\n\nYou may now build new shops.</LevelText>
+			<MaxBuilding category="house">9</MaxBuilding>
+			<MaxBuilding category="shop">6</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="11" toNext="7500">
+<!--			<LevelText>Turn it up to 11!\n\nYour Carpenter can now make Beds. Make your town more attractive with the four new decorations that are unlocked, including the Large Statue.\n\nYou may now build up to 10 houses.</LevelText> -->
+			<LevelText>Turn it up to 11!\n\nYou've unlocked new decorations.\n\nYou may now build additional houses.</LevelText>
+			<MaxBuilding category="house">10</MaxBuilding>
+			<MaxBuilding category="shop">6</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="12" toNext="9000">
+<!--			<LevelText>Excellent, you've leveled up.\n\nYou now have access to the Stone Cutter. Keep your Farms safe with the Scarecrow, now available for purchase.</LevelText> -->
+			<LevelText>Excellent, you've leveled up.\n\nYou've unlocked new decorations!</LevelText>
+			<MaxBuilding category="house">10</MaxBuilding>
+			<MaxBuilding category="shop">6</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="13" toNext="11000">
+<!--			<LevelText>You've leveled up again.\n\nYou can make yourself a nice pair of Trousers at the Tailors and brighten up your town with some Potted Pansies.\n\nYou may now build up to 11 houses.</LevelText> -->
+			<LevelText>You've leveled up again.\n\nYou've unlocked new decorations!\n\nYou may now build additional houses.</LevelText>
+			<MaxBuilding category="house">11</MaxBuilding>
+			<MaxBuilding category="shop">6</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="14" toNext="12000">
+<!--			<LevelText>Brilliant, another level up.\n\nYou have unlocked the Stone House, Loom and Sculptor's Shop.  You may also build the Fountain, a perfect centerpiece to any city.\n\nYou may now build up to 7 shops.</LevelText> -->
+			<LevelText>Brilliant, another level up.\n\nYou have unlocked new buildings and decorations!\n\nYou may now build additional shops.</LevelText>
+			<MaxBuilding category="house">11</MaxBuilding>
+			<MaxBuilding category="shop">7</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="15" toNext="14000">
+<!--			<LevelText>You're clearing these levels like nobody's business!\n\nYou can now make a Fancy Suit at the Tailor and a Lawn Gnome at the Sculptor Shop.\n\nYou may now build up to 12 houses.</LevelText> -->
+			<LevelText>You're clearing these levels like nobody's business!\n\nYou may now build additional houses.</LevelText>
+			<MaxBuilding category="house">12</MaxBuilding>
+			<MaxBuilding category="shop">7</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="16" toNext="16000">
+<!--			<LevelText>There's no stopping you!  You can now build the Pub and the Fruit Stand.</LevelText> -->
+			<LevelText>There's no stopping you! You have unlocked new buildings.</LevelText>
+			<MaxBuilding category="house">12</MaxBuilding>
+			<MaxBuilding category="shop">7</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="17" toNext="18000">
+<!--			<LevelText>Well done, you've leveled up again.\n\nYour Tailor can now make the Fancy Dress and your Sculptor can create a Bust. Make sure to check out the Sunflowers, they'll light up your life!\n\nYou may now build up to 13 houses and 8 shops.</LevelText> -->
+			<LevelText>Well done, you've leveled up again.\n\nYou have unlocked new decorations!\n\nYou may now build additional houses and shops.</LevelText>
+			<MaxBuilding category="house">13</MaxBuilding>
+			<MaxBuilding category="shop">8</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="18" toNext="20000">
+<!--			<LevelText>I nearly got a nose bleed your level is so high!  You can now build the Warehouse, the Fish Stand, and brew Ale at the Pub.</LevelText> -->
+			<LevelText>I nearly got a nose bleed your level is so high! You have unlocked new buildings.</LevelText>
+			<MaxBuilding category="house">13</MaxBuilding>
+			<MaxBuilding category="shop">8</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="19" toNext="22000">
+<!--			<LevelText>Fantastic, you've leveled up!\n\nYou may now build the Chicken Coop, and your Sculptor can now create Lion Statues.\n\nYou may now build up to 14 houses.</LevelText> -->
+			<LevelText>Fantastic, you've leveled up!\n\nYou have unlocked new decorations.\n\nYou may now build additional 14 houses.</LevelText>
+			<MaxBuilding category="house">14</MaxBuilding>
+			<MaxBuilding category="shop">8</MaxBuilding>
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="20" toNext="24800">
+<!--			<LevelText>Level 20! You can now upgrade your Town Hall to the Castle, build a Windmill, build a Butcher Stand, purchase a Horse, and brew Mead at the Pub. Add a Lake to your city as well!\n\nYou may now build up to 9 Shops.</LevelText> -->
+			<LevelText>Level 20! You can now build the Hot Air Balloon to visit new lands! You can also upgrade your Town Hall to the Castle, and have unlocked new buildings and decorations!</LevelText>
+			<MaxBuilding category="house">14</MaxBuilding>
+			<MaxBuilding category="shop">9</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">3</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">2</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="21" toNext="28092">
+<!--			<LevelText>Well done, level 21!  You can now plant Lilacs and Hedges.  Pretty! You can also purchase food and water troughs for your animals! \n\nYou may now build up to 15 Houses.</LevelText> -->
+			<LevelText>Well done, level 21! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">15</MaxBuilding>
+			<MaxBuilding category="shop">9</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">3</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">3</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="22" toNext="31774">
+<!--			<LevelText>Level 22? No way! Cobblestone Roads are a thing of the past.  Check out the brand new Brick Roads that you can build.  You can also build the Book Shop and the Mayor can have his very own cottage.</LevelText> -->
+			<LevelText>Level 22? No way! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">15</MaxBuilding>
+			<MaxBuilding category="shop">9</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">4</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">3</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="23" toNext="35870">
+<!-- 			<LevelText>Another level! I'm so proud.  You can now create "Of Sheep and Haulers" at the Book Shop.\n\nYou may now build up to 16 Houses and 10 Shops.</LevelText> -->
+			<LevelText>Another level! I'm so proud. Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">16</MaxBuilding>
+			<MaxBuilding category="shop">10</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">4</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">4</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="24" toNext="40534">
+<!--			<LevelText>Congratulations on level 24! You may now get a Juggler, build a Toy Shop, and build an Outhouse.  Fun!</LevelText> -->
+			<LevelText>Congratulations on level 24! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">16</MaxBuilding>
+			<MaxBuilding category="shop">10</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">5</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">4</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="25" toNext="45803">
+<!--			<LevelText>Congratulations on level 25!  Now you can print "Villager's Travels" at the Book Shop and build the Blue Doghouse.\n\nYou may now build up to 17 houses.</LevelText> -->
+			<LevelText>Congratulations on level 25! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">17</MaxBuilding>
+			<MaxBuilding category="shop">10</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">5</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">5</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="26" toNext="51757">
+<!--			<LevelText>Level 26! To level, or not to level... that is the question.  You may now build the Theater!\n\nYou may now build up to 11 shops.</LevelText> -->
+			<LevelText>Level 26! To level, or not to level... that is the question. Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">17</MaxBuilding>
+			<MaxBuilding category="shop">11</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">6</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">5</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="27" toNext="58486">
+<!--			<LevelText>Congratulations on level 27! You may now build rivers in your village, the majestic Fishing Hole, and you may print "The Lord of the Donuts" in the Book Shop. \n\nYou may now build up to 18 houses.</LevelText> -->
+			<LevelText>Congratulations on level 27! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">18</MaxBuilding>
+			<MaxBuilding category="shop">11</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">6</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">6</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="28" toNext="66089">
+<!--			<LevelText>Congratulations on level 28! You can now build the Trampoline, the Apple Tree, and adopt Poochie the Dog!</LevelText> -->
+			<LevelText>Congratulations on level 28! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">18</MaxBuilding>
+			<MaxBuilding category="shop">11</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">7</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">6</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="29" toNext="74680">
+<!--			<LevelText>Congratulations on level 29! The Traveling Merchant is unlocked (when he's in town from his travels)! He brings back surprises from far away lands. You may now print "Playing the Market" in the Book Shop!\n\nYou may now build up to 19 houses and 12 shops.</LevelText> -->
+			<LevelText>Congratulations on level 29! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">19</MaxBuilding>
+			<MaxBuilding category="shop">12</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">7</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">7</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="30" toNext="84389">
+<!--			<LevelText>Congratulations on level 30! You can now purchase the Citadel and the Big Top. Save up those coins!</LevelText> -->
+			<LevelText>Congratulations on level 30! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">19</MaxBuilding>
+			<MaxBuilding category="shop">12</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">8</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">7</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="31" toNext="95360">
+<!--			<LevelText>Congratulations on level 31! You may now build the Lamp Post and perform "The Merchant of Nations" at the Theater.\n\nYou may now build up to 20 houses.</LevelText> -->
+			<LevelText>Congratulations on level 31! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">20</MaxBuilding>
+			<MaxBuilding category="shop">12</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">8</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">7</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="32" toNext="107756">
+<!--			<LevelText>Congratulations on level 32! You may now build the Cobbler, the Firebreather, and the Mayor can get his Villa he's wanted for so long.\n\nYou may now build up to 13 shops.</LevelText> -->
+			<LevelText>Congratulations on level 32! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">20</MaxBuilding>
+			<MaxBuilding category="shop">13</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">8</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">8</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="33" toNext="121765">
+<!--			<LevelText>Congratulations on level 33! You may now get Cows and Hay Bales for your Nation.  Yee-Haw!  You may also perform King Mayor at your Theater.\n\nYou may now build up to 21 houses.</LevelText> -->
+			<LevelText>Congratulations on level 33! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">21</MaxBuilding>
+			<MaxBuilding category="shop">13</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">9</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">8</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="34" toNext="137594">
+<!--			<LevelText>Congratulations on level 34! You can now build the Creamery, the Water Fountain, and Jugglers can now perform at your Big Top.</LevelText> -->
+			<LevelText>Congratulations on level 34! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">21</MaxBuilding>
+			<MaxBuilding category="shop">13</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">9</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">8</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="35" toNext="155841">
+<!--			<LevelText>Congratulations on level 35! You may now purchase Holly Bushes and Trapeze Artists are now performing at the Big Top.  Don't look down!</LevelText> -->
+			<LevelText>Congratulations on level 35! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">22</MaxBuilding>
+			<MaxBuilding category="shop">14</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">9</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">9</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+        <XP level="36" toNext="175694">
+<!--			<LevelText>Congratulations on level 36! You can now build a Silo, and your Creamery can make Swiss Cheese.</LevelText> -->
+			<LevelText>Congratulations on level 36! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">22</MaxBuilding>
+			<MaxBuilding category="shop">14</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">9</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="37" toNext="198534">
+<!--			<LevelText>Congratulations on level 37!  Blueberry Bushes and the Lantern are now available to you. \n\nYou may now build up to 23 houses.</LevelText> -->
+			<LevelText>Congratulations on level 37! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">23</MaxBuilding>
+			<MaxBuilding category="shop">14</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">9</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="38" toNext="224343">
+<!--			<LevelText>Congratulations on level 38! You may now build the Sundial and you may make Chocolate Ice Cream in the Creamery.  Yum!\n\nYou may now build up to 15 shops.</LevelText> -->
+			<LevelText>Congratulations on level 38! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">23</MaxBuilding>
+			<MaxBuilding category="shop">15</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">9</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="39" toNext="253508">
+<!--			<LevelText>Congratulations on level 39! Cheddar Cheese can now be made at the Creamery! \n\nYou may now build up to 24 houses.</LevelText> -->
+			<LevelText>Congratulations on level 39! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">24</MaxBuilding>
+			<MaxBuilding category="shop">15</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">9</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="40" toNext="286464">
+<!--			<LevelText>Congratulations on level 40!  You can now make Rainbow Ice Cream!</LevelText> -->
+			<LevelText>Congratulations on level 40! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">24</MaxBuilding>
+			<MaxBuilding category="shop">15</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="41" toNext="323704">
+<!--			<LevelText>Level 41! Great job! You can now build the Jeweler Shop and purchase the Prize Horse! \n\nYou may now build up to 25 houses and 16 Shops.</LevelText> -->
+			<LevelText>Level 41! Great job! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">25</MaxBuilding>
+			<MaxBuilding category="shop">16</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="42" toNext="365786">
+<!--			<LevelText>Level 42! Great job! You can now plant the Spiral Topiary, and your villagers can practice Karate!</LevelText> -->
+			<LevelText>Level 42! Great job! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">25</MaxBuilding>
+			<MaxBuilding category="shop">16</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="43" toNext="413338">
+<!-- 			<LevelText>Level 43? No way!\n\nYou may now build up to 26 houses.</LevelText> -->
+			<LevelText>Level 43? Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">26</MaxBuilding>
+			<MaxBuilding category="shop">16</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="44" toNext="467072">
+<!--			<LevelText>Congrats on level 44! You may now plant the Ball Topiary!\n\nYou may now build up to 17 shops.</LevelText> -->
+			<LevelText>Congrats on level 44! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">26</MaxBuilding>
+			<MaxBuilding category="shop">17</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">10</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="45" toNext="518450">
+<!--			<LevelText>Level 45? Wow! You can now make the Emerald Ring in the Jeweler Shop. \n\nYou may now build up to 27 houses.</LevelText> -->
+			<LevelText>Level 45? Wow! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">27</MaxBuilding>
+			<MaxBuilding category="shop">17</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="46" toNext="565110">
+<!--			<LevelText>Level 46? You're pretty good at this. You may now plant the Flower Topiary, cook the T-Bone Steak at the Restaurant.</LevelText> -->
+			<LevelText>Level 46? You're pretty good at this. Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">27</MaxBuilding>
+			<MaxBuilding category="shop">17</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="47" toNext="604668">
+<!--			<LevelText>Congrats on level 47! You may now craft Sapphire Earrings at the Jeweler Shop.\n\nYou may now build up to 28 houses and 18 shops.</LevelText> -->
+			<LevelText>Congrats on level 47! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">28</MaxBuilding>
+			<MaxBuilding category="shop">18</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="48" toNext="634901">
+<!--			<LevelText>Level 48! Yay!!</LevelText> -->
+			<LevelText>Level 48! Yay!! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">28</MaxBuilding>
+			<MaxBuilding category="shop">18</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="49" toNext="666467">
+<!--			<LevelText>Level 49! Nothing can stop you! Now you can craft the Diamond Tiara at the Jeweler Shop.\n\nYou may now build up to 29 houses.</LevelText> -->
+			<LevelText>Level 49! Nothing can stop you! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText>
+			<MaxBuilding category="house">29</MaxBuilding>
+			<MaxBuilding category="shop">18</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">10</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		<XP level="50" toNext="699979">
+<!--			<LevelText>Ain't it nifty, now you're 50! You may now purchase the Gold Sundial. Start saving up! \n\n You may now build up to 19 Shops.</LevelText> -->
+			<LevelText>Ain't it nifty, now you're 50! Check to see what new buildings, decorations, or shop jobs have been unlocked in your lands!</LevelText> -->
+			<MaxBuilding category="house">29</MaxBuilding>
+			<MaxBuilding category="shop">19</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="51" toNext="728000">
+<!--			<LevelText>Level 51! Congratulations!\n\nYou may now build up to 30 houses.</LevelText> -->
+			<LevelText>Level 51! Congratulations!</LevelText>
+			<MaxBuilding category="house">30</MaxBuilding>
+			<MaxBuilding category="shop">19</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="52" toNext="757000">
+			<LevelText>Level 52!</LevelText>
+			<MaxBuilding category="house">30</MaxBuilding>
+			<MaxBuilding category="shop">19</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="53" toNext="787000">
+<!--			<LevelText>Level 53! Awesome!\n\nYou may now build up to 31 houses and 20 Shops.</LevelText> -->
+			<LevelText>Level 53! Awesome!</LevelText>
+			<MaxBuilding category="house">31</MaxBuilding>
+			<MaxBuilding category="shop">20</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="54" toNext="819000">
+			<LevelText>Level 54! Woot!</LevelText>
+			<MaxBuilding category="house">31</MaxBuilding>
+			<MaxBuilding category="shop">20</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">11</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="55" toNext="851500">
+<!--			<LevelText>Level 55! Great job! \n\nYou may now build up to 32 houses.</LevelText> -->
+			<LevelText>Level 55! Great job!</LevelText>
+			<MaxBuilding category="house">32</MaxBuilding>
+			<MaxBuilding category="shop">20</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="56" toNext="877000">
+<!--			<LevelText>Level 56! You're the best! \n\nYou may now build up to 21 Shops.</LevelText> -->
+			<LevelText>Level 56! You're the best!</LevelText>
+			<MaxBuilding category="house">32</MaxBuilding>
+			<MaxBuilding category="shop">21</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="57" toNext="903000">
+<!--			<LevelText>Level 57! Amazing! \n\nYou may now build up to 33 houses.</LevelText> -->
+			<LevelText>Level 57! Amazing!</LevelText>
+			<MaxBuilding category="house">33</MaxBuilding>
+			<MaxBuilding category="shop">21</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="58" toNext="930500">
+			<LevelText>Level 58! Keep it going!</LevelText>
+			<MaxBuilding category="house">33</MaxBuilding>
+			<MaxBuilding category="shop">21</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="59" toNext="958500">
+<!--			<LevelText>Level 59! Nothing can stop you! \n\nYou may now build up to 34 houses and 22 Shops.</LevelText> -->
+			<LevelText>Level 59! Nothing can stop you!</LevelText>
+			<MaxBuilding category="house">34</MaxBuilding>
+			<MaxBuilding category="shop">22</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">11</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="60" toNext="987000">
+<!--			<LevelText>Ever since you hurried your first log, I knew you were destined for Level 60 greatness. You are now a Trade Nations Master! Keep going to become a Grandmaster, young one...</LevelText> -->
+			<LevelText>Ever since you hurried your first log, I knew you were destined for Level 60 greatness. You are now a Trade Nations Master! Keep going to become a Grandmaster, young one...</LevelText>
+			<MaxBuilding category="house">34</MaxBuilding>
+			<MaxBuilding category="shop">22</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="61" toNext="1020500">
+<!--			<LevelText>Level 61! Fun, fun, fun, fun.\n\nYou may now build up to 35 houses.</LevelText> -->
+			<LevelText>Level 61! Fun, fun, fun, fun.</LevelText>
+			<MaxBuilding category="house">35</MaxBuilding>
+			<MaxBuilding category="shop">22</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="62" toNext="1059000">
+<!--			<LevelText>Level 62! Go you!\n\nYou may now build up to 23 Shops.</LevelText> -->
+			<LevelText>Level 62! Go you!</LevelText>
+			<MaxBuilding category="house">35</MaxBuilding>
+			<MaxBuilding category="shop">23</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="63" toNext="1102500">
+<!--			<LevelText>Level 63! You are a leveling machine.\n\nYou may now build up to 36 houses.</LevelText> -->
+			<LevelText>Level 63! You are a leveling machine.</LevelText>
+			<MaxBuilding category="house">36</MaxBuilding>
+			<MaxBuilding category="shop">23</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="64" toNext="1151000">
+			<LevelText>Level 64! You're so good at this, you should write a book on how to level up in Trade Nations!</LevelText>
+			<MaxBuilding category="house">36</MaxBuilding>
+			<MaxBuilding category="shop">23</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">12</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="65" toNext="1224500">
+<!--			<LevelText>Level 65! Holy smokes, you are on fire! (see what we did there?)\n\nYou may now build up to 37 houses and 24 Shops.</LevelText> -->
+			<LevelText>Level 65! Holy smokes, you are on fire! (see what we did there?)</LevelText>
+			<MaxBuilding category="house">37</MaxBuilding>
+			<MaxBuilding category="shop">24</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="66" toNext="1323000">
+			<LevelText>Level 66! You're on Route to greatness.</LevelText>
+			<MaxBuilding category="house">37</MaxBuilding>
+			<MaxBuilding category="shop">24</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="67" toNext="1446500">
+<!--			<LevelText>Level 67! Lucky Level 67, or something like that.\n\nYou may now build up to 38 houses.</LevelText> -->
+			<LevelText>Level 67! Lucky Level 67, or something like that.</LevelText>
+			<MaxBuilding category="house">38</MaxBuilding>
+			<MaxBuilding category="shop">24</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="68" toNext="1595000">
+<!--			<LevelText>Level 68! You're almost there, keep going strong!\n\nYou may now build up to 25 Shops.</LevelText> -->
+			<LevelText>Level 68! You're almost there, keep going strong!</LevelText>
+			<MaxBuilding category="house">38</MaxBuilding>
+			<MaxBuilding category="shop">25</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="69" toNext="1768500">
+<!--			<LevelText>Level 69! You're doing just fine.\n\nYou may now build up to 39 houses.</LevelText> -->
+			<LevelText>Level 69! You're doing just fine.</LevelText>
+			<MaxBuilding category="house">39</MaxBuilding>
+			<MaxBuilding category="shop">25</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">12</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+		<XP level="70" toNext="2042000">
+			<LevelText>Level 70! Congratulations, you are now a Trade Nations Grand Master!</LevelText>
+			<MaxBuilding category="house">39</MaxBuilding>
+			<MaxBuilding category="shop">25</MaxBuilding>
+			
+			<MaxBuilding land="Frontier" category="house">13</MaxBuilding>
+			<MaxBuilding land="Frontier" category="shop">13</MaxBuilding>
+			
+			<Reward energy="1">
+			</Reward>
+		</XP>
+		
+	</User>
+
+  <VideoAdReward value="1"/>
+
+	<!-- Market:
+			resourceblock - the amount of resources traded in a single interaction (buy/sell)
+			revertpricerate - the frequency that the price readjusts towards the base price
+			revertpricepercent - the amount the price shifts at each shift occurance
+			min/maxprice - the bounds on the prices of resources
+	-->
+	<Market resourceblock="100" revertpricerate="1.0" revertpricepercent="0.01" minprice="5" maxprice="200"/>
+	
+	<!-- Sounds: -->
+	<Sounds menumusic="0" bgmusic="0" construction="5" back="1" cancel="2" select="3" levelup="4" popup="29" hurryPoof="38" rotate="30"/>
+	
+	<!-- OutsideTiles:
+		This pattern of tiles is repeated to determine which tile is placed where.
+	-->
+	<OutsideTiles>342014214423324343032443121234344230412302</OutsideTiles>
+	
+	
+	<!-- VillagerNames:
+		LastName - a last name used for male or female villagers
+		MaleName - a first name used for male villagers
+		FemaleName - a first name used for female villagers
+	-->
+	<VillagerNames>
+		<LastName>Smith</LastName>
+		<LastName>Mitchell</LastName>
+		<LastName>Jones</LastName>
+		<LastName>Kelly</LastName>
+		<LastName>Williams</LastName>
+		<LastName>Cook</LastName>
+		<LastName>Taylor</LastName>
+		<LastName>Carter</LastName>
+		<LastName>Brown</LastName>
+		<LastName>Richardson</LastName>
+		<LastName>Davies</LastName>
+		<LastName>Bailey</LastName>
+		<LastName>Evans</LastName>
+		<LastName>Collins</LastName>
+		<LastName>Wilson</LastName>
+		<LastName>Bell</LastName>
+		<LastName>Thomas</LastName>
+		<LastName>Shaw</LastName>
+		<LastName>Johnson</LastName>
+		<LastName>Murphy</LastName>
+		<LastName>Roberts</LastName>
+		<LastName>Miller</LastName>
+		<LastName>Robinson</LastName>
+		<LastName>Cox</LastName>
+		<LastName>Thompson</LastName>
+		<LastName>Richards</LastName>
+		<LastName>Wright</LastName>
+		<LastName>Khan</LastName>
+		<LastName>Walker</LastName>
+		<LastName>Marshall</LastName>
+		<LastName>White</LastName>
+		<LastName>Anderson</LastName>
+		<LastName>Edwards</LastName>
+		<LastName>Simpson</LastName>
+		<LastName>Hughes</LastName>
+		<LastName>Ellis</LastName>
+		<LastName>Green</LastName>
+		<LastName>Adams</LastName>
+		<LastName>Hall</LastName>
+		<LastName>Singh</LastName>
+		<LastName>Lewis</LastName>
+		<LastName>Begum</LastName>
+		<LastName>Harris</LastName>
+		<LastName>Wilkinson</LastName>
+		<LastName>Clarke</LastName>
+		<LastName>Foster</LastName>
+		<LastName>Patel</LastName>
+		<LastName>Chapman</LastName>
+		<LastName>Jackson</LastName>
+		<LastName>Powell</LastName>
+		<LastName>Wood</LastName>
+		<LastName>Webb</LastName>
+		<LastName>Turner</LastName>
+		<LastName>Rogers</LastName>
+		<LastName>Martin</LastName>
+		<LastName>Gray</LastName>
+		<LastName>Cooper</LastName>
+		<LastName>Mason</LastName>
+		<LastName>Hill</LastName>
+		<LastName>Ali</LastName>
+		<LastName>Ward</LastName>
+		<LastName>Hunt</LastName>
+		<LastName>Morris</LastName>
+		<LastName>Hussain</LastName>
+		<LastName>Moore</LastName>
+		<LastName>Campbell</LastName>
+		<LastName>Clark</LastName>
+		<LastName>Matthews</LastName>
+		<LastName>Lee</LastName>
+		<LastName>Owen</LastName>
+		<LastName>King</LastName>
+		<LastName>Palmer</LastName>
+		<LastName>Baker</LastName>
+		<LastName>Holmes</LastName>
+		<LastName>Harrison</LastName>
+		<LastName>Mills</LastName>
+		<LastName>Morgan</LastName>
+		<LastName>Barnes</LastName>
+		<LastName>Allen</LastName>
+		<LastName>Knight</LastName>
+		<LastName>James</LastName>
+		<LastName>Lloyd</LastName>
+		<LastName>Scott</LastName>
+		<LastName>Butler</LastName>
+		<LastName>Phillips</LastName>
+		<LastName>Russell</LastName>
+		<LastName>Watson</LastName>
+		<LastName>Barker</LastName>
+		<LastName>Davis</LastName>
+		<LastName>Fisher</LastName>
+		<LastName>Parker</LastName>
+		<LastName>Stevens</LastName>
+		<LastName>Price</LastName>
+		<LastName>Jenkins</LastName>
+		<LastName>Bennett</LastName>
+		<LastName>Murray</LastName>
+		<LastName>Young</LastName>
+		<LastName>Dixon</LastName>
+		<LastName>Griffiths</LastName>
+		<LastName>Harvey</LastName>
+		<LastName>Sierra</LastName>
+		<LastName>Sinnamon</LastName>
+		<LastName>Bibby</LastName>
+		<LastName>Bourgault</LastName>
+				
+		<MaleName>Aidan</MaleName>
+		<MaleName>Jacob</MaleName>
+		<MaleName>Ethan</MaleName>
+		<MaleName>Nicholas</MaleName>
+		<MaleName>Matthew</MaleName>
+		<MaleName>Ryan</MaleName>
+		<MaleName>Tyler</MaleName>
+		<MaleName>Jack</MaleName>
+		<MaleName>Joshua</MaleName>
+		<MaleName>Andrew</MaleName>
+		<MaleName>Dylan</MaleName>
+		<MaleName>Michael</MaleName>
+		<MaleName>Connor</MaleName>
+		<MaleName>Caden</MaleName>
+		<MaleName>Jayden</MaleName>
+		<MaleName>Noah</MaleName>
+		<MaleName>Zachary</MaleName>
+		<MaleName>Alexander</MaleName>
+		<MaleName>Logan</MaleName>
+		<MaleName>Caleb</MaleName>
+		<MaleName>Nathan</MaleName>
+		<MaleName>Jackson</MaleName>
+		<MaleName>William</MaleName>
+		<MaleName>Evan</MaleName>
+		<MaleName>Joseph</MaleName>
+		<MaleName>Benjamin</MaleName>
+		<MaleName>James</MaleName>
+		<MaleName>Christopher</MaleName>
+		<MaleName>Cameron</MaleName>
+		<MaleName>Daniel</MaleName>
+		<MaleName>Christian</MaleName>
+		<MaleName>Luke</MaleName>
+		<MaleName>Gavin</MaleName>
+		<MaleName>Gabriel</MaleName>
+		<MaleName>Mason</MaleName>
+		<MaleName>Anthony</MaleName>
+		<MaleName>Brayden</MaleName>
+		<MaleName>David</MaleName>
+		<MaleName>Austin</MaleName>
+		<MaleName>Lucas</MaleName>
+		<MaleName>John</MaleName>
+		<MaleName>Elijah</MaleName>
+		<MaleName>Owen</MaleName>
+		<MaleName>Jonathan</MaleName>
+		<MaleName>Brandon</MaleName>
+		<MaleName>Alex</MaleName>
+		<MaleName>Samuel</MaleName>
+		<MaleName>Sean</MaleName>
+		<MaleName>Thomas</MaleName>
+		<MaleName>Hunter</MaleName>
+		<MaleName>Landon</MaleName>
+		<MaleName>Jordan</MaleName>
+		<MaleName>Justin</MaleName>
+		<MaleName>Carter</MaleName>
+		<MaleName>Cole</MaleName>
+		<MaleName>Jake</MaleName>
+		<MaleName>Ian</MaleName>
+		<MaleName>Liam</MaleName>
+		<MaleName>Hayden</MaleName>
+		<MaleName>Dominic</MaleName>
+		<MaleName>Isaac</MaleName>
+		<MaleName>Jason</MaleName>
+		<MaleName>Kyle</MaleName>
+		<MaleName>Adam</MaleName>
+		<MaleName>Isaiah</MaleName>
+		<MaleName>Aaron</MaleName>
+		<MaleName>Nathaniel</MaleName>
+		<MaleName>Colin</MaleName>
+		<MaleName>Devin</MaleName>
+		<MaleName>Riley</MaleName>
+		<MaleName>Robert</MaleName>
+		<MaleName>Max</MaleName>
+		<MaleName>Eric</MaleName>
+		<MaleName>Tristan</MaleName>
+		<MaleName>Chase</MaleName>
+		<MaleName>Wyatt</MaleName>
+		<MaleName>Carson</MaleName>
+		<MaleName>Julian</MaleName>
+		<MaleName>Cooper</MaleName>
+		<MaleName>Blake</MaleName>
+		<MaleName>Charlie</MaleName>
+		<MaleName>Brady</MaleName>
+		<MaleName>Bryce</MaleName>
+		<MaleName>Brendan</MaleName>
+		<MaleName>Brian</MaleName>
+		<MaleName>Sebastian</MaleName>
+		<MaleName>Xavier</MaleName>
+		<MaleName>Seth</MaleName>
+		<MaleName>Parker</MaleName>
+		<MaleName>Cody</MaleName>
+		<MaleName>Sam</MaleName>
+		<MaleName>Patrick</MaleName>
+		<MaleName>Ashton</MaleName>
+		<MaleName>Will</MaleName>
+		<MaleName>Kevin</MaleName>
+		<MaleName>Garrett</MaleName>
+		<MaleName>Ben</MaleName>
+		<MaleName>Trevor</MaleName>
+		<MaleName>Henry</MaleName>
+		<MaleName>Drew</MaleName>
+		<MaleName>Carl</MaleName>
+		<MaleName>Ramon</MaleName>
+				
+		<FemaleName>Emma</FemaleName>
+		<FemaleName>Emily</FemaleName>
+		<FemaleName>Madison</FemaleName>
+		<FemaleName>Kaitlyn</FemaleName>
+		<FemaleName>Sophia</FemaleName>
+		<FemaleName>Isabella</FemaleName>
+		<FemaleName>Olivia</FemaleName>
+		<FemaleName>Hannah</FemaleName>
+		<FemaleName>Makayla</FemaleName>
+		<FemaleName>Ava</FemaleName>
+		<FemaleName>Abigail</FemaleName>
+		<FemaleName>Sarah</FemaleName>
+		<FemaleName>Hailey</FemaleName>
+		<FemaleName>Kaylee</FemaleName>
+		<FemaleName>Madeline</FemaleName>
+		<FemaleName>Ella</FemaleName>
+		<FemaleName>Grace</FemaleName>
+		<FemaleName>Mia</FemaleName>
+		<FemaleName>Riley</FemaleName>
+		<FemaleName>Samantha</FemaleName>
+		<FemaleName>Sydney</FemaleName>
+		<FemaleName>Lauren</FemaleName>
+		<FemaleName>Mackenzie</FemaleName>
+		<FemaleName>Chloe</FemaleName>
+		<FemaleName>Alyssa</FemaleName>
+		<FemaleName>Lily</FemaleName>
+		<FemaleName>Alexis</FemaleName>
+		<FemaleName>Natalie</FemaleName>
+		<FemaleName>Taylor</FemaleName>
+		<FemaleName>Anna</FemaleName>
+		<FemaleName>Brianna</FemaleName>
+		<FemaleName>Zoe</FemaleName>
+		<FemaleName>Kylie</FemaleName>
+		<FemaleName>Ashley</FemaleName>
+		<FemaleName>Elizabeth</FemaleName>
+		<FemaleName>Megan</FemaleName>
+		<FemaleName>Allison</FemaleName>
+		<FemaleName>Kayla</FemaleName>
+		<FemaleName>Katherine</FemaleName>
+		<FemaleName>Kyra</FemaleName>
+		<FemaleName>Isabelle</FemaleName>
+		<FemaleName>Morgan</FemaleName>
+		<FemaleName>Savannah</FemaleName>
+		<FemaleName>Jasmine</FemaleName>
+		<FemaleName>Arianna</FemaleName>
+		<FemaleName>Avery</FemaleName>
+		<FemaleName>Julia</FemaleName>
+		<FemaleName>Rachel</FemaleName>
+		<FemaleName>Maya</FemaleName>
+		<FemaleName>Jordan</FemaleName>
+		<FemaleName>Brooke</FemaleName>
+		<FemaleName>Paige</FemaleName>
+		<FemaleName>Victoria</FemaleName>
+		<FemaleName>Peyton</FemaleName>
+		<FemaleName>Katie</FemaleName>
+		<FemaleName>Abby</FemaleName>
+		<FemaleName>Gabriella</FemaleName>
+		<FemaleName>Alexandra</FemaleName>
+		<FemaleName>Leah</FemaleName>
+		<FemaleName>Jessica</FemaleName>
+		<FemaleName>Rebecca</FemaleName>
+		<FemaleName>Brooklyn</FemaleName>
+		<FemaleName>Gabrielle</FemaleName>
+		<FemaleName>Audrey</FemaleName>
+		<FemaleName>Amelia</FemaleName>
+		<FemaleName>Jenna</FemaleName>
+		<FemaleName>Reagan</FemaleName>
+		<FemaleName>Sophie</FemaleName>
+		<FemaleName>Trinity</FemaleName>
+		<FemaleName>Sierra</FemaleName>
+		<FemaleName>Cadence</FemaleName>
+		<FemaleName>Lillian</FemaleName>
+		<FemaleName>Ashlyn</FemaleName>
+		<FemaleName>Bailey</FemaleName>
+		<FemaleName>Gracie</FemaleName>
+		<FemaleName>Faith</FemaleName>
+		<FemaleName>Kendall</FemaleName>
+		<FemaleName>Kate</FemaleName>
+		<FemaleName>Molly</FemaleName>
+		<FemaleName>Claire</FemaleName>
+		<FemaleName>Kennedy</FemaleName>
+		<FemaleName>Caroline</FemaleName>
+		<FemaleName>Addison</FemaleName>
+		<FemaleName>Marissa</FemaleName>
+		<FemaleName>Alana</FemaleName>
+		<FemaleName>Destiny</FemaleName>
+		<FemaleName>Jada</FemaleName>
+		<FemaleName>Amanda</FemaleName>
+		<FemaleName>Alexa</FemaleName>
+		<FemaleName>Erin</FemaleName>
+		<FemaleName>Layla</FemaleName>
+		<FemaleName>Gianna</FemaleName>
+		<FemaleName>Ellie</FemaleName>
+		<FemaleName>Camryn</FemaleName>
+		<FemaleName>Nicole</FemaleName>
+		<FemaleName>Angelina</FemaleName>
+		<FemaleName>Charlotte</FemaleName>
+		<FemaleName>Aaliyah</FemaleName>
+		<FemaleName>Mckenna</FemaleName>
+		<FemaleName>Lucy</FemaleName>
+	</VillagerNames>
+	
+	<VillagerIdleDescription>
+		<Text>Eating food.</Text>
+        <Text>Calculating Pi.</Text>
+        <Text>Bored.</Text>
+        <Text>Writing a Haiku.</Text>
+        <Text>Yes Milord?</Text>
+        <Text>Alphabetizing Pantry.</Text>
+        <Text>Watering the Plants.</Text>
+        <Text>Brushing Teeth.</Text>
+        <Text>Wondering when the Sun Sets.</Text>
+        <Text>Falling Asleep.</Text>
+        <Text>Picking Nose.</Text>
+        <Text>Twiddling Thumbs.</Text>
+        <Text>Singing.</Text>
+        <Text>Whistling.</Text>
+        <Text>Whittling.</Text>
+        <Text>Reading.</Text>
+        <Text>Daydreaming.</Text>
+        <Text>Work, Work.</Text>
+        <Text>Hoping not to have to Hurry.</Text>
+        <Text>Something need doing?</Text>
+        <Text>Ready to work.</Text>
+        <Text>Zug Zug.</Text>
+        <Text>More work?</Text>
+	</VillagerIdleDescription>
+	
+	<!-- VillagerWorkDescription:
+		Building: id - the id of the building the villager is working at when these descriptions are used
+			Text - a description which is used at that building
+	-->
+	<VillagerWorkDescription>
+		<Building id="8">
+			<Text>Chopping wood.</Text>
+		</Building>
+		<Building id="9">
+			<Text>Quarrying rock.</Text>
+		</Building>
+		<Building id="11">
+			<Text>Harvesting wheat.</Text>
+		</Building>
+		<Building id="36">
+			<Text>Herding sheep.</Text>
+		</Building>
+		<Building id="15">
+			<Text>Milling wood.</Text>
+		</Building>
+		<Building id="17">
+			<Text>Cutting rock.</Text>
+		</Building>
+		<Building id="23">
+			<Text>Weaving wool.</Text>
+		</Building>
+		<Building id="156">
+			<Text>Jumping on the trampoline.</Text>
+		</Building>
+        <Building id="167">
+			<Text>Performing at the Theater.</Text>
+		</Building>
+        <Building id="166">
+			<Text>Performing at the Big Top.</Text>
+		</Building>
+		<Building id="179">
+			<Text>Fishing in the Pond.</Text>
+		</Building>
+		<Building id="211">
+			<Text>Selling Fruit.</Text>
+		</Building>
+		<Building id="212">
+			<Text>Selling Fish.</Text>
+		</Building>
+		<Building id="213">
+			<Text>Selling Meat.</Text>
+		</Building>
+		<Building id="250">
+			<Text>Practicing Tai Chi.</Text>
+		</Building>
+		<Building id="263">
+			<Text>Attempting Karate.</Text>
+		</Building>
+	</VillagerWorkDescription>
+	
+	<!-- VillagerHaulDescription:
+		Building: id - the id of the building the villager is hauling at when these descriptions are used
+			Text - a description which is used at that building
+	-->
+	<VillagerHaulDescription>
+		<Building id="8">
+			<Text>Carrying wood.</Text>
+		</Building>
+		<Building id="9">
+			<Text>Carrying rock.</Text>
+		</Building>
+		<Building id="11">
+			<Text>Carrying wheat.</Text>
+		</Building>
+		<Building id="36">
+			<Text>Carrying wool.</Text>
+		</Building>
+		<Building id="15">
+			<Text>Carrying lumber.</Text>
+		</Building>
+		<Building id="17">
+			<Text>Carrying cut stone.</Text>
+		</Building>
+		<Building id="23">
+			<Text>Carrying cloth.</Text>
+		</Building>
+	</VillagerHaulDescription>
+	
+	<TownHallUpgrade>
+		<Upgrade object="2" level="1" title="TITLETOWER" image="POPUPTOWER">Congratulations, you have built a Tower. You can now build more advanced buildings.</Upgrade>
+		<Upgrade object="3" level="2" title="TITLEKEEP" image="POPUPKEEP">Congratulations, you have built a Keep. You can now build more advanced buildings.</Upgrade>
+		<Upgrade object="4" level="3" title="TITLEFORT" image="POPUPFORT">Congratulations, you have built a Fort. You can now build more advanced buildings.</Upgrade>
+		<Upgrade object="5" level="4" title="TITLEBLUECASTLE" image="POPUPBLUECASTLE">Congratulations, you have built a Castle. You can now build more advanced buildings.</Upgrade>
+		<Upgrade object="6" level="5" title="TITLECITADEL" image="POPUPREDCASTLE">Congratulations, you have built a Citadel. It's epic.</Upgrade>
+	</TownHallUpgrade>
+	
+	<!-- time between promotions from the server when we go to world map -->
+	<PromoInterval minutes="30" />
+	
+	<!-- maximum length for a land status message -->
+	<LandMessage MaxLength="80" />
+	
+	<Inventory maxSlots="100" />
+</Settings>

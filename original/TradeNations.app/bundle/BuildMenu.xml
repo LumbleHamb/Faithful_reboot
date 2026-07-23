@@ -1,0 +1,566 @@
+<Title>Build Menu</Title>
+
+
+<Category name="Buildings" icon="BUILDINGICON" selected="BUILDINGICONPRESSED">
+	
+	<!-- Level 1 -->
+    <Item type="Object" id="12" name="Small Cottage" icon="LITTLECOTTAGE"></Item> <!-- LITTLECOTTAGE -->
+	<Item type="Object" id="139" name="Brown Cottage" icon="LITTLECOTTAGE2"></Item> <!-- LITTLECOTTAGE -->
+	<Item type="Object" id="138" name="Red Cottage" icon="LITTLECOTTAGE1"></Item> <!-- LITTLECOTTAGE -->
+	<Item type="Object" id="8" name="Logging Camp" icon="CAMP"></Item> <!-- CAMP -->
+	<Item type="Object" id="25" name="Stockpile" icon="STOCKPILE"></Item> <!-- STOCKPILE -->
+	
+		<Item type="Object" id="344" name="Lumberjack Camp" icon="CAMP"></Item> 
+		<Item type="Object" id="334" name="Frontier Stockpile" icon="STOCKPILE"></Item>
+		<Item type="Object" id="329" name="Frontier Market" icon="F_market"></Item> <!-- FRONTIER MARKET -->
+		<Item type="Object" id="307" name="Log Cabin" icon="F_house_cabin"></Item> <!-- LOG CABIN -->
+	
+	
+	<Item type="Object" id="11" name="Farm" icon="FARM"></Item> <!-- FARM -->
+	
+	<!-- Level 2 -->
+	<Item type="Object" id="27" name="Market" icon="MARKET"></Item> <!-- MARKET -->
+	<Item type="Object" id="35" name="Baker Shop" icon="BAKERSSHOP"></Item> <!-- BAKERSSHOP -->
+	
+	<!-- Level 3 -->
+    <Item type="Object" id="199" name="Flower Shop" icon="FLOWERSHOP"></Item> <!-- FLOWERSHOP -->
+
+	<!-- Special -->
+	
+		<Item type="Object" id="233" name="Traveling Merchant" icon="BrightSunfair"></Item> <!-- TRAVELING MERCHANT -->
+		<Item type="Object" id="343" name="Frontier Merchant" icon="BrightSunfair"></Item> <!-- FRONTIER TRAVELING MERCHANT -->
+		<Item type="Object" id="332" name="Frosty the Snowman" icon="frosty" limitedTime="y"></Item> 
+		<Item type="Object" id="333" name="Frosty Crockett" icon="frosty" limitedTime="y"></Item> 
+		<Item type="Object" id="345" name="Mine" icon="QUARRY"></Item>
+	
+
+	<!-- Level 4 -->
+	<Item type="Object" id="9" name="Quarry" icon="QUARRY"></Item> <!-- QUARRY -->
+
+	<Item type="Object" id="30" name="Wizard Tower" icon="WIZARDTOWER" bonus="yes"></Item> <!-- WIZARDTOWER -->
+
+	<Item type="Object" id="37" name="Large Cottage" icon="COTTAGE"></Item> <!-- COTTAGE -->
+	<Item type="Object" id="140" name="Green Cottage" icon="COTTAGE1"></Item> <!-- COTTAGE -->
+	<Item type="Object" id="141" name="Purple Cottage" icon="COTTAGE2"></Item> <!-- QUARRY -->
+	
+		<Item type="Object" id="302" name="Gold Panner" icon="F_goldmine_male_active"></Item> <!-- GOLD PANNING POND -->
+	
+	
+	<!-- Level 6 -->
+	<Item type="Object" id="15" name="Lumber Yard" icon="LUMBERYARD"></Item> <!-- LUMBERYARD -->
+	<Item type="Object" id="32" name="Carpenter Shop" icon="CARVERSHALL"></Item> <!-- CARVERSHALL -->
+	<Item type="Object" id="26" name="Large Stockpile" icon="LARGESTOCKPILE"></Item> <!-- LARGESTOCKPILE -->
+	
+		<Item type="Object" id="335" name="Large Frontier Stockpile" icon="LARGESTOCKPILE"></Item> 
+	
+	
+	<!-- Level 8 -->
+	<Item type="Object" id="142" name="Brown House" icon="HOUSE1"></Item> <!-- HOUSE -->
+	<Item type="Object" id="143" name="Yellow House" icon="HOUSE2"></Item> <!-- HOUSE -->
+	<Item type="Object" id="13" name="Blue House" icon="HOUSE"></Item> <!-- HOUSE -->
+    <Item type="Object" id="272" name="Schoolhouse" icon="schoolhouse"></Item> <!-- SCHOOLHO	<!-- Level 10 -->
+	<Item type="Object" id="36" name="Pen" icon="PEN"></Item> <!-- PEN -->
+	<Item type="Object" id="34" name="Tailor Shop" icon="TAILORSSHOP"></Item> <!-- TAILORSSHOP -->
+	
+	<!-- Level 12 -->
+	<Item type="Object" id="17" name="Stone Cutter" icon="STONECUTTER"></Item> <!-- STONECUTTER -->
+	
+	<!-- Level 14 -->
+	<Item type="Object" id="14" name="Stone House" icon="STONEHOUSE"></Item> <!-- STONEHOUSE -->
+	<Item type="Object" id="157" name="Sunshine House" icon="STONEHOUSE1"></Item> <!-- STONEHOUSE -->
+	<Item type="Object" id="158" name="Skyblue House" icon="STONEHOUSE2"></Item> <!-- STONEHOUSE -->
+	<Item type="Object" id="23" name="Loom" icon="LOOM"></Item> <!-- LOOM -->
+	<Item type="Object" id="31" name="Sculptor Shop" icon="SCULPTURESHALL"></Item> <!-- SCULPTURESHALL -->
+	
+	<Item type="Object" id="355" name="Fruit Stand" icon="FRUITSTAND"></Item> <!-- FRUITSTAND -->
+	
+	
+	<!-- Level 16 -->
+	<Item type="Object" id="38" name="Pub" icon="PUBSHOP"> </Item> <!-- PUBSHOP -->
+	
+	<Item type="Object" id="354" name="Fish Stand" icon="FISHSTAND"></Item> <!-- FISHSTAND -->
+	
+	
+	<!-- Level 18 -->
+	<Item type="Object" id="163" name="Warehouse" icon="WAREHOUSE"></Item> <!-- WAREHOUSE -->
+	
+		<Item type="Object" id="336" name="Frontier Warehouse" icon="WAREHOUSE"></Item> 
+	
+	
+	<!-- Level 20 -->
+	
+		<Item type="Object" id="301" name="Hot Air Balloon" icon="F_HotAirBalloon"></Item> <!-- HOT AIR BALLOON -->
+		<Item type="Object" id="309" name="Hot Beverage Shop" icon="F_hotdrinkshop_idle"></Item> <!-- BAKERSHOP -->
+	
+	<Item type="Object" id="164" name="Windmill" icon="WINDMILL"> </Item> <!-- WINDMILL -->
+    <Item type="Object" id="346" name="Butcher Stand" icon="MEATSTAND"></Item> <!-- MEATSTAND -->
+    
+	<!-- Level 22 -->
+    <Item type="Object" id="218" name="Mayor's Cottage" icon="MAYORS_COTTAGE"></Item> <!-- MAYORS_COTTAGE -->	
+	<Item type="Object" id="165" name="Book Shop" icon="BOOKSHOP"></Item> <!-- BOOKSHOP -->
+	
+		<Item type="Object" id="338" name="Old West Book Shop" icon="BOOKSHOP"></Item>
+	
+	
+	<!-- Level 24 -->
+	<Item type="Object" id="168" name="Juggler" icon="JUGGLER"></Item> <!-- JUGGLER -->
+	<Item type="Object" id="214" name="Toy Shop" icon="Toy_Shop_Idle"></Item> <!-- TOYSHOP -->
+	
+	<!-- Level 25 -->
+	
+		<Item type="Object" id="310" name="Apothecary" icon="F_apothecary_idle"></Item> <!-- BAKERSHOP -->
+	
+
+	<!-- Level 26 -->
+	
+		<Item type="Object" id="308" name="A-Frame Cabin" icon="F_house_aframe"></Item> <!-- HOUSE -->
+	
+	<Item type="Object" id="167" name="Theater" icon="THEATER"></Item> <!-- THEATER -->
+	<Item type="Object" id="224" name="Large Warehouse" icon="largewarehouse"></Item> <!-- LARGE WAREHOUSE -->
+	
+		<Item type="Object" id="337" name="Large Frontier Warehouse" icon="largewarehouse"></Item> 
+	
+	
+	<!-- Level 28 -->
+	<Item type="Object" id="220" name="Inn" icon="INN_IDLE"></Item> <!-- INN -->
+    <Item type="Object" id="156" name="Trampoline" icon="TRAMPOLINE"></Item> <!-- TRAMPOLINE -->
+
+	<!-- Level 29 -->
+
+	<!-- Level 30 -->
+    <Item type="Object" id="166" name="Big Top" icon="CIRCUS"></Item> <!-- CIRCUS -->
+
+	
+		<Item type="Object" id="311" name="Blacksmith" icon="F_blacksmith_idle"></Item> <!-- BAKERSHOP -->
+	
+
+	<!-- Level 32 -->
+  	<Item type="Object" id="235" name="Cobbler" icon="Cobbler_idle"></Item> <!-- COBBLER -->
+	
+	  	<Item type="Object" id="339" name="Frontier Cobbler" icon="Cobbler_idle"></Item>
+	
+    <Item type="Object" id="169" name="Firebreather" icon="FIREBREATHER"></Item> <!-- FIREBREATHER -->
+    <Item type="Object" id="219" name="Mayor's Villa" icon="MAYORS_VILLA"></Item> <!-- MAYORS_VILLA -->
+
+	<!-- Level 34 -->
+    <Item type="Object" id="210" name="Creamery" icon="CREAMERY_IDLE"></Item> <!-- CREAMERY -->
+	
+	    <Item type="Object" id="340" name="Mountain Dairy" icon="CREAMERY_IDLE"></Item>
+	
+
+	<!-- Level 35 -->
+	
+		<Item type="Object" id="253" name="Imperial House" icon="exotichouse" limitedTime="y"></Item> -->
+	
+
+	<!-- Level 35 -->
+    <Item type="Object" id="294" name="Mansion" icon="mansion"></Item>  <!-- MANSION -->
+
+	<!-- Level 36 -->
+    <Item type="Object" id="209" name="Silo" icon="SILO"></Item> <!-- SILO -->
+
+	<!-- Level 38 -->
+    <Item type="Object" id="234" name="Restaurant" icon="Restaurant_idle"></Item> <!-- RESTAURANT -->
+
+	<!-- Level 39 -->
+	
+	    <Item type="Object" id="250" name="Tai Chi" icon="taichi_male_active" limitedTime="y"></Item> -->
+	
+
+	<!-- Level 41 -->
+	<Item type="Object" id="237" name="Jeweler Shop" icon="JewelersShop_idle"></Item> <!-- JEWELERS SHOP -->
+	
+		<Item type="Object" id="341" name="Pioneer Jewelry" icon="JewelersShop_idle"></Item>
+	
+
+	<!-- Level 42 -->	
+	
+	 	<Item type="Object" id="263" name="Karate Chop!" icon="karate_female_active" limitedTime="y"></Item> -->
+	
+	
+	<!-- Level 44 -->
+	
+	  	<Item type="Object" id="251" name="Tea Shop" icon="teashop_idle" limitedTime="y"></Item> -->
+	
+
+	<!-- Level 45 -->
+	<Item type="Object" id="293" name="Stylist" icon="barbershop_idle"></Item>  <!-- STYLIST -->
+
+	<!-- Level 47 -->
+	
+		<Item type="Object" id="252" name="Sushi Shop" icon="sushishop_idle" limitedTime="y"></Item> -->
+	
+	
+</Category>
+
+<Category name="Decorations" icon="DECORATIONICON" selected="DECORATIONICONPRESSED">
+	
+
+	
+	<Item type="Object" id="347" name="Holiday Gift" icon="holidayGift" limitedTime="yes"></Item> <!-- WHITE BUNNY -->
+	<Item type="Object" id="349" name="Magic Bunny" icon="bunny_pink" limitedTime="yes"></Item> <!-- PINK BUNNY -->
+	
+	
+	<!-- Level 1 -->
+	<Item type="Object" id="101" name="Poplar" icon="POPLAR"></Item> <!-- POPLAR -->
+ 	
+		<Item type="Object" id="111" name="Holiday Tree" icon="CHRISTMASTREE" limitedTime="yes"> </Item> <!-- CHRISTMASTREE -->
+	
+
+	<Item type="Object" id="108" name="Buttercups" icon="BUTTERCUPS"></Item> <!-- BUTTERCUPS -->
+
+	<!-- Level 2 -->
+	<Item type="Object" id="106" name="Daisies" icon="DAISIES"></Item> <!-- DAISIES -->
+	<Item type="Object" id="129" name="Yellow Pot" icon="POTYELLOW"></Item> <!-- POTYELLOW -->
+	
+	<!-- Level 3 -->
+	<Item type="Object" id="102" name="Spruce" icon="SPRUCE"></Item> <!-- SPRUCE -->
+	<Item type="Object" id="105" name="Oak" icon="OAK" bonus="yes"></Item> <!-- OAK -->
+
+	<!-- Level 4 -->	
+	<Item type="Object" id="240" name="Well" icon="well"></Item> <!-- WELL -->
+ 	
+		<Item type="Object" id="342" name="Large Granite Statue" icon="LARGESTATUE" bonus="yes"></Item>
+	
+	<Item type="Object" id="148" name="Pond" icon="POND" bonus="yes"></Item> <!-- POND -->
+
+	<Item type="Object" id="109" name="Pansies" icon="PANSIES"></Item> <!-- PANSIES -->
+
+ 	
+		<Item type="Object" id="315" name="Criss Cross Fence" icon="F_crossbeamfence"></Item> <!-- BAKERSHOP -->
+	
+
+	<Item type="Object" id="121" name="Wood Fence" icon="FENCEWOOD"></Item> <!-- FENCEWOOD -->
+	<Item type="Object" id="216" name="Wood Gate" icon="WOODGATE"></Item> <!-- WOODGATE -->
+	<Item type="Object" id="133" name="Road Straight" icon="ROADSTRAIGHT"></Item> <!-- ROADSTRAIGHT -->
+	<Item type="Object" id="134" name="Road Turn Down" icon="ROADTURNDOWN"></Item> <!-- ROADTURNDOWN -->
+	<Item type="Object" id="135" name="Road Turn Up" icon="ROADTURNUP"></Item> <!-- ROADTURNUP -->
+	<Item type="Object" id="136" name="Road Turn Left" icon="ROADTURNLEFT"></Item> <!-- ROADTURNLEFT -->
+	<Item type="Object" id="137" name="Road Turn Right" icon="ROADTURNRIGHT"></Item> <!-- ROADTURNRIGHT -->
+	<Item type="Object" id="120" name="Crates" icon="CRATES" bonus="yes"></Item> <!-- CRATES -->
+   	<Item type="Object" id="295" name="Turkey" icon="turkey" bonus="yes"></Item> 
+
+	
+
+	<!-- Level 5 -->	
+ 	
+		<Item type="Object" id="317" name="Juniper" icon="F_tree1"></Item> <!-- TREE -->
+	
+
+	<Item type="Object" id="103" name="Birch" icon="BIRCH"></Item> <!-- BIRCH -->
+	<Item type="Object" id="114" name="Yellow Tent" icon="TENTYELLOW"></Item> <!-- TENTYELLOW -->
+	<Item type="Object" id="131" name="Orange Pot" icon="POTORANGE"></Item> <!-- POTORANGE -->
+	<Item type="Object" id="110" name="Lupins" icon="LUPINS" bonus="yes"></Item> <!-- LUPINS -->
+
+	<!-- Level 6 -->	
+	<Item type="Object" id="122" name="Stone Wall" icon="FENCESTONE"></Item> <!-- FENCESTONE -->
+	<Item type="Object" id="217" name="Stone Gate" icon="STONEGATE"></Item>  <!-- STONEGATE -->
+	<Item type="Object" id="128" name="Barrel" icon="BARREL"></Item> <!-- BARREL -->
+	<Item type="Object" id="132" name="Sheep" icon="SHEEP" bonus="yes"></Item> <!-- SHEEP -->
+
+	<!-- Level 7 -->	                            
+	<Item type="Object" id="104" name="Maple" icon="MAPLE"></Item> <!-- MAPLE -->
+	<Item type="Object" id="118" name="Stump" icon="STUMP"></Item> <!-- STUMP -->
+	<Item type="Object" id="119" name="Toadstool" icon="TOADSTOOLS"></Item> <!-- TOADSTOOLS -->
+	<Item type="Object" id="117" name="Log" icon="LOGS"></Item> <!-- LOGS -->
+	
+	<!-- Level 8 -->	                            
+	<Item type="Object" id="107" name="Tulips" icon="TULIPS"></Item> <!-- TULIPS -->
+	<Item type="Object" id="116" name="Blue Tent" icon="TENTBLUE"></Item> <!-- TENTBLUE -->
+	<Item type="Object" id="127" name="Blue Pot" icon="POTBLUE"></Item> <!-- POTBLUE -->
+	<Item type="Object" id="146" name="Bird Bath" icon="BIRDBATH"></Item> <!-- BIRDBATH -->
+
+ 	
+		<Item type="Object" id="325" name="Red Fern" icon="F_bush1"></Item> <!-- BUSH -->
+	
+
+	<!-- Level 9 -->                                
+	<Item type="Object" id="125" name="Potted Daisies" icon="POTDAISIES"></Item> <!-- POTDAISIES -->
+    <Item type="Object" id="274" name="Kite Flyer" icon="kite_flying" bonus="yes"></Item> <!-- KITE FLYER -->  
+
+	<!-- Level 10 -->	                            
+    <Item type="Object" id="273" name="Swing Set" icon="swingset" bonus="yes"></Item> <!-- SWINGSET -->  
+	<Item type="Object" id="124" name="Potted Pansies" icon="POTPANSIES"></Item> <!-- POTPANSIES -->
+    <Item type="Object" id="147" name="Lawn Gnome" icon="LAWNSTATUE" bonus="yes"></Item> <!-- LAWNSTATUE -->
+
+	<!-- Level 11 -->	                            
+ 	
+	<Item type="Object" id="115" name="Red Tent" icon="TENTRED"></Item> <!-- TENTRED -->
+	<Item type="Object" id="126" name="Red Pot" icon="POTRED"></Item> <!-- POTRED -->
+	<Item type="Object" id="151" name="Bench" icon="BENCH" bonus="yes"></Item> <!-- BENCH -->
+
+	<!-- Level 12 -->	                            
+    <Item type="Object" id="276" name="Seesaw" icon="seesaw" bonus="yes"></Item> <!-- SEESAW --> 
+	<Item type="Object" id="123" name="Mossy Wall" icon="FENCESTONE2"></Item> <!-- FENCESTONE2 -->
+	<Item type="Object" id="215" name="Mossy Gate" icon="MOSSYGATE"></Item> <!-- MOSSYGATE -->
+	<Item type="Object" id="149" name="Roundabout" icon="ROUNDABOUT"></Item> <!-- ROUNDABOUT -->
+	<Item type="Object" id="161" name="Scarecrow" icon="SCARECROW" bonus="yes"></Item> <!-- SCARECROW -->
+
+	<!-- Level 13 -->	
+	<Item type="Object" id="226" name="Cherry Blossom" icon="CherryTree" bonus="yes"></Item> <!-- CHERRY TREE -->
+ 	
+		<Item type="Object" id="330" name="Blue Spruce" icon="F_bluespruce"></Item> <!-- BLUE SPRUCE-->
+	
+
+	<!-- Level 14 -->	                            
+    <Item type="Object" id="275" name="Treehouse" icon="treehouse" bonus="yes"></Item> <!-- TREEHOUSE -->  
+    <Item type="Object" id="150" name="Fountain" icon="FOUNTAIN" bonus="yes"></Item> <!-- FOUNTAIN -->
+	
+ 
+	<!-- Level 15 -->                               
+    <Item type="Object" id="204" name="Blue Doghouse" icon="DOGHOUSE_2" bonus="yes"></Item> <!-- DOG HOUSE 2 -->
+	<Item type="Object" id="159" name="Cart" icon="CART"></Item> <!-- CART -->
+ 	<Item type="Object" id="160" name="Pumpkin Cart" icon="PUMPKINCART"></Item> <!-- PUMPKINCART -->
+
+	<!-- Level 16 -->                                
+    <Item type="Object" id="182" name="Dogwood" icon="DOGWOOD_MENU" bonus="yes"></Item> <!-- DOGWOOD_MENU -->
+
+	<!-- Level 17 -->                                
+	<Item type="Object" id="130" name="Potted Lupins" icon="POTLUPINS"></Item> <!-- POTLUPINS -->
+	<Item type="Object" id="144" name="Lion Statue" icon="LIONSTATUE"></Item> <!-- LIONSTATUE -->
+ 	<Item type="Object" id="198" name="Sunflowers" icon="SUNFLOWERS_MENU" bonus="yes"></Item> <!-- SUNFLOWERS_MENU -->
+ 
+	<!-- Level 18 -->                               
+	<Item type="Object" id="188" name="Bluebells" icon="BLUEBELLS_MENU" bonus="yes"></Item> <!-- BLUEBELLS_MENU -->
+
+	<!-- Level 19 -->         
+	
+		<Item type="Object" id="312" name="Jordo" icon="F_beaver" bonus="yes"></Item> <!-- BAKERSHOP -->
+	
+   	<Item type="Object" id="236" name="Chicken Coop" icon="Coop" bonus="yes"></Item><!-- CHICKEN COOP -->                     
+    <Item type="Object" id="183" name="Camphor" icon="CAMPHOR_MENU" bonus="yes"></Item> <!-- CAMPHOR_MENU -->
+
+	<!-- Level 20 -->                                
+	
+		<Item type="Object" id="314" name="Kazi" icon="F_ibex" bonus="yes"></Item> <!-- BAKERSHOP -->
+		<Item type="Object" id="322" name="Cottonwood" icon="F_treeorange"></Item> <!-- FALL TREE -->
+		<Item type="Object" id="326" name="Elderberry Bush" icon="F_bush2"></Item> <!-- BUSH-->
+	
+	<Item type="Object" id="179" name="Lake" icon="FISHPOND" bonus="yes"></Item> <!-- FISHPOND -->  
+ 	<Item type="Object" id="257" name="Horse" icon="horse_active" bonus="yes"></Item> <!-- HORSE -->
+
+	<!-- Level 21 -->                                
+	
+		<Item type="Object" id="318" name="Aspen" icon="F_tree2"></Item> <!-- TREE -->
+	
+    <Item type="Object" id="190" name="Lilacs" icon="LILACS_MENU" bonus="yes"></Item> <!-- LILACS_MENU -->
+    <Item type="Object" id="208" name="Hedges" icon="BUSH4" bonus="yes"></Item> <!-- BUSH 4 -->
+    <Item type="Object" id="264" name="Food Trough" icon="food_trough"></Item> <!-- FOOD TROUGH -->
+    <Item type="Object" id="265" name="Water Trough" icon="water_trough"></Item> <!-- WATER TROUGH -->
+
+	<!-- Level 22 -->                                
+	
+		<Item type="Object" id="313" name="Ian" icon="F_honeybear" bonus="yes"></Item> <!-- BAKERSHOP -->
+		<Item type="Object" id="324" name="Larch" icon="F_treeyellow"></Item> <!-- FALL TREE -->
+	
+	<Item type="Object" id="174" name="Brick Road Straight" icon="BRICKROAD_STRAIGHT" bonus="yes"></Item> <!-- BRICKROAD_STRAIGHT -->
+    <Item type="Object" id="175" name="Brick Road Right" icon="BRICKROAD_RIGHT" bonus="yes"></Item> <!-- BRICKROAD_RIGHT --> 
+    <Item type="Object" id="176" name="Brick Road Left" icon="BRICKROAD_LEFT" bonus="yes"></Item> <!-- BRICKROAD_LEFT -->
+    <Item type="Object" id="178" name="Brick Road Up" icon="BRICKROAD_UP" bonus="yes"></Item> <!-- BRICKROAD_UP -->
+    <Item type="Object" id="177" name="Brick Road Down" icon="BRICKROAD_DOWN" bonus="yes"></Item> <!-- BRICKROAD_DOWN -->
+	<Item type="Object" id="184" name="Cypress" icon="CYPRUS_MENU" bonus="yes"></Item> <!-- CYPRUS_MENU -->
+
+	<!-- Level 23 -->                                
+	
+		<Item type="Object" id="327" name="Potentillia" icon="F_bush3"></Item> <!-- BUSH-->
+	
+    <Item type="Object" id="170" name="Tall Tent" icon="SIDETENTTALL"  bonus="yes"></Item> <!-- SIDETENTTALL -->   
+    <Item type="Object" id="192" name="Lilies" icon="LILIES_MENU" bonus="yes"></Item> <!-- LILIES_MENU -->
+
+	<!-- Level 24 -->                                
+	
+		<Item type="Object" id="316" name="Laddie" icon="F_crossbeamfence" bonus="yes"></Item> <!-- ST BERNARD -->
+		<Item type="Object" id="320" name="Pine" icon="F_tree4"></Item> <!-- TREE -->
+	
+    <Item type="Object" id="185" name="Olive" icon="OLIVE_MENU" bonus="yes"></Item> <!-- OLIVE_MENU -->
+    <Item type="Object" id="268" name="Outhouse" icon="outhouse_idle" bonus="yes"></Item> <!-- OUTHOUSE -->
+
+	<!-- Level 25 -->                            
+	
+		<Item type="Object" id="328" name="Fire Tail" icon="F_bush4"></Item> <!-- BUSH-->
+	
+    <Item type="Object" id="223" name="Gabbo" icon="Cat2" bonus="yes"></Item> <!-- GRAY KITTEN -->
+    <Item type="Object" id="171" name="Short Tent" icon="SIDETENTSHORT"  bonus="yes"></Item> <!-- SIDETENTSHORT -->
+
+	<!-- Level 26 -->    
+	<Item type="Object" id="194" name="Marigolds" icon="MERRIGOLD_MENU" bonus="yes"></Item> <!-- MERRIGOLD_MENU -->
+	
+		<Item type="Object" id="323" name="Mountain Maple" icon="F_treered" bonus="yes"></Item> <!-- FALL TREE -->
+	
+	
+	
+	<Item type="Object" id="351" name="Bullwrinkle" icon="moose" bonus="yes"></Item> 
+	
+	
+	<!-- Level 27 --> 
+	
+		<Item type="Object" id="319" name="Ash" icon="F_tree3"></Item> <!-- TREE -->
+	
+	<Item type="Object" id="241" name="River Straight" icon="rivertile_straight" bonus="yes"></Item>  <!-- RIVERSTRAIGHT -->
+    <Item type="Object" id="242" name="River Turn Left" icon="rivertile_turnleft" bonus="yes"></Item> <!-- RIVERTURNLEFT -->
+    <Item type="Object" id="243" name="River Turn Right" icon="rivertile_turnright" bonus="yes"></Item> <!-- RIVERTURNRIGHT -->
+    <Item type="Object" id="244" name="River Turn Down" icon="rivertile_turndown" bonus="yes"></Item> <!-- RIVERTURNDOWN -->
+    <Item type="Object" id="245" name="River Turn Up" icon="rivertile_turnup" bonus="yes"></Item> <!-- RIVERTURNUP -->
+    <Item type="Object" id="246" name="Fishing Hole" icon="waterfall_idle" bonus="yes"></Item> <!-- FISHING HOLE -->
+    <Item type="Object" id="247" name="River Pool Up" icon="rivertile_cap" bonus="yes"></Item> <!-- RIVER CAP -->
+    <Item type="Object" id="249" name="River Pool Down" icon="rivertile_capdown" bonus="yes"></Item> <!-- RIVER CAP 2 -->
+    <Item type="Object" id="248" name="River Bridge" icon="rivertile_bridge" bonus="yes"></Item> <!-- RIVER BRIDGE-->                               
+ 	<Item type="Object" id="186" name="Willow" icon="WILLOW_MENU" bonus="yes"></Item> <!-- WILLOW_MENU -->
+    <Item type="Object" id="172" name="Gypsy Wagon" icon="GYPSYWAGON" bonus="yes"></Item> <!-- GYPSYWAGON -->
+
+	<!-- Level 28 -->
+    <Item type="Object" id="225" name="Apple Tree" icon="AppleTree" bonus="yes"></Item> <!-- APPLE TREE -->
+    <Item type="Object" id="256" name="Poochie" icon="poochie_active" bonus="yes"></Item> <!-- POOCHIE -->
+	
+	
+	<Item type="Object" id="350" name="Bill" icon="bison" bonus="yes"></Item> 
+	
+	
+	<!-- Level 29 -->
+	<Item type="Object" id="196" name="Roses" icon="ROSES_MENU" bonus="yes"></Item> <!-- Roses -->
+	
+		<Item type="Object" id="259" name="Bamboo" icon="bamboo" limitedTime="yes"></Item> -->
+	
+	
+	<!-- Level 30 -->
+	
+		<Item type="Object" id="321" name="Fir" icon="F_tree5"></Item> <!-- TREE -->
+	
+    <Item type="Object" id="187" name="Sycamore" icon="SYCAMORE_MENU" bonus="yes"></Item> <!-- SYCAMORE_MENU -->
+	
+	<Item type="Object" id="352" name="Pepe" icon="skunk" bonus="yes"></Item> 
+	
+	<!-- Level 31 -->
+	<Item type="Object" id="201" name="Lamp Post" icon="LAMPPOST_MENU" bonus="yes"></Item> <!-- Lamp Post -->
+
+	<!-- Level 32 -->
+    <Item type="Object" id="222" name="Lily" icon="Cat" bonus="yes"></Item> <!-- KITTEN -->
+    
+    <Item type="Object" id="353" name="Sam" icon="sheepdog" bonus="yes"></Item> <!-- KITTEN -->
+	
+	
+	<!-- Level 33 -->
+	<Item type="Object" id="202" name="Cow" icon="COW_MENU" bonus="yes"></Item> <!-- Cow --> 
+    <Item type="Object" id="203" name="Hay Bale" icon="HAY" bonus="yes"></Item> <!-- HAY -->
+
+	<!-- Level 34 -->
+ 	<Item type="Object" id="230" name="Water Fountain" icon="waterfountain" bonus="yes"></Item> <!-- WATER FOUNTAIN -->
+
+	<!-- Level 35 -->
+    <Item type="Object" id="205" name="Holly Bush" icon="BUSH3" bonus="yes"></Item> <!-- BUSH 3 -->
+	
+		<Item type="Object" id="266" name="Sneezy" icon="panda_baby" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 36 -->
+	
+		<Item type="Object" id="260" name="Torii" icon="gate" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 37 -->
+    <Item type="Object" id="206" name="Blueberry Bush" icon="BUSH2" bonus="yes"></Item> <!-- BUSH 2 -->
+	
+		<Item type="Object" id="261" name="Lantern" icon="lantern_active" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 38 -->
+    <Item type="Object" id="238" name="Sundial" icon="sundial" bonus="yes"></Item> <!-- SUNDIAL -->
+	
+		<Item type="Object" id="255" name="Ling" icon="panda_active" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 39 -->
+    <Item type="Object" id="207" name="Raspberry Bush" icon="BUSH1" bonus="yes"></Item> <!-- BUSH 1 -->
+
+	<!-- Level 40 -->
+	<Item type="Object" id="279" name="Elvis" icon="poodle" bonus="yes"></Item>  <!-- POODLE -->
+
+	
+		<Item type="Object" id="254" name="Koi Pond" icon="koipond_active" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 41 -->
+    <Item type="Object" id="271" name="Prize Horse" icon="horse_black_active" bonus="yes"></Item> <!-- Prize Horse -->
+	<!-- Level 42 -->
+    <Item type="Object" id="227" name="Spiral Topiary" icon="topiary01_med" bonus="yes"></Item> <!-- TOPIARY1 -->
+
+	<!-- Level 43 -->
+    <Item type="Object" id="281" name="Lawn Table" icon="lawntable"></Item>  <!-- LAWN TABLE -->
+
+	
+		<Item type="Object" id="262" name="Zen Garden" icon="zengarden" limitedTime="yes"></Item> -->
+	
+
+
+	<!-- Level 44 -->
+    <Item type="Object" id="228" name="Ball Topiary" icon="topiary02_med" bonus="yes"></Item> <!-- TOPIARY2 -->
+
+	<!-- Level 45 -->
+    <Item type="Object" id="278" name="Gazebo" icon="gazebo" bonus="yes" ></Item>  <!-- GAZEBO -->
+
+	<!-- Level 46 -->
+	<Item type="Object" id="229" name="Flower Topiary" icon="topiary03_med" bonus="yes"></Item> <!-- TOPIARY3 -->
+
+	<!-- Level 50 -->
+   <Item type="Object" id="239" name="Gold Sundial" icon="sundial_gold"></Item> <!-- GOLD SUNDIAL -->
+
+	<!-- Level 52 -->
+	
+		<Item type="Object" id="269" name="Dragon Statue" icon="dragon_statue" limitedTime="yes"></Item> -->
+	
+
+	<!-- Level 55 -->
+	<Item type="Object" id="277" name="Badminton Court" icon="badminton" bonus="yes" ></Item>
+
+	<!-- Level 65 -->
+	<Item type="Object" id="292" name="Pool" icon="pooltime" bonus="yes"></Item>  <!-- POOL -->
+
+    <!-- SPECIAL -->
+    <Item type="Object" id="258" name="Dragon" icon="dragon_active" bonus="yes"></Item>  
+    <Item type="Object" id="280" name="Turtle" icon="turtle" bonus="yes"></Item> 
+    
+	<Item type="Object" id="348" name="Twitch" icon="bunny_spotted" bonus="yes"></Item>
+	
+</Category>
+
+<Category name="Upgrades" icon="UPGRADEICON" selected="UPGRADEICONPRESSED">
+	<Item type="Object" id="2"  name="Tower" largeIcon="yes" autoplace="yes" icon="TOWER"></Item> <!-- TOWER -->
+	<Item type="Object" id="3"  name="Keep" largeIcon="yes" autoplace="yes" icon="KEEP"></Item> <!-- KEEP -->
+	<Item type="Object" id="4"  name="Fort" largeIcon="yes" autoplace="yes" icon="FORT"></Item> <!-- FORT -->
+	<Item type="Object" id="5"  name="Castle" largeIcon="yes" autoplace="yes" icon="CASTLE_1"></Item> <!-- BLUECASTLE -->
+    <Item type="Object" id="221"  name="Citadel" largeIcon="yes" autoplace="yes" icon="CITADEL"></Item> <!-- CITADEL -->
+	
+		<Item type="Object" id="303"  name="Ridge Post" largeIcon="yes" autoplace="yes" icon="TOWER"></Item> <!-- TOWER -->
+		<Item type="Object" id="304"  name="Mountain Fort" largeIcon="yes" autoplace="yes" icon="KEEP"></Item> <!-- KEEP -->
+		<Item type="Object" id="305"  name="Sierra Palisade" largeIcon="yes" autoplace="yes" icon="FORT"></Item> <!-- FORT -->
+	
+</Category>
+
+
+<Category name="Land" icon="LANDICON" selected="LANDICONPRESSED">
+	<Item type="Consumable" id="1" name="Increase Land 1" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="2" name="Increase Land 2" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="3" name="Increase Land 3" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="4" name="Increase Land 4" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="5" name="Increase Land 5" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="6" name="Increase Land 6" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="7" name="Increase Land 7" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="8" name="Increase Land 8" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="9" name="Increase Land 9" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="99" name="Increase Land 10" icon="LAND" disableOnBuy="yes"></Item>
+	<Item type="Consumable" id="115" name="Increase Land 11" icon="LAND" disableOnBuy="yes"></Item>
+	
+		<Item type="Consumable" id="122" name="Increase Land 1" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="123" name="Increase Land 2" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="124" name="Increase Land 3" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="125" name="Increase Land 4" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="126" name="Increase Land 5" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="127" name="Increase Land 6" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="142" name="Increase Land 7" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="143" name="Increase Land 8" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="144" name="Increase Land 9" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="145" name="Increase Land 10" icon="LAND" disableOnBuy="yes"></Item>
+		<Item type="Consumable" id="146" name="Increase Land 11" icon="LAND" disableOnBuy="yes"></Item>
+	
+</Category>
+

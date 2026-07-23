@@ -1,0 +1,487 @@
+<Tutorials>
+
+	<!--
+		Tutorial: id - identifier used for tutorial prerequisites. Must be unique.
+				  triggerType - one of: always (will trigger as soon as prereqs met, triggerValue unused)
+										build (will trigger when building of type [triggerValue] is built and prereqs met
+												**if prereqs not met, will not try to trigger again until another building of the correct type is built)
+										select (will trigger when a building of type [triggerValue] is selected and prereqs met - note from above applies)
+
+		Prerequisite: added new type "tutorial" (can be used for objects/items as well)
+
+		Objective:	For each objective type, the first and second parameters have different meanings
+					build		first: building ID					second: quantity					Requires [second] buildings of type [first]
+					assign		first: job type						second: building id (-1 means any)	Assign a villager to be a [first: worker/hauler] at building [second]
+					collect		first: resource id					second: quantity					Collect [second] of resource [first]
+					gather		first: resource id (-1 means any)	second: (unused)					Gather (or mill) resource of type [first] with the Mayor
+					transport	first: resource id (-1 means any)	second: (unused)					Transport resource of type [first]
+					useShop		first: shop id (-1 means any)		second: item index (-1 means any)	Make an item [second] at shop [first]
+					marketBuy	first: resource id					second: quantity					Buy [second] of resource [first] at the market
+					marketSell	first: resource id					second: quantity					Sell [second] of resource [first] at the market
+					landSize	first: target land size				second: (unused)					Obtain a land size>= target land size
+					message		first: (unused)						second: (unused)					Displays the message and is completed when the message is dismissed.
+					hurryShop	first: shop id (-1 means any)		second: item index (-1 means any)	Hurry an item [second] at shop[first]
+					hurryBuilding	first: building id (-1 means any)	second: (unused)				Hurry the construction of building type [first]
+					supply		first: resource id (-1 means any)	second: (unused)					Supply resources of type [first] to a plant.
+					friendView	first: (unused)						second: (unused)					Go to the friend view.
+
+		Lock: Prevents the use of buildings/energy/workers/haulers/selling based on the values given during the tutorial.
+
+				world - If "yes", cannot view world map.
+				buildings - If "yes", cannot build buildings. If not included, buildings can be built.
+				consumables - If "yes", cannot buy consumables (ie. Land Upgrades)
+				energy - If "yes", cannot perform any actions that take energy. If not included, energy can be used.
+				workers - If "yes", cannot assign any villagers as workers. Existing workers will not be affected, but cannot be reassigned. If not included, workers can be assigned.
+				haulers - If "yes", cannot assign any villagers as haulers. Existing haulers will not be affected, but cannot be reassigned. If not included, haulers can be assigned.
+				sell - If "yes", cannot sell any buildings. If not included, buildings can be sold.
+				friendShop - If "yes", can only do the lowest level shop item on a friends shop
+
+			Allow: Creates exceptions for the locks specified above. The value of allow is always a building ID where that ID is the type of building which the exception is being made for. The exception type is meaningless if the relevant lock is not set. Only 1 allow entry per building ID.
+
+				build - Number of this building you can build. If not included, cannot build it, if -1 you can build any number.
+				energy - Number of energy points you can spend on actions for buildings with this ID. If not included, cannot spend energy there, if -1 you can spend any number.
+				workers - If "yes", can assign workers to this building. If not included, cannot assign workers there.
+				haulers - If "yes", can assign haulers to this building. If not included, cannot assign haulers there.
+				sell - If "yes", can sell buildings of this type.
+
+				message - The text that will be displayed once this allow condition is no longer valid (ie. built the set number of buildings already) but the tutorial is not complete. If not included, the normal lock message will be used.
+
+			AllowConsumable: Creates an exception for a consumable. The value of AllowConsumable is an item ID where that ID can then be built.
+				number - the number of that consumable you can buy. if -1 you can buy any  number
+
+				message - The text that will be displayed once this allow condition is no longer valid (ie. bought the number of consumables already) but the tutorial is not complete. If not included, the normal lock message will be used.
+	-->
+
+
+	<!-- Welcome -->
+	<Tutorial id="1" triggerType="always" triggerValue="0" name="Welcome!" description="Welcome to your town, Mayor!  I'm the Professor!  To succeed, grow your small village into a bustling city and amass a fortune! Tap to continue.">
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Build a small cottage
+			<Resource id="1">100</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource>
+	-->
+	<Tutorial id="2" triggerType="always" triggerValue="0" name="Build a Cottage!" description="First things first - attract a villager by building a cottage!  Tap the glowing hammer on the bottom right of the screen and select the Small Cottage.">
+		<Prerequisite type="tutorial">1</Prerequisite>
+		<Reward>
+			<Resource id="1">100</Resource>
+		</Reward>
+		<Objective first="12" second="1">build</Objective>
+		<Highlight>true</Highlight>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Try building a Small Cottage first.">
+			<Allow build="1" message="Locked! Wait for your Small Cottage to finish building.">12</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- First Villager -->
+	<Tutorial id="3" triggerType="always" triggerValue="0" name="Cottage Built!" description="Good job, your first cottage is now built and your first villager has moved in!  Each cottage creates one villager!  Tap to continue.">
+		<Prerequisite type="tutorial">2</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Build a Logging Camp
+			<Resource id="1">50</Resource>
+	-->
+	<Tutorial id="4" triggerType="always" triggerValue="0" name="Logging Camp" description="Let's build a Logging Camp for a place to do work.  Logging Camps make wood!  Tap the hammer in the bottom right and select the Logging Camp.">
+		<Prerequisite type="tutorial">3</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="8" second="1">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Try building a Logging Camp first.">
+			<Allow build="1" message="Locked! Wait for your Logging Camp to finish building.">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Make a Wood Cutter -->
+	<Tutorial id="5" triggerType="always" triggerValue="0" name="Make a Wood Cutter" description="Your Logging Camp is built!  Now put a villager to work.  Tap the villager and pick 'Give Job,' then tap the Logging Camp and pick 'Wood Cutter.'">
+		<Prerequisite type="tutorial">4</Prerequisite>
+		<Reward energy="1">
+		</Reward>
+		<Objective first="worker" second="8">assign</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Assign a Worker to your Logging Camp.">
+			<Allow workers="yes">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Wood Cutter! -->
+	<Tutorial id="6" triggerType="always" triggerValue="0" name="Wood Cutter!" description="Well done! Your villager has started their new job as a Wood Cutter.  Villagers will keep working for you, even while you're not playing!">
+		<Prerequisite type="tutorial">5</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Hurry -->
+	<Tutorial id="7" triggerType="always" triggerValue="0" name="Hurrying!" description="Your town needs lots of wood to grow.  Don't wait for it!  Make villagers harvest wood instantly - tap the Logging Camp and select Hurry.  Try it now!">
+		<Prerequisite type="tutorial">6</Prerequisite>
+		<Reward>
+			<Resource id="1">300</Resource>
+			<Resource id="10">450</Resource>
+		</Reward>
+		<Objective first="10" second="0">gather</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Hurry your Logging Camp.">
+			<Allow energy="1" message="Locked! Wait for the hurry to complete.">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Magic Beans -->
+	<Tutorial id="8" triggerType="always" triggerValue="0" name="Magic Beans!" description="You just got a pile of wood!  Hurrying uses Magic Beans.  To get more Magic Beans, tap 'Get More!' at the bottom left of the screen!">
+		<Prerequisite type="tutorial">7</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Make a Stockpile
+			<Resource id="1">300</Resource>
+			<Resource id="10">250</Resource>
+	-->
+	<Tutorial id="9" triggerType="always" triggerValue="0" name="Build a Stockpile" description="You need somewhere to store your wood, so let's build a stockpile.  Tap the hammer and select 'Stockpile.'">
+		<Prerequisite type="tutorial">8</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="25" second="1">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Proceed by building a Stockpile.">
+			<Allow build="1" message="Locked! Wait for your Stockpile to finish building.">25</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Stockpiles -->
+	<Tutorial id="10" triggerType="always" triggerValue="0" name="Stockpiles" description="You can store resources in stockpiles until you're ready to use or sell them.  Tap your stockpile anytime to see what it holds.">
+		<Prerequisite type="tutorial">9</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!--
+	 LEVEL UP
+	-->
+
+	<!-- Collect Wood -->
+	<Tutorial id="11" triggerType="always" triggerValue="0" name="Collect Wood" description="Let's collect the wood from your Logging Camp to add to your Stockpile.  Tap your Logging Camp then tap 'Collect.'">
+		<Prerequisite type="tutorial">10</Prerequisite>
+		<Reward>
+			<Resource id="1">75</Resource>
+		</Reward>
+		<Objective first="10" second="0">transport</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="no" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Collect the wood.">
+		</Lock>
+	</Tutorial>
+
+	<!-- Collecting Resources -->
+	<Tutorial id="12" triggerType="always" triggerValue="0" name="Collect Resources" description="Buildings can only hold 150 resources at a time, so collect them regularly or your workers will stop working until you do.">
+		<Prerequisite type="tutorial">11</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Build a Farm
+			<Resource id="1">75</Resource>
+			<Resource id="10">50</Resource>
+	-->
+	<Tutorial id="13" triggerType="always" triggerValue="0" name="Build a Farm" description="Your town is out of wheat!  Farms produce wheat, so let's build one.  Tap the hammer icon and select 'Farm.'">
+		<Prerequisite type="tutorial">12</Prerequisite>
+		<Reward>
+			<Resource id="1">75</Resource>
+			<Resource id="40">25</Resource>
+		</Reward>
+		<Objective first="11" second="1">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Try building a farm.">
+			<Allow build="1" message="Locked! Wait for your Farm to finish building.">11</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Farms -->
+	<Tutorial id="14" triggerType="always" triggerValue="0" name="Farm Built!" description="Your farm is built, now let's put it to work!  We don't have another villager to work at the farm, so build a cottage to get another villager.">
+		<Prerequisite type="tutorial">13</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Build 2nd small cottage
+			<Resource id="1">100</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource>
+	-->
+	<Tutorial id="15" triggerType="always" triggerValue="0" name="Second Cottage" description="Build another cottage to get your second villager.  If you need more wood, Hurry your logging camp and collect the wood!">
+		<Prerequisite type="tutorial">14</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="12" second="2">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Make another small cottage.">
+			<Allow build="2" message="Locked! Wait for your Small Cottage to finish building.">12</Allow>
+			<Allow energy="2" message="Locked! You have enough Wood. Collect it and build a Small Cottage.">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Make a Farmer -->
+	<Tutorial id="16" triggerType="always" triggerValue="0" name="Farmer" description="Good job, your second villager is ready to become a Farmer!  Tap the villager and pick 'Give Job,' then tap the Farm and pick 'Farmer.'">
+		<Prerequisite type="tutorial">15</Prerequisite>
+		<Reward>
+			<Resource id="1">75</Resource>
+		</Reward>
+		<Objective first="worker" second="11">assign</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="no" workers="yes" haulers="yes" sell="yes" friendShop="no" message="Locked! Your farm needs a farmer.">
+			<Allow workers="yes">11</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- small cottage #3
+			<Resource id="1">100</Resource>
+			<Resource id="10">50</Resource>
+			<Resource id="40">25</Resource>
+	-->
+	<Tutorial id="17" triggerType="always" triggerValue="0" name="More Villagers!" description="Your town is progressing, but your villagers are lonely!  Build another cottage.  Hurry your logging camp and farm to get the supplies you need!">
+		<Prerequisite type="tutorial">16</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="12" second="3">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! You need more villagers!">
+			<Allow build="1" message="Locked! Wait for your Small Cottage to finish building.">12</Allow>
+			<Allow energy="2" message="Locked! You've gathered enough Wood. When you have enough Wheat, build a Small Cottage.">8</Allow>
+			<Allow energy="2" message="Locked! You've gathered enough Wheat When you have enough Wood, build a Small Cottage.">11</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Haulers -->
+	<Tutorial id="18" triggerType="always" triggerValue="0" name="Haulers" description="Great job!  Now let's automate our village with a Hauler.  Haulers are villagers that collect resources for you.">
+		<Prerequisite type="tutorial">17</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Make a Wood Hauler -->
+	<Tutorial id="19" triggerType="always" triggerValue="0" name="Wood Hauler" description="To make the villager a Wood Hauler tap the villager and pick 'Give Job,' Then tap the Logging Camp and pick 'Wood Hauler.'">
+		<Prerequisite type="tutorial">18</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="hauler" second="8">assign</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! Assign a hauler to your logging camp.">
+			<Allow haulers="yes">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Haulers -->
+	<Tutorial id="20" triggerType="always" triggerValue="0" name="Haulers" description="Haulers automate your town and make it run more efficiently. Haulers collect and move resources to the stockpile, they do not create them.">
+		<Prerequisite type="tutorial">19</Prerequisite>
+		<Reward>
+			<Resource id="10">100</Resource>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+
+	<!-- Market
+		<Resource id="10">150</Resource>
+	-->
+	<Tutorial id="21" triggerType="always" triggerValue="0" name="Build a Market" description="To grow rapidly, we need a market!  Markets let you buy and sell resources for gold.  Tap the hammer to build a Market.">
+		<Prerequisite type="tutorial">20</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="27" second="1">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! Build yourself a market.">
+			<Allow energy="6" message="Locked! You have gathered enough Wood. Collect it and build a Market.">8</Allow>
+			<Allow build="1" message="Locked! Wait for your Market to finish building.">27</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!--
+	LEVEL UP
+	-->
+
+
+	<!-- Sell 100 Wood -->
+	<Tutorial id="22" triggerType="always" triggerValue="0" name="Sell 100 Wood" description="Now that you've built a Market, let's sell some wood! Hurry 100 wood, collect it, then tap the Market to sell it.">
+		<Prerequisite type="tutorial">21</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="10" second="100">marketSell</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! Collect some wood to sell.">
+			<Allow energy="4" message="Locked! You have gathered enough Wood. Collect it and sell it at the Market.">8</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Decorations! -->
+	<Tutorial id="23" triggerType="always" triggerValue="0" name="Decorating!" description="Great work!  The profit from that wood sale can improve the look of your town. Let's add some decorations!">
+		<Prerequisite type="tutorial">22</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Plant some trees! -->
+	<Tutorial id="24" triggerType="always" triggerValue="0" name="Plant 3 Poplars!" description="Let's plant some trees around around the village. Villagers love trees!  Tap the hammer and build three Poplar Trees now.">
+		<Prerequisite type="tutorial">23</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="101" second="3">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="yes" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! Plant some trees!">
+			<Allow build="3" message="Locked! Wait for your trees to grow.">101</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Decorations -->
+	<Tutorial id="25" triggerType="always" triggerValue="0" name="Looking Good!" description="Decorate your town to keep your villagers happy and productive.  Your friends might also stop by, so be sure to impress them!">
+		<Prerequisite type="tutorial">24</Prerequisite>
+		<Reward>
+			<Resource id="1">10</Resource>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+
+	<!-- Increase your Land
+		<Resource id="1">100</Resource>
+	-->
+	<Tutorial id="27" triggerType="always" triggerValue="0" name="Expand the Land!" description="Your town is filling up, so let's buy more land!  Tap the hammer icon, select expansions, then select 'Land Expansion 1.'">
+		<Prerequisite type="tutorial">25</Prerequisite>
+		<Reward>
+			<Resource id="1">300</Resource>
+			<Resource id="10">200</Resource>
+		</Reward>
+		<Objective first="56" second="0">landSize</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="no" workers="no" haulers="no" sell="yes" friendShop="no" message="Locked! Expand your land.">
+			<Allow energy="16" message="Locked! You have enough Wheat. Collect it and sell it for the gold you need.">11</Allow>
+			<AllowConsumable number="1">1</AllowConsumable>
+		</Lock>
+	</Tutorial>
+
+	<!-- LEVEL UP -->
+
+	<!-- Bakery
+			<Resource id="1">300</Resource>
+			<Resource id="10">250</Resource>
+			<Resource id="20">100</Resource>
+	-->
+	<!-- We should make this a level based condition -->
+	<Tutorial id="28" triggerType="always" triggerValue="0" name="Baker's Shop" description="Your village expanded!  Now your villagers want a Bakery to make delicious treats that earn gold and XP.  Build then Hurry a Baker's Shop now!">
+		<Prerequisite type="tutorial">27</Prerequisite>
+		<Reward>
+			<!--Resource id="40">50</Resource-->
+		</Reward>
+		<Objective first="35" second="1">build</Objective>
+
+		<Lock world="yes" buildings="yes" consumables="yes" energy="no" workers="no" haulers="no" sell="no" friendShop="no" market="no" message="Locked! Build a Bakery.">
+			<Allow energy="10" message="Locked! You have enough Wood now for your Bakery.">8</Allow>
+			<Allow build="1" message="Locked! Wait for your Bakery to finish building.">35</Allow>
+		</Lock>
+	</Tutorial>
+
+	<!-- Shops -->
+	<Tutorial id="29" triggerType="always" triggerValue="0" name="Shops" description="Earn more gold by making things in shops instead of selling things at the market.  It will take longer, but you can use Magic Beans to Hurry!">
+		<Prerequisite type="tutorial">28</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Use Bakery -->
+	<Tutorial id="30" triggerType="always" triggerValue="0" name="Get Baking!" description="To bake goods, tap the Baker's Shop, then choose a delicious item to bake! When it's finished, tap the Baker's Shop again to collect your profit.">
+		<Prerequisite type="tutorial">29</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="35" second="-1">useShop</Objective>
+		<Lock world="yes" buildings="no" consumables="no" energy="no" workers="no" haulers="no" sell="no" friendShop="no" message="Locked! Collect the wood.">
+		</Lock>
+	</Tutorial>
+
+	<!-- Explain Market goes live -->
+	<Tutorial id="31" triggerType="always" triggerValue="0" name="Community" description="Keep an eye on the market. Prices change as you and other players use it. Remember to stop by your friend's towns to see how they are doing!">
+		<Prerequisite type="tutorial">30</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Trading -->
+	<Tutorial id="32" triggerType="always" triggerValue="0" name="Visit Friends" description="When visiting a friend's town, watch for buildings with a $ over them. You can trade at these buildings.">
+		<Prerequisite type="tutorial">31</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Trading -->
+	<Tutorial id="33" triggerType="always" triggerValue="0" name="Make a Trade" description="Try making a trade now. Press the glowing friends button below and go make a trade with a friend." secondDescription="Good order! Now tap the Cottage button to go back home.">
+		<Prerequisite type="tutorial">32</Prerequisite>
+		<Reward>
+			<Resource id="1">10</Resource>
+		</Reward>
+		<Lock world="no" buildings="no" consumables="no" energy="no" workers="no" haulers="no" sell="no" friendShop="yes" message="Complete a trade first!"></Lock>
+		<Objective first="0" second="0">trade</Objective>
+	</Tutorial>
+
+	<!-- Trade done -->
+	<Tutorial id="34" triggerType="always" triggerValue="0" name="Trade Arrived!" description="The trade goods have arrived sooner than expected! When trading with friends, you will have to wait for them to accept and the job to finish.">
+		<Prerequisite type="tutorial">33</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- End -->
+	<Tutorial id="35" triggerType="always" triggerValue="0" name="GREAT JOB!" description="You've got everything you need to keep growing your town, so keep building more houses and shops gain new villagers and resources!">
+		<Prerequisite type="tutorial">34</Prerequisite>
+		<Reward energy="1">
+			 <ShowPromptToRegister />
+		</Reward>
+		<Objective first="0" second="0">message</Objective>
+	</Tutorial>
+
+	<!-- Quarry -->
+	<Tutorial id="36" triggerType="always" triggerValue="0" name="Quarry" description="Your town is progressing nicely, but new buildings will require rock.  Build a Quarry to collect rock.">
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="tutorial">35</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="9" second="1">build</Objective>
+	</Tutorial>
+
+	<!-- Tower -->
+	<Tutorial id="37" triggerType="always" triggerValue="0" name="Build a Tower" description="Now that you have rocks, build a Tower to delight the town! Building it will be a large task, but I know you can do it!">
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="tutorial">36</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="2" second="1">build</Objective>
+	</Tutorial>
+
+	<!-- Mill -->
+	<Tutorial id="38" triggerType="always" triggerValue="0" name="Need Supplies" description="Lumber Yards turn Wood into Lumber. Tap the Lumber Yard and select 'Supply' to move Wood from the Stockpile and assign a hauler to get started.">
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="building">15</Prerequisite>
+		<Prerequisite type="tutorial">37</Prerequisite>
+		<Reward>
+		</Reward>
+		<Objective first="10" second="0">supply</Objective>
+	</Tutorial>
+
+	<!-- SUPER IMPORTANT NOTE:
+			Tutorial ids MUST be sequential with the larger numbers always coming after the smaller ones or they will not be saved to the server properly.-->
+
+	</Tutorials>

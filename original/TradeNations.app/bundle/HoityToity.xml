@@ -1,0 +1,179 @@
+
+
+<Objects>
+    <Object id="294" name="Mansion" width="7" height="7" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="5000" >
+		<Description>The Mansion is the creme de la creme of hoity toity.</Description>
+		<Info>The Mansion houses five villagers, and supports up to two adopted villagers!</Info>
+		<IdleAnim name="mansion">115</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="level">35</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+        <BuildMenuAnim name="mansion"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">100000</Resource>
+			<Resource id="11">15000</Resource>
+			<Resource id="21">15000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">10000</Resource>
+			<Resource id="11">1500</Resource>
+			<Resource id="21">1500</Resource>
+		</Sell>
+		<Villagers default="5" purchasable="2"/>
+		<Tax interval="14400.0">
+			<Resources xp="25">
+            	<Resource id="1">35</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>14</UpgradeOf>
+		<UpgradeOf>157</UpgradeOf>
+		<UpgradeOf>158</UpgradeOf>
+		<UpgradeOf>253</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="293" name="Stylist" width="6" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="4500" >
+		<Description>Get a new hairdo at the Stylist!</Description>
+        <Info>Use the Stylist to make great new hairstyles for gold and XP!</Info>
+		<IdleAnim name="barbershop_idle">18</IdleAnim>
+        <BuildMenuAnim name="barbershop_idle" />
+		<BuildingWorkAnim male="barbershop_active" female="barbershop_active" maleIdle="barbershop_idle" femaleIdle="barbershop_idle"/>
+		<Sounds select="49"/>
+		<Prerequisite type="level">45</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+		<Cost>
+			<Resource id="1">12500</Resource>
+			<Resource id="11">4000</Resource>
+			<Resource id="21">3500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">1250</Resource>
+			<Resource id="11">400</Resource>
+			<Resource id="21">350</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>117</Item>
+		<Item>118</Item>
+		<Item>119</Item>
+		<Item>120</Item>
+		<Item>121</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	  <Object id="277" name="Badminton Court" width="9" height="5" type="decoration" availableFromStore="0" upgradeID="0" xpValue="9750">
+		<IdleAnim name="badminton"></IdleAnim>
+		<Info>Tennis? No. Volleyball? Nope. Badminton? Yes! Badminton Court grants a bonus to the XP and Gold received from all Shops by 10% (500% Maximum)</Info>
+		<Prerequisite type="level">55</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+        <BuildMenuAnim name="badminton"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>150</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1950</Resource>
+			<Resource id="11">1000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="10">
+            	<Resource id="1" percent="10"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="278" name="Gazebo" width="4" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="4750">
+		<IdleAnim name="gazebo"></IdleAnim>
+		<Info>Have a fun tea party in your BRAND. NEW. GAZEBO! Gazebo grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">45</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+        <BuildMenuAnim name="gazebo"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">125000</Resource>
+			<Resource id="21">15000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">12500</Resource>
+			<Resource id="21">1500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.65">
+            	<Resource id="1" percent="0.65"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="279" name="Elvis" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="37500">
+		<IdleAnim name="poodle"></IdleAnim>
+		<Info>Elvis lives!...as a very, very spoiled Poodle. He has papers. Elvis grants a bonus to the XP and Gold received from all Shops by 75% (500% Maximum)</Info>
+		<Prerequisite type="level">40</Prerequisite>
+        <BuildMenuAnim name="poodle"></BuildMenuAnim>
+		<Sounds select="39"/>
+		<Cost>
+			<MagicBeans>750</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">7500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="75">
+            	<Resource id="1" percent="75"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+    <Object id="281" name="Lawn Table" width="2" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="25000">
+		<IdleAnim name="lawntable"></IdleAnim>
+		<Info>This is the most luxurious lawn furniture in the world.</Info>
+		<Prerequisite type="level">43</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+        <BuildMenuAnim name="lawntable"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">120000</Resource>
+			<Resource id="11">15000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">12000</Resource>
+			<Resource id="11">1500</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="292" name="Pool" width="8" height="8" type="decoration" availableFromStore="0" upgradeID="0" xpValue="18500">
+		<IdleAnim name="pooltime"></IdleAnim>
+		<Info>Cannonball! The Pool grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">65</Prerequisite>
+		<Prerequisite type="building">221</Prerequisite>
+        <BuildMenuAnim name="pooltime"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">1250000</Resource>
+			<Resource id="11">6500</Resource>
+			<Resource id="21">50000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">125000</Resource>
+			<Resource id="11">650</Resource>
+			<Resource id="21">5000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.75">
+            	<Resource id="1" percent="0.75"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+</Objects>
+

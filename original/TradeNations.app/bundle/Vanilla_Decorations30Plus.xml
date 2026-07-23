@@ -1,0 +1,388 @@
+
+
+<Objects>
+
+    <Object id="205" name="Holly Bush" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2500">
+		<IdleAnim name="BUSH3"></IdleAnim>
+		<Info>Holly Bushes grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">35</Prerequisite>
+        <BuildMenuAnim name="BUSH3"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">5000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.06">
+            	<Resource id="1" percent="0.06"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="206" name="Blueberry Bush" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3000">
+		<IdleAnim name="BUSH2"></IdleAnim>
+		<Info>Blueberry Bushes grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">37</Prerequisite>
+        <BuildMenuAnim name="BUSH2"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">6000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">600</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.07">
+            	<Resource id="1" percent="0.07"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="207" name="Raspberry Bush" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3250">
+		<IdleAnim name="BUSH1"></IdleAnim>
+		<Info>Raspberry Bushes grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">39</Prerequisite>
+        <BuildMenuAnim name="BUSH1"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">6500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">650</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.08">
+            	<Resource id="1" percent="0.08"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- Apple Tree -->
+     <Object id="225" name="Apple Tree" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="APPLETREE"></IdleAnim>
+		<Info>Apple Trees grant a bonus to the XP and Gold received from all Shops by 1.25% (500% Maximum)</Info>
+		<Prerequisite type="level">28</Prerequisite>
+        <BuildMenuAnim name="APPLETREE"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>25</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="10">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.25">
+            	<Resource id="1" percent="1.25"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="227" name="Spiral Topiary" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="10000">
+		<IdleAnim name="topiary01_med"></IdleAnim>
+		<Info>Spiral Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">42</Prerequisite>
+        <BuildMenuAnim name="topiary01_med"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">30000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">3000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.45">
+            	<Resource id="1" percent="0.45"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="228" name="Ball Topiary" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="11000">
+		<IdleAnim name="topiary02_med"></IdleAnim>
+		<Info>Ball Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">44</Prerequisite>
+        <BuildMenuAnim name="topiary02_med"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">35000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">3500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.55">
+            	<Resource id="1" percent="0.55"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="229" name="Flower Topiary" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="12000">
+		<IdleAnim name="topiary03_med"></IdleAnim>
+		<Info>Flower Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">46</Prerequisite>
+        <BuildMenuAnim name="topiary03_med"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">40000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">4000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.6">
+            	<Resource id="1" percent="0.6"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="230" name="Water Fountain" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="waterfountain"></IdleAnim>
+		<Info>Water Fountains grant a bonus to the XP and Gold received from all Shops by 2.25% (500% Maximum)</Info>
+		<Prerequisite type="level">34</Prerequisite>
+        <BuildMenuAnim name="waterfountain"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>40</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">400</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2.25">
+            	<Resource id="1" percent="2.25"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="238" name="Sundial" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="10000">
+		<IdleAnim name="sundial"></IdleAnim>
+		<Info>Sundials grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="level">38</Prerequisite>
+        <BuildMenuAnim name="sundial"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">20000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">2000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.30">
+            	<Resource id="1" percent="0.30"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="239" name="Gold Sundial" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="250000">
+		<IdleAnim name="sundial_gold"></IdleAnim>
+		<Info>You're not elite if you don't have the Gold Sundial.</Info>
+		<Prerequisite type="level">50</Prerequisite>
+        <BuildMenuAnim name="sundial_gold"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">1000000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100000</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="254" name="Koi Pond" width="8" height="5" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+        <Info>The Koi Pond is the epitome of serenity, and grants a bonus to the XP and Gold received from all Shops of 1.2% (500% Maximum)</Info>
+		<IdleAnim name="koipond_active">138</IdleAnim>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">40</Prerequisite>
+        <BuildMenuAnim name="koipond_active"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>30</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">3000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.2">
+            	<Resource id="1" percent="1.2"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="255" name="Ling" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="30000">
+		<IdleAnim name="panda_active"></IdleAnim>
+		<Info>Cute Panda! Ling, mother of Sneezy the baby panda, grants a bonus to the XP and Gold received from all Shops by 33.3%! (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">38</Prerequisite>
+        <BuildMenuAnim name="panda_active"></BuildMenuAnim>
+		<Cost>
+			<MagicBeans>500</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">5000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="33.3">
+            	<Resource id="1" percent="33.3"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="260" name="Torii" width="4" height="1" type="decoration" availableFromStore="0" upgradeID="0" blockVillager="no" xpValue="8000">
+		<IdleAnim name="gate"></IdleAnim>
+		<Info>A very cool gate, imported straight from Japan. The Torii grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">36</Prerequisite>
+        <BuildMenuAnim name="gate"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">18000</Resource>
+			<Resource id="11">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1800</Resource>
+			<Resource id="11">250</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.26">
+            	<Resource id="1" percent="0.26"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+        <Decoration type="wall" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="261" name="Lantern" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="3500">
+		<IdleAnim name="lantern_active"></IdleAnim>
+		<Info>Let there be light! ...with this lantern that grants a small bonus to the XP and Gold received from all Shops. (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">37</Prerequisite>
+        <BuildMenuAnim name="lantern_active"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">7500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">750</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.09">
+            	<Resource id="1" percent="0.09"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="262" name="Zen Garden" width="6" height="6" type="decoration" availableFromStore="0" upgradeID="0" xpValue="10500">
+		<IdleAnim name="zengarden"></IdleAnim>
+		<Info>Rake sand for relaxation...a small bonus to the XP and Gold received from all Shops. (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">43</Prerequisite>
+        <BuildMenuAnim name="zengarden"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">12500</Resource>
+			<Resource id="21">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1250</Resource>
+			<Resource id="21">100</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.12">
+            	<Resource id="1" percent="0.12"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="266" name="Sneezy" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="7500">
+		<IdleAnim name="panda_baby"></IdleAnim>
+		<Info>Everybody loves Sneezy the baby panda! Sneezy grants a bonus to the XP and Gold received from all Shops by 10.5% (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">35</Prerequisite>
+        <BuildMenuAnim name="panda_baby"></BuildMenuAnim>
+		<Sounds select="55"/>
+		<Cost>
+			<MagicBeans>150</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="10.5">
+            	<Resource id="1" percent="10.5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="269" name="Dragon Statue" width="3" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="100000">
+		<IdleAnim name="dragon_statue"></IdleAnim>
+		<Info>Dragon Statue grants a bonus to the XP and Gold received from all Shops by 3%! (500% Maximum)</Info>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">52</Prerequisite>
+        <BuildMenuAnim name="dragon_statue"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">500000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">50000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="3.0">
+            	<Resource id="1" percent="3.0"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="271" name="Prize Horse" width="2" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="5000">
+		<IdleAnim name="horse_black_active"></IdleAnim>
+		<Info>The Prize Horse has very straight teeth and grants a bonus to the XP and Gold received from all Shops by 5%! (500% Maximum)</Info>
+		<Sounds select="51"/>
+		<Prerequisite type="level">41</Prerequisite>
+        <BuildMenuAnim name="horse_black_active"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">1500000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">150000</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="5">
+            	<Resource id="1" percent="5"/>
+			</Resources>
+        </Buffer>
+		<BuildTime>0</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+</Objects>
+

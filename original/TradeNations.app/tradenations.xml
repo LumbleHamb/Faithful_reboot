@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE root [
+<!ELEMENT root (TextpoolIndex)*>
+<!ELEMENT TextpoolIndex EMPTY>
+<!ATTLIST TextpoolIndex
+    val CDATA #IMPLIED
+    name CDATA #IMPLIED
+  >
+ ]>
+<root>
+	<TextpoolIndex name="Yes" val="0"/>
+	<TextpoolIndex name="No" val="1"/>
+	<TextpoolIndex name="On" val="2"/>
+	<TextpoolIndex name="Off" val="3"/>
+	<TextpoolIndex name="Locked" val="4"/>
+	<TextpoolIndex name="Main Menu Title" val="5"/>
+	<TextpoolIndex name="Main Login Network" val="6"/>
+	<TextpoolIndex name="Main Login Button" val="7"/>
+	<TextpoolIndex name="Login Menu Title" val="8"/>
+	<TextpoolIndex name="Login Play Button" val="9"/>
+	<TextpoolIndex name="Login Button" val="10"/>
+	<TextpoolIndex name="New Game" val="11"/>
+	<TextpoolIndex name="Build Menu" val="12"/>
+	<TextpoolIndex name="Gather Button" val="13"/>
+	<TextpoolIndex name="Resource Stack Carry" val="14"/>
+	<TextpoolIndex name="Mill Button" val="15"/>
+	<TextpoolIndex name="Sell Button" val="16"/>
+	<TextpoolIndex name="Villager Work Place" val="17"/>
+	<TextpoolIndex name="Villager Worker" val="18"/>
+	<TextpoolIndex name="Villager Hauler" val="19"/>
+	<TextpoolIndex name="Build Mine" val="20"/>
+	<TextpoolIndex name="MarketTitle" val="21"/>
+	<TextpoolIndex name="BuyAndSellMarketSubtitle" val="22"/>
+	<TextpoolIndex name="Reorganize Text" val="23"/>
+	<TextpoolIndex name="Place Building Text" val="24"/>
+	<TextpoolIndex name="Place Building Upgrade Only1" val="25"/>
+	<TextpoolIndex name="Place Building Upgrade Only2" val="26"/>
+	<TextpoolIndex name="Place Building Upgrade Only3" val="27"/>
+	<TextpoolIndex name="Market Buy" val="28"/>
+	<TextpoolIndex name="Market Sell" val="29"/>
+	<TextpoolIndex name="Build Time Remaining" val="30"/>
+	<TextpoolIndex name="Empty Text" val="31"/>
+	<TextpoolIndex name="Villager Occupation" val="32"/>
+	<TextpoolIndex name="Villager Activity" val="33"/>
+	<TextpoolIndex name="Mayor Energy" val="34"/>
+	<TextpoolIndex name="Dropdown Nations" val="35"/>
+	<TextpoolIndex name="Dropdown Logout" val="36"/>
+	<TextpoolIndex name="Dropdown Debug" val="37"/>
+	<TextpoolIndex name="Nations Dropdown MyLand" val="38"/>
+	<TextpoolIndex name="Nations Dropdown Logout" val="39"/>
+	<TextpoolIndex name="View Friends Land Dropdown MyLand" val="40"/>
+	<TextpoolIndex name="View Friends Land Dropdown Nations" val="41"/>
+	<TextpoolIndex name="View Friends Land Dropdown Logout" val="42"/>
+	<TextpoolIndex name="Create Nation" val="43"/>
+	<TextpoolIndex name="Stack Size" val="44"/>
+	<TextpoolIndex name="Mill Trade Sell" val="45"/>
+	<TextpoolIndex name="Shop Sell" val="46"/>
+	<TextpoolIndex name="Shop Cost" val="47"/>
+	<TextpoolIndex name="Shop Ready" val="48"/>
+	<TextpoolIndex name="Powerup Lasts" val="49"/>
+	<TextpoolIndex name="Camp Collect" val="50"/>
+	<TextpoolIndex name="Camp Supply" val="51"/>
+	<TextpoolIndex name="Warehouse Subtitle" val="52"/>
+	<TextpoolIndex name="Adopt Villager" val="53"/>
+	<TextpoolIndex name="House Taxes" val="54"/>
+	<TextpoolIndex name="Gold Earned In" val="55"/>
+	<TextpoolIndex name="Build Text" val="56"/>
+	<TextpoolIndex name="Build Energy Button" val="57"/>
+	<TextpoolIndex name="Shop Energy Button" val="58"/>
+	<TextpoolIndex name="Place Villager Text" val="59"/>
+	<TextpoolIndex name="Select Job" val="60"/>
+	<TextpoolIndex name="Mayor" val="61"/>
+	<TextpoolIndex name="Mayor Gain Energy" val="62"/>
+	<TextpoolIndex name="Assign No Openings" val="63"/>
+	<TextpoolIndex name="Assign Full" val="64"/>
+	<TextpoolIndex name="Not Enough Energy" val="65"/>
+	<TextpoolIndex name="Resources Full" val="66"/>
+	<TextpoolIndex name="Need Resource" val="67"/>
+	<TextpoolIndex name="Add A Worker" val="68"/>
+	<TextpoolIndex name="No Energy Text" val="69"/>
+	<TextpoolIndex name="No Energy Powerup Text" val="70"/>
+	<TextpoolIndex name="Resource Full Text1" val="71"/>
+	<TextpoolIndex name="Resource Full Text2" val="72"/>
+	<TextpoolIndex name="Need Resource Text1" val="73"/>
+	<TextpoolIndex name="Need Resource Text2" val="74"/>
+	<TextpoolIndex name="Add A Worker Text" val="75"/>
+	<TextpoolIndex name="Cant Afford Item" val="76"/>
+	<TextpoolIndex name="Tutorial Reward" val="77"/>
+	<TextpoolIndex name="Get More Coins" val="78"/>
+	<TextpoolIndex name="Your Nation" val="79"/>
+	<TextpoolIndex name="My Town" val="80"/>
+	<TextpoolIndex name="Level Up" val="81"/>
+	<TextpoolIndex name="Level Up Max" val="82"/>
+	<TextpoolIndex name="Level Up Unlocked" val="83"/>
+	<TextpoolIndex name="Level Up Unlocked Nothing" val="84"/>
+	<TextpoolIndex name="Assign No Worker Title" val="85"/>
+	<TextpoolIndex name="Assign No Worker" val="86"/>
+	<TextpoolIndex name="Hurrying" val="87"/>
+	<TextpoolIndex name="Market Sell Fail" val="88"/>
+	<TextpoolIndex name="Market Buy Fail" val="89"/>
+	<TextpoolIndex name="Market Sell Fail2" val="90"/>
+	<TextpoolIndex name="Market Buy Fail2" val="91"/>
+	<TextpoolIndex name="Market Under Construction" val="92"/>
+	<TextpoolIndex name="Market Sale Price Zero" val="93"/>
+	<TextpoolIndex name="Market Buy Price Zero" val="94"/>
+	<TextpoolIndex name="Market Storage Full" val="95"/>
+	<TextpoolIndex name="Market Awaiting Rates Title" val="96"/>
+	<TextpoolIndex name="Market Awaiting Rates" val="97"/>
+	<TextpoolIndex name="Market No Goods" val="98"/>
+	<TextpoolIndex name="Market No Goods2" val="99"/>
+	<TextpoolIndex name="Market No Goods3" val="100"/>
+	<TextpoolIndex name="Sell Last Store Title" val="101"/>
+	<TextpoolIndex name="Sell Last Store" val="102"/>
+	<TextpoolIndex name="Stash Last Store Title" val="103"/>
+	<TextpoolIndex name="Stash Last Store" val="104"/>
+	<TextpoolIndex name="Stash Inventory Full Title" val="105"/>
+	<TextpoolIndex name="Stash Inventory Full" val="106"/>
+	<TextpoolIndex name="Stash Job In Progress Title" val="107"/>
+	<TextpoolIndex name="Stash Job In Progress" val="108"/>
+	<TextpoolIndex name="Trade Time" val="109"/>
+	<TextpoolIndex name="Trade Reward" val="110"/>
+	<TextpoolIndex name="Trade Returned" val="111"/>
+	<TextpoolIndex name="Trade Accept" val="112"/>
+	<TextpoolIndex name="Trade Reject" val="113"/>
+	<TextpoolIndex name="Trade Request1" val="114"/>
+	<TextpoolIndex name="Trade Request2" val="115"/>
+	<TextpoolIndex name="Trade Expired Title" val="116"/>
+	<TextpoolIndex name="Trade Expired Owner1" val="117"/>
+	<TextpoolIndex name="Trade Expired Owner2" val="118"/>
+	<TextpoolIndex name="Trade Expired Other1" val="119"/>
+	<TextpoolIndex name="Trade Expired Other2" val="120"/>
+	<TextpoolIndex name="Trade Declined Title" val="121"/>
+	<TextpoolIndex name="Trade Declined1" val="122"/>
+	<TextpoolIndex name="Trade Declined2" val="123"/>
+	<TextpoolIndex name="Trade Declined3" val="124"/>
+	<TextpoolIndex name="Trade Done Title" val="125"/>
+	<TextpoolIndex name="Trade Done1" val="126"/>
+	<TextpoolIndex name="Trade Done2" val="127"/>
+	<TextpoolIndex name="Trade Done3" val="128"/>
+	<TextpoolIndex name="Trade In Progress" val="129"/>
+	<TextpoolIndex name="Trade Cannot Sell" val="130"/>
+	<TextpoolIndex name="Trade Cannot Stash" val="131"/>
+	<TextpoolIndex name="Build Menu Prereqs" val="132"/>
+	<TextpoolIndex name="Build Already" val="133"/>
+	<TextpoolIndex name="Build Owned" val="134"/>
+	<TextpoolIndex name="Place Upgrade Home Title" val="135"/>
+	<TextpoolIndex name="Place Upgrade Home" val="136"/>
+	<TextpoolIndex name="Collect No Room Title" val="137"/>
+	<TextpoolIndex name="Collect No Room" val="138"/>
+	<TextpoolIndex name="Sell Confirm Title" val="139"/>
+	<TextpoolIndex name="Sell Confirm1" val="140"/>
+	<TextpoolIndex name="Sell Confirm2" val="141"/>
+	<TextpoolIndex name="Sell Confirm3" val="142"/>
+	<TextpoolIndex name="Sell Confirm Nothing" val="143"/>
+	<TextpoolIndex name="Push Stock Full1" val="144"/>
+	<TextpoolIndex name="Push Stock Full2" val="145"/>
+	<TextpoolIndex name="Push Full1" val="146"/>
+	<TextpoolIndex name="Push Full2" val="147"/>
+	<TextpoolIndex name="Push Empty1" val="148"/>
+	<TextpoolIndex name="Push Empty2" val="149"/>
+	<TextpoolIndex name="Push Shop Done1" val="150"/>
+	<TextpoolIndex name="Push Shop Done2" val="151"/>
+	<TextpoolIndex name="Push Shop Done3" val="152"/>
+	<TextpoolIndex name="Lost Connection Title" val="153"/>
+	<TextpoolIndex name="Lost Connection" val="154"/>
+	<TextpoolIndex name="Item of the Day" val="155"/>
+	<TextpoolIndex name="Item of the Day No" val="156"/>
+	<TextpoolIndex name="Item of the Day Buy" val="157"/>
+	<TextpoolIndex name="Featured App" val="158"/>
+	<TextpoolIndex name="Featured App Award" val="159"/>
+	<TextpoolIndex name="Featured App No" val="160"/>
+	<TextpoolIndex name="Featured App Yes" val="161"/>
+	<TextpoolIndex name="Facebook Share" val="162"/>
+	<TextpoolIndex name="Twitter Share" val="163"/>
+	<TextpoolIndex name="Spending Beans" val="164"/>
+</root>

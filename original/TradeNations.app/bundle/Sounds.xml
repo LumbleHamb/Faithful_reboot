@@ -1,0 +1,67 @@
+<Sound id="0" extension="caf" volume="1.0" isMusic="1">theme_tune</Sound>
+
+<Sound id="1" extension="caf" volume="1.0">menu_back</Sound>
+<Sound id="2" extension="caf" volume="1.0">menu_cancel</Sound>
+<Sound id="3" extension="caf" volume="1.0">menu_select</Sound>
+<Sound id="4" extension="caf" volume="1.0">level_up</Sound>
+<!--Sound id="5" extension="caf" volume="1.0">construction</Sound-->
+
+<Sound id="6" extension="caf" volume="1.0">bakery</Sound>
+<Sound id="7" extension="caf" volume="1.0">carpenters_shop</Sound>
+<Sound id="8" extension="caf" volume="1.0">farm</Sound>
+<!--Sound id="9" extension="caf" volume="1.0">lumberyard</Sound-->
+<Sound id="10" extension="caf" volume="1.0">loom</Sound>
+<Sound id="11" extension="caf" volume="1.0">pen</Sound>
+<Sound id="12" extension="caf" volume="1.0">quarry</Sound>
+<!--Sound id="13" extension="caf" volume="1.0">sculptershall</Sound-->
+<Sound id="14" extension="caf" volume="1.0">tailor</Sound>
+<Sound id="15" extension="caf" volume="1.0">house</Sound>
+<Sound id="16" extension="caf" volume="1.0">stone_cutter</Sound>
+<Sound id="17" extension="caf" volume="1.0">buy_sell_buttons</Sound>
+
+<Sound id="18" extension="caf" volume="1.0">male_2</Sound>
+<!--Sound id="19" extension="caf" volume="1.0">male_3</Sound-->
+
+<Sound id="23" extension="caf" volume="1.0">female_1</Sound>
+<Sound id="24" extension="caf" volume="1.0">female_2</Sound>
+<Sound id="25" extension="caf" volume="1.0">female_3</Sound>
+<Sound id="26" extension="caf" volume="1.0">female_4</Sound>
+<Sound id="27" extension="caf" volume="1.0">female_5</Sound>
+
+<Sound id="28" extension="caf" volume="1.0">male_1</Sound>
+
+<Sound id="29" extension="caf" volume="1.0">01_mssg_pop_up</Sound>
+<Sound id="30" extension="caf" volume="1.0">04_rotate_bldng</Sound>
+<Sound id="31" extension="caf" volume="1.0">05_stock_pile_wood</Sound>
+<Sound id="32" extension="caf" volume="1.0">06_stock_pile_lumber</Sound>
+<Sound id="33" extension="caf" volume="1.0">07_stock_pile_rock</Sound>
+<Sound id="34" extension="caf" volume="1.0">08_stock_pile_stone</Sound>
+<Sound id="35" extension="caf" volume="1.0">09_stock_pile_wheat</Sound>
+<Sound id="36" extension="caf" volume="1.0">10_stock_pile_wool</Sound>
+<Sound id="37" extension="caf" volume="1.0">11_stock_pile_cloth</Sound>
+<Sound id="38" extension="caf" volume="1.0">12_dis_appear</Sound>
+<Sound id="39" extension="caf" volume="1.0">bark</Sound>
+<Sound id="40" extension="caf" volume="1.0">pub</Sound>
+<Sound id="41" extension="caf" volume="1.0">BigTop</Sound>
+<Sound id="42" extension="caf" volume="1.0">Bookshop</Sound>
+<Sound id="43" extension="caf" volume="1.0">Theater</Sound>
+<Sound id="44" extension="caf" volume="1.0">FlowerShop</Sound>
+<Sound id="45" extension="caf" volume="1.0">Moo</Sound>
+
+<Sound id="46" extension="caf" volume="1.0">Chicken</Sound>
+<Sound id="47" extension="caf" volume="1.0">Meow</Sound>
+
+<Sound id="48" extension="caf" volume="1.0">01_tea_shop</Sound>
+<Sound id="49" extension="caf" volume="1.0">02_sushi_shop</Sound>
+<Sound id="50" extension="caf" volume="1.0">03_horse_standard</Sound>
+<Sound id="51" extension="caf" volume="1.0">04_prize_horse</Sound>
+<Sound id="52" extension="caf" volume="1.0">05_karate</Sound>
+<Sound id="53" extension="caf" volume="1.0">06_tai_chi</Sound>
+
+<Sound id="54" extension="caf" volume="1.0">schoolhouse</Sound>
+<Sound id="55" extension="caf" volume="1.0">panda_sneeze</Sound>
+
+<Sound id="56" extension="caf" volume="1.0">bear</Sound>
+<Sound id="57" extension="caf" volume="1.0">dog_big</Sound>
+<Sound id="58" extension="caf" volume="1.0">giggle</Sound>
+<Sound id="59" extension="caf" volume="1.0">goat</Sound>

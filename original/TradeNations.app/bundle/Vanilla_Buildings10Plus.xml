@@ -1,0 +1,969 @@
+
+
+<Objects>
+	<Object id="5" name="Castle" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<TownHall level="4" />
+		<IdleAnim name="CASTLE_1">35</IdleAnim>
+		<BuildMenuAnim name="CASTLE_1">159</BuildMenuAnim>
+        <Info>The Castle is an upgrade to the Fort.  It allows you to build more advanced buildings.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+        <Prerequisite type="level">20</Prerequisite>
+		<Prerequisite type="building">4</Prerequisite>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+
+		<Cost>
+			<Resource id="1">20000</Resource>
+			<Resource id="11">10000</Resource>
+		 	<Resource id="21">5000</Resource>
+			<Resource id="51">2500</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">4</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="221" name="Citadel" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="200000" >
+		<TownHall level="5" />
+		<IdleAnim name="CITADEL">35</IdleAnim>
+		<BuildMenuAnim name="CITADEL">159</BuildMenuAnim>
+        <Info>The Citadel is an upgrade to the Castle.  It's epic.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+        <Prerequisite type="level">30</Prerequisite>
+		<Prerequisite type="building">5</Prerequisite>
+
+		<Cost>
+			<Resource id="1">500000</Resource>
+			<Resource id="21">75000</Resource>
+			<Resource id="11">50000</Resource>
+			<Resource id="51">30000</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">5</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+<!-- STONE HOUSE -->
+	<Object id="14" name="Stone House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="1500" >
+		<Description>Houses four villagers</Description>
+        <Info>The Stone House houses four villagers.</Info>
+		<IdleAnim name="STONEHOUSE">34</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">14</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">250</Resource>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="21">25</Resource>
+		</Sell>
+		<Villagers default="4" purchasable="1"/>
+		<Tax interval="43200.0">
+			<Resources xp="10">
+            	<Resource id="1">20</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>13</UpgradeOf>
+		<UpgradeOf>142</UpgradeOf>
+		<UpgradeOf>143</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<!-- STONE HOUSE -->
+	<Object id="157" name="Sunshine House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="1500" >
+		<Description>Houses four villagers</Description>
+        <Info>The Sunshine House houses four villagers.</Info>
+		<IdleAnim name="STONEHOUSE1">150</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">14</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">250</Resource>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="21">25</Resource>
+		</Sell>
+		<Villagers default="4" purchasable="1"/>
+		<Tax interval="43200.0">
+			<Resources xp="10">
+            	<Resource id="1">20</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>13</UpgradeOf>
+		<UpgradeOf>142</UpgradeOf>
+		<UpgradeOf>143</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="158" name="Skyblue House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="1500" >
+		<Description>Houses four villagers</Description>
+        <Info>The Skyblue House houses four villagers.</Info>
+		<IdleAnim name="STONEHOUSE2">151</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">14</Prerequisite>
+		<Cost>
+		<MagicBeans>30</MagicBeans>
+			<!-- <Resource id="1">2000</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">250</Resource> -->
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="21">25</Resource>
+		</Sell>
+		<Villagers default="4" purchasable="1"/>
+		<Tax interval="43200.0">
+			<Resources xp="10">
+            	<Resource id="1">20</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>13</UpgradeOf>
+		<UpgradeOf>142</UpgradeOf>
+		<UpgradeOf>143</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<!-- STONE CUTTER -->
+	<Object id="17" name="Stone Cutter" width="7" height="5" type="plant" availableFromStore="1" upgradeID="0" xpValue="2750" >
+		<Description>Shapes Rock into Cut Stone</Description>
+        <Info>The Stone Cutter shapes Rock into Cut Stone.  Cut Stone is used for more advanced buildings and jobs in the Sculptor Shop.</Info>
+		<Action>Shapes</Action>
+		<IdleAnim name="STONECUTTER">27</IdleAnim>
+		<BuildingWorkAnim male="STONECUTTERACTIVE" female="STONECUTTERACTIVE" maleIdle="STONECUTTERACTIVE" femaleIdle="STONECUTTERACTIVE"/>
+		<Sounds select="16"/>
+		<Prerequisite type="building">3</Prerequisite>
+		<Prerequisite type="level">12</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="20">1250</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">200</Resource>
+			<Resource id="20">125</Resource>
+		</Sell>
+		<WorkerType>Stone Cutter</WorkerType>
+		<Workers workerMax="2" haulerMax="1" />
+		<Produce hurryCost="2">
+			<Input resource_id="20" amount="2" maxInputStackSize="150"/>
+			<Output resource_id="21" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0" villagerResourcesPerHour="15.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<Item>26</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="23" name="Loom" width="7" height="5" type="plant" availableFromStore="1" upgradeID="0" xpValue="4250" >
+		<Description>Weaves Wool into Cloth</Description>
+        <Info>The Loom weaves Wool into Cloth.  Cloth is used for more advanced buildings and jobs in the Tailor Shop.</Info>
+		<Action>Weaves</Action>
+		<IdleAnim name="LOOM">23</IdleAnim>
+		<BuildMenuAnim name="LOOMACTIVEMALE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="LOOMACTIVEMALE" female="LOOMACTIVEFEMALE" maleIdle="LOOMACTIVEMALEIDLE" femaleIdle="LOOMACTIVEFEMALEIDLE"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">14</Prerequisite>
+		<Sounds select="10"/>
+		<Cost>
+			<Resource id="1">4000</Resource>
+			<Resource id="11">1500</Resource>
+			<Resource id="21">900</Resource>
+			<Resource id="50">2000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">400</Resource>
+			<Resource id="11">150</Resource>
+			<Resource id="21">90</Resource>
+			<Resource id="50">200</Resource>
+		</Sell>
+		<WorkerType>Weaver</WorkerType>
+		<Workers workerMax="2" haulerMax="2" />
+		<Produce hurryCost="2">
+			<Input resource_id="50" amount="2" maxInputStackSize="150"/>
+			<Output resource_id="51" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0" villagerResourcesPerHour="20.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<Item>27</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="31" name="Sculptor Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="2000" >
+		<Description>Creates fantastic sculptures for sale</Description>
+        <Info>Use the Sculptor Shop to complete jobs using Rock and Cut Stone.</Info>
+		<IdleAnim name="SCULPTURESHALL">13</IdleAnim>
+		<BuildingWorkAnim male="SCULPTURESHALLACTIVE" female="SCULPTURESHALLACTIVE" maleIdle="SCULPTURESHALLACTIVE" femaleIdle="SCULPTURESHALLACTIVE"/>
+		<Sounds select="13"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">14</Prerequisite>
+		<Cost>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="21">1100</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">150</Resource>
+			<Resource id="11">60</Resource>
+			<Resource id="21">40</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>20</Item>
+		<Item>23</Item>
+		<Item>22</Item>
+		<Item>24</Item>
+		<Item>21</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="38" name="Pub" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="2000" >
+		<Description>Brew yummy drinks for sale.</Description>
+        <Info>Use the Pub to complete jobs using Wheat.</Info>
+		<IdleAnim name="PUBSHOP">156</IdleAnim>
+		<BuildingWorkAnim male="PUBSHOPACTIVE" female="PUBSHOPACTIVE" maleIdle="PUBSHOPACTIVE" femaleIdle="PUBSHOPACTIVE"/>
+		<Sounds select="40"/>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">16</Prerequisite>
+		<Cost>
+		<Resource id="1">6000</Resource>
+		<Resource id="11">2500</Resource>
+		<Resource id="21">1500</Resource>
+		</Cost>
+<!--		<BuildTime>3600</BuildTime> -->
+			<BuildTime>86400</BuildTime>
+		<Sell>
+	<Resource id="1">600</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>16</Item>
+		<Item>19</Item>
+		<Item>18</Item>
+		<Item>30</Item>
+		<Item>17</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="163" name="Warehouse" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="1500" >
+		<Description>Stores a large amount of resources</Description>
+        <Info>The Warehouse stores up to 20000 of each resource.</Info>
+		<IdleAnim name="WAREHOUSE">17</IdleAnim>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">18</Prerequisite>
+		<Cost>
+			<MagicBeans>30</MagicBeans>
+		</Cost>
+		<BuildTime>36000</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">100</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="20000"></Resource>
+			<Resource id="20" qty="20000"></Resource>
+			<Resource id="40" qty="20000"></Resource>
+			<Resource id="50" qty="20000"></Resource>
+			<Resource id="11" qty="20000"></Resource>
+			<Resource id="21" qty="20000"></Resource>
+			<Resource id="51" qty="20000"></Resource>
+		</Resources>
+		<UpgradeOf>25</UpgradeOf>
+		<UpgradeOf>26</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+
+    <Object id="165" name="Book Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5250">
+		<Description>Creates works of literary genius.</Description>
+        <Info>Use the Book Shop to complete jobs using Wood and Cloth.</Info>
+		<IdleAnim name="BOOKSHOP">13</IdleAnim>
+        <BuildingWorkAnim male="BOOKSHOP_WORKING" female="BOOKSHOP_WORKING" maleIdle="BOOKSHOP_WORKING" femaleIdle="BOOKSHOP_WORKING"/>
+        <Sounds select="42"/>
+		<MaxTouchAreaExtension>3</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">3000</Resource>
+			<Resource id="51">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="51">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>34</Item>
+		<Item>35</Item>
+		<Item>36</Item>
+		<Item>37</Item>
+		<Item>38</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="210" name="Creamery" width="6" height="8" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="2000" >
+		<Description>Makes milky goodness for sale</Description>
+        <Info>Use the Creamery to complete jobs using Wheat.</Info>
+		<Sounds select="45"/>
+		<IdleAnim name="CREAMERY_IDLE" />
+        <BuildMenuAnim name="CREAMERY_IDLE" />
+		<BuildingWorkAnim male="CREAMERY_ACTIVE" female="CREAMERY_ACTIVE" maleIdle="CREAMERY_IDLE" femaleIdle="CREAMERY_IDLE"/>
+		<Sounds select="13"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">34</Prerequisite>
+		<Cost>
+			<Resource id="1">6000</Resource>
+			<Resource id="11">2500</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">600</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>75</Item>
+		<Item>74</Item>
+        <Item>77</Item>
+        <Item>78</Item>
+		<Item>76</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	
+	<Object id="211" name="Produce Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<Description>Delicious, fresh fruit!</Description>
+        <Info>Assign a villager to the Fruit Stand and earn gold and experience as they sell delicious fruit!</Info>
+		<IdleAnim name="FRUITSTAND" />
+        <BuildMenuAnim name="FRUITSTAND_MALE_ACTIVE" />
+        <BubbleIcon name="FRUITSTAND_ICON" />
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">16</Prerequisite>
+		<BuildingWorkAnim male="FRUITSTAND_MALE_ACTIVE" female="FRUITSTAND_FEMALE_ACTIVE" maleIdle="FRUITSTAND_MALE_ACTIVE" femaleIdle="FRUITSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="10">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Fruit Vendor</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="50">
+            	<Resource id="1">75</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="355" name="Fruit Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<Description>Delicious, fresh fruit!</Description>
+        <Info>Assign a villager to the Fruit Stand and earn gold and experience as they sell delicious fruit!</Info>
+		<IdleAnim name="FRUITSTAND" />
+        <BuildMenuAnim name="FRUITSTAND_MALE_ACTIVE" />
+        <BubbleIcon name="FRUITSTAND_ICON" />
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">16</Prerequisite>
+		<BuildingWorkAnim male="FRUITSTAND_MALE_ACTIVE" female="FRUITSTAND_FEMALE_ACTIVE" maleIdle="FRUITSTAND_MALE_ACTIVE" femaleIdle="FRUITSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">2000</Resource>
+			<Resource id="10">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Fruit Vendor</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="50">
+            	<Resource id="1">75</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	
+    <Object id="212" name="Seafood Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1560">
+		<Description>Fresh fish for sale!</Description>
+        <Info>Assign a villager to the Fish Stand and earn gold and experience as they sell fresh fish!</Info>
+		<IdleAnim name="FISHSTAND" />
+        <BuildMenuAnim name="FISHSTAND_FEMALE_ACTIVE" />
+        <BubbleIcon name="FISHSTAND_ICON" />
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">18</Prerequisite>
+		<BuildingWorkAnim male="FISHSTAND_MALE_ACTIVE" female="FISHSTAND_FEMALE_ACTIVE" maleIdle="FISHSTAND_MALE_ACTIVE" femaleIdle="FISHSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">2500</Resource>
+			<Resource id="10">1250</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+			<Resource id="10">125</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Fish Vendor</WorkerType>
+		<Tax interval="7200.0">
+			<Resources xp="85">
+            	<Resource id="1">125</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="354" name="Fish Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1560">
+		<Description>Fresh fish for sale!</Description>
+        <Info>Assign a villager to the Fish Stand and earn gold and experience as they sell fresh fish!</Info>
+		<IdleAnim name="FISHSTAND" />
+        <BuildMenuAnim name="FISHSTAND_FEMALE_ACTIVE" />
+        <BubbleIcon name="FISHSTAND_ICON" />
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">18</Prerequisite>
+		<BuildingWorkAnim male="FISHSTAND_MALE_ACTIVE" female="FISHSTAND_FEMALE_ACTIVE" maleIdle="FISHSTAND_MALE_ACTIVE" femaleIdle="FISHSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">2500</Resource>
+			<Resource id="10">1250</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+			<Resource id="10">125</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Fish Vendor</WorkerType>
+		<Tax interval="7200.0">
+			<Resources xp="85">
+            	<Resource id="1">125</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	
+    <Object id="213" name="Meat Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1875">
+		<Description>Tasty meat for sale.</Description>
+        <Info>Assign a villager to the Meat Stand and earn gold and experience as they sell tasty meats!</Info>
+		<IdleAnim name="MEATSTAND" />
+        <BuildMenuAnim name="MEATSTAND_MALE_ACTIVE" />
+        <BubbleIcon name="MEATSTAND_ICON" />
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">20</Prerequisite>
+		<BuildingWorkAnim male="MEATSTAND_MALE_ACTIVE" female="MEATSTAND_FEMALE_ACTIVE" maleIdle="MEATSTAND_MALE_ACTIVE" femaleIdle="MEATSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">3000</Resource>
+			<Resource id="10">1500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">300</Resource>
+			<Resource id="10">150</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Meat Vendor</WorkerType>
+		<Tax interval="10800.0">
+			<Resources xp="125">
+            	<Resource id="1">175</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	<Object id="346" name="Butcher Stand" width="4" height="2" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="1875">
+		<Description>Tasty meat for sale.</Description>
+        <Info>Assign a villager to the Butcher Stand and earn gold and experience as they sell tasty meats!</Info>
+		<IdleAnim name="MEATSTAND" />
+        <BuildMenuAnim name="MEATSTAND_MALE_ACTIVE" />
+        <BubbleIcon name="MEATSTAND_ICON" />
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">20</Prerequisite>
+		<BuildingWorkAnim male="MEATSTAND_MALE_ACTIVE" female="MEATSTAND_FEMALE_ACTIVE" maleIdle="MEATSTAND_MALE_ACTIVE" femaleIdle="MEATSTAND_FEMALE_ACTIVE"/>
+		<Cost>
+			<Resource id="1">3000</Resource>
+			<Resource id="10">1500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">300</Resource>
+			<Resource id="10">150</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Meat Vendor</WorkerType>
+		<Tax interval="10800.0">
+			<Resources xp="125">
+            	<Resource id="1">175</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+	<Object id="214" name="Toy Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Make entertaining toys for sale</Description>
+        <Info>Use the Toy Shop to complete jobs using different resources.</Info>
+		<IdleAnim name="Toy_Shop_Idle">18</IdleAnim>
+        <BuildMenuAnim name="Toy_Shop_Idle" />
+		<BuildingWorkAnim male="Toy_Shop_Active" female="Toy_Shop_Active" maleIdle="Toy_Shop_Idle" femaleIdle="Toy_Shop_Idle"/>
+		<Sounds select="7"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">24</Prerequisite>
+		<Cost>
+			<Resource id="1">4500</Resource>
+			<Resource id="11">5000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">450</Resource>
+			<Resource id="11">500</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>79</Item>
+		<Item>80</Item>
+		<Item>81</Item>
+		<Item>82</Item>
+		<Item>83</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	    <!-- MAYOR'S COTTAGE -->
+	<Object id="218" name="Mayor's Cottage" width="5" height="6" type="house" availableFromStore="1" upgradeID="0" blockVillager="no" xpValue="5000" >
+		<Description>Houses six villagers.</Description>
+        <Info>The Mayor's Cottage houses six villagers.  The Mayor pulled some strings in the permitting office, so his cottage doesn't count towards your house limit.</Info>
+        <BuildMenuAnim name="MAYORS_COTTAGE">159</BuildMenuAnim>
+		<IdleAnim name="MAYORS_COTTAGE">34</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<MagicBeans>100</MagicBeans>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">50</Resource>
+			<Resource id="21">25</Resource>
+		</Sell>
+		<Villagers default="6" purchasable="1"/>
+		<Tax interval="43200.0">
+			<Resources xp="150">
+            	<Resource id="1">200</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <!-- MAYOR'S VILLA -->
+	<Object id="219" name="Mayor's Villa" width="5" height="6" type="house" availableFromStore="1" upgradeID="0" xpValue="20000" >
+		<Description>Houses six villagers</Description>
+        <Info>The Mayor's Villa houses six villagers.  The Mayor pulled some strings in the permitting office, so his villa doesn't count towards your house limit.</Info>
+        <BuildMenuAnim name="MAYORS_VILLA">159</BuildMenuAnim>
+		<IdleAnim name="MAYORS_VILLA">34</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">32</Prerequisite>
+		<Cost>
+			<Resource id="1">200000</Resource>
+			<Resource id="11">5000</Resource>
+			<Resource id="21">2500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">20000</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">250</Resource>
+		</Sell>
+		<Villagers default="6" purchasable="1"/>
+		<Tax interval="43200.0">
+			<Resources xp="150">
+            	<Resource id="1">200</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+
+	<Object id="220" name="Inn" width="11" height="9" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="5500">
+		<Description>Relax in the Inn</Description>
+        <Info>Assign a villager to be an Innkeeper and earn gold and experience!</Info>
+		<IdleAnim name="INN_IDLE">147</IdleAnim>
+		<BuildMenuAnim name="INN_IDLE">159</BuildMenuAnim>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">28</Prerequisite>
+		<BuildingWorkAnim male="INN_ACTIVE" female="INN_ACTIVE" maleIdle="INN_ACTIVE" femaleIdle="INN_ACTIVE"/>
+		<Cost>
+			<Resource id="1">6000</Resource>
+			<Resource id="11">5000</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">600</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<BuildTime>43200.0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Innkeeper</WorkerType>
+		<Tax interval="21600.0">
+			<Resources xp="1500">
+            	<Resource id="1">1250</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	
+    <!-- LARGE WAREHOUSE -->
+	<Object id="224" name="Large Warehouse" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="6250" >
+		<Description>Stores a large very amount of resources</Description>
+        <Info>The Large Warehouse stores up to 100,000 of each resource.</Info>
+		<IdleAnim name="largewarehouse">17</IdleAnim>
+        <BuildMenuAnim name="largewarehouse"></BuildMenuAnim>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+			<MagicBeans>125</MagicBeans>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">5000</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="100000"></Resource>
+			<Resource id="20" qty="100000"></Resource>
+			<Resource id="40" qty="100000"></Resource>
+			<Resource id="50" qty="100000"></Resource>
+			<Resource id="11" qty="100000"></Resource>
+			<Resource id="21" qty="100000"></Resource>
+			<Resource id="51" qty="100000"></Resource>
+		</Resources>
+		<UpgradeOf>25</UpgradeOf>
+		<UpgradeOf>26</UpgradeOf>
+
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="234" name="Restaurant" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Cook a culinary masterpiece for sale</Description>
+        <Info>Use the Restaurant to complete jobs using Gold.</Info>
+		<IdleAnim name="Restaurant_idle">18</IdleAnim>
+        <BuildMenuAnim name="Restaurant_idle" />
+		<BuildingWorkAnim male="Restaurant_Active" female="Restaurant_Active" maleIdle="Restaurant_idle" femaleIdle="Restaurant_idle"/>
+		<Sounds select="40"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">38</Prerequisite>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">3000</Resource>
+			<Resource id="21">2000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="21">200</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>84</Item>
+		<Item>85</Item>
+		<Item>86</Item>
+		<Item>87</Item>
+		<Item>88</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    
+    <Object id="235" name="Cobbler" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Create fashionable footwear for sale</Description>
+        <Info>Use the Cobbler to create footwear for your villagers.</Info>
+		<IdleAnim name="Cobbler_idle">18</IdleAnim>
+		<Sounds select="14"/>
+        <BuildMenuAnim name="Cobbler_idle" />
+		<BuildingWorkAnim male="Cobbler_Active" female="Cobbler_Active" maleIdle="Cobbler_idle" femaleIdle="Cobbler_idle"/>
+		<Sounds select="40"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">32</Prerequisite>
+		<Cost>
+      		<Resource id="1">4000</Resource>
+			<Resource id="11">2500</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">400</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>89</Item>
+		<Item>90</Item>
+		<Item>91</Item>
+		<Item>92</Item>
+		<Item>93</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	<Object id="237" name="Jeweler Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Create beautiful jewelry for sale</Description>
+        <Info>Use the Jeweler Shop to prospect for gems and complete jobs using rock.</Info>
+		<IdleAnim name="JewelersShop_idle">18</IdleAnim>
+        <BuildMenuAnim name="JewelersShop_idle" />
+		<BuildingWorkAnim male="JewelersShop_active" female="JewelersShop_active" maleIdle="JewelersShop_idle" femaleIdle="JewelersShop_idle"/>
+		<Sounds select="16"/>
+		<Prerequisite type="building">5</Prerequisite>
+		<Prerequisite type="level">41</Prerequisite>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">3000</Resource>
+			<Resource id="21">4000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="21">400</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>94</Item>
+		<Item>95</Item>
+		<Item>96</Item>
+		<Item>97</Item>
+		<Item>98</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+	   <Object id="250" name="Tai Chi" width="4" height="3" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="3500">
+		<Description>Calm the body and Soul with Tai Chi.</Description>
+        <Info>Assign a villager to Tai Chi and earn gold and experience for their spiritual relaxation!</Info>
+		<IdleAnim name="taichi_idle">147</IdleAnim>
+		<Sounds select="53"/>
+		<BuildMenuAnim name="taichi_male_active">159</BuildMenuAnim>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">39</Prerequisite>
+		<BuildingWorkAnim male="taichi_male_active" female="taichi_female_active" maleIdle="taichi_male_active" femaleIdle="taichi_female_active"/>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">1500</Resource>
+			<Resource id="51">1500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">150</Resource>
+			<Resource id="51">150</Resource>
+		</Sell>
+		<BuildTime>86400.0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Tai Chi Master</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="350">
+            	<Resource id="1">400</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+
+    <Object id="251" name="Tea Shop" width="5" height="4" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Exotic Teas from the Far East!</Description>
+        <Info>Use the Tea Shop to create amazing new beverages for your townspeople.</Info>
+		<IdleAnim name="teashop_idle">18</IdleAnim>
+        <BuildMenuAnim name="teashop_idle" />
+		<BuildingWorkAnim male="teashop_active" female="teashop_active" maleIdle="teashop_idle" femaleIdle="teashop_idle"/>
+		<Sounds select="48"/>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">44</Prerequisite>
+		<Cost>
+			<Resource id="1">10000</Resource>
+			<Resource id="11">3500</Resource>
+			<Resource id="21">3500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">1000</Resource>
+			<Resource id="11">350</Resource>
+			<Resource id="21">350</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>109</Item>
+		<Item>100</Item>
+		<Item>101</Item>
+		<Item>102</Item>
+		<Item>103</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="252" name="Sushi Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Trade Nations Roll, please!</Description>
+        <Info>Use the Sushi Shop to make exotic foods for gold and XP!</Info>
+		<IdleAnim name="sushishop_idle">18</IdleAnim>
+        <BuildMenuAnim name="sushishop_idle" />
+		<BuildingWorkAnim male="sushishop_active" female="sushishop_active" maleIdle="sushishop_idle" femaleIdle="sushishop_idle"/>
+		<Sounds select="49"/>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">47</Prerequisite>
+		<Cost>
+			<Resource id="1">15000</Resource>
+			<Resource id="11">5000</Resource>
+			<Resource id="21">5000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">1500</Resource>
+			<Resource id="11">500</Resource>
+			<Resource id="21">500</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>104</Item>
+		<Item>105</Item>
+		<Item>106</Item>
+		<Item>107</Item>
+		<Item>108</Item>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+    <Object id="253" name="Imperial House" width="5" height="4" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="2000" >
+		<Description>The Imperial House from the Far East is an exotic home for your townspeople!</Description>
+		<Info>The Imperial House houses four villagers, and supports up to two adopted villagers!</Info>
+		<IdleAnim name="exotichouse">115</IdleAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">35</Prerequisite>
+        <BuildMenuAnim name="exotichouse"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">10000</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="21">1200</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">1000</Resource>
+			<Resource id="11">200</Resource>
+			<Resource id="21">120</Resource>
+		</Sell>
+		<Villagers default="4" purchasable="2"/>
+		<Tax interval="14400.0">
+			<Resources xp="20">
+            	<Resource id="1">25</Resource>
+			</Resources>
+		</Tax>
+		<UpgradeOf>14</UpgradeOf>
+		<UpgradeOf>157</UpgradeOf>
+		<UpgradeOf>158</UpgradeOf>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	    <Object id="263" name="Karate Chop!" width="4" height="4" type="entertainer" availableFromStore="0" upgradeID="0" xpValue="4500">
+		<Description>Wax on, wax off, chop!</Description>
+        <Info>Assign a villager to the Karate Chop! and earn gold and experience for their stellar performance!</Info>
+		<IdleAnim name="karate_idle">147</IdleAnim>
+		<Sounds select="52"/>
+		<BuildMenuAnim name="karate_female_active">159</BuildMenuAnim>
+		<Prerequisite type="building">233</Prerequisite>
+		<Prerequisite type="level">42</Prerequisite>
+		<BuildingWorkAnim male="karate_male_active" female="karate_female_active" maleIdle="karate_male_active" femaleIdle="karate_female_active"/>
+		<Cost>
+			<Resource id="1">8500</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="21">2000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">850</Resource>
+			<Resource id="11">200</Resource>
+			<Resource id="21">200</Resource>
+		</Sell>
+		<BuildTime>86400.0</BuildTime>
+		<Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Supposed Board Breaker</WorkerType>
+		<Tax interval="3600.0">
+			<Resources xp="450">
+            	<Resource id="1">300</Resource>
+			</Resources>
+		</Tax>
+        <Limit>1</Limit>
+		<CompatibleLand>Vanilla</CompatibleLand>
+	</Object>
+	
+
+</Objects>
+

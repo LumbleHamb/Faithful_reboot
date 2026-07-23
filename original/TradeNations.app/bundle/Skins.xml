@@ -1,0 +1,363 @@
+
+<Skins>
+    <Skin name="Vanilla" id="0" isLand="true">
+        <World prefix="" />
+        <Icon name="SELECTLANDCLASSIC" />
+        <Land name="Vanilla" />
+    </Skin>
+	<Skin name="Winter" id="0">
+		<World prefix="Snow" />
+        <Icon name="SELECTLANDCLASSIC" />
+        <Land name="Vanilla" />
+
+        <!-- currently matches by id. name is for reference. -->
+		<Object id="6" name="Forest" idleAnim="SEASON1FOREST"/>
+		<Object id="7" name="Mountain" idleAnim="SEASON1MOUNTAIN" />
+		<Object id="101" name="Poplar" idleAnim="SEASON1_POPLAR" />
+		<Object id="102" name="Spruce" idleAnim="SEASON1_SPRUCE" />
+		<Object id="103" name="Birch" idleAnim="SEASON1_BIRCH" />
+		<Object id="104" name="Maple" idleAnim="SEASON1_MAPLE" />
+		<Object id="105" name="Oak" idleAnim="SEASON1_OAK" />
+        <Object id="226" name="Cherry Blossom" idleAnim="Winter_CherryTree" />
+        <Anim prefix="W_">
+            HaulerFemaleIdle
+            HaulerClothFemaleIdle
+            HaulerClothFemaleBackNW
+            HaulerClothFemaleBackNE
+            HaulerClothFemaleFrontSW
+            HaulerClothFemaleFrontSE
+            HaulerWoolFemaleIdle
+            HaulerWoolFemaleBackNW
+            HaulerWoolFemaleBackNE
+            HaulerWoolFemaleFrontSW
+            HaulerWoolFemaleFrontSE
+            HaulerGrainFemaleIdle
+            HaulerGrainFemaleBackNW
+            HaulerGrainFemaleBackNE
+            HaulerGrainFemaleFrontSW
+            HaulerGrainFemaleFrontSE
+            HaulerCutStoneFemaleIdle
+            HaulerCutStoneFemaleBackNW
+            HaulerCutStoneFemaleBackNE
+            HaulerCutStoneFemaleFrontSW
+            HaulerCutStoneFemaleFrontSE
+            HaulerStoneFemaleIdle
+            HaulerStoneFemaleBackNW
+            HaulerStoneFemaleBackNE
+            HaulerStoneFemaleFrontSW
+            HaulerStoneFemaleFrontSE
+            HaulerLumberFemaleIdle
+            HaulerLumberFemaleBackNW
+            HaulerLumberFemaleBackNE
+            HaulerLumberFemaleFrontSW
+            HaulerLumberFemaleFrontSE
+            HaulerCampFemaleIdle
+            HaulerCampFemaleBackNW
+            HaulerCampFemaleBackNE
+            HaulerCampFemaleFrontSW
+            HaulerCampFemaleFrontSE
+            WalkFemaleBackNW
+            WalkFemaleBackNE
+            WalkFemaleFrontSW
+            WalkFemaleFrontSE
+            HaulerMaleIdle
+            HaulerClothMaleIdle
+            HaulerClothMaleBackNW
+            HaulerClothMaleBackNE
+            HaulerClothMaleFrontSW
+            HaulerClothMaleFrontSE
+            HaulerWoolMaleIdle
+            HaulerWoolMaleBackNW
+            HaulerWoolMaleBackNE
+            HaulerWoolMaleFrontSW
+            HaulerWoolMaleFrontSE
+            HaulerGrainMaleIdle
+            HaulerGrainMaleBackNW
+            HaulerGrainMaleBackNE
+            HaulerGrainMaleFrontSW
+            HaulerGrainMaleFrontSE
+            HaulerCutStoneMaleIdle
+            HaulerCutStoneMaleBackNW
+            HaulerCutStoneMaleBackNE
+            HaulerCutStoneMaleFrontSW
+            HaulerCutStoneMaleFrontSE
+            HaulerStoneMaleIdle
+            HaulerStoneMaleBackNW
+            HaulerStoneMaleBackNE
+            HaulerStoneMaleFrontSW
+            HaulerStoneMaleFrontSE
+            HaulerLumberMaleIdle
+            HaulerLumberMaleBackNW
+            HaulerLumberMaleBackNE
+            HaulerLumberMaleFrontSW
+            HaulerLumberMaleFrontSE
+            HaulerCampMaleIdle
+            HaulerCampMaleBackNW
+            HaulerCampMaleBackNE
+            HaulerCampMaleFrontSW
+            HaulerCampMaleFrontSE
+            WalkMaleBackNW
+            WalkMaleBackNE
+            WalkMaleFrontSW
+            WalkMaleFrontSE
+            Pond_Idle
+            Pond_Male
+            Pond_Female
+            townhall
+            tower
+            fort
+            keep
+            Castle_1
+            Citadel
+            BUSH1
+            BUSH2
+            BUSH3
+            BUSH4
+            APPLETREE
+            DOGWOOD
+            CYPRESS
+            COMPHOR
+            SYCAMORE
+            OLIVE
+            WILLOW
+            topiary01_med
+            topiary02_med
+            topiary03_med
+        </Anim>
+	</Skin>
+    <Skin name="Frontier" id="1" isLand="true">
+		<World prefix="Fall" />
+        <Icon name="SELECTLANDFRONTIER" />
+        <Land name="Frontier" lockedText="To unlock Frontier, achieve Level 20 and buy the Hot Air Balloon in your land!" />
+
+        <!-- currently matches by id. name is for reference. -->
+		<Object id="6" name="Forest" idleAnim="FALLFOREST"/>
+		<Object id="7" name="Mountain" idleAnim="FALLMOUNTAIN" />
+
+        <Anim prefix="F_">
+            HaulerFemaleIdle
+            HaulerClothFemaleIdle
+            HaulerClothFemaleBackNW
+            HaulerClothFemaleBackNE
+            HaulerClothFemaleFrontSW
+            HaulerClothFemaleFrontSE
+            HaulerWoolFemaleIdle
+            HaulerWoolFemaleBackNW
+            HaulerWoolFemaleBackNE
+            HaulerWoolFemaleFrontSW
+            HaulerWoolFemaleFrontSE
+            HaulerGrainFemaleIdle
+            HaulerGrainFemaleBackNW
+            HaulerGrainFemaleBackNE
+            HaulerGrainFemaleFrontSW
+            HaulerGrainFemaleFrontSE
+            HaulerCutStoneFemaleIdle
+            HaulerCutStoneFemaleBackNW
+            HaulerCutStoneFemaleBackNE
+            HaulerCutStoneFemaleFrontSW
+            HaulerCutStoneFemaleFrontSE
+            HaulerStoneFemaleIdle
+            HaulerStoneFemaleBackNW
+            HaulerStoneFemaleBackNE
+            HaulerStoneFemaleFrontSW
+            HaulerStoneFemaleFrontSE
+            HaulerLumberFemaleIdle
+            HaulerLumberFemaleBackNW
+            HaulerLumberFemaleBackNE
+            HaulerLumberFemaleFrontSW
+            HaulerLumberFemaleFrontSE
+            HaulerCampFemaleIdle
+            HaulerCampFemaleBackNW
+            HaulerCampFemaleBackNE
+            HaulerCampFemaleFrontSW
+            HaulerCampFemaleFrontSE
+            WalkFemaleBackNW
+            WalkFemaleBackNE
+            WalkFemaleFrontSW
+            WalkFemaleFrontSE
+            HaulerMaleIdle
+            HaulerClothMaleIdle
+            HaulerClothMaleBackNW
+            HaulerClothMaleBackNE
+            HaulerClothMaleFrontSW
+            HaulerClothMaleFrontSE
+            HaulerWoolMaleIdle
+            HaulerWoolMaleBackNW
+            HaulerWoolMaleBackNE
+            HaulerWoolMaleFrontSW
+            HaulerWoolMaleFrontSE
+            HaulerGrainMaleIdle
+            HaulerGrainMaleBackNW
+            HaulerGrainMaleBackNE
+            HaulerGrainMaleFrontSW
+            HaulerGrainMaleFrontSE
+            HaulerCutStoneMaleIdle
+            HaulerCutStoneMaleBackNW
+            HaulerCutStoneMaleBackNE
+            HaulerCutStoneMaleFrontSW
+            HaulerCutStoneMaleFrontSE
+            HaulerStoneMaleIdle
+            HaulerStoneMaleBackNW
+            HaulerStoneMaleBackNE
+            HaulerStoneMaleFrontSW
+            HaulerStoneMaleFrontSE
+            HaulerLumberMaleIdle
+            HaulerLumberMaleBackNW
+            HaulerLumberMaleBackNE
+            HaulerLumberMaleFrontSW
+            HaulerLumberMaleFrontSE
+            HaulerCampMaleIdle
+            HaulerCampMaleBackNW
+            HaulerCampMaleBackNE
+            HaulerCampMaleFrontSW
+            HaulerCampMaleFrontSE
+            WalkMaleBackNW
+            WalkMaleBackNE
+            WalkMaleFrontSW
+            WalkMaleFrontSE
+            CAMP
+            CAMPACTIVEMALE
+            CAMPACTIVEFEMALE
+            CAMPACTIVEMALEIDLE
+            CAMPACTIVEFEMALEIDLE
+            QUARRYIDLE
+            QUARRYACTIVE
+            QUARRY
+        </Anim>
+	</Skin>
+    <Skin name="FrontierWinter" id="1">
+		<World prefix="W_Fall" />
+        <Icon name="SELECTLANDFRONTIER" />
+        <Land name="Frontier" />
+
+        <!-- currently matches by id. name is for reference. -->
+		<Object id="6" name="Forest" idleAnim="FALLFOREST"/>
+		<Object id="7" name="Mountain" idleAnim="FALLMOUNTAIN" />
+
+        <Anim prefix="W_">
+            HaulerFemaleIdle
+            HaulerGoldFemaleIdle
+            HaulerGoldFemaleBackNW
+            HaulerGoldFemaleBackNE
+            HaulerGoldFemaleFrontSW
+            HaulerGoldFemaleFrontSE
+            HaulerClothFemaleIdle
+            HaulerClothFemaleBackNW
+            HaulerClothFemaleBackNE
+            HaulerClothFemaleFrontSW
+            HaulerClothFemaleFrontSE
+            HaulerWoolFemaleIdle
+            HaulerWoolFemaleBackNW
+            HaulerWoolFemaleBackNE
+            HaulerWoolFemaleFrontSW
+            HaulerWoolFemaleFrontSE
+            HaulerGrainFemaleIdle
+            HaulerGrainFemaleBackNW
+            HaulerGrainFemaleBackNE
+            HaulerGrainFemaleFrontSW
+            HaulerGrainFemaleFrontSE
+            HaulerCutStoneFemaleIdle
+            HaulerCutStoneFemaleBackNW
+            HaulerCutStoneFemaleBackNE
+            HaulerCutStoneFemaleFrontSW
+            HaulerCutStoneFemaleFrontSE
+            HaulerStoneFemaleIdle
+            HaulerStoneFemaleBackNW
+            HaulerStoneFemaleBackNE
+            HaulerStoneFemaleFrontSW
+            HaulerStoneFemaleFrontSE
+            HaulerLumberFemaleIdle
+            HaulerLumberFemaleBackNW
+            HaulerLumberFemaleBackNE
+            HaulerLumberFemaleFrontSW
+            HaulerLumberFemaleFrontSE
+            HaulerCampFemaleIdle
+            HaulerCampFemaleBackNW
+            HaulerCampFemaleBackNE
+            HaulerCampFemaleFrontSW
+            HaulerCampFemaleFrontSE
+            WalkFemaleBackNW
+            WalkFemaleBackNE
+            WalkFemaleFrontSW
+            WalkFemaleFrontSE
+            HaulerMaleIdle
+            HaulerGoldMaleIdle
+            HaulerGoldMaleBackNW
+            HaulerGoldMaleBackNE
+            HaulerGoldMaleFrontSW
+            HaulerGoldMaleFrontSE
+            HaulerClothMaleIdle
+            HaulerClothMaleBackNW
+            HaulerClothMaleBackNE
+            HaulerClothMaleFrontSW
+            HaulerClothMaleFrontSE
+            HaulerWoolMaleIdle
+            HaulerWoolMaleBackNW
+            HaulerWoolMaleBackNE
+            HaulerWoolMaleFrontSW
+            HaulerWoolMaleFrontSE
+            HaulerGrainMaleIdle
+            HaulerGrainMaleBackNW
+            HaulerGrainMaleBackNE
+            HaulerGrainMaleFrontSW
+            HaulerGrainMaleFrontSE
+            HaulerCutStoneMaleIdle
+            HaulerCutStoneMaleBackNW
+            HaulerCutStoneMaleBackNE
+            HaulerCutStoneMaleFrontSW
+            HaulerCutStoneMaleFrontSE
+            HaulerStoneMaleIdle
+            HaulerStoneMaleBackNW
+            HaulerStoneMaleBackNE
+            HaulerStoneMaleFrontSW
+            HaulerStoneMaleFrontSE
+            HaulerLumberMaleIdle
+            HaulerLumberMaleBackNW
+            HaulerLumberMaleBackNE
+            HaulerLumberMaleFrontSW
+            HaulerLumberMaleFrontSE
+            HaulerCampMaleIdle
+            HaulerCampMaleBackNW
+            HaulerCampMaleBackNE
+            HaulerCampMaleFrontSW
+            HaulerCampMaleFrontSE
+            WalkMaleBackNW
+            WalkMaleBackNE
+            WalkMaleFrontSW
+            WalkMaleFrontSE
+            F_tree1
+            F_tree2
+            F_tree3
+            F_tree4
+            F_tree5
+            F_treeorange
+            F_treered
+            F_treeyellow
+            F_bush1
+            F_bush2
+            F_bush3
+            F_bush4
+            F_Fort1
+            F_Fort2
+            F_Fort3
+            F_bluespruce
+            FallPond
+            FallMountain
+            FallForest
+            Pond_Idle
+            Pond_Male
+            Pond_Female
+        </Anim>
+
+        <Anim prefix="F_">
+        	CAMP
+            CAMPACTIVEMALE
+            CAMPACTIVEFEMALE
+            CAMPACTIVEMALEIDLE
+            CAMPACTIVEFEMALEIDLE
+            QUARRYIDLE
+            QUARRYACTIVE
+            QUARRY
+        </Anim>
+	</Skin>
+</Skins>

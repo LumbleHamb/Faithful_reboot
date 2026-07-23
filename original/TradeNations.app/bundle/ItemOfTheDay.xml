@@ -1,0 +1,13 @@
+
+
+<Item type="Object" id="120" name="Crates" icon="CRATES" desc="It's what all the kids want this holiday season: CRATES!&#10;&#10; Crates grant a bonus to the XP and Gold received from all Shops by .3%"></Item>
+<Item type="Object" id="132" name="Sheep" icon="SHEEP" desc="The sheep is cuddly and sweet!&#10;&#10; The Sheep grants a bonus to the XP and Gold received from all Shops by .3% (500% Maximum)"></Item>
+<Item type="Object" id="275" name="Treehouse" desc="Members only.&#10;&#10;Treehouse grants a bonus to the XP and Gold received from all Shops by 4.7%"></Item>
+<Item type="Object" id="204" name="Blue Doghouse" icon="DOGHOUSE_2" desc="This lovable puppy will keep a watchful eye over your Town.&#10;&#10;The Blue Doghouse increases XP and Gold for all Shops by 4.25%"></Item>
+<Item type="Object" id="236" name="Chicken Coop" icon="Coop" desc="Chicken Coops grant a bonus to the XP and Gold received from all Shops by 2.75%"></Item>
+<Item type="Object" id="179" name="Lake" icon="FISHPOND" desc="Give your villagers a vacation and let them fish in the Lake to earn Gold and XP. The Lake increases XP and Gold for all Shops by 5%"></Item>
+<Item type="Object" id="223" name="Gabbo" icon="Cat2" desc="Everybody loves Gabbo! &#10;&#10; Gabbo increases XP and Gold for all Shops by 10.5%"></Item>
+<Item type="Object" id="256" name="Poochie" icon="poochie_active" desc="Happy Dog! &#10;&#10;Poochie grants a bonus to the XP and Gold received from all Shops by 0.4%"></Item>
+<Item type="Object" id="222" name="Lily" icon="Cat" desc="Lily needs a home! &#10;&#10; Lily increases XP and Gold for all Shops by 25%"></Item>
+
+

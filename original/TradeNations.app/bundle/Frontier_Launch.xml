@@ -1,0 +1,937 @@
+
+
+<Objects>
+	<!-- LAKE -->
+	<Object id="306" name="Mountain Lake" width="6" height="6" type="resourcetile" availableFromStore="0" upgradeID="0" xpValue="0" >
+		<IdleAnim name="FallPond">0</IdleAnim>
+		<Description>Build a Gold Panner here to gather gold!</Description>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	 <!-- GOLD PANNING -->
+	<Object id="302" name="Gold Panner" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="1500" >
+		<Action>Collects</Action>
+        <Info>Gold Rush! Assign a Villager to the Gold Panner to collect Gold. Must be placed on a Mountain Lake.</Info>
+		<IdleAnim name="F_goldmine_inactive">48</IdleAnim>
+		<BuildMenuAnim name="F_goldmine_male_active">159</BuildMenuAnim>
+		<BuildingWorkAnim male="F_goldmine_male_active" female="F_goldmine_female_active" maleIdle="F_goldmine_male_idle" femaleIdle="F_goldmine_female_idle"/>
+		<Sounds select="12"/>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<!--BuildTime>75</BuildTime-->
+		<WorkerType>Gold Panner</WorkerType>
+		<Workers workerMax="1" haulerMax="1"/>
+		<Produce hurryCost="1">
+			<Output resource_id="1" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0"  villagerResourcesPerHour="50.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<UpgradeOf upgradeOnly="true">306</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="303" name="Ridge Post" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="0" >
+	    <Info>The humble Ridge Post overlooks your new mountain land and is the start of a new and bright future for your villagers.</Info>
+	    <TownHall level="0" />
+		<IdleAnim name="F_Fort1">0</IdleAnim>
+		<BuildMenuAnim name="F_Fort1">0</BuildMenuAnim>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<Limit>1</Limit>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+
+	<Object id="304" name="Mountain Fort" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="15000" >
+		<TownHall level="1" />
+		<IdleAnim name="F_Fort2">38</IdleAnim>
+		<BuildMenuAnim name="F_Fort2">159</BuildMenuAnim>
+		<Info>Make yourself more comfortable with the Mountain Fort which is an upgrade to the Ridge Post. It allows you to build more advanced buildings.</Info>
+		<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+
+		<Prerequisite type="level">30</Prerequisite>
+		<Prerequisite type="building">303</Prerequisite>
+		<Cost>
+			<Resource id="1">500000</Resource>
+			<Resource id="11">50000</Resource>
+			<Resource id="21">75000</Resource>
+			<Resource id="51">30000</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">303</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+
+	<Object id="305" name="Sierra Palisade" width="14" height="14" type="townhall" availableFromStore="0" upgradeID="0" xpValue="35000" >
+		<TownHall level="2" />
+		<BuildMenuAnim name="F_Fort3">0</BuildMenuAnim>
+		<IdleAnim name="F_Fort3">0</IdleAnim>
+    	<Info>Enjoy your mountain lifestyle! The Sierra Palisade is an upgrade to the Mountain Fort. It allows you to build more advanced buildings.</Info>
+    	<Sounds select="15"/>
+		<Sell>false</Sell>
+		<MaxTouchAreaExtension>4</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="level">40</Prerequisite>
+		<Prerequisite type="building">304</Prerequisite>
+		<Cost>
+			<Resource id="1">1000000</Resource>
+			<Resource id="11">200000</Resource>
+			<Resource id="21">250000</Resource>
+			<Resource id="51">75000</Resource>
+		</Cost>
+		<BuildTime>0</BuildTime>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="0"></Resource>
+			<Resource id="20" qty="0"></Resource>
+			<Resource id="40" qty="0"></Resource>
+			<Resource id="50" qty="0"></Resource>
+			<Resource id="11" qty="0"></Resource>
+			<Resource id="21" qty="0"></Resource>
+		</Resources>
+		<UpgradeOf upgradeOnly="true">304</UpgradeOf>
+        <Limit>1</Limit>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	
+	<Object id="307" name="Log Cabin" width="6" height="6" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="3000" >
+		<Description>Old school log cabin, Abe Lincoln style</Description>
+        <Info>The Log Cabin houses two villagers and comes with an extra room for one adopted villager.</Info>
+		<IdleAnim name="F_house_cabin">43</IdleAnim>
+		<BuildMenuAnim name="F_house_cabin"></BuildMenuAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+			<Resource id="11">750</Resource>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">300</Resource>
+			<Resource id="11">75</Resource>
+		</Sell>
+		<Villagers default="2" purchasable="1"/>
+		<Tax interval="28800.0">
+			<Resources xp="6">
+            	<Resource id="1">12</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="308" name="A-Frame Cabin" width="7" height="7" type="house" category="house" availableFromStore="1" upgradeID="1" xpValue="9000" >
+		<Description>An upgraded design on the log cabin</Description>
+        <Info>The A-Frame Cabin houses two villagers. It also has more empty rooms for two adopted villagers.</Info>
+		<IdleAnim name="F_house_aframe">43</IdleAnim>
+		<BuildMenuAnim name="F_house_aframe"></BuildMenuAnim>
+		<Sounds select="15"/>
+		<Prerequisite type="level">26</Prerequisite>
+		<Prerequisite type="building">304</Prerequisite>
+		<Cost>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">1000</Resource>
+			<Resource id="21">50</Resource>
+		</Cost>
+		<BuildTime>43200</BuildTime>
+		<Sell>
+			<Resource id="1">500</Resource>
+			<Resource id="11">100</Resource>
+			<Resource id="21">5</Resource>
+		</Sell>
+		<Villagers default="2" purchasable="2"/>
+		<Tax interval="28800.0">
+			<Resources xp="6">
+            	<Resource id="1">12</Resource>
+			</Resources>
+		</Tax>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<UpgradeOf>307</UpgradeOf>
+	</Object>
+	<Object id="309" name="Hot Beverage Shop" width="7" height="7" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="3000" >
+		<Description>Create drinks for your villagers</Description>
+        <Info>Use the Hot Beverage Shop to complete jobs using different resources. Requires a cheery Barista.</Info>
+		<IdleAnim name="F_hotdrinkshop_idle">18</IdleAnim>
+		<BuildMenuAnim name="F_hotdrinkshop_idle"></BuildMenuAnim>
+		<BuildingWorkAnim male="F_hotdrinkshop_active" female="F_hotdrinkshop_active" maleIdle="F_hotdrinkshop_idle" femaleIdle="F_hotdrinkshop_idle"/>
+		<Sounds select="6"/>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+			<Resource id="11">2000</Resource>
+			<Resource id="20">1000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">300</Resource>
+			<Resource id="11">200</Resource>
+			<Resource id="20">100</Resource>
+		</Sell>
+		<Item>147</Item>
+		<Item>148</Item>
+		<Item>149</Item>
+		<Item>150</Item>
+		<Item>151</Item>
+		<CompatibleLand>Frontier</CompatibleLand>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Barista</WorkerType>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+	</Object>
+	<Object id="310" name="Apothecary" width="7" height="7" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="4000" >
+		<Description>Create potions and remedies</Description>
+        <Info>Use the Apothecary to complete jobs using Gold and other resources. Requires a sleazy Salesman.</Info>
+		<IdleAnim name="F_apothecary_idle">18</IdleAnim>
+		<BuildMenuAnim name="F_apothecary_idle"></BuildMenuAnim>
+		<BuildingWorkAnim male="F_apothecary_maleactive" female="F_apothecary_femaleactive" maleIdle="F_apothecary_idle" femaleIdle="F_apothecary_idle"/>
+		<Sounds select="6"/>
+		<Prerequisite type="level">25</Prerequisite>
+		<Cost>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">500</Resource>
+			<Resource id="11">150</Resource>
+		</Sell>
+		<Item>152</Item>
+		<Item>153</Item>
+		<Item>154</Item>
+		<Item>155</Item>
+		<Item>156</Item>
+		<CompatibleLand>Frontier</CompatibleLand>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Apothecary</WorkerType>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+	</Object>
+    <Object id="311" name="Blacksmith Forge" width="9" height="9" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Create amazing works of metal</Description>
+        <Info>Use the Blacksmith to complete jobs using Gold and other resources. Requires a dedicated Blacksmith.</Info>
+		<IdleAnim name="F_blacksmith_idle">18</IdleAnim>
+		<BuildMenuAnim name="F_blacksmith_idle"></BuildMenuAnim>
+		<BuildingWorkAnim male="F_blacksmith_active" female="F_blacksmith_active" maleIdle="F_blacksmith_idle" femaleIdle="F_blacksmith_idle"/>
+		<Sounds select="16"/>
+		<Prerequisite type="level">31</Prerequisite>
+		<Prerequisite type="building">304</Prerequisite>
+		<Cost>
+			<Resource id="1">6000</Resource>
+			<Resource id="11">2500</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">600</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+        <Item>157</Item>
+        <Item>158</Item>
+        <Item>159</Item>
+        <Item>160</Item>
+        <Item>161</Item>
+		<CompatibleLand>Frontier</CompatibleLand>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Blacksmith</WorkerType>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+	</Object>
+	<Object id="312" name="Jordo" width="2" height="2" type="decoration" availableFromStore="1" upgradeID="0" xpValue="1750">
+		<IdleAnim name="F_beaver">63</IdleAnim>
+		<BuildMenuAnim name="F_beaver"></BuildMenuAnim>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Jordo the Beaver loves to build dams and grants a bonus to the XP and Gold received from all Shops by 2% (500% Maximum)</Info>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+		    <MagicBeans>35</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">100</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="2">
+            	<Resource id="1" percent="2"/>
+			</Resources>
+        </Buffer>
+	</Object>
+	<Object id="313" name="Ian" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="15000">
+		<IdleAnim name="F_honeybear">63</IdleAnim>
+		<BuildMenuAnim name="F_honeybear"></BuildMenuAnim>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Hide your honey! Ian the Bear grants a bonus to the XP and Gold received from all Shops by 15% (500% Maximum)</Info>
+		<Sounds select="56"/>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+		    <MagicBeans>295</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">500</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="15">
+            	<Resource id="1" percent="15"/>
+			</Resources>
+        </Buffer>
+	</Object>
+	<Object id="314" name="Kazi" width="3" height="3" type="decoration" availableFromStore="1" upgradeID="0" xpValue="3750">
+		<IdleAnim name="F_ibex">63</IdleAnim>
+		<BuildMenuAnim name="F_ibex"></BuildMenuAnim>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Kazi the Ibex like to eat... well... anything, and grants a bonus to the XP and Gold received from all Shops by 4.5% (500% Maximum)</Info>
+		<Prerequisite type="level">20</Prerequisite>
+		<Sounds select="59"/>
+		<Cost>
+		    <MagicBeans>75</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">200</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="4.5">
+            	<Resource id="1" percent="4.5"/>
+			</Resources>
+        </Buffer>
+	</Object>
+	<Object id="315" name="Criss Cross Fence" width="1" height="4" type="decoration" availableFromStore="0" upgradeID="0" xpValue="90">
+		<IdleAnim name="F_fence">63</IdleAnim>
+		<BuildMenuAnim name="F_fence"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>This fence is great for keeping livestock in and wolves out</Info>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+		    <Resource id="1">250</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">20</Resource>
+		</Sell>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="316" name="Laddie" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="2150">
+		<IdleAnim name="F_stbernard">63</IdleAnim>
+		<BuildMenuAnim name="F_stbernard"></BuildMenuAnim>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<Sounds select="57"/>
+		<BuildTime>0</BuildTime>
+	    <Info>What is it, Laddie? Did Uncle Ben fall down the well again?! Laddie the St. Bernard grants a bonus to the XP and Gold received from all Shops by 7.5% (500% Maximum)</Info>
+		<Prerequisite type="level">24</Prerequisite>
+		<Cost>
+		    <MagicBeans>115</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1150</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="7.5">
+            	<Resource id="1" percent="7.5"/>
+			</Resources>
+        </Buffer>
+	</Object>
+	<Object id="317" name="Juniper" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="750">
+		<IdleAnim name="F_tree1">63</IdleAnim>
+		<BuildMenuAnim name="F_tree1"></BuildMenuAnim>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">1600</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">160</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="318" name="Aspen" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1000">
+		<IdleAnim name="F_tree2">63</IdleAnim>
+		<BuildMenuAnim name="F_tree2"></BuildMenuAnim>
+		<Prerequisite type="level">21</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">200</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="319" name="Ash" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="F_tree3">63</IdleAnim>
+		<BuildMenuAnim name="F_tree3"></BuildMenuAnim>
+		<Prerequisite type="level">27</Prerequisite>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="320" name="Pine" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+		<IdleAnim name="F_tree4">63</IdleAnim>
+		<BuildMenuAnim name="F_tree4"></BuildMenuAnim>
+		<Prerequisite type="level">24</Prerequisite>
+		<Cost>
+			<Resource id="1">1000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">100</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="321" name="Fir" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1100">
+		<IdleAnim name="F_tree5">63</IdleAnim>
+		<BuildMenuAnim name="F_tree5"></BuildMenuAnim>
+		<Prerequisite type="level">30</Prerequisite>
+		<Cost>
+			<Resource id="1">2200</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">220</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="322" name="Cottonwood" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="F_treeorange">63</IdleAnim>
+		<BuildMenuAnim name="F_treeorange"></BuildMenuAnim>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="323" name="Mountain Maple" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="500">
+		<Info>Mmm... maple syrup! Mountain Maples grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)</Info>
+		<IdleAnim name="F_treered">63</IdleAnim>
+		<BuildMenuAnim name="F_treered"></BuildMenuAnim>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+			<MagicBeans>10</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="10">50</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="0.4">
+            	<Resource id="1" percent="0.4"/>
+			</Resources>
+        </Buffer>
+	</Object>
+	<Object id="324" name="Larch" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1000">
+		<IdleAnim name="F_treeyellow">63</IdleAnim>
+		<BuildMenuAnim name="F_treeyellow"></BuildMenuAnim>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<Resource id="1">2000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="10">200</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="325" name="Red Fern" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="F_bush1">63</IdleAnim>
+		<BuildMenuAnim name="F_bush1"></BuildMenuAnim>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="326" name="Elderberry Bush" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="650">
+		<IdleAnim name="F_bush2">63</IdleAnim>
+		<BuildMenuAnim name="F_bush2"></BuildMenuAnim>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+			<Resource id="1">1400</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">140</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="327" name="Potentillia" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="600">
+		<IdleAnim name="F_bush3">63</IdleAnim>
+		<BuildMenuAnim name="F_bush3"></BuildMenuAnim>
+		<Prerequisite type="level">23</Prerequisite>
+		<Cost>
+			<Resource id="1">1300</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">130</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="328" name="Fire Tail" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1500">
+		<IdleAnim name="F_bush4">63</IdleAnim>
+		<BuildMenuAnim name="F_bush4"></BuildMenuAnim>
+		<Prerequisite type="level">25</Prerequisite>
+		<Cost>
+			<Resource id="1">3000</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">300</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="329" name="Frontier Market" width="8" height="8" type="market" availableFromStore="0" upgradeID="0" xpValue="850" >
+		<Description>Buys and sell resources</Description>
+        <Info>Buy and sell resources at the Market!</Info>
+		<IdleAnim name="F_market">52</IdleAnim>
+		<BuildMenuAnim name="F_market"></BuildMenuAnim>
+		<Sell>false</Sell>
+		<Sounds select="-1" buy="17" sell="17"/>
+		<Prerequisite type="level">2</Prerequisite>
+		<Cost>
+			<Resource id="10">150</Resource>
+			<Resource id="10">150</Resource>
+		</Cost>
+		<BuildTime>5</BuildTime>
+		<UnitOfTrade>1</UnitOfTrade>
+		<ResourcePrices sellPriceDifference="0.85">
+			<Resource id="10" price="50"></Resource>
+			<Resource id="40" price="60"></Resource>
+			<Resource id="20" price="72"></Resource>
+			<Resource id="50" price="60"></Resource>
+			<Resource id="11" price="150"></Resource>
+			<Resource id="51" price="275"></Resource>
+			<Resource id="21" price="300"></Resource>
+		</ResourcePrices>
+        <Limit>1</Limit>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="330" name="Blue Spruce" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1250">
+		<IdleAnim name="F_bluespruce">63</IdleAnim>
+		<BuildMenuAnim name="F_bluespruce"></BuildMenuAnim>
+		<Prerequisite type="level">20</Prerequisite>
+		<MaxTouchAreaExtension>3</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Cost>
+			<Resource id="1">2500</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">250</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+		<Decoration type="tree" select="no" reposition="yes" blockVillager="no"/>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	
+	<Object id="333" name="Frosty Crockett" width="3" height="3" type="skinswitch" availableFromStore="0" upgradeID="0" xpValue="850" >
+        <Info>Frosty Crockett makes your land a Winter Wonderland! Frosty also grants a bonus to the XP and Gold received from all Shops by 5% (500% Maximum)</Info>
+		<Description>Makes your land a Winter Wonderland!</Description>
+		<IdleAnim name="F_frosty">52</IdleAnim>
+		<BuildMenuAnim name="F_frosty"></BuildMenuAnim>
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="building">343</Prerequisite>
+		<Sounds select="58"/>
+		<Cost>
+			<MagicBeans>65</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">650</Resource>
+		</Sell>
+		<BuildTime>0</BuildTime>
+			<Resource id="1">650</Resource>
+        <Limit>1</Limit>
+		<BuildTime fadeAnim="y">30</BuildTime>
+		<SkinSwitch target="FrontierWinter"></SkinSwitch>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="5.0">
+            	<Resource id="1" percent="5.0"/>
+			</Resources>
+        </Buffer>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	
+	<Object id="334" name="Frontier Stockpile" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="380" >
+		<Description>Stores a small amount of resources</Description>
+        <Info>The Frontier Stockpile stores up to 1,500 of each resource.</Info>
+		<IdleAnim name="STOCKPILEUNDER">25</IdleAnim>
+		<OverAnim name="STOCKPILEOVER">74</OverAnim>
+		<CustomDraw>resources</CustomDraw>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<MagicBeans>5</MagicBeans>
+		</Cost>
+		<BuildTime>5</BuildTime>
+		<Sell>
+			<Resource id="1">30</Resource>
+			<Resource id="10">45</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="1500"></Resource>
+			<Resource id="20" qty="1500"></Resource>
+			<Resource id="40" qty="1500"></Resource>
+			<Resource id="50" qty="1500"></Resource>
+			<Resource id="11" qty="1500"></Resource>
+			<Resource id="21" qty="1500"></Resource>
+			<Resource id="51" qty="1500"></Resource>
+		</Resources>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="335" name="Large Frontier Stockpile" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="675" >
+		<Description>Stores a large amount of resources</Description>
+        <Info>The Large Frontier Stockpile stores up to 10,000 of each resource.</Info>
+		<IdleAnim name="LARGESTOCKPILEUNDER">127</IdleAnim>
+		<OverAnim name="LARGESTOCKPILEOVER">126</OverAnim>
+		<CustomDraw>resourcesLarge</CustomDraw>
+		<Prerequisite type="building">2</Prerequisite>
+		<Prerequisite type="level">6</Prerequisite>
+		<Cost>
+			<MagicBeans>15</MagicBeans>
+		</Cost>
+		<BuildTime>28800</BuildTime>
+		<Sell>
+			<Resource id="1">75</Resource>
+			<Resource id="11">50</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="10000"></Resource>
+			<Resource id="20" qty="10000"></Resource>
+			<Resource id="40" qty="10000"></Resource>
+			<Resource id="50" qty="10000"></Resource>
+			<Resource id="11" qty="10000"></Resource>
+			<Resource id="21" qty="10000"></Resource>
+			<Resource id="51" qty="10000"></Resource>
+		</Resources>
+		<UpgradeOf>334</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="336" name="Frontier Warehouse" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="1500" >
+		<Description>Stores a large amount of resources</Description>
+        <Info>The Frontier Warehouse stores up to 50,000 of each resource.</Info>
+		<IdleAnim name="WAREHOUSE">17</IdleAnim>
+		<Prerequisite type="building">4</Prerequisite>
+		<Prerequisite type="level">18</Prerequisite>
+		<Cost>
+			<MagicBeans>60</MagicBeans>
+		</Cost>
+		<BuildTime>36000</BuildTime>
+		<Sell>
+			<Resource id="1">200</Resource>
+			<Resource id="11">100</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="50000"></Resource>
+			<Resource id="20" qty="50000"></Resource>
+			<Resource id="40" qty="50000"></Resource>
+			<Resource id="50" qty="50000"></Resource>
+			<Resource id="11" qty="50000"></Resource>
+			<Resource id="21" qty="50000"></Resource>
+			<Resource id="51" qty="50000"></Resource>
+		</Resources>
+		<UpgradeOf>334</UpgradeOf>
+		<UpgradeOf>335</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="337" name="Large Frontier Warehouse" width="10" height="10" type="store" availableFromStore="0" upgradeID="0" xpValue="6250" >
+		<Description>Stores a large very amount of resources</Description>
+        <Info>The Large Frontier Warehouse stores up to 250,000 of each resource.</Info>
+		<IdleAnim name="largewarehouse">17</IdleAnim>
+        <BuildMenuAnim name="largewarehouse"></BuildMenuAnim>
+		<Prerequisite type="building">305</Prerequisite>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+			<MagicBeans>225</MagicBeans>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">5000</Resource>
+			<Resource id="11">5000</Resource>
+		</Sell>
+		<Resources>
+			<Resource id="1" qty="unlimited"></Resource>
+			<Resource id="10" qty="250000"></Resource>
+			<Resource id="20" qty="250000"></Resource>
+			<Resource id="40" qty="250000"></Resource>
+			<Resource id="50" qty="250000"></Resource>
+			<Resource id="11" qty="250000"></Resource>
+			<Resource id="21" qty="250000"></Resource>
+			<Resource id="51" qty="250000"></Resource>
+		</Resources>
+		<UpgradeOf>334</UpgradeOf>
+		<UpgradeOf>335</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+    <Object id="338" name="Old West Book Shop" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5250">
+		<Description>Creates works of literary genius.</Description>
+        <Info>Use the Old West Book Shop to complete jobs using Wood and Cloth.</Info>
+		<IdleAnim name="BOOKSHOP">13</IdleAnim>
+        <BuildingWorkAnim male="BOOKSHOP_WORKING" female="BOOKSHOP_WORKING" maleIdle="BOOKSHOP_WORKING" femaleIdle="BOOKSHOP_WORKING"/>
+        <Sounds select="42"/>
+		<MaxTouchAreaExtension>3</MaxTouchAreaExtension> <!-- This is for tall buildings that shouldn't be touchable near the top -->
+		<Prerequisite type="building">303</Prerequisite>
+		<Prerequisite type="level">22</Prerequisite>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">3000</Resource>
+			<Resource id="51">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="51">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>34</Item>
+		<Item>35</Item>
+		<Item>36</Item>
+		<Item>37</Item>
+		<Item>38</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Bookkeep</WorkerType>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+    <Object id="339" name="Frontier Cobbler" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Create fashionable footwear for sale</Description>
+        <Info>Use the Frontier Cobbler to create footwear for your villagers.</Info>
+		<IdleAnim name="Cobbler_idle">18</IdleAnim>
+		<Sounds select="14"/>
+        <BuildMenuAnim name="Cobbler_idle" />
+		<BuildingWorkAnim male="Cobbler_Active" female="Cobbler_Active" maleIdle="Cobbler_idle" femaleIdle="Cobbler_idle"/>
+		<Sounds select="40"/>
+		<Prerequisite type="building">304</Prerequisite>
+		<Prerequisite type="level">32</Prerequisite>
+		<Cost>
+      		<Resource id="1">4000</Resource>
+			<Resource id="11">2500</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">400</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>89</Item>
+		<Item>90</Item>
+		<Item>91</Item>
+		<Item>92</Item>
+		<Item>93</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Cobbler</WorkerType>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+    <Object id="340" name="Mountain Dairy" width="6" height="8" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="2000" >
+		<Description>Makes milky goodness for sale</Description>
+        <Info>Use the Creamery to complete jobs using Wheat.</Info>
+		<Sounds select="45"/>
+		<IdleAnim name="CREAMERY_IDLE" />
+        <BuildMenuAnim name="CREAMERY_IDLE" />
+		<BuildingWorkAnim male="CREAMERY_ACTIVE" female="CREAMERY_ACTIVE" maleIdle="CREAMERY_IDLE" femaleIdle="CREAMERY_IDLE"/>
+		<Sounds select="13"/>
+		<Prerequisite type="building">304</Prerequisite>
+		<Prerequisite type="level">34</Prerequisite>
+		<Cost>
+			<Resource id="1">6000</Resource>
+			<Resource id="11">2500</Resource>
+			<Resource id="21">1500</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">600</Resource>
+			<Resource id="11">250</Resource>
+			<Resource id="21">150</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>75</Item>
+		<Item>74</Item>
+        <Item>77</Item>
+        <Item>78</Item>
+		<Item>76</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Dairy Farmer</WorkerType>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+    <Object id="341" name="Pioneer Jewelry" width="5" height="5" type="shop" category="shop" availableFromStore="0" upgradeID="0" xpValue="5000" >
+		<Description>Create beautiful jewelry for sale</Description>
+        <Info>Use the Jeweler Shop to prospect for gems and complete jobs using rock.</Info>
+		<IdleAnim name="JewelersShop_idle">18</IdleAnim>
+        <BuildMenuAnim name="JewelersShop_idle" />
+		<BuildingWorkAnim male="JewelersShop_active" female="JewelersShop_active" maleIdle="JewelersShop_idle" femaleIdle="JewelersShop_idle"/>
+		<Sounds select="16"/>
+		<Prerequisite type="building">305</Prerequisite>
+		<Prerequisite type="level">41</Prerequisite>
+		<Cost>
+			<Resource id="1">7500</Resource>
+			<Resource id="11">3000</Resource>
+			<Resource id="21">4000</Resource>
+		</Cost>
+		<BuildTime>86400</BuildTime>
+		<Sell>
+			<Resource id="1">750</Resource>
+			<Resource id="11">300</Resource>
+			<Resource id="21">400</Resource>
+		</Sell>
+		<Buffable>
+			<Categories>
+				<Category name="shops"/>
+			</Categories>
+        </Buffable>
+		<Item>94</Item>
+		<Item>95</Item>
+		<Item>96</Item>
+		<Item>97</Item>
+		<Item>98</Item>
+        <Workers workerMax="1" haulerMax="0" />
+		<WorkerType>Prospector</WorkerType>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	
+    <Object id="343" name="Frontier Merchant" width="8" height="5" type="decoration" availableFromStore="0" upgradeID="0" xpValue="0">
+		<IdleAnim name="W_BrightSunfair"></IdleAnim>
+		<Info>The Traveling Merchant is visiting your Frontier land and has brought back something special from the North Pole! The Frontier Merchant grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+        <BuildMenuAnim name="W_BrightSunfair"></BuildMenuAnim>
+		<Cost>
+			<Resource id="1">500</Resource>
+		</Cost>
+		<Cost>
+			<Resource id="1">50</Resource>
+		</Cost>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1">
+            	<Resource id="1" percent="1"/>
+			</Resources>
+        </Buffer>
+		<BuildTime fadeAnim="y">3</BuildTime>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no"/>
+        <Limit>1</Limit>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="344" name="Lumberjack Camp" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="30" >
+		<Action>Chops</Action>
+        <Info>Assign a villager to the Lumberjack Camp to collect Wood. Must be placed on a Forest.</Info>
+		<IdleAnim name="CAMP">49</IdleAnim>
+		<BuildMenuAnim name="CAMPACTIVEMALE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="CAMPACTIVEMALE" female="CAMPACTIVEFEMALE" maleIdle="CAMPACTIVEMALEIDLE" femaleIdle="CAMPACTIVEFEMALEIDLE"/>
+		<Prerequisite type="level">1</Prerequisite>
+		<Cost>
+			<Resource id="1">10</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">1</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<WorkerType>Wood Cutter</WorkerType>
+		<Workers workerMax="1" haulerMax="1" />
+		<Produce hurryCost="1">
+			<Output resource_id="10" maxOutputStackSize="150" />
+			<Rate resourcesPerHour="0.0" villagerResourcesPerHour="50.0" mayorResources="50" mayorResourcesNoEnergy="0"/> <!-- NoEnergy should be 5 once energy works -->
+		</Produce>
+		<UpgradeOf upgradeOnly="true">6</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="345" name="Mine" width="6" height="6" type="mine" availableFromStore="0" upgradeID="0" xpValue="125" >
+		<Action>Collects</Action>
+        <Info>Assign a villager to the Mine to collect Rock. Must be placed on a Mountain.</Info>
+		<IdleAnim name="QUARRY">48</IdleAnim>
+		<BuildMenuAnim name="QUARRYACTIVE">159</BuildMenuAnim>
+		<BuildingWorkAnim male="QUARRYACTIVE" female="QUARRYACTIVE" maleIdle="QUARRYIDLE" femaleIdle="QUARRYIDLE"/>
+		<Sounds select="12"/>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>
+			<Resource id="1">100</Resource>
+			<Resource id="10">150</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">10</Resource>
+			<Resource id="10">15</Resource>
+		</Sell>
+		<BuildTime fadeAnim="y">14400</BuildTime>
+		<!--BuildTime>75</BuildTime-->
+		<WorkerType>Quarryman</WorkerType>
+		<Workers workerMax="1" haulerMax="1"/>
+		<Produce hurryCost="1">
+			<Output resource_id="20" maxOutputStackSize="150"/>
+			<Rate resourcesPerHour="0.0"  villagerResourcesPerHour="20.0" mayorResources="50" mayorResourcesNoEnergy="0"/>
+		</Produce>
+		<UpgradeOf upgradeOnly="true">7</UpgradeOf>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+
+</Objects>
+

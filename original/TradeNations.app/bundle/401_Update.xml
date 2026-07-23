@@ -1,0 +1,155 @@
+
+
+<Objects>
+	
+	
+	<Object id="347" name="Holiday Gift" width="2" height="2" type="present" availableFromStore="0" upgradeID="0" xpValue="0">
+		<HurryCost timeInterval="86400">12</HurryCost>
+	    <Info>Hoppy Holidays! The Holiday Gift will be ready to open on December 25th, or you can choose to hurry it and receive it early! The Holiday Gift grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+		<IdleAnim name="bunny_white">63</IdleAnim>
+		<BuildMenuAnim name="holidayGift"></BuildMenuAnim>
+		<ConstructionAnim name="holidayGift">159</ConstructionAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+		<FinishTime>1324800000</FinishTime> <!-- DEC 25, 2011 -->
+		<Cost>
+			<Resource id="1">0</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">0</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="1.0">
+            <Resource id="1" percent="1.0"/>
+			</Resources>
+        </Buffer>
+        <Limit>1</Limit>
+        <CompatibleLand>All</CompatibleLand>
+	</Object>
+
+	<Object id="348" name="Twitch" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="0">
+		<IdleAnim name="bunny_spotted">63</IdleAnim>
+		<BuildMenuAnim name="bunny_spotted"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Twitch the bunny rabbit may have ingested too much caffeine. Twitch grants a bonus to the XP and Gold received from all Shops by 3% (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+		<Prerequisite type="rewardUnlockable"></Prerequisite>
+		<Cost>
+			<Resource id="1">0</Resource>
+		</Cost>
+		<Sell>
+			<Resource id="1">0</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="3.0">
+            	<Resource id="1" percent="3.0"/>
+			</Resources>
+        </Buffer>
+        <Limit>1</Limit>
+        <CompatibleLand>All</CompatibleLand>
+	</Object>
+	<Object id="349" name="Magic Bunny" width="2" height="2" type="decoration" availableFromStore="1" upgradeID="0" xpValue="2950">
+		<IdleAnim name="bunny_pink">63</IdleAnim>
+		<BuildMenuAnim name="bunny_pink"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>The Magic Bunny is best friends with the Magic Stallion! The Magic Bunny is so magical that she grants a bonus to the XP and Gold received from all Shops by 32.0%!! (500% Maximum)</Info>
+		<Prerequisite type="level">4</Prerequisite>
+		<Cost>	
+		    <MagicBeans>295</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">2950</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="32.0">
+            <Resource id="1" percent="32.0"/>
+			</Resources>
+        </Buffer>
+        <CompatibleLand>All</CompatibleLand>
+	</Object>
+	<Object id="350" name="Bill" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="750">
+		<IdleAnim name="bison">63</IdleAnim>
+		<BuildMenuAnim name="bison"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="yes" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Bison Bill is a kind and gentle bovid who loves to eat grass. Bill grants a bonus to the XP and Gold received from all Shops by 4.0% (500% Maximum)</Info>
+		<Prerequisite type="level">28</Prerequisite>
+		<Cost>
+		    <MagicBeans>55</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">750</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="4.0">
+            <Resource id="1" percent="4.0"/>
+			</Resources>
+        </Buffer>
+		<CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="351" name="Bullwrinkle" width="3" height="3" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1350">
+		<IdleAnim name="moose">63</IdleAnim>
+		<BuildMenuAnim name="moose"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Bullwrinkle is a moose whose best friend is a crazy squirrel. Bullwrinkle grants a bonus to the XP and Gold received from all Shops by 8.5% (500% Maximum)</Info>
+		<Prerequisite type="level">26</Prerequisite>
+		<Cost>
+		    <MagicBeans>135</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1350</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="8.5">
+            <Resource id="1" percent="8.5"/>
+			</Resources>
+        </Buffer>
+        <CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="352" name="Pepe" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="1950">
+		<IdleAnim name="skunk">63</IdleAnim>
+		<BuildMenuAnim name="skunk"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Skunk? or Smelly-Black-Cat-White-Paint mishap? You decide. Pepe grants a bonus to the XP and Gold received from all Shops by 15% (500% Maximum)</Info>
+		<Prerequisite type="level">20</Prerequisite>
+		<Cost>
+		    <MagicBeans>195</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">1950</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="15.0">
+            <Resource id="1" percent="15.0"/>
+			</Resources>
+        </Buffer>
+        <CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	<Object id="353" name="Sam" width="2" height="2" type="decoration" availableFromStore="0" upgradeID="0" xpValue="950">
+		<IdleAnim name="sheepdog">63</IdleAnim>
+		<BuildMenuAnim name="sheepdog"></BuildMenuAnim>
+		<Decoration type="misc" select="no" reposition="yes" blockVillager="no" hasPadding="no"/>
+		<BuildTime>0</BuildTime>
+	    <Info>Sam the Sheep Dog does not like wily coyotes. Sam grants a bonus to the XP and Gold received from all Shops by 7% (500% Maximum)</Info>
+		<Prerequisite type="level">32</Prerequisite>
+		<Cost>
+		    <MagicBeans>95</MagicBeans>
+		</Cost>
+		<Sell>
+			<Resource id="1">950</Resource>
+		</Sell>
+		<Buffer onlyOne="0" category="shops">
+			<Resources xpPercent="7.0">
+            <Resource id="1" percent="7.0"/>
+			</Resources>
+        </Buffer>
+        <CompatibleLand>Frontier</CompatibleLand>
+	</Object>
+	
+</Objects>
+

@@ -1,0 +1,22 @@
+{
+    "purchase_already_pending": "test",
+    "purchase_cant_make_payments": "test",
+    "purchase_error_cancelled": "test",
+    "purchase_internet_required": "test",
+    "purchase_process_failed": "test",
+    "purchase_processing_body": "test",
+    "purchase_processing_title": "test",
+    "purchase_restore_failed_body": "test",
+    "purchase_restore_failed_title": "test",
+    "purchase_restored_body": "test",
+    "purchase_restored_title": "test",
+    "purchase_restoring_body": "test",
+    "purchase_restoring_title": "test",
+    "purchase_thank_you_body": "test",
+    "purchase_thank_you_title": "test",
+    "purchase_unable_to_find_for_verify": "test",
+    "purchase_unable_to_verify_body": "test",
+    "purchase_unable_to_verify_title": "test",
+    "purchase_verifying_body": "test",
+    "purchase_verifying_title": "test"
+}

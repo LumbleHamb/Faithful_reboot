@@ -1,0 +1,22 @@
+{
+    "purchase_already_pending": "Dieser Kauf ist bereits anh\u00e4ngig.",
+    "purchase_cant_make_payments": "Ihr Ger\u00e4t ist nicht erlaubt, Zahlungen zu leisten. Bitte \u00fcberpr\u00fcfen Sie Ihre Parental Controls-Einstellungen.",
+    "purchase_error_cancelled": "Ihr Kauf ist ein Fehler aufgetreten. Bitte \u00fcberpr\u00fcfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.",
+    "purchase_internet_required": "Internet-Verbindung erforderlich, um Produkt zu kaufen.",
+    "purchase_process_failed": "Failed to Bearbeitung Ihrer Bestellung.",
+    "purchase_processing_body": "Ihr Kauf wird bearbeitet.",
+    "purchase_processing_title": "Verarbeitung",
+    "purchase_restore_failed_body": "Fehler beim Wiederherstellen Ihrer Transaktionen. Bitte \u00fcberpr\u00fcfen Sie Ihre Internetverbindung, \u00fcberpr\u00fcfen Sie Ihre iTunes Account-Informationen, und versuchen Sie es erneut.",
+    "purchase_restore_failed_title": "Restaurierung fehlgeschlagen",
+    "purchase_restored_body": "Ihr Kauf ist restauriert worden.",
+    "purchase_restored_title": "Kauf restauriert",
+    "purchase_restoring_body": "Wiederherstellen Ihrer Bestellung ...",
+    "purchase_restoring_title": "Wiederherstellen",
+    "purchase_thank_you_body": "Ihr Kauf bearbeitet wurde.",
+    "purchase_thank_you_title": "Danke",
+    "purchase_unable_to_find_for_verify": "Kann Produkt zu \u00fcberpr\u00fcfen, zu finden.",
+    "purchase_unable_to_verify_body": "Ihr Kauf konnte nicht verifiziert werden. Bitte versuchen Sie es Ihrem Kauf wieder, wenn Sie eine Internet-Verbindung haben, oder zu einem sp\u00e4teren Zeitpunkt.",
+    "purchase_unable_to_verify_title": "Kann Purchase \u00dcberpr\u00fcfen",
+    "purchase_verifying_body": "\u00dcberpr\u00fcfen Sie Ihre Kauf ...",
+    "purchase_verifying_title": "\u00dcberpr\u00fcfen"
+}

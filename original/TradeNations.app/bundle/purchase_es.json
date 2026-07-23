@@ -1,0 +1,22 @@
+{
+    "purchase_already_pending": "Esta adquisici\u00f3n est\u00e1 pendiente.",
+    "purchase_cant_make_payments": "El dispositivo no se le permite hacer los pagos. Por favor, compruebe la configuraci\u00f3n de control parental.",
+    "purchase_error_cancelled": "Su compra ha encontrado un error. Por favor, compruebe la conexi\u00f3n de red y vuelva a intentarlo.",
+    "purchase_internet_required": "Requiere conexi\u00f3n a Internet para comprar productos.",
+    "purchase_process_failed": "No se ha podido procesar su compra.",
+    "purchase_processing_body": "Su compra est\u00e1 siendo procesada.",
+    "purchase_processing_title": "tratamiento",
+    "purchase_restore_failed_body": "Se produjo un error al restaurar sus transacciones. Por favor, verifique su conexi\u00f3n a Internet, compruebe la informaci\u00f3n de su cuenta de iTunes, y vuelva a intentarlo.",
+    "purchase_restore_failed_title": "restauraci\u00f3n de Fallo",
+    "purchase_restored_body": "Su compra ha sido restaurada.",
+    "purchase_restored_title": "Compra Restaurado",
+    "purchase_restoring_body": "La restauraci\u00f3n de su compra ...",
+    "purchase_restoring_title": "la restauraci\u00f3n de",
+    "purchase_thank_you_body": "Su compra ha sido procesado.",
+    "purchase_thank_you_title": "Gracias",
+    "purchase_unable_to_find_for_verify": "No se puede encontrar productos para verificar.",
+    "purchase_unable_to_verify_body": "Su compra no pudo ser verificada. Por favor, int\u00e9ntelo de nuevo cuando su compra usted tiene una conexi\u00f3n a Internet o en un momento posterior.",
+    "purchase_unable_to_verify_title": "No es posible verificar la compra",
+    "purchase_verifying_body": "Verificar su compra ...",
+    "purchase_verifying_title": "Verificaci\u00f3n"
+}

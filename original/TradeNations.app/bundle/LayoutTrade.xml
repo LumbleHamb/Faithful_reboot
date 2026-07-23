@@ -1,0 +1,329 @@
+<!-- Allowed tags: -->
+
+<!-- <Object id="int: object id from Objects xml" xPosition="int: xpos on map" yPosition="int: ypos on map" (flipObj="y": if flipObj tag present, building will be flipped (value irrelavent))> Creates object on map -->
+
+<!-- <ResourceTiles>Object(s)</> Specifies that objects contained within are resource tiles and should not be included in town region (used for where mayor wanders) --> 
+<Layout>
+
+      <!-- Trees and rocks at the edge of the map -->
+
+      <ResourceTiles>
+
+            <Object id="6" xPosition="7" yPosition="7"></Object> 
+
+            <Object id="7" xPosition="15" yPosition="7"></Object> 
+
+            <Object id="6" xPosition="23" yPosition="7"></Object>
+
+            <Object id="6" xPosition="31" yPosition="7"></Object>
+
+            <Object id="7" xPosition="39" yPosition="7"></Object>
+
+            <Object id="7" xPosition="47" yPosition="7"></Object>
+
+            <Object id="6" xPosition="55" yPosition="7"></Object>
+
+            <Object id="7" xPosition="63" yPosition="7"></Object>
+
+            <Object id="7" xPosition="71" yPosition="7"></Object>
+
+            <Object id="6" xPosition="79" yPosition="7"></Object>
+
+            <Object id="7" xPosition="87" yPosition="7"></Object>
+
+            <Object id="6" xPosition="95" yPosition="7"></Object>
+
+            <Object id="7" xPosition="103" yPosition="7"></Object> 
+
+            <Object id="6" xPosition="7" yPosition="15"></Object>
+
+            <Object id="7" xPosition="7" yPosition="23"></Object>
+
+            <Object id="6" xPosition="7" yPosition="31"></Object>
+
+            <Object id="7" xPosition="7" yPosition="39"></Object>
+
+            <Object id="6" xPosition="7" yPosition="47"></Object>
+
+            <Object id="7" xPosition="7" yPosition="55"></Object>
+
+            <Object id="7" xPosition="7" yPosition="63"></Object>
+
+            <Object id="6" xPosition="7" yPosition="71"></Object>
+
+            <Object id="6" xPosition="7" yPosition="79"></Object>
+
+            <Object id="7" xPosition="7" yPosition="87"></Object>
+
+            <Object id="7" xPosition="7" yPosition="95"></Object>
+
+            <Object id="6" xPosition="7" yPosition="103"></Object>
+
+      </ResourceTiles> 
+      <!-- POSITIONING:
+
+            - 0, 0 is at the top center of the map.
+
+            - Building width and height extend back from the xPosition and yPosition (so a building placed at 20, 20 with width 5 and height 5 has its other corners at 15, 20, 15, 15 and 20, 15)
+
+            - X grows towards the bottom right, Y grows towards the bottom left
+
+            - Be aware of building gutters: make sure there is 1 space between all buildings
+
+                  - the only exception to this are Decorations with the blockVillager property set to "no". These can be placed directly next to each other and to other buildings.
+
+            - land size is 48 by 48. Buildings placed outside this region will not be drawn.
+
+       --> 
+
+      <!-- Town Hall -->
+
+      <Object id="1" xPosition="23" yPosition="23"></Object> 
+      <!-- Baker shop -->
+
+      <Object id="35" xPosition="40" yPosition="21"></Object>
+	  
+	  <!-- Small Cottage -->
+	  <Object id="12" xPosition="46" yPosition="21"></Object>
+	  
+      <!-- Purple Cottage -->
+
+      <Object id="141" xPosition="31" yPosition="21"></Object> 
+      <!-- Farm -->
+
+      <Object id="11" xPosition="36" yPosition="14"></Object> 
+      <!-- Blue Tent -->
+
+      <Object id="116" xPosition="45" yPosition="13"></Object> 
+      <!-- Buttercups -->
+
+      <Object id="108" xPosition="28" yPosition="23"></Object> 
+      <!-- Market -->
+
+      <Object id="27" xPosition="19" yPosition="34" flipObj="y"></Object> 
+      <!-- Orange Pot -->
+
+      <Object id="131" xPosition="21" yPosition="30"></Object> 
+      <!-- Potted Daisies -->
+
+      <Object id="125" xPosition="21" yPosition="32"></Object> 
+      <!-- Poplar -->
+
+      <Object id="101" xPosition="18" yPosition="36"></Object> 
+      <!-- Yellow Pot -->
+
+      <Object id="129" xPosition="16" yPosition="36"></Object> 
+      <!-- Red Cottage -->
+
+      <Object id="138" xPosition="17" yPosition="45" flipObj="y"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="16" yPosition="37" flipObj="y"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="12" yPosition="37" flipObj="y"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="8" yPosition="41"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="8" yPosition="45"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="12" yPosition="46" flipObj="y"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="16" yPosition="46" flipObj="y"></Object> 
+      <!-- Wood Fence -->
+
+      <Object id="121" xPosition="18" yPosition="42"></Object> 
+      <!-- Sheep -->
+
+      <Object id="132" xPosition="11" yPosition="44"></Object> 
+      <!-- Sheep -->
+
+      <Object id="132" xPosition="11" yPosition="40" flipObj="y"></Object> 
+      <!-- Sheep -->
+
+      <Object id="132" xPosition="15" yPosition="40"></Object> 
+      <!-- Toadstool -->
+
+      <Object id="119" xPosition="20" yPosition="42"></Object> 
+      <!-- Brown Cottage -->
+
+      <Object id="139" xPosition="37" yPosition="35" flipObj="y"></Object> 
+      <!-- Crates -->
+
+      <Object id="120" xPosition="37" yPosition="37"></Object> 
+      <!-- Poplar -->
+
+      <Object id="101" xPosition="30" yPosition="29"></Object> 
+      <!-- Poplar -->
+
+      <Object id="101" xPosition="29" yPosition="32"></Object> 
+      <!-- Spruce -->
+
+      <Object id="102" xPosition="31" yPosition="32"></Object> 
+      <!-- Log -->
+
+      <Object id="117" xPosition="32" yPosition="34"></Object> 
+      <!-- Bench -->
+
+      <Object id="151" xPosition="31" yPosition="39" flipObj="y"></Object> 
+      <!-- Red Cottage -->
+
+      <Object id="138" xPosition="46" yPosition="36"></Object> 
+      <!-- Toadstool -->
+
+      <Object id="119" xPosition="45" yPosition="30"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="30" yPosition="44"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="34" yPosition="44"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="32" yPosition="46"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="32" yPosition="44"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="30" yPosition="46"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="34" yPosition="46"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="42" yPosition="43"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="44" yPosition="45"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="46" yPosition="45"></Object> 
+      <!-- Daisies -->
+
+      <Object id="106" xPosition="44" yPosition="47"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="44" yPosition="43"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="42" yPosition="45"></Object> 
+      <!-- Pansies -->
+
+      <Object id="109" xPosition="46" yPosition="47"></Object> 
+      <!-- ALL ROADS START HERE --> 
+
+      <Object id="133" xPosition="30" yPosition="23"></Object>
+
+      <Object id="133" xPosition="39" yPosition="23"></Object>
+
+      <Object id="133" xPosition="45" yPosition="23"></Object>
+
+      <Object id="133" xPosition="23" yPosition="34"></Object>
+
+      <Object id="133" xPosition="21" yPosition="34"></Object>
+
+      <Object id="133" xPosition="45" yPosition="38"></Object> 
+ 
+
+      <!-- Across 1 -->
+
+      <Object id="134" xPosition="25" yPosition="25"></Object>
+
+      <Object id="133" xPosition="27" yPosition="25"></Object>
+
+      <Object id="133" xPosition="29" yPosition="25"></Object>
+
+      <Object id="133" xPosition="31" yPosition="25"></Object>
+
+      <Object id="133" xPosition="33" yPosition="25"></Object>
+
+      <Object id="133" xPosition="35" yPosition="25"></Object>
+
+      <Object id="133" xPosition="37" yPosition="25"></Object>
+
+      <Object id="133" xPosition="39" yPosition="25"></Object>
+
+      <Object id="133" xPosition="41" yPosition="25"></Object>
+
+      <Object id="133" xPosition="43" yPosition="25"></Object>
+
+      <Object id="133" xPosition="45" yPosition="25"></Object>
+
+      <Object id="133" xPosition="47" yPosition="25"></Object> 
+      <!-- Across 2 -->
+
+      <Object id="133" xPosition="27" yPosition="41"></Object>
+
+      <Object id="133" xPosition="29" yPosition="41"></Object>
+
+      <Object id="133" xPosition="31" yPosition="41"></Object>
+
+      <Object id="133" xPosition="33" yPosition="41"></Object>
+
+      <Object id="133" xPosition="35" yPosition="41"></Object>
+
+      <Object id="133" xPosition="37" yPosition="41"></Object>
+
+      <Object id="133" xPosition="39" yPosition="41"></Object>
+
+      <Object id="133" xPosition="41" yPosition="40"></Object>
+
+      <Object id="133" xPosition="43" yPosition="40"></Object>
+
+      <Object id="133" xPosition="45" yPosition="40"></Object>
+
+      <Object id="133" xPosition="47" yPosition="40"></Object> 
+ 
+
+      <!-- Down 1-->
+
+      <Object id="133" xPosition="25" yPosition="27"></Object>
+
+      <Object id="133" xPosition="25" yPosition="29"></Object>
+
+      <Object id="133" xPosition="25" yPosition="31"></Object>
+
+      <Object id="133" xPosition="25" yPosition="33"></Object>
+
+      <Object id="133" xPosition="25" yPosition="35"></Object>
+
+      <Object id="133" xPosition="25" yPosition="37"></Object>
+
+      <Object id="133" xPosition="25" yPosition="39"></Object>
+
+      <Object id="133" xPosition="25" yPosition="41"></Object>
+
+      <Object id="133" xPosition="25" yPosition="43"></Object>
+
+      <Object id="133" xPosition="25" yPosition="45"></Object>
+
+      <Object id="133" xPosition="25" yPosition="47"></Object> 
+      <!-- Down 2-->
+
+      <Object id="133" xPosition="39" yPosition="27"></Object>
+
+      <Object id="133" xPosition="39" yPosition="29"></Object>
+
+      <Object id="133" xPosition="39" yPosition="31"></Object>
+
+      <Object id="133" xPosition="39" yPosition="33"></Object>
+
+      <Object id="133" xPosition="39" yPosition="35"></Object>
+
+      <Object id="133" xPosition="39" yPosition="37"></Object>
+
+      <Object id="133" xPosition="39" yPosition="39"></Object>
+
+      <Object id="133" xPosition="39" yPosition="43"></Object>
+
+      <Object id="133" xPosition="39" yPosition="45"></Object>
+
+      <Object id="133" xPosition="39" yPosition="47"></Object> 
+
+
+</Layout>

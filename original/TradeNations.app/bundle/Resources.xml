@@ -1,0 +1,71 @@
+<Resources>
+	<Resource id="1" name="Gold" scoreValue="1" startValue="75"
+		
+		stacksprite="F_goldstack_01" singlesprite="F_goldstack_02" gainedanim="F_goldstack_03"
+		haulerAnim="910"
+        
+		menuIcon="1000" menuIconSmall="1001"
+		menuIconName="GOLD" menuIconSmallName="GOLD"
+		iconfontchar="#"
+		collectSFX="17"/>
+
+	<!-- Tier 1 -->
+	<Resource id="10" name="Wood" scoreValue="0.25" startValue="50"
+		stacksprite="RESSOURCELOGS" singlesprite="SINGLELOG"
+		menuIcon="1002" menuIconName="RESSOURCE_WOOD"
+		menuIconSmall="1003" menuIconSmallName="WOODICON"
+		haulerAnim="900"
+		menuIconWatermark="1031"
+		menuIconWatermarkName="WATERMARK_WOOD"
+		iconfontchar="~" collectSFX="31"/>
+
+	<Resource id="20" name="Rock" scoreValue="1.2" startValue="0"
+		stacksprite="RESSOURCESTONE" singlesprite="SINGLESTONE"
+		menuIcon="1004" menuIconName="RESSOURCE_STONE"
+		menuIconSmall="1005" menuIconSmallName="STONEICON"
+		haulerAnim="901"
+		menuIconWatermark="1029" menuIconWatermarkName="WATERMARK_STONE"
+		iconfontchar="&amp;" collectSFX="33"/>
+	<!--Resource id="30" name="Ore" startValue="0" stacksprite="2" singlesprite="54" menuIcon="1006" menuIconSmall="1007" haulerAnim="902" menuIconWatermark="1031" iconfontchar="O"/-->
+	<Resource id="40" name="Wheat" scoreValue="0.45" startValue="25"
+		stacksprite="RESSOURCEGRAIN" singlesprite="SINGLEGRAIN"
+		menuIcon="1008" menuIconName="RESSOURCE_WHEAT"
+		menuIconSmall="1009" menuIconSmallName="GRAINICON"
+		haulerAnim="903"
+		menuIconWatermark="1030"
+		menuIconWatermarkName ="WATERMARK_WHEAT"
+		iconfontchar="$" collectSFX="35"/>
+
+	<Resource id="50" name="Wool" scoreValue="0.4" startValue="0"
+		stacksprite="RESSOURCEWOOL" singlesprite="SINGLEWOOL"
+		menuIcon="1010" menuIconName="RESSOURCE_WOOL"
+		menuIconSmall="1011" menuIconSmallName="WOOLICON"
+		haulerAnim="904"
+		menuIconWatermark="1032" menuIconWatermarkName="WATERMARK_WOOL"
+		iconfontchar="@" collectSFX="36"/>
+
+	<!-- Tier 2 -->
+	<Resource id="11" name="Lumber" scoreValue="0.45" startValue="0"
+		stacksprite="RESOURCEWOOD" singlesprite="SINGLELUMBER"
+		menuIcon="1012" menuIconName="RESSOURCE_LUMBER"
+		menuIconSmall="1013" menuIconSmallName="LUMBERICON"
+		haulerAnim="905"
+		menuIconWatermark="1028" menuIconWatermarkName="WATERMARK_LUMBER"
+		iconfontchar="%" collectSFX="32"/>
+
+	<Resource id="21" name="Cut Stone" scoreValue="2.5" startValue="0"
+		stacksprite="RESSOURCECUTSTONE" singlesprite="SINGLECUTSTONE"
+		menuIcon="1014" menuIconName="RESSOURCE_CUTSTONE"
+		menuIconSmall="1015" menuIconSmallName="CUTSTONEICON"
+		haulerAnim="906"
+		menuIconWatermark="1027" menuIconWatermarkName="WATERMARK_CUTSTONE"
+		iconfontchar="*" collectSFX="34"/>
+
+	<Resource id="51" name="Cloth" startValue="0"
+		stacksprite="RESSOURCECLOTH" singlesprite="SINGLECLOTH"
+		menuIcon="1020" menuIconName="RESSOURCE_CLOTH"
+		menuIconSmall="1021" menuIconSmallName="CLOTHICON"
+		haulerAnim="909"
+		menuIconWatermark="1033" menuIconWatermarkName="WATERMARK_CLOTH"
+		iconfontchar="{" collectSFX="37"/>
+</Resources>

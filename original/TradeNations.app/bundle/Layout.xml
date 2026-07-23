@@ -1,0 +1,44 @@
+<!-- Allowed tags: -->
+<!-- <Object id="int: object id from Objects xml" xPosition="int: xpos on map" yPosition="int: ypos on map"> Creates object on map -->
+<!-- <ResourceTiles>Object(s)</> Specifies that objects contained within are resource tiles and should not be included in town region (used for where mayor wanders) -->
+
+<Layout>
+	<!-- Trees and rocks at the edge of the map -->
+	<ResourceTiles>
+		<Object id="6" xPosition="7" yPosition="7"></Object>
+		
+		<Object id="7" xPosition="15" yPosition="7"></Object>
+
+		<Object id="6" xPosition="23" yPosition="7"></Object>
+		<Object id="6" xPosition="31" yPosition="7"></Object>
+		<Object id="7" xPosition="39" yPosition="7"></Object>
+		<Object id="7" xPosition="47" yPosition="7"></Object>
+		<Object id="6" xPosition="55" yPosition="7"></Object>
+		<Object id="7" xPosition="63" yPosition="7"></Object>
+		<Object id="7" xPosition="71" yPosition="7"></Object>
+		<Object id="6" xPosition="79" yPosition="7"></Object>
+		<Object id="7" xPosition="87" yPosition="7"></Object>
+		<Object id="6" xPosition="95" yPosition="7"></Object>
+		<Object id="7" xPosition="103" yPosition="7"></Object>
+		<Object id="6" xPosition="111" yPosition="7"></Object>
+		<Object id="7" xPosition="119" yPosition="7"></Object>
+		
+		<Object id="6" xPosition="7" yPosition="15"></Object>
+		<Object id="7" xPosition="7" yPosition="23"></Object>
+		<Object id="6" xPosition="7" yPosition="31"></Object>
+		<Object id="7" xPosition="7" yPosition="39"></Object>
+		<Object id="6" xPosition="7" yPosition="47"></Object>
+		<Object id="7" xPosition="7" yPosition="55"></Object>
+		<Object id="7" xPosition="7" yPosition="63"></Object>
+		<Object id="6" xPosition="7" yPosition="71"></Object>
+		<Object id="6" xPosition="7" yPosition="79"></Object>
+		<Object id="7" xPosition="7" yPosition="87"></Object>
+		<Object id="7" xPosition="7" yPosition="95"></Object>
+		<Object id="6" xPosition="7" yPosition="103"></Object>
+		<Object id="6" xPosition="7" yPosition="111"></Object>
+		<Object id="7" xPosition="7" yPosition="119"></Object>
+	</ResourceTiles>
+	
+	<!-- Some starting buildings -->
+	<Object id="1" xPosition="23" yPosition="23"></Object>
+</Layout>
