@@ -1,0 +1,15 @@
+# Godot
+.godot/
+export/
+*.tmp
+
+# AI temporary files
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
