@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_sdgef"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_g3jwx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ex8qk"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8mulu"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_74ykg"]
+
+[sub_resource type="Resource" id="Resource_vk2tx"]
+script = ExtResource("1_sdgef")
+resource_id = 1
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_7sx5i"]
+script = ExtResource("1_sdgef")
+resource_id = 20
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_js5ck"]
+script = ExtResource("2_g3jwx")
+entries = Array[ExtResource("1_sdgef")]([SubResource("Resource_vk2tx"), SubResource("Resource_7sx5i")])
+
+[sub_resource type="Resource" id="Resource_e2ifd"]
+script = ExtResource("3_ex8qk")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_dthyn"]
+script = ExtResource("4_8mulu")
+all_of = Array[ExtResource("3_ex8qk")]([SubResource("Resource_e2ifd")])
+
+[sub_resource type="Resource" id="Resource_2sl7f"]
+script = ExtResource("1_sdgef")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_o57o7"]
+script = ExtResource("1_sdgef")
+resource_id = 20
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_t4xho"]
+script = ExtResource("2_g3jwx")
+entries = Array[ExtResource("1_sdgef")]([SubResource("Resource_2sl7f"), SubResource("Resource_o57o7")])
+
+[resource]
+script = ExtResource("5_74ykg")
+id = 136
+display_name = "Road Turn Left"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_js5ck")
+sell = SubResource("Resource_t4xho")
+prerequisites = SubResource("Resource_dthyn")
+upgrade_of_id = 0

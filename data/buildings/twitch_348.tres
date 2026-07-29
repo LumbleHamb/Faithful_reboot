@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_wflay"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ruitp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_1y5u7"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_6gyho"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_wusah"]
+
+[sub_resource type="Resource" id="Resource_m3fag"]
+script = ExtResource("1_wflay")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_7qnap"]
+script = ExtResource("2_ruitp")
+entries = Array[ExtResource("1_wflay")]([SubResource("Resource_m3fag")])
+
+[sub_resource type="Resource" id="Resource_p4k31"]
+script = ExtResource("3_1y5u7")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_sfrtm"]
+script = ExtResource("3_1y5u7")
+target_id = 0
+
+[sub_resource type="Resource" id="Resource_1it8b"]
+script = ExtResource("4_6gyho")
+all_of = Array[ExtResource("3_1y5u7")]([SubResource("Resource_p4k31"), SubResource("Resource_sfrtm")])
+
+[sub_resource type="Resource" id="Resource_1s1wm"]
+script = ExtResource("1_wflay")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_m7w41"]
+script = ExtResource("2_ruitp")
+entries = Array[ExtResource("1_wflay")]([SubResource("Resource_1s1wm")])
+
+[resource]
+script = ExtResource("5_wusah")
+id = 348
+display_name = "Twitch"
+type = 5
+width = 2
+height = 2
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_7qnap")
+sell = SubResource("Resource_m7w41")
+prerequisites = SubResource("Resource_1it8b")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Twitch the bunny rabbit may have ingested too much caffeine. Twitch grants a bonus to the XP and Gold received from all Shops by 3% (500% Maximum)"

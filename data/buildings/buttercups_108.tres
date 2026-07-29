@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_bnvn3"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_38k22"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5sl57"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_3deos"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_4eusi"]
+
+[sub_resource type="Resource" id="Resource_jl5wn"]
+script = ExtResource("1_bnvn3")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_n3452"]
+script = ExtResource("2_38k22")
+entries = Array[ExtResource("1_bnvn3")]([SubResource("Resource_jl5wn")])
+
+[sub_resource type="Resource" id="Resource_ek8ws"]
+script = ExtResource("3_5sl57")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_ulxw8"]
+script = ExtResource("4_3deos")
+all_of = Array[ExtResource("3_5sl57")]([SubResource("Resource_ek8ws")])
+
+[sub_resource type="Resource" id="Resource_edv3r"]
+script = ExtResource("1_bnvn3")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_h3b85"]
+script = ExtResource("2_38k22")
+entries = Array[ExtResource("1_bnvn3")]([SubResource("Resource_edv3r")])
+
+[resource]
+script = ExtResource("5_4eusi")
+id = 108
+display_name = "Buttercups"
+type = 5
+width = 2
+height = 2
+xp_value = 15.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_n3452")
+sell = SubResource("Resource_h3b85")
+prerequisites = SubResource("Resource_ulxw8")
+upgrade_of_id = 0

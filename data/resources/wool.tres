@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/resource_definition.gd" id="1_gtitu"]
+
+[resource]
+script = ExtResource("1_gtitu")
+id = 50
+display_name = "Wool"
+tier = 1
+score_value = 0.4
+icon_font_char = "@"

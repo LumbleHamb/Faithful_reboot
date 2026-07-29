@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7xtwv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_q4ron"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_7gh4x"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_0hqwc"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_mqctp"]
+
+[sub_resource type="Resource" id="Resource_lrrqa"]
+script = ExtResource("1_7xtwv")
+resource_id = 0
+amount = 24.0
+
+[sub_resource type="Resource" id="Resource_aatn3"]
+script = ExtResource("2_q4ron")
+entries = Array[ExtResource("1_7xtwv")]([SubResource("Resource_lrrqa")])
+
+[sub_resource type="Resource" id="Resource_xy663"]
+script = ExtResource("3_7gh4x")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_vbwis"]
+script = ExtResource("3_7gh4x")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_f2kvd"]
+script = ExtResource("4_0hqwc")
+all_of = Array[ExtResource("3_7gh4x")]([SubResource("Resource_xy663"), SubResource("Resource_vbwis")])
+
+[sub_resource type="Resource" id="Resource_eyrtr"]
+script = ExtResource("1_7xtwv")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_caeut"]
+script = ExtResource("1_7xtwv")
+resource_id = 11
+amount = 60.0
+
+[sub_resource type="Resource" id="Resource_rrgj8"]
+script = ExtResource("1_7xtwv")
+resource_id = 20
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_h434l"]
+script = ExtResource("1_7xtwv")
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_gfu8a"]
+script = ExtResource("2_q4ron")
+entries = Array[ExtResource("1_7xtwv")]([SubResource("Resource_eyrtr"), SubResource("Resource_caeut"), SubResource("Resource_rrgj8"), SubResource("Resource_h434l")])
+
+[resource]
+script = ExtResource("5_mqctp")
+id = 143
+display_name = "Yellow House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_aatn3")
+sell = SubResource("Resource_gfu8a")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_f2kvd")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Yellow House houses three villagers."
+description_text = "Houses three villagers"

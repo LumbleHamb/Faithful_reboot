@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_kjutd"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_bp1gc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_hc8ts"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bhobq"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vr184"]
+
+[sub_resource type="Resource" id="Resource_waynr"]
+script = ExtResource("1_kjutd")
+resource_id = 0
+amount = 18.0
+
+[sub_resource type="Resource" id="Resource_clbfw"]
+script = ExtResource("2_bp1gc")
+entries = Array[ExtResource("1_kjutd")]([SubResource("Resource_waynr")])
+
+[sub_resource type="Resource" id="Resource_lgdrq"]
+script = ExtResource("3_hc8ts")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_24nls"]
+script = ExtResource("4_bhobq")
+all_of = Array[ExtResource("3_hc8ts")]([SubResource("Resource_lgdrq")])
+
+[sub_resource type="Resource" id="Resource_gobh2"]
+script = ExtResource("1_kjutd")
+resource_id = 1
+amount = 180.0
+
+[sub_resource type="Resource" id="Resource_hhgr3"]
+script = ExtResource("2_bp1gc")
+entries = Array[ExtResource("1_kjutd")]([SubResource("Resource_gobh2")])
+
+[resource]
+script = ExtResource("5_vr184")
+id = 162
+display_name = "Jack O' Lantern"
+type = 5
+width = 2
+height = 2
+xp_value = 900.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_clbfw")
+sell = SubResource("Resource_hhgr3")
+prerequisites = SubResource("Resource_24nls")
+upgrade_of_id = 0
+info_text = "Scare all the neighborhood kids with a Jack O' Lantern this Halloween! The Jack O' Lantern grants a bonus to the XP and Gold received from all Shops by 0.6% (500% Maximum)"

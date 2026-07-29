@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_dixiu"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_02f33"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0i4vi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_c2tuh"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_mjcfv"]
+
+[sub_resource type="Resource" id="Resource_0u5vo"]
+script = ExtResource("1_dixiu")
+resource_id = 0
+amount = 135.0
+
+[sub_resource type="Resource" id="Resource_62ox8"]
+script = ExtResource("2_02f33")
+entries = Array[ExtResource("1_dixiu")]([SubResource("Resource_0u5vo")])
+
+[sub_resource type="Resource" id="Resource_0dqmm"]
+script = ExtResource("3_0i4vi")
+target_id = 26
+
+[sub_resource type="Resource" id="Resource_iyt8u"]
+script = ExtResource("4_c2tuh")
+all_of = Array[ExtResource("3_0i4vi")]([SubResource("Resource_0dqmm")])
+
+[sub_resource type="Resource" id="Resource_m4o3h"]
+script = ExtResource("1_dixiu")
+resource_id = 1
+amount = 1350.0
+
+[sub_resource type="Resource" id="Resource_glsfk"]
+script = ExtResource("2_02f33")
+entries = Array[ExtResource("1_dixiu")]([SubResource("Resource_m4o3h")])
+
+[resource]
+script = ExtResource("5_mjcfv")
+id = 351
+display_name = "Bullwrinkle"
+type = 5
+width = 3
+height = 3
+xp_value = 1350.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_62ox8")
+sell = SubResource("Resource_glsfk")
+prerequisites = SubResource("Resource_iyt8u")
+upgrade_of_id = 0
+info_text = "Bullwrinkle is a moose whose best friend is a crazy squirrel. Bullwrinkle grants a bonus to the XP and Gold received from all Shops by 8.5% (500% Maximum)"

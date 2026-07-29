@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_40dkq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ybam5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_h82sr"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_l3476"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_k0jnj"]
+
+[sub_resource type="Resource" id="Resource_dtteb"]
+script = ExtResource("1_40dkq")
+resource_id = 1
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_jdl62"]
+script = ExtResource("1_40dkq")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_0axh3"]
+script = ExtResource("1_40dkq")
+resource_id = 21
+amount = 1100.0
+
+[sub_resource type="Resource" id="Resource_qe4ly"]
+script = ExtResource("2_ybam5")
+entries = Array[ExtResource("1_40dkq")]([SubResource("Resource_dtteb"), SubResource("Resource_jdl62"), SubResource("Resource_0axh3")])
+
+[sub_resource type="Resource" id="Resource_42x37"]
+script = ExtResource("3_h82sr")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_ntr0k"]
+script = ExtResource("3_h82sr")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_ob7tu"]
+script = ExtResource("4_l3476")
+all_of = Array[ExtResource("3_h82sr")]([SubResource("Resource_42x37"), SubResource("Resource_ntr0k")])
+
+[sub_resource type="Resource" id="Resource_m22wq"]
+script = ExtResource("1_40dkq")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_61qol"]
+script = ExtResource("1_40dkq")
+resource_id = 11
+amount = 60.0
+
+[sub_resource type="Resource" id="Resource_a2ney"]
+script = ExtResource("1_40dkq")
+resource_id = 21
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_wtqcf"]
+script = ExtResource("2_ybam5")
+entries = Array[ExtResource("1_40dkq")]([SubResource("Resource_m22wq"), SubResource("Resource_61qol"), SubResource("Resource_a2ney")])
+
+[resource]
+script = ExtResource("5_k0jnj")
+id = 31
+display_name = "Sculptor Shop"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_qe4ly")
+sell = SubResource("Resource_wtqcf")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_ob7tu")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([20, 23, 22, 24, 21])
+info_text = "Use the Sculptor Shop to complete jobs using Rock and Cut Stone."
+description_text = "Creates fantastic sculptures for sale"

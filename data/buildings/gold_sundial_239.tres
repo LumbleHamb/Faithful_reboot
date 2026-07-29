@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3567n"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_348h2"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_j0rxj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_q2wyr"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_txe8x"]
+
+[sub_resource type="Resource" id="Resource_xc0e2"]
+script = ExtResource("1_3567n")
+resource_id = 1
+amount = 1000000.0
+
+[sub_resource type="Resource" id="Resource_sal48"]
+script = ExtResource("2_348h2")
+entries = Array[ExtResource("1_3567n")]([SubResource("Resource_xc0e2")])
+
+[sub_resource type="Resource" id="Resource_6e014"]
+script = ExtResource("3_j0rxj")
+target_id = 50
+
+[sub_resource type="Resource" id="Resource_y6vto"]
+script = ExtResource("4_q2wyr")
+all_of = Array[ExtResource("3_j0rxj")]([SubResource("Resource_6e014")])
+
+[sub_resource type="Resource" id="Resource_acirc"]
+script = ExtResource("1_3567n")
+resource_id = 1
+amount = 100000.0
+
+[sub_resource type="Resource" id="Resource_65kxm"]
+script = ExtResource("2_348h2")
+entries = Array[ExtResource("1_3567n")]([SubResource("Resource_acirc")])
+
+[resource]
+script = ExtResource("5_txe8x")
+id = 239
+display_name = "Gold Sundial"
+type = 5
+width = 2
+height = 2
+xp_value = 250000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_sal48")
+sell = SubResource("Resource_65kxm")
+prerequisites = SubResource("Resource_y6vto")
+upgrade_of_id = 0
+info_text = "You're not elite if you don't have the Gold Sundial."

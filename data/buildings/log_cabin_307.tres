@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_cou7k"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ijaqu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_61q1p"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hg8f2"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lvgqj"]
+
+[sub_resource type="Resource" id="Resource_ssylu"]
+script = ExtResource("1_cou7k")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_0j1cq"]
+script = ExtResource("1_cou7k")
+resource_id = 11
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_02bn7"]
+script = ExtResource("2_ijaqu")
+entries = Array[ExtResource("1_cou7k")]([SubResource("Resource_ssylu"), SubResource("Resource_0j1cq")])
+
+[sub_resource type="Resource" id="Resource_ljdkx"]
+script = ExtResource("3_61q1p")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_jipgi"]
+script = ExtResource("4_hg8f2")
+all_of = Array[ExtResource("3_61q1p")]([SubResource("Resource_ljdkx")])
+
+[sub_resource type="Resource" id="Resource_rdovf"]
+script = ExtResource("1_cou7k")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_o4ct3"]
+script = ExtResource("1_cou7k")
+resource_id = 11
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_33p66"]
+script = ExtResource("2_ijaqu")
+entries = Array[ExtResource("1_cou7k")]([SubResource("Resource_rdovf"), SubResource("Resource_o4ct3")])
+
+[resource]
+script = ExtResource("5_lvgqj")
+id = 307
+display_name = "Log Cabin"
+type = 6
+category = "house"
+width = 6
+height = 6
+xp_value = 3000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_02bn7")
+sell = SubResource("Resource_33p66")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_jipgi")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Log Cabin houses two villagers and comes with an extra room for one adopted villager."
+description_text = "Old school log cabin, Abe Lincoln style"

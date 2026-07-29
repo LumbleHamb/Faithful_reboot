@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2l1qn"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_1icxg"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4fscf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_vn6io"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_l6lwe"]
+
+[sub_resource type="Resource" id="Resource_nhxrl"]
+script = ExtResource("1_2l1qn")
+resource_id = 0
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_jrja1"]
+script = ExtResource("2_1icxg")
+entries = Array[ExtResource("1_2l1qn")]([SubResource("Resource_nhxrl")])
+
+[sub_resource type="Resource" id="Resource_3ebmq"]
+script = ExtResource("3_4fscf")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_k1cp4"]
+script = ExtResource("3_4fscf")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_a736f"]
+script = ExtResource("4_vn6io")
+all_of = Array[ExtResource("3_4fscf")]([SubResource("Resource_3ebmq"), SubResource("Resource_k1cp4")])
+
+[sub_resource type="Resource" id="Resource_63q85"]
+script = ExtResource("1_2l1qn")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_uryaw"]
+script = ExtResource("1_2l1qn")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_luvyd"]
+script = ExtResource("1_2l1qn")
+resource_id = 21
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_l7wh5"]
+script = ExtResource("2_1icxg")
+entries = Array[ExtResource("1_2l1qn")]([SubResource("Resource_63q85"), SubResource("Resource_uryaw"), SubResource("Resource_luvyd")])
+
+[resource]
+script = ExtResource("5_l6lwe")
+id = 218
+display_name = "Mayor's Cottage"
+type = 6
+width = 5
+height = 6
+xp_value = 5000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_jrja1")
+sell = SubResource("Resource_l7wh5")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_a736f")
+upgrade_of_id = 0
+house_capacity = 2
+info_text = "The Mayor's Cottage houses six villagers.  The Mayor pulled some strings in the permitting office, so his cottage doesn't count towards your house limit."
+description_text = "Houses six villagers."

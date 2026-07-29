@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_aeq2j"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_s3oyj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ogo7r"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pwxgd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_6bmi3"]
+
+[sub_resource type="Resource" id="Resource_qwyto"]
+script = ExtResource("1_aeq2j")
+resource_id = 1
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_8158j"]
+script = ExtResource("1_aeq2j")
+resource_id = 20
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_cflcn"]
+script = ExtResource("2_s3oyj")
+entries = Array[ExtResource("1_aeq2j")]([SubResource("Resource_qwyto"), SubResource("Resource_8158j")])
+
+[sub_resource type="Resource" id="Resource_diy72"]
+script = ExtResource("3_ogo7r")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_lj0ro"]
+script = ExtResource("4_pwxgd")
+all_of = Array[ExtResource("3_ogo7r")]([SubResource("Resource_diy72")])
+
+[sub_resource type="Resource" id="Resource_28tym"]
+script = ExtResource("1_aeq2j")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_rpaqw"]
+script = ExtResource("1_aeq2j")
+resource_id = 20
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_6lea5"]
+script = ExtResource("2_s3oyj")
+entries = Array[ExtResource("1_aeq2j")]([SubResource("Resource_28tym"), SubResource("Resource_rpaqw")])
+
+[resource]
+script = ExtResource("5_6bmi3")
+id = 135
+display_name = "Road Turn Up"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_cflcn")
+sell = SubResource("Resource_6lea5")
+prerequisites = SubResource("Resource_lj0ro")
+upgrade_of_id = 0

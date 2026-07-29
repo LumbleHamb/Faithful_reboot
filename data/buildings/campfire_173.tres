@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7e24q"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_weple"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qcthc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_dcvxu"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_v8iwj"]
+
+[sub_resource type="Resource" id="Resource_dbtvo"]
+script = ExtResource("2_weple")
+
+[sub_resource type="Resource" id="Resource_xrmkf"]
+script = ExtResource("3_qcthc")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_gxgpr"]
+script = ExtResource("4_dcvxu")
+all_of = Array[ExtResource("3_qcthc")]([SubResource("Resource_xrmkf")])
+
+[sub_resource type="Resource" id="Resource_be18l"]
+script = ExtResource("1_7e24q")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_goh3a"]
+script = ExtResource("2_weple")
+entries = Array[ExtResource("1_7e24q")]([SubResource("Resource_be18l")])
+
+[resource]
+script = ExtResource("5_v8iwj")
+id = 173
+display_name = "Campfire"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_dbtvo")
+sell = SubResource("Resource_goh3a")
+prerequisites = SubResource("Resource_gxgpr")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Got marshmallows? Campfire grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_vyifs"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vkknh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2yrjv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ik2md"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_bodev"]
+
+[sub_resource type="Resource" id="Resource_scv5s"]
+script = ExtResource("1_vyifs")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_6mla5"]
+script = ExtResource("2_vkknh")
+entries = Array[ExtResource("1_vyifs")]([SubResource("Resource_scv5s")])
+
+[sub_resource type="Resource" id="Resource_7ubhc"]
+script = ExtResource("3_2yrjv")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_51g55"]
+script = ExtResource("4_ik2md")
+all_of = Array[ExtResource("3_2yrjv")]([SubResource("Resource_7ubhc")])
+
+[sub_resource type="Resource" id="Resource_m0fsy"]
+script = ExtResource("1_vyifs")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_kvwuw"]
+script = ExtResource("2_vkknh")
+entries = Array[ExtResource("1_vyifs")]([SubResource("Resource_m0fsy")])
+
+[resource]
+script = ExtResource("5_bodev")
+id = 315
+display_name = "Criss Cross Fence"
+type = 5
+height = 4
+xp_value = 90.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_6mla5")
+sell = SubResource("Resource_kvwuw")
+prerequisites = SubResource("Resource_51g55")
+upgrade_of_id = 0
+info_text = "This fence is great for keeping livestock in and wolves out"

@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_88t4l"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_m6xsn"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_7pqkp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_odjk4"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_op18o"]
+
+[sub_resource type="Resource" id="Resource_c4wa0"]
+script = ExtResource("1_88t4l")
+resource_id = 0
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_rhr08"]
+script = ExtResource("2_m6xsn")
+entries = Array[ExtResource("1_88t4l")]([SubResource("Resource_c4wa0")])
+
+[sub_resource type="Resource" id="Resource_le7fd"]
+script = ExtResource("3_7pqkp")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_wbdj6"]
+script = ExtResource("3_7pqkp")
+target_id = 18
+
+[sub_resource type="Resource" id="Resource_fjvak"]
+script = ExtResource("4_odjk4")
+all_of = Array[ExtResource("3_7pqkp")]([SubResource("Resource_le7fd"), SubResource("Resource_wbdj6")])
+
+[sub_resource type="Resource" id="Resource_vgnkq"]
+script = ExtResource("1_88t4l")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_62wxr"]
+script = ExtResource("1_88t4l")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_it742"]
+script = ExtResource("2_m6xsn")
+entries = Array[ExtResource("1_88t4l")]([SubResource("Resource_vgnkq"), SubResource("Resource_62wxr")])
+
+[resource]
+script = ExtResource("5_op18o")
+id = 163
+display_name = "Warehouse"
+type = 3
+width = 10
+height = 10
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_rhr08")
+sell = SubResource("Resource_it742")
+build_time_seconds = 36000.0
+prerequisites = SubResource("Resource_fjvak")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 20000.0,
+11: 20000.0,
+20: 20000.0,
+21: 20000.0,
+40: 20000.0,
+50: 20000.0,
+51: 20000.0
+}
+info_text = "The Warehouse stores up to 20000 of each resource."
+description_text = "Stores a large amount of resources"

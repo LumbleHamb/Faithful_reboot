@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_fvfgu"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_h0ln3"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ubo23"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8ha77"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_aoi0d"]
+
+[sub_resource type="Resource" id="Resource_pr70s"]
+script = ExtResource("1_fvfgu")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_ponn7"]
+script = ExtResource("1_fvfgu")
+resource_id = 21
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_77g7y"]
+script = ExtResource("2_h0ln3")
+entries = Array[ExtResource("1_fvfgu")]([SubResource("Resource_pr70s"), SubResource("Resource_ponn7")])
+
+[sub_resource type="Resource" id="Resource_fkhgb"]
+script = ExtResource("3_ubo23")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_rabil"]
+script = ExtResource("4_8ha77")
+all_of = Array[ExtResource("3_ubo23")]([SubResource("Resource_fkhgb")])
+
+[sub_resource type="Resource" id="Resource_ihyjd"]
+script = ExtResource("1_fvfgu")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_w3vqu"]
+script = ExtResource("1_fvfgu")
+resource_id = 21
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_g3fa1"]
+script = ExtResource("2_h0ln3")
+entries = Array[ExtResource("1_fvfgu")]([SubResource("Resource_ihyjd"), SubResource("Resource_w3vqu")])
+
+[resource]
+script = ExtResource("5_aoi0d")
+id = 176
+display_name = "Brick Road Left"
+type = 5
+width = 2
+height = 2
+xp_value = 200.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_77g7y")
+sell = SubResource("Resource_g3fa1")
+prerequisites = SubResource("Resource_rabil")
+upgrade_of_id = 0
+info_text = "Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

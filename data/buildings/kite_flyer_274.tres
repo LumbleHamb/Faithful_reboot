@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_arcwv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_dtt6g"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_jv2bu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_0oeey"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_iacdg"]
+
+[sub_resource type="Resource" id="Resource_dqx5m"]
+script = ExtResource("1_arcwv")
+resource_id = 0
+amount = 35.0
+
+[sub_resource type="Resource" id="Resource_al4xn"]
+script = ExtResource("2_dtt6g")
+entries = Array[ExtResource("1_arcwv")]([SubResource("Resource_dqx5m")])
+
+[sub_resource type="Resource" id="Resource_61he7"]
+script = ExtResource("3_jv2bu")
+target_id = 9
+
+[sub_resource type="Resource" id="Resource_fn6p1"]
+script = ExtResource("4_0oeey")
+all_of = Array[ExtResource("3_jv2bu")]([SubResource("Resource_61he7")])
+
+[sub_resource type="Resource" id="Resource_nkmt2"]
+script = ExtResource("1_arcwv")
+resource_id = 1
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_hsrho"]
+script = ExtResource("1_arcwv")
+resource_id = 51
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_n302a"]
+script = ExtResource("2_dtt6g")
+entries = Array[ExtResource("1_arcwv")]([SubResource("Resource_nkmt2"), SubResource("Resource_hsrho")])
+
+[resource]
+script = ExtResource("5_iacdg")
+id = 274
+display_name = "Kite Flyer"
+type = 5
+width = 2
+height = 2
+xp_value = 150.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_al4xn")
+sell = SubResource("Resource_n302a")
+prerequisites = SubResource("Resource_fn6p1")
+upgrade_of_id = 0
+info_text = "Watch out for lightning! The Kite Flyer grants a bonus to the XP and Gold received from all Shops by 1.7% (500% Maximum)"

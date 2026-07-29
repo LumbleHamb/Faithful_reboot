@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xt82u"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_5vofy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_n0q70"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lmb1d"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_bmvyx"]
+
+[sub_resource type="Resource" id="Resource_8vioc"]
+script = ExtResource("1_xt82u")
+resource_id = 0
+amount = 55.0
+
+[sub_resource type="Resource" id="Resource_co1m7"]
+script = ExtResource("2_5vofy")
+entries = Array[ExtResource("1_xt82u")]([SubResource("Resource_8vioc")])
+
+[sub_resource type="Resource" id="Resource_nycfn"]
+script = ExtResource("3_n0q70")
+target_id = 28
+
+[sub_resource type="Resource" id="Resource_edw4r"]
+script = ExtResource("4_lmb1d")
+all_of = Array[ExtResource("3_n0q70")]([SubResource("Resource_nycfn")])
+
+[sub_resource type="Resource" id="Resource_3ghwv"]
+script = ExtResource("1_xt82u")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_4gp4n"]
+script = ExtResource("2_5vofy")
+entries = Array[ExtResource("1_xt82u")]([SubResource("Resource_3ghwv")])
+
+[resource]
+script = ExtResource("5_bmvyx")
+id = 350
+display_name = "Bill"
+type = 5
+width = 3
+height = 3
+xp_value = 750.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_co1m7")
+sell = SubResource("Resource_4gp4n")
+prerequisites = SubResource("Resource_edw4r")
+upgrade_of_id = 0
+info_text = "Bison Bill is a kind and gentle bovid who loves to eat grass. Bill grants a bonus to the XP and Gold received from all Shops by 4.0% (500% Maximum)"

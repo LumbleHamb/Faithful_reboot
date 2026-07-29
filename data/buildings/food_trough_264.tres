@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_tqykx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_veitl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_1d8mw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_uh31d"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_3sotc"]
+
+[sub_resource type="Resource" id="Resource_6edag"]
+script = ExtResource("1_tqykx")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_vsa2p"]
+script = ExtResource("2_veitl")
+entries = Array[ExtResource("1_tqykx")]([SubResource("Resource_6edag")])
+
+[sub_resource type="Resource" id="Resource_88na6"]
+script = ExtResource("3_1d8mw")
+target_id = 21
+
+[sub_resource type="Resource" id="Resource_4b60c"]
+script = ExtResource("4_uh31d")
+all_of = Array[ExtResource("3_1d8mw")]([SubResource("Resource_88na6")])
+
+[sub_resource type="Resource" id="Resource_dy6bh"]
+script = ExtResource("1_tqykx")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_8so00"]
+script = ExtResource("2_veitl")
+entries = Array[ExtResource("1_tqykx")]([SubResource("Resource_dy6bh")])
+
+[resource]
+script = ExtResource("5_3sotc")
+id = 264
+display_name = "Food Trough"
+type = 5
+width = 3
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_vsa2p")
+sell = SubResource("Resource_8so00")
+prerequisites = SubResource("Resource_4b60c")
+upgrade_of_id = 0

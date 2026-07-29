@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_33i5w"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_72820"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qryxf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ncspq"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_y44ai"]
+
+[sub_resource type="Resource" id="Resource_p8py3"]
+script = ExtResource("1_33i5w")
+resource_id = 0
+amount = 165.0
+
+[sub_resource type="Resource" id="Resource_s34vi"]
+script = ExtResource("2_72820")
+entries = Array[ExtResource("1_33i5w")]([SubResource("Resource_p8py3")])
+
+[sub_resource type="Resource" id="Resource_o2mbu"]
+script = ExtResource("3_qryxf")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_778ds"]
+script = ExtResource("4_ncspq")
+all_of = Array[ExtResource("3_qryxf")]([SubResource("Resource_o2mbu")])
+
+[sub_resource type="Resource" id="Resource_cgrfm"]
+script = ExtResource("1_33i5w")
+resource_id = 1
+amount = 1650.0
+
+[sub_resource type="Resource" id="Resource_cptj2"]
+script = ExtResource("2_72820")
+entries = Array[ExtResource("1_33i5w")]([SubResource("Resource_cgrfm")])
+
+[resource]
+script = ExtResource("5_y44ai")
+id = 288
+display_name = "Black Cat"
+type = 5
+width = 2
+height = 2
+xp_value = 8250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_s34vi")
+sell = SubResource("Resource_cptj2")
+prerequisites = SubResource("Resource_778ds")
+upgrade_of_id = 0
+info_text = "Don't cross his path! The Black Cat grants a bonus to the XP and Gold received from all Shops by 12%. (500% Maximum)"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5v0vv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_fyih6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qn3xs"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_wibl8"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_kmthl"]
+
+[sub_resource type="Resource" id="Resource_pxrde"]
+script = ExtResource("1_5v0vv")
+resource_id = 1
+amount = 1400.0
+
+[sub_resource type="Resource" id="Resource_5438p"]
+script = ExtResource("2_fyih6")
+entries = Array[ExtResource("1_5v0vv")]([SubResource("Resource_pxrde")])
+
+[sub_resource type="Resource" id="Resource_v57jy"]
+script = ExtResource("3_qn3xs")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_isf41"]
+script = ExtResource("4_wibl8")
+all_of = Array[ExtResource("3_qn3xs")]([SubResource("Resource_v57jy")])
+
+[sub_resource type="Resource" id="Resource_yv1uu"]
+script = ExtResource("1_5v0vv")
+resource_id = 1
+amount = 140.0
+
+[sub_resource type="Resource" id="Resource_67crq"]
+script = ExtResource("2_fyih6")
+entries = Array[ExtResource("1_5v0vv")]([SubResource("Resource_yv1uu")])
+
+[resource]
+script = ExtResource("5_kmthl")
+id = 326
+display_name = "Elderberry Bush"
+type = 5
+width = 2
+height = 2
+xp_value = 650.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_5438p")
+sell = SubResource("Resource_67crq")
+prerequisites = SubResource("Resource_isf41")
+upgrade_of_id = 0

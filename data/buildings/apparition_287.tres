@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_lnws6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hmupb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wb4n1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_fr4md"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_x2267"]
+
+[sub_resource type="Resource" id="Resource_46lul"]
+script = ExtResource("1_lnws6")
+resource_id = 0
+amount = 175.0
+
+[sub_resource type="Resource" id="Resource_y2ija"]
+script = ExtResource("2_hmupb")
+entries = Array[ExtResource("1_lnws6")]([SubResource("Resource_46lul")])
+
+[sub_resource type="Resource" id="Resource_pskh2"]
+script = ExtResource("3_wb4n1")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_brcib"]
+script = ExtResource("4_fr4md")
+all_of = Array[ExtResource("3_wb4n1")]([SubResource("Resource_pskh2")])
+
+[sub_resource type="Resource" id="Resource_w1gth"]
+script = ExtResource("1_lnws6")
+resource_id = 1
+amount = 1750.0
+
+[sub_resource type="Resource" id="Resource_o0m8g"]
+script = ExtResource("2_hmupb")
+entries = Array[ExtResource("1_lnws6")]([SubResource("Resource_w1gth")])
+
+[resource]
+script = ExtResource("5_x2267")
+id = 287
+display_name = "Apparition"
+type = 5
+width = 2
+height = 2
+xp_value = 8750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_y2ija")
+sell = SubResource("Resource_o0m8g")
+prerequisites = SubResource("Resource_brcib")
+upgrade_of_id = 0
+info_text = "I ain't afraid of no ghost! The Apparition grants a bonus to the XP and Gold received from all Shops by 12.2%. (500% Maximum)"

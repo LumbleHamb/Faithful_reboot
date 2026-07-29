@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_w4mf7"]
+
+[resource]
+script = ExtResource("1_w4mf7")
+id = 64
+kind = 1
+display_name = "King Mayor"
+time_seconds = 72000.0
+input_cost = {
+1: 1250.0
+}
+reward_xp = 3000.0
+hurry_cost = 3.0
+hurry_interval_seconds = 7200.0
+compatible_lands = Array[String](["Vanilla"])

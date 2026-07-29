@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_up4qa"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_5f3o1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_f3lp5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_dghd2"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fdksq"]
+
+[sub_resource type="Resource" id="Resource_j2i6a"]
+script = ExtResource("1_up4qa")
+resource_id = 1
+amount = 95.0
+
+[sub_resource type="Resource" id="Resource_doofh"]
+script = ExtResource("2_5f3o1")
+entries = Array[ExtResource("1_up4qa")]([SubResource("Resource_j2i6a")])
+
+[sub_resource type="Resource" id="Resource_4somd"]
+script = ExtResource("3_f3lp5")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_j55fw"]
+script = ExtResource("4_dghd2")
+all_of = Array[ExtResource("3_f3lp5")]([SubResource("Resource_4somd")])
+
+[sub_resource type="Resource" id="Resource_2spf7"]
+script = ExtResource("1_up4qa")
+resource_id = 1
+amount = 9.0
+
+[sub_resource type="Resource" id="Resource_vpla3"]
+script = ExtResource("2_5f3o1")
+entries = Array[ExtResource("1_up4qa")]([SubResource("Resource_2spf7")])
+
+[resource]
+script = ExtResource("5_fdksq")
+id = 109
+display_name = "Pansies"
+type = 5
+width = 2
+height = 2
+xp_value = 47.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_doofh")
+sell = SubResource("Resource_vpla3")
+prerequisites = SubResource("Resource_j55fw")
+upgrade_of_id = 0

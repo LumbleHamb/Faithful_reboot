@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_6vgir"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_euxle"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4g7hl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7jov3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_3y2dy"]
+
+[sub_resource type="Resource" id="Resource_2yyuy"]
+script = ExtResource("1_6vgir")
+resource_id = 0
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_fa0um"]
+script = ExtResource("2_euxle")
+entries = Array[ExtResource("1_6vgir")]([SubResource("Resource_2yyuy")])
+
+[sub_resource type="Resource" id="Resource_voi1h"]
+script = ExtResource("3_4g7hl")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_bkd7x"]
+script = ExtResource("4_7jov3")
+all_of = Array[ExtResource("3_4g7hl")]([SubResource("Resource_voi1h")])
+
+[sub_resource type="Resource" id="Resource_m13wb"]
+script = ExtResource("1_6vgir")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_jt027"]
+script = ExtResource("2_euxle")
+entries = Array[ExtResource("1_6vgir")]([SubResource("Resource_m13wb")])
+
+[resource]
+script = ExtResource("5_3y2dy")
+id = 249
+display_name = "River Pool Down"
+type = 5
+width = 6
+height = 6
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_fa0um")
+sell = SubResource("Resource_jt027")
+prerequisites = SubResource("Resource_bkd7x")
+upgrade_of_id = 0
+info_text = "River Pools grant a bonus to the XP and Gold received from all Shops by 1%. (500% Maximum)"

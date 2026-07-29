@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_jlsiw"]
+
+[resource]
+script = ExtResource("1_jlsiw")
+id = 50017
+display_name = "Gather at Stone Cutter"
+output_resource_id = 21
+max_output_stack_size = 150.0
+worker_max = 2
+villager_resources_per_hour = 15.0

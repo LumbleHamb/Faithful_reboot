@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_11od8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_duq27"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xe76r"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lf5sw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_r801c"]
+
+[sub_resource type="Resource" id="Resource_agyr5"]
+script = ExtResource("1_11od8")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_esm8j"]
+script = ExtResource("2_duq27")
+entries = Array[ExtResource("1_11od8")]([SubResource("Resource_agyr5")])
+
+[sub_resource type="Resource" id="Resource_hco4p"]
+script = ExtResource("3_xe76r")
+target_id = 25
+
+[sub_resource type="Resource" id="Resource_o0g4s"]
+script = ExtResource("4_lf5sw")
+all_of = Array[ExtResource("3_xe76r")]([SubResource("Resource_hco4p")])
+
+[sub_resource type="Resource" id="Resource_wl4s3"]
+script = ExtResource("1_11od8")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_mxcnc"]
+script = ExtResource("2_duq27")
+entries = Array[ExtResource("1_11od8")]([SubResource("Resource_wl4s3")])
+
+[resource]
+script = ExtResource("5_r801c")
+id = 328
+display_name = "Fire Tail"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_esm8j")
+sell = SubResource("Resource_mxcnc")
+prerequisites = SubResource("Resource_o0g4s")
+upgrade_of_id = 0

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_hq8is"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_eurfo"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_jgq5m"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_q15pk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_qtu21"]
+
+[sub_resource type="Resource" id="Resource_1u8pb"]
+script = ExtResource("1_hq8is")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_syau6"]
+script = ExtResource("2_eurfo")
+entries = Array[ExtResource("1_hq8is")]([SubResource("Resource_1u8pb")])
+
+[sub_resource type="Resource" id="Resource_isaf7"]
+script = ExtResource("3_jgq5m")
+target_id = 18
+
+[sub_resource type="Resource" id="Resource_ehjwj"]
+script = ExtResource("4_q15pk")
+all_of = Array[ExtResource("3_jgq5m")]([SubResource("Resource_isaf7")])
+
+[sub_resource type="Resource" id="Resource_uyddb"]
+script = ExtResource("1_hq8is")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_yehm2"]
+script = ExtResource("2_eurfo")
+entries = Array[ExtResource("1_hq8is")]([SubResource("Resource_uyddb")])
+
+[resource]
+script = ExtResource("5_qtu21")
+id = 188
+display_name = "Bluebells"
+type = 5
+width = 2
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_syau6")
+sell = SubResource("Resource_yehm2")
+prerequisites = SubResource("Resource_ehjwj")
+upgrade_of_id = 0
+info_text = "Bluebells grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3nod4"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_u7jrf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_p4jxt"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_262he"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_8rcea"]
+
+[sub_resource type="Resource" id="Resource_c1p4c"]
+script = ExtResource("1_3nod4")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_w1lol"]
+script = ExtResource("2_u7jrf")
+entries = Array[ExtResource("1_3nod4")]([SubResource("Resource_c1p4c")])
+
+[sub_resource type="Resource" id="Resource_trhyu"]
+script = ExtResource("3_p4jxt")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_aswso"]
+script = ExtResource("4_262he")
+all_of = Array[ExtResource("3_p4jxt")]([SubResource("Resource_trhyu")])
+
+[sub_resource type="Resource" id="Resource_xawub"]
+script = ExtResource("1_3nod4")
+resource_id = 10
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_2cocp"]
+script = ExtResource("2_u7jrf")
+entries = Array[ExtResource("1_3nod4")]([SubResource("Resource_xawub")])
+
+[resource]
+script = ExtResource("5_8rcea")
+id = 102
+display_name = "Spruce"
+type = 5
+width = 2
+height = 2
+xp_value = 80.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_w1lol")
+sell = SubResource("Resource_2cocp")
+prerequisites = SubResource("Resource_aswso")
+upgrade_of_id = 0

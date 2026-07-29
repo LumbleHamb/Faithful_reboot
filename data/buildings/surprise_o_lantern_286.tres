@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_6sf2w"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ve8fq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_hqfri"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_tgs52"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vm7ej"]
+
+[sub_resource type="Resource" id="Resource_eq1k3"]
+script = ExtResource("1_6sf2w")
+resource_id = 0
+amount = 58.0
+
+[sub_resource type="Resource" id="Resource_o6qn5"]
+script = ExtResource("2_ve8fq")
+entries = Array[ExtResource("1_6sf2w")]([SubResource("Resource_eq1k3")])
+
+[sub_resource type="Resource" id="Resource_jh1og"]
+script = ExtResource("3_hqfri")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_s5a8e"]
+script = ExtResource("4_tgs52")
+all_of = Array[ExtResource("3_hqfri")]([SubResource("Resource_jh1og")])
+
+[sub_resource type="Resource" id="Resource_0mxgg"]
+script = ExtResource("1_6sf2w")
+resource_id = 1
+amount = 580.0
+
+[sub_resource type="Resource" id="Resource_fn04j"]
+script = ExtResource("2_ve8fq")
+entries = Array[ExtResource("1_6sf2w")]([SubResource("Resource_0mxgg")])
+
+[resource]
+script = ExtResource("5_vm7ej")
+id = 286
+display_name = "Surprise O' Lantern"
+type = 5
+width = 3
+height = 3
+xp_value = 2900.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_o6qn5")
+sell = SubResource("Resource_fn04j")
+prerequisites = SubResource("Resource_s5a8e")
+upgrade_of_id = 0
+info_text = "This Jack O' Lantern has a surprise... he includes Jack! Surprise O' Lantern grants a bonus to the XP and Gold received from all Shops by 2.4%. (500% Maximum)"

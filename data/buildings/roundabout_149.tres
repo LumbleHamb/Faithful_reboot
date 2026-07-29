@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_40kaj"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_3yiac"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_gpjug"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_314w6"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_q8rnx"]
+
+[sub_resource type="Resource" id="Resource_8bd73"]
+script = ExtResource("1_40kaj")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_aqddk"]
+script = ExtResource("1_40kaj")
+resource_id = 20
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_wiwlo"]
+script = ExtResource("2_3yiac")
+entries = Array[ExtResource("1_40kaj")]([SubResource("Resource_8bd73"), SubResource("Resource_aqddk")])
+
+[sub_resource type="Resource" id="Resource_a3cfj"]
+script = ExtResource("3_gpjug")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_n82bp"]
+script = ExtResource("4_314w6")
+all_of = Array[ExtResource("3_gpjug")]([SubResource("Resource_a3cfj")])
+
+[sub_resource type="Resource" id="Resource_le5v5"]
+script = ExtResource("1_40kaj")
+resource_id = 1
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_e507g"]
+script = ExtResource("1_40kaj")
+resource_id = 20
+amount = 8.0
+
+[sub_resource type="Resource" id="Resource_5msmf"]
+script = ExtResource("2_3yiac")
+entries = Array[ExtResource("1_40kaj")]([SubResource("Resource_le5v5"), SubResource("Resource_e507g")])
+
+[resource]
+script = ExtResource("5_q8rnx")
+id = 149
+display_name = "Roundabout"
+type = 5
+width = 14
+height = 14
+xp_value = 150.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_wiwlo")
+sell = SubResource("Resource_5msmf")
+prerequisites = SubResource("Resource_n82bp")
+upgrade_of_id = 0

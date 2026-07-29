@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_k8xif"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_8vmpx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_3msdv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_37d5n"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_w61dv"]
+
+[sub_resource type="Resource" id="Resource_e3xbm"]
+script = ExtResource("1_k8xif")
+resource_id = 0
+amount = 65.0
+
+[sub_resource type="Resource" id="Resource_gs246"]
+script = ExtResource("2_8vmpx")
+entries = Array[ExtResource("1_k8xif")]([SubResource("Resource_e3xbm")])
+
+[sub_resource type="Resource" id="Resource_fsv2n"]
+script = ExtResource("3_3msdv")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_lx7d0"]
+script = ExtResource("3_3msdv")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_7h7ym"]
+script = ExtResource("4_37d5n")
+all_of = Array[ExtResource("3_3msdv")]([SubResource("Resource_fsv2n"), SubResource("Resource_lx7d0")])
+
+[sub_resource type="Resource" id="Resource_nn0ri"]
+script = ExtResource("1_k8xif")
+resource_id = 1
+amount = 650.0
+
+[sub_resource type="Resource" id="Resource_buknu"]
+script = ExtResource("2_8vmpx")
+entries = Array[ExtResource("1_k8xif")]([SubResource("Resource_nn0ri")])
+
+[resource]
+script = ExtResource("5_w61dv")
+id = 332
+display_name = "Frosty the Snowman"
+type = 10
+width = 3
+height = 3
+xp_value = 850.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_gs246")
+sell = SubResource("Resource_buknu")
+prerequisites = SubResource("Resource_7h7ym")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Frosty the Snowman makes your land a Winter Wonderland! Frosty also grants a bonus to the XP and Gold received from all Shops by 5% (500% Maximum)"
+description_text = "Makes your land a Winter Wonderland!"

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_1vsc2"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qkytb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_pkwpp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_dl1bk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_jqd2b"]
+
+[sub_resource type="Resource" id="Resource_h1qxe"]
+script = ExtResource("1_1vsc2")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_4j6m1"]
+script = ExtResource("2_qkytb")
+entries = Array[ExtResource("1_1vsc2")]([SubResource("Resource_h1qxe")])
+
+[sub_resource type="Resource" id="Resource_mlksf"]
+script = ExtResource("3_pkwpp")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_61k70"]
+script = ExtResource("4_dl1bk")
+all_of = Array[ExtResource("3_pkwpp")]([SubResource("Resource_mlksf")])
+
+[sub_resource type="Resource" id="Resource_ujlwr"]
+script = ExtResource("1_1vsc2")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_lwy6y"]
+script = ExtResource("2_qkytb")
+entries = Array[ExtResource("1_1vsc2")]([SubResource("Resource_ujlwr")])
+
+[resource]
+script = ExtResource("5_jqd2b")
+id = 300
+display_name = "Scared Woman"
+type = 5
+width = 2
+height = 2
+xp_value = 250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_4j6m1")
+sell = SubResource("Resource_lwy6y")
+prerequisites = SubResource("Resource_61k70")
+upgrade_of_id = 0
+info_text = "This villager saw something go bump in the night."

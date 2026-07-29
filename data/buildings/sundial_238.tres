@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_irr8h"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_rq68d"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_x5rqj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_6yuxt"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ctmjc"]
+
+[sub_resource type="Resource" id="Resource_0puo0"]
+script = ExtResource("1_irr8h")
+resource_id = 1
+amount = 20000.0
+
+[sub_resource type="Resource" id="Resource_pgkv1"]
+script = ExtResource("2_rq68d")
+entries = Array[ExtResource("1_irr8h")]([SubResource("Resource_0puo0")])
+
+[sub_resource type="Resource" id="Resource_xgfqf"]
+script = ExtResource("3_x5rqj")
+target_id = 38
+
+[sub_resource type="Resource" id="Resource_koqdb"]
+script = ExtResource("4_6yuxt")
+all_of = Array[ExtResource("3_x5rqj")]([SubResource("Resource_xgfqf")])
+
+[sub_resource type="Resource" id="Resource_crl5h"]
+script = ExtResource("1_irr8h")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_tmawb"]
+script = ExtResource("2_rq68d")
+entries = Array[ExtResource("1_irr8h")]([SubResource("Resource_crl5h")])
+
+[resource]
+script = ExtResource("5_ctmjc")
+id = 238
+display_name = "Sundial"
+type = 5
+width = 2
+height = 2
+xp_value = 10000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_pgkv1")
+sell = SubResource("Resource_tmawb")
+prerequisites = SubResource("Resource_koqdb")
+upgrade_of_id = 0
+info_text = "Sundials grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

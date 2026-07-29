@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_tbaj1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_a6hd2"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_06sxo"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8am0q"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_hoyqw"]
+
+[sub_resource type="Resource" id="Resource_nsoi0"]
+script = ExtResource("1_tbaj1")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_4qn3p"]
+script = ExtResource("1_tbaj1")
+resource_id = 11
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_nrqh3"]
+script = ExtResource("2_a6hd2")
+entries = Array[ExtResource("1_tbaj1")]([SubResource("Resource_nsoi0"), SubResource("Resource_4qn3p")])
+
+[sub_resource type="Resource" id="Resource_dm0ch"]
+script = ExtResource("3_06sxo")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_fkc2i"]
+script = ExtResource("3_06sxo")
+target_id = 36
+
+[sub_resource type="Resource" id="Resource_1mwm6"]
+script = ExtResource("4_8am0q")
+all_of = Array[ExtResource("3_06sxo")]([SubResource("Resource_dm0ch"), SubResource("Resource_fkc2i")])
+
+[sub_resource type="Resource" id="Resource_t2lxm"]
+script = ExtResource("1_tbaj1")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_iopk4"]
+script = ExtResource("1_tbaj1")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_y3neo"]
+script = ExtResource("2_a6hd2")
+entries = Array[ExtResource("1_tbaj1")]([SubResource("Resource_t2lxm"), SubResource("Resource_iopk4")])
+
+[resource]
+script = ExtResource("5_hoyqw")
+id = 209
+display_name = "Silo"
+type = 3
+width = 4
+height = 4
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_nrqh3")
+sell = SubResource("Resource_y3neo")
+build_time_seconds = 21600.0
+prerequisites = SubResource("Resource_1mwm6")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+40: 6000.0
+}
+info_text = "The Silo holds up to 6000 Wheat."
+description_text = "Stores a large amount of Wheat"

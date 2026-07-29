@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ii2q7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cxkwb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_lf7di"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_v5mvx"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_g16xg"]
+
+[sub_resource type="Resource" id="Resource_3xy3d"]
+script = ExtResource("1_ii2q7")
+resource_id = 0
+amount = 285.0
+
+[sub_resource type="Resource" id="Resource_ib3vv"]
+script = ExtResource("2_cxkwb")
+entries = Array[ExtResource("1_ii2q7")]([SubResource("Resource_3xy3d")])
+
+[sub_resource type="Resource" id="Resource_6bod4"]
+script = ExtResource("3_lf7di")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_amp8g"]
+script = ExtResource("4_v5mvx")
+all_of = Array[ExtResource("3_lf7di")]([SubResource("Resource_6bod4")])
+
+[sub_resource type="Resource" id="Resource_e5rvv"]
+script = ExtResource("1_ii2q7")
+resource_id = 1
+amount = 2850.0
+
+[sub_resource type="Resource" id="Resource_cpc7l"]
+script = ExtResource("2_cxkwb")
+entries = Array[ExtResource("1_ii2q7")]([SubResource("Resource_e5rvv")])
+
+[resource]
+script = ExtResource("5_g16xg")
+id = 282
+display_name = "Sabrina"
+type = 5
+width = 3
+height = 3
+xp_value = 14250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ib3vv")
+sell = SubResource("Resource_cpc7l")
+prerequisites = SubResource("Resource_amp8g")
+upgrade_of_id = 0
+info_text = "Double, double, toil and trouble. Fire burn, and cauldron bubble! Sabrina the witch grants a bonus to the XP and Gold received from all Shops by 18%. (500% Maximum)"

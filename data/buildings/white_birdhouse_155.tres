@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3tsn6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ilmrs"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_r4phh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7r5ul"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_djjcg"]
+
+[sub_resource type="Resource" id="Resource_v3x1p"]
+script = ExtResource("1_3tsn6")
+resource_id = 0
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_ucny4"]
+script = ExtResource("2_ilmrs")
+entries = Array[ExtResource("1_3tsn6")]([SubResource("Resource_v3x1p")])
+
+[sub_resource type="Resource" id="Resource_e23x0"]
+script = ExtResource("3_r4phh")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_2c67g"]
+script = ExtResource("4_7r5ul")
+all_of = Array[ExtResource("3_r4phh")]([SubResource("Resource_e23x0")])
+
+[sub_resource type="Resource" id="Resource_hojpl"]
+script = ExtResource("1_3tsn6")
+resource_id = 1
+amount = 8.0
+
+[sub_resource type="Resource" id="Resource_jlfc6"]
+script = ExtResource("1_3tsn6")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_114b5"]
+script = ExtResource("2_ilmrs")
+entries = Array[ExtResource("1_3tsn6")]([SubResource("Resource_hojpl"), SubResource("Resource_jlfc6")])
+
+[resource]
+script = ExtResource("5_djjcg")
+id = 155
+display_name = "White Birdhouse"
+type = 5
+width = 2
+height = 2
+xp_value = 160.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ucny4")
+sell = SubResource("Resource_114b5")
+prerequisites = SubResource("Resource_2c67g")
+upgrade_of_id = 0

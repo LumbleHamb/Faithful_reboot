@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ng2kc"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_waml0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_o17vq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_va6ny"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_5s175"]
+
+[sub_resource type="Resource" id="Resource_lkdo0"]
+script = ExtResource("1_ng2kc")
+resource_id = 1
+amount = 10000.0
+
+[sub_resource type="Resource" id="Resource_qw281"]
+script = ExtResource("1_ng2kc")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_8sqra"]
+script = ExtResource("1_ng2kc")
+resource_id = 21
+amount = 1200.0
+
+[sub_resource type="Resource" id="Resource_s7pbi"]
+script = ExtResource("2_waml0")
+entries = Array[ExtResource("1_ng2kc")]([SubResource("Resource_lkdo0"), SubResource("Resource_qw281"), SubResource("Resource_8sqra")])
+
+[sub_resource type="Resource" id="Resource_upwgl"]
+script = ExtResource("3_o17vq")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_8xoxg"]
+script = ExtResource("3_o17vq")
+target_id = 35
+
+[sub_resource type="Resource" id="Resource_qes55"]
+script = ExtResource("4_va6ny")
+all_of = Array[ExtResource("3_o17vq")]([SubResource("Resource_upwgl"), SubResource("Resource_8xoxg")])
+
+[sub_resource type="Resource" id="Resource_fp4jd"]
+script = ExtResource("1_ng2kc")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_2kic0"]
+script = ExtResource("1_ng2kc")
+resource_id = 11
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_hjd2t"]
+script = ExtResource("1_ng2kc")
+resource_id = 21
+amount = 120.0
+
+[sub_resource type="Resource" id="Resource_d5yar"]
+script = ExtResource("2_waml0")
+entries = Array[ExtResource("1_ng2kc")]([SubResource("Resource_fp4jd"), SubResource("Resource_2kic0"), SubResource("Resource_hjd2t")])
+
+[resource]
+script = ExtResource("5_5s175")
+id = 253
+display_name = "Imperial House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_s7pbi")
+sell = SubResource("Resource_d5yar")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_qes55")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Imperial House houses four villagers, and supports up to two adopted villagers!"
+description_text = "The Imperial House from the Far East is an exotic home for your townspeople!"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ciuex"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ek7f4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_hrdeq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pfe3o"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uoc5p"]
+
+[sub_resource type="Resource" id="Resource_et851"]
+script = ExtResource("1_ciuex")
+resource_id = 1
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_llksx"]
+script = ExtResource("2_ek7f4")
+entries = Array[ExtResource("1_ciuex")]([SubResource("Resource_et851")])
+
+[sub_resource type="Resource" id="Resource_6j5xg"]
+script = ExtResource("3_hrdeq")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_furtd"]
+script = ExtResource("4_pfe3o")
+all_of = Array[ExtResource("3_hrdeq")]([SubResource("Resource_6j5xg")])
+
+[sub_resource type="Resource" id="Resource_itm3u"]
+script = ExtResource("1_ciuex")
+resource_id = 10
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_hcc04"]
+script = ExtResource("2_ek7f4")
+entries = Array[ExtResource("1_ciuex")]([SubResource("Resource_itm3u")])
+
+[resource]
+script = ExtResource("5_uoc5p")
+id = 101
+display_name = "Poplar"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_llksx")
+sell = SubResource("Resource_hcc04")
+prerequisites = SubResource("Resource_furtd")
+upgrade_of_id = 0

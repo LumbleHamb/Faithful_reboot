@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7ftwp"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ntbc2"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_m3fxj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_xv0ps"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vqki5"]
+
+[sub_resource type="Resource" id="Resource_ji0yg"]
+script = ExtResource("1_7ftwp")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_bp6n5"]
+script = ExtResource("1_7ftwp")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_255su"]
+script = ExtResource("2_ntbc2")
+entries = Array[ExtResource("1_7ftwp")]([SubResource("Resource_ji0yg"), SubResource("Resource_bp6n5")])
+
+[sub_resource type="Resource" id="Resource_e0t50"]
+script = ExtResource("3_m3fxj")
+target_id = 15
+
+[sub_resource type="Resource" id="Resource_t57kq"]
+script = ExtResource("4_xv0ps")
+all_of = Array[ExtResource("3_m3fxj")]([SubResource("Resource_e0t50")])
+
+[sub_resource type="Resource" id="Resource_8uh2i"]
+script = ExtResource("1_7ftwp")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_nj0p1"]
+script = ExtResource("1_7ftwp")
+resource_id = 11
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_x1yon"]
+script = ExtResource("2_ntbc2")
+entries = Array[ExtResource("1_7ftwp")]([SubResource("Resource_8uh2i"), SubResource("Resource_nj0p1")])
+
+[resource]
+script = ExtResource("5_vqki5")
+id = 160
+display_name = "Pumpkin Cart"
+type = 5
+width = 2
+height = 2
+xp_value = 120.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_255su")
+sell = SubResource("Resource_x1yon")
+prerequisites = SubResource("Resource_t57kq")
+upgrade_of_id = 0

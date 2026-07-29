@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5csk4"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_trqcq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_rukax"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ke7fe"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_xsh2l"]
+
+[sub_resource type="Resource" id="Resource_dq25g"]
+script = ExtResource("1_5csk4")
+resource_id = 1
+amount = 125000.0
+
+[sub_resource type="Resource" id="Resource_ndsr0"]
+script = ExtResource("1_5csk4")
+resource_id = 21
+amount = 15000.0
+
+[sub_resource type="Resource" id="Resource_fvdl7"]
+script = ExtResource("2_trqcq")
+entries = Array[ExtResource("1_5csk4")]([SubResource("Resource_dq25g"), SubResource("Resource_ndsr0")])
+
+[sub_resource type="Resource" id="Resource_vua3d"]
+script = ExtResource("3_rukax")
+target_id = 45
+
+[sub_resource type="Resource" id="Resource_d51lj"]
+script = ExtResource("3_rukax")
+kind = 1
+target_id = 221
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_psxgx"]
+script = ExtResource("4_ke7fe")
+all_of = Array[ExtResource("3_rukax")]([SubResource("Resource_vua3d"), SubResource("Resource_d51lj")])
+
+[sub_resource type="Resource" id="Resource_47g6u"]
+script = ExtResource("1_5csk4")
+resource_id = 1
+amount = 12500.0
+
+[sub_resource type="Resource" id="Resource_40xjj"]
+script = ExtResource("1_5csk4")
+resource_id = 21
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_6qxl5"]
+script = ExtResource("2_trqcq")
+entries = Array[ExtResource("1_5csk4")]([SubResource("Resource_47g6u"), SubResource("Resource_40xjj")])
+
+[resource]
+script = ExtResource("5_xsh2l")
+id = 278
+display_name = "Gazebo"
+type = 5
+width = 4
+height = 4
+xp_value = 4750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_fvdl7")
+sell = SubResource("Resource_6qxl5")
+prerequisites = SubResource("Resource_psxgx")
+upgrade_of_id = 0
+info_text = "Have a fun tea party in your BRAND. NEW. GAZEBO! Gazebo grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

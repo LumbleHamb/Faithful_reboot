@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ydngu"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_j3yle"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5kjww"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_d84td"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_xm3jn"]
+
+[sub_resource type="Resource" id="Resource_5blw2"]
+script = ExtResource("1_ydngu")
+resource_id = 1
+amount = 120000.0
+
+[sub_resource type="Resource" id="Resource_tkfa0"]
+script = ExtResource("1_ydngu")
+resource_id = 11
+amount = 15000.0
+
+[sub_resource type="Resource" id="Resource_f3m16"]
+script = ExtResource("2_j3yle")
+entries = Array[ExtResource("1_ydngu")]([SubResource("Resource_5blw2"), SubResource("Resource_tkfa0")])
+
+[sub_resource type="Resource" id="Resource_iu7ix"]
+script = ExtResource("3_5kjww")
+target_id = 43
+
+[sub_resource type="Resource" id="Resource_xf1ki"]
+script = ExtResource("3_5kjww")
+kind = 1
+target_id = 221
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_pci2l"]
+script = ExtResource("4_d84td")
+all_of = Array[ExtResource("3_5kjww")]([SubResource("Resource_iu7ix"), SubResource("Resource_xf1ki")])
+
+[sub_resource type="Resource" id="Resource_yryr6"]
+script = ExtResource("1_ydngu")
+resource_id = 1
+amount = 12000.0
+
+[sub_resource type="Resource" id="Resource_qdsjc"]
+script = ExtResource("1_ydngu")
+resource_id = 11
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_mkvkb"]
+script = ExtResource("2_j3yle")
+entries = Array[ExtResource("1_ydngu")]([SubResource("Resource_yryr6"), SubResource("Resource_qdsjc")])
+
+[resource]
+script = ExtResource("5_xm3jn")
+id = 281
+display_name = "Lawn Table"
+type = 5
+width = 2
+height = 4
+xp_value = 25000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_f3m16")
+sell = SubResource("Resource_mkvkb")
+prerequisites = SubResource("Resource_pci2l")
+upgrade_of_id = 0
+info_text = "This is the most luxurious lawn furniture in the world."

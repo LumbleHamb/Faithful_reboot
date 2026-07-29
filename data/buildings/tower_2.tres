@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ntqaq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cg3cf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_78i1t"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bjwjg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_1ysjr"]
+
+[sub_resource type="Resource" id="Resource_lfoif"]
+script = ExtResource("1_ntqaq")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_n4qfc"]
+script = ExtResource("1_ntqaq")
+resource_id = 10
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_i4ir1"]
+script = ExtResource("1_ntqaq")
+resource_id = 20
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_asfef"]
+script = ExtResource("2_cg3cf")
+entries = Array[ExtResource("1_ntqaq")]([SubResource("Resource_lfoif"), SubResource("Resource_n4qfc"), SubResource("Resource_i4ir1")])
+
+[sub_resource type="Resource" id="Resource_hiiv2"]
+script = ExtResource("3_78i1t")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_lj50m"]
+script = ExtResource("3_78i1t")
+kind = 1
+target_id = 1
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_4plos"]
+script = ExtResource("4_bjwjg")
+all_of = Array[ExtResource("3_78i1t")]([SubResource("Resource_hiiv2"), SubResource("Resource_lj50m")])
+
+[sub_resource type="Resource" id="Resource_s7v3d"]
+script = ExtResource("2_cg3cf")
+
+[resource]
+script = ExtResource("5_1ysjr")
+id = 2
+display_name = "Tower"
+type = 0
+width = 14
+height = 14
+xp_value = 450.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_asfef")
+sell = SubResource("Resource_s7v3d")
+sellable = false
+prerequisites = SubResource("Resource_4plos")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The Tower is an upgrade to the Town Hall.  It allows you to build more advanced buildings."

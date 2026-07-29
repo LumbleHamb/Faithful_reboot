@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_qv18k"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_dqjvv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_6cr3w"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_472pd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_nr6pk"]
+
+[sub_resource type="Resource" id="Resource_juwfb"]
+script = ExtResource("1_qv18k")
+resource_id = 0
+amount = 195.0
+
+[sub_resource type="Resource" id="Resource_jrn5o"]
+script = ExtResource("2_dqjvv")
+entries = Array[ExtResource("1_qv18k")]([SubResource("Resource_juwfb")])
+
+[sub_resource type="Resource" id="Resource_h7tgj"]
+script = ExtResource("3_6cr3w")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_qy73p"]
+script = ExtResource("4_472pd")
+all_of = Array[ExtResource("3_6cr3w")]([SubResource("Resource_h7tgj")])
+
+[sub_resource type="Resource" id="Resource_x1pu7"]
+script = ExtResource("1_qv18k")
+resource_id = 1
+amount = 1950.0
+
+[sub_resource type="Resource" id="Resource_rcnid"]
+script = ExtResource("2_dqjvv")
+entries = Array[ExtResource("1_qv18k")]([SubResource("Resource_x1pu7")])
+
+[resource]
+script = ExtResource("5_nr6pk")
+id = 352
+display_name = "Pepe"
+type = 5
+width = 2
+height = 2
+xp_value = 1950.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_jrn5o")
+sell = SubResource("Resource_rcnid")
+prerequisites = SubResource("Resource_qy73p")
+upgrade_of_id = 0
+info_text = "Skunk? or Smelly-Black-Cat-White-Paint mishap? You decide. Pepe grants a bonus to the XP and Gold received from all Shops by 15% (500% Maximum)"

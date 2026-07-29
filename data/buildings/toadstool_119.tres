@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_grgmt"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_phdio"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_beyhv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_yp7hy"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_b1s63"]
+
+[sub_resource type="Resource" id="Resource_4ke35"]
+script = ExtResource("1_grgmt")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_pkge3"]
+script = ExtResource("2_phdio")
+entries = Array[ExtResource("1_grgmt")]([SubResource("Resource_4ke35")])
+
+[sub_resource type="Resource" id="Resource_s7301"]
+script = ExtResource("3_beyhv")
+target_id = 7
+
+[sub_resource type="Resource" id="Resource_dv6xi"]
+script = ExtResource("4_yp7hy")
+all_of = Array[ExtResource("3_beyhv")]([SubResource("Resource_s7301")])
+
+[sub_resource type="Resource" id="Resource_de221"]
+script = ExtResource("1_grgmt")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_gjvc6"]
+script = ExtResource("2_phdio")
+entries = Array[ExtResource("1_grgmt")]([SubResource("Resource_de221")])
+
+[resource]
+script = ExtResource("5_b1s63")
+id = 119
+display_name = "Toadstool"
+type = 5
+width = 2
+height = 2
+xp_value = 7.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_pkge3")
+sell = SubResource("Resource_gjvc6")
+prerequisites = SubResource("Resource_dv6xi")
+upgrade_of_id = 0

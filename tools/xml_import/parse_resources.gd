@@ -54,7 +54,7 @@ static func parse(path: String = SOURCE_PATH) -> Array:
 			enrichment = {"tier": 1, "refines_from_id": -1}
 
 		var score_value_raw = XmlDom.attr_string(node, "scoreValue")
-		var has_score_value := score_value_raw != ""
+		var has_score_value: bool = score_value_raw != ""
 
 		results.append({
 			"id": id,

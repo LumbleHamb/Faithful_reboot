@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xglh8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_agwyl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2ptm4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_xm7gl"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lcl65"]
+
+[sub_resource type="Resource" id="Resource_ctbxc"]
+script = ExtResource("1_xglh8")
+resource_id = 0
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_qamwm"]
+script = ExtResource("2_agwyl")
+entries = Array[ExtResource("1_xglh8")]([SubResource("Resource_ctbxc")])
+
+[sub_resource type="Resource" id="Resource_lxv1s"]
+script = ExtResource("3_2ptm4")
+target_id = 28
+
+[sub_resource type="Resource" id="Resource_oldw0"]
+script = ExtResource("4_xm7gl")
+all_of = Array[ExtResource("3_2ptm4")]([SubResource("Resource_lxv1s")])
+
+[sub_resource type="Resource" id="Resource_swdfj"]
+script = ExtResource("1_xglh8")
+resource_id = 10
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_fpi7u"]
+script = ExtResource("2_agwyl")
+entries = Array[ExtResource("1_xglh8")]([SubResource("Resource_swdfj")])
+
+[resource]
+script = ExtResource("5_lcl65")
+id = 225
+display_name = "Apple Tree"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_qamwm")
+sell = SubResource("Resource_fpi7u")
+prerequisites = SubResource("Resource_oldw0")
+upgrade_of_id = 0
+info_text = "Apple Trees grant a bonus to the XP and Gold received from all Shops by 1.25% (500% Maximum)"

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_82t5c"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7urhy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_e1iat"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_yr280"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_06w17"]
+
+[sub_resource type="Resource" id="Resource_qsxhf"]
+script = ExtResource("1_82t5c")
+resource_id = 0
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_68hhf"]
+script = ExtResource("2_7urhy")
+entries = Array[ExtResource("1_82t5c")]([SubResource("Resource_qsxhf")])
+
+[sub_resource type="Resource" id="Resource_nav4r"]
+script = ExtResource("3_e1iat")
+target_id = 25
+
+[sub_resource type="Resource" id="Resource_dkwkg"]
+script = ExtResource("4_yr280")
+all_of = Array[ExtResource("3_e1iat")]([SubResource("Resource_nav4r")])
+
+[sub_resource type="Resource" id="Resource_q4pju"]
+script = ExtResource("1_82t5c")
+resource_id = 1
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_3m16l"]
+script = ExtResource("2_7urhy")
+entries = Array[ExtResource("1_82t5c")]([SubResource("Resource_q4pju")])
+
+[resource]
+script = ExtResource("5_06w17")
+id = 223
+display_name = "Gabbo"
+type = 5
+width = 2
+height = 2
+xp_value = 7500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_68hhf")
+sell = SubResource("Resource_3m16l")
+prerequisites = SubResource("Resource_dkwkg")
+upgrade_of_id = 0
+info_text = "Everybody loves Gabbo! Gabbo grants a bonus to the XP and Gold received from all Shops by 10.5% (500% Maximum)"

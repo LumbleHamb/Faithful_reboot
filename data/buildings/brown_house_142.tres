@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_qsahu"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qyws7"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_kr2me"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ssef1"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_t3w2g"]
+
+[sub_resource type="Resource" id="Resource_aguo1"]
+script = ExtResource("1_qsahu")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_us5fc"]
+script = ExtResource("1_qsahu")
+resource_id = 11
+amount = 600.0
+
+[sub_resource type="Resource" id="Resource_p35p6"]
+script = ExtResource("1_qsahu")
+resource_id = 20
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_clnc5"]
+script = ExtResource("1_qsahu")
+resource_id = 40
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_a7wyq"]
+script = ExtResource("2_qyws7")
+entries = Array[ExtResource("1_qsahu")]([SubResource("Resource_aguo1"), SubResource("Resource_us5fc"), SubResource("Resource_p35p6"), SubResource("Resource_clnc5")])
+
+[sub_resource type="Resource" id="Resource_na048"]
+script = ExtResource("3_kr2me")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_60y2u"]
+script = ExtResource("3_kr2me")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_3xvfy"]
+script = ExtResource("4_ssef1")
+all_of = Array[ExtResource("3_kr2me")]([SubResource("Resource_na048"), SubResource("Resource_60y2u")])
+
+[sub_resource type="Resource" id="Resource_q1j3u"]
+script = ExtResource("1_qsahu")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_ceswa"]
+script = ExtResource("1_qsahu")
+resource_id = 11
+amount = 60.0
+
+[sub_resource type="Resource" id="Resource_dl1ym"]
+script = ExtResource("1_qsahu")
+resource_id = 20
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_aju3w"]
+script = ExtResource("1_qsahu")
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_6fwk8"]
+script = ExtResource("2_qyws7")
+entries = Array[ExtResource("1_qsahu")]([SubResource("Resource_q1j3u"), SubResource("Resource_ceswa"), SubResource("Resource_dl1ym"), SubResource("Resource_aju3w")])
+
+[resource]
+script = ExtResource("5_t3w2g")
+id = 142
+display_name = "Brown House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_a7wyq")
+sell = SubResource("Resource_6fwk8")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_3xvfy")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Brown House houses three villagers."
+description_text = "Houses three villagers"

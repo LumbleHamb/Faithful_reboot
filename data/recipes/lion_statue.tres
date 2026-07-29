@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_q1g1f"]
+
+[resource]
+script = ExtResource("1_q1g1f")
+id = 24
+kind = 1
+display_name = "Lion Statue"
+time_seconds = 54000.0
+input_cost = {
+21: 80.0
+}
+reward_xp = 550.0
+reward = {
+1: 650.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 15429.0
+compatible_lands = Array[String](["Vanilla"])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_hg7d4"]
+
+[resource]
+script = ExtResource("1_hg7d4")
+id = 88
+kind = 1
+display_name = "T-Bone Steak"
+time_seconds = 86400.0
+input_cost = {
+1: 700.0
+}
+reward_xp = 1300.0
+reward = {
+1: 1250.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 19200.0
+compatible_lands = Array[String](["Vanilla"])

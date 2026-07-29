@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_hfask"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_05r07"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_prfbd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8bl1r"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lidjt"]
+
+[sub_resource type="Resource" id="Resource_fpbdk"]
+script = ExtResource("1_hfask")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_j1yo2"]
+script = ExtResource("1_hfask")
+resource_id = 21
+amount = 380.0
+
+[sub_resource type="Resource" id="Resource_nr70j"]
+script = ExtResource("2_05r07")
+entries = Array[ExtResource("1_hfask")]([SubResource("Resource_fpbdk"), SubResource("Resource_j1yo2")])
+
+[sub_resource type="Resource" id="Resource_m6ia5"]
+script = ExtResource("3_prfbd")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_p0vwe"]
+script = ExtResource("4_8bl1r")
+all_of = Array[ExtResource("3_prfbd")]([SubResource("Resource_m6ia5")])
+
+[sub_resource type="Resource" id="Resource_2nllb"]
+script = ExtResource("1_hfask")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_i8ity"]
+script = ExtResource("1_hfask")
+resource_id = 21
+amount = 38.0
+
+[sub_resource type="Resource" id="Resource_gqp5d"]
+script = ExtResource("2_05r07")
+entries = Array[ExtResource("1_hfask")]([SubResource("Resource_2nllb"), SubResource("Resource_i8ity")])
+
+[resource]
+script = ExtResource("5_lidjt")
+id = 290
+display_name = "Ghoulish Tomb"
+type = 5
+width = 2
+height = 2
+xp_value = 2200.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_nr70j")
+sell = SubResource("Resource_gqp5d")
+prerequisites = SubResource("Resource_p0vwe")
+upgrade_of_id = 0
+info_text = "Some villagers have reported seeing ghosts and other apparitions near this tombstone."

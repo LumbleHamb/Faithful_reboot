@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_t0djg"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_kvi06"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_vmpmq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_00gc7"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_rv8ir"]
+
+[sub_resource type="Resource" id="Resource_l24mt"]
+script = ExtResource("1_t0djg")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_veppy"]
+script = ExtResource("2_kvi06")
+entries = Array[ExtResource("1_t0djg")]([SubResource("Resource_l24mt")])
+
+[sub_resource type="Resource" id="Resource_chk2y"]
+script = ExtResource("3_vmpmq")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_3qne8"]
+script = ExtResource("4_00gc7")
+all_of = Array[ExtResource("3_vmpmq")]([SubResource("Resource_chk2y")])
+
+[sub_resource type="Resource" id="Resource_1jdcg"]
+script = ExtResource("1_t0djg")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_d7np2"]
+script = ExtResource("2_kvi06")
+entries = Array[ExtResource("1_t0djg")]([SubResource("Resource_1jdcg")])
+
+[resource]
+script = ExtResource("5_rv8ir")
+id = 344
+display_name = "Lumberjack Camp"
+type = 1
+width = 6
+height = 6
+xp_value = 30.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_veppy")
+sell = SubResource("Resource_d7np2")
+build_time_seconds = 14400.0
+prerequisites = SubResource("Resource_3qne8")
+upgrade_of_id = 0
+upgrade_only = true
+gather_recipe_id = 50344
+info_text = "Assign a villager to the Lumberjack Camp to collect Wood. Must be placed on a Forest."

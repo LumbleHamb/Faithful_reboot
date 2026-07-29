@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_20nmq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_igpno"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_8aewf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hukso"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_6yleg"]
+
+[sub_resource type="Resource" id="Resource_km51k"]
+script = ExtResource("1_20nmq")
+resource_id = 0
+amount = 285.0
+
+[sub_resource type="Resource" id="Resource_3cu8t"]
+script = ExtResource("2_igpno")
+entries = Array[ExtResource("1_20nmq")]([SubResource("Resource_km51k")])
+
+[sub_resource type="Resource" id="Resource_l3uk0"]
+script = ExtResource("3_8aewf")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_pc5mi"]
+script = ExtResource("4_hukso")
+all_of = Array[ExtResource("3_8aewf")]([SubResource("Resource_l3uk0")])
+
+[sub_resource type="Resource" id="Resource_jsvho"]
+script = ExtResource("1_20nmq")
+resource_id = 1
+amount = 2850.0
+
+[sub_resource type="Resource" id="Resource_abomh"]
+script = ExtResource("2_igpno")
+entries = Array[ExtResource("1_20nmq")]([SubResource("Resource_jsvho")])
+
+[resource]
+script = ExtResource("5_6yleg")
+id = 297
+display_name = "Meryl"
+type = 5
+width = 2
+height = 2
+xp_value = 14250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_3cu8t")
+sell = SubResource("Resource_abomh")
+prerequisites = SubResource("Resource_pc5mi")
+upgrade_of_id = 0
+info_text = "Meryl is a zombie. Death becomes her. Meryl grants a bonus to the XP and Gold received from all Shops by 21%. (500% Maximum)"

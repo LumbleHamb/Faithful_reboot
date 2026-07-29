@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_7ftu6"]
+
+[resource]
+script = ExtResource("1_7ftu6")
+id = 50008
+display_name = "Gather at Logging Camp"
+output_resource_id = 10
+max_output_stack_size = 150.0
+villager_resources_per_hour = 50.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_aim2u"]
+
+[resource]
+script = ExtResource("1_aim2u")
+id = 50009
+display_name = "Gather at Quarry"
+output_resource_id = 20
+max_output_stack_size = 150.0
+villager_resources_per_hour = 20.0

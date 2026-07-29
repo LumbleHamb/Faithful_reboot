@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_bxnkk"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vimhf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xcff3"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_vy6qo"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_bqpj8"]
+
+[sub_resource type="Resource" id="Resource_60ypy"]
+script = ExtResource("1_bxnkk")
+resource_id = 0
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_axudj"]
+script = ExtResource("2_vimhf")
+entries = Array[ExtResource("1_bxnkk")]([SubResource("Resource_60ypy")])
+
+[sub_resource type="Resource" id="Resource_ug3p7"]
+script = ExtResource("3_xcff3")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_ow40a"]
+script = ExtResource("4_vy6qo")
+all_of = Array[ExtResource("3_xcff3")]([SubResource("Resource_ug3p7")])
+
+[sub_resource type="Resource" id="Resource_ws36q"]
+script = ExtResource("1_bxnkk")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_c5nkn"]
+script = ExtResource("2_vimhf")
+entries = Array[ExtResource("1_bxnkk")]([SubResource("Resource_ws36q")])
+
+[resource]
+script = ExtResource("5_bqpj8")
+id = 284
+display_name = "Flappy"
+type = 5
+width = 2
+height = 2
+xp_value = 3750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_axudj")
+sell = SubResource("Resource_c5nkn")
+prerequisites = SubResource("Resource_ow40a")
+upgrade_of_id = 0
+info_text = "Flappy the bat lives in a very large belfrey. Flappy grants a bonus to the XP and Gold received from all Shops by 3.25%. (500% Maximum)"

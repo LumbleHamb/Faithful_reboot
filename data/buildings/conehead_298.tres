@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_wd34j"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_u764y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_w747r"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_yduhx"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_rd14j"]
+
+[sub_resource type="Resource" id="Resource_ywoqs"]
+script = ExtResource("1_wd34j")
+resource_id = 0
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_wxdfs"]
+script = ExtResource("2_u764y")
+entries = Array[ExtResource("1_wd34j")]([SubResource("Resource_ywoqs")])
+
+[sub_resource type="Resource" id="Resource_mu75n"]
+script = ExtResource("3_w747r")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_r2caw"]
+script = ExtResource("4_yduhx")
+all_of = Array[ExtResource("3_w747r")]([SubResource("Resource_mu75n")])
+
+[sub_resource type="Resource" id="Resource_yrhnc"]
+script = ExtResource("1_wd34j")
+resource_id = 1
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_yxasg"]
+script = ExtResource("2_u764y")
+entries = Array[ExtResource("1_wd34j")]([SubResource("Resource_yrhnc")])
+
+[resource]
+script = ExtResource("5_rd14j")
+id = 298
+display_name = "Conehead"
+type = 5
+width = 2
+height = 2
+xp_value = 7500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_wxdfs")
+sell = SubResource("Resource_yxasg")
+prerequisites = SubResource("Resource_r2caw")
+upgrade_of_id = 0
+info_text = "Conehead is a zombie with an irrational fear of flora. Conehead grants a bonus to the XP and Gold received from all Shops by 10.5%. (500% Maximum)"

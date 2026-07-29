@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_uwfgq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hhh4o"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_d65pv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8xd2e"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_unrsn"]
+
+[sub_resource type="Resource" id="Resource_4i7jk"]
+script = ExtResource("1_uwfgq")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_ceyvm"]
+script = ExtResource("2_hhh4o")
+entries = Array[ExtResource("1_uwfgq")]([SubResource("Resource_4i7jk")])
+
+[sub_resource type="Resource" id="Resource_hpj0a"]
+script = ExtResource("3_d65pv")
+target_id = 7
+
+[sub_resource type="Resource" id="Resource_bakj1"]
+script = ExtResource("4_8xd2e")
+all_of = Array[ExtResource("3_d65pv")]([SubResource("Resource_hpj0a")])
+
+[sub_resource type="Resource" id="Resource_bafap"]
+script = ExtResource("1_uwfgq")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_d2i4o"]
+script = ExtResource("2_hhh4o")
+entries = Array[ExtResource("1_uwfgq")]([SubResource("Resource_bafap")])
+
+[resource]
+script = ExtResource("5_unrsn")
+id = 118
+display_name = "Stump"
+type = 5
+width = 2
+height = 2
+xp_value = 7.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_ceyvm")
+sell = SubResource("Resource_d2i4o")
+prerequisites = SubResource("Resource_bakj1")
+upgrade_of_id = 0

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_1cd6y"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qy3vc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_njgjx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_jsgb1"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uy5r7"]
+
+[sub_resource type="Resource" id="Resource_vyseu"]
+script = ExtResource("1_1cd6y")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_715su"]
+script = ExtResource("2_qy3vc")
+entries = Array[ExtResource("1_1cd6y")]([SubResource("Resource_vyseu")])
+
+[sub_resource type="Resource" id="Resource_ex4r8"]
+script = ExtResource("3_njgjx")
+target_id = 21
+
+[sub_resource type="Resource" id="Resource_pec5k"]
+script = ExtResource("4_jsgb1")
+all_of = Array[ExtResource("3_njgjx")]([SubResource("Resource_ex4r8")])
+
+[sub_resource type="Resource" id="Resource_p446p"]
+script = ExtResource("1_1cd6y")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_c0pm1"]
+script = ExtResource("2_qy3vc")
+entries = Array[ExtResource("1_1cd6y")]([SubResource("Resource_p446p")])
+
+[resource]
+script = ExtResource("5_uy5r7")
+id = 265
+display_name = "Water Trough"
+type = 5
+width = 3
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_715su")
+sell = SubResource("Resource_c0pm1")
+prerequisites = SubResource("Resource_pec5k")
+upgrade_of_id = 0

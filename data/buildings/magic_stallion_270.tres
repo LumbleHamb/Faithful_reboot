@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2b3lx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_wjd5w"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0un4t"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_do22h"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_nbjif"]
+
+[sub_resource type="Resource" id="Resource_dxcp2"]
+script = ExtResource("1_2b3lx")
+resource_id = 0
+amount = 295.0
+
+[sub_resource type="Resource" id="Resource_rbggu"]
+script = ExtResource("2_wjd5w")
+entries = Array[ExtResource("1_2b3lx")]([SubResource("Resource_dxcp2")])
+
+[sub_resource type="Resource" id="Resource_xav4d"]
+script = ExtResource("3_0un4t")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_qq58e"]
+script = ExtResource("4_do22h")
+all_of = Array[ExtResource("3_0un4t")]([SubResource("Resource_xav4d")])
+
+[sub_resource type="Resource" id="Resource_5fdq0"]
+script = ExtResource("1_2b3lx")
+resource_id = 1
+amount = 2950.0
+
+[sub_resource type="Resource" id="Resource_3qpef"]
+script = ExtResource("2_wjd5w")
+entries = Array[ExtResource("1_2b3lx")]([SubResource("Resource_5fdq0")])
+
+[resource]
+script = ExtResource("5_nbjif")
+id = 270
+display_name = "Magic Stallion"
+type = 5
+width = 2
+height = 3
+xp_value = 5000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_rbggu")
+sell = SubResource("Resource_3qpef")
+prerequisites = SubResource("Resource_qq58e")
+upgrade_of_id = 0
+info_text = "Magic Stallion, may all your days be bright! Magic Stallion grants a bonus to the XP and Gold received from all Shops by 30%! (500% Maximum)"

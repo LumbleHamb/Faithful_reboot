@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_vpjv6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_a8kgm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wl2nw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_4508u"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_3mtyl"]
+
+[sub_resource type="Resource" id="Resource_fulmn"]
+script = ExtResource("1_vpjv6")
+resource_id = 1
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_4vuth"]
+script = ExtResource("2_a8kgm")
+entries = Array[ExtResource("1_vpjv6")]([SubResource("Resource_fulmn")])
+
+[sub_resource type="Resource" id="Resource_lv5rx"]
+script = ExtResource("3_wl2nw")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_620hk"]
+script = ExtResource("4_4508u")
+all_of = Array[ExtResource("3_wl2nw")]([SubResource("Resource_lv5rx")])
+
+[sub_resource type="Resource" id="Resource_ldwbr"]
+script = ExtResource("1_vpjv6")
+resource_id = 1
+amount = 4.0
+
+[sub_resource type="Resource" id="Resource_s6wjr"]
+script = ExtResource("2_a8kgm")
+entries = Array[ExtResource("1_vpjv6")]([SubResource("Resource_ldwbr")])
+
+[resource]
+script = ExtResource("5_3mtyl")
+id = 127
+display_name = "Blue Pot"
+type = 5
+width = 2
+height = 2
+xp_value = 20.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_4vuth")
+sell = SubResource("Resource_s6wjr")
+prerequisites = SubResource("Resource_620hk")
+upgrade_of_id = 0

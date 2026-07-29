@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_o4d1p"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_m22b4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_50gel"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_1321j"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_bpexs"]
+
+[sub_resource type="Resource" id="Resource_tjyk8"]
+script = ExtResource("1_o4d1p")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_tuish"]
+script = ExtResource("1_o4d1p")
+resource_id = 10
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_oudkv"]
+script = ExtResource("1_o4d1p")
+resource_id = 20
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_80m6w"]
+script = ExtResource("1_o4d1p")
+resource_id = 40
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_b6s3n"]
+script = ExtResource("2_m22b4")
+entries = Array[ExtResource("1_o4d1p")]([SubResource("Resource_tjyk8"), SubResource("Resource_tuish"), SubResource("Resource_oudkv"), SubResource("Resource_80m6w")])
+
+[sub_resource type="Resource" id="Resource_6tgx1"]
+script = ExtResource("3_50gel")
+target_id = 10
+
+[sub_resource type="Resource" id="Resource_aj0dv"]
+script = ExtResource("3_50gel")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_hw5p2"]
+script = ExtResource("4_1321j")
+all_of = Array[ExtResource("3_50gel")]([SubResource("Resource_6tgx1"), SubResource("Resource_aj0dv")])
+
+[sub_resource type="Resource" id="Resource_0l0d1"]
+script = ExtResource("1_o4d1p")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_h7q7c"]
+script = ExtResource("1_o4d1p")
+resource_id = 10
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_gyifu"]
+script = ExtResource("1_o4d1p")
+resource_id = 20
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_amvrh"]
+script = ExtResource("1_o4d1p")
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_e84di"]
+script = ExtResource("2_m22b4")
+entries = Array[ExtResource("1_o4d1p")]([SubResource("Resource_0l0d1"), SubResource("Resource_h7q7c"), SubResource("Resource_gyifu"), SubResource("Resource_amvrh")])
+
+[resource]
+script = ExtResource("5_bpexs")
+id = 36
+display_name = "Pen"
+type = 1
+width = 6
+height = 6
+xp_value = 600.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_b6s3n")
+sell = SubResource("Resource_e84di")
+build_time_seconds = 57600.0
+prerequisites = SubResource("Resource_hw5p2")
+upgrade_of_id = 0
+gather_recipe_id = 50036
+info_text = "Assign a villager to the Pen to collect Wool!"

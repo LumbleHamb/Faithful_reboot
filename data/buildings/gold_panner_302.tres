@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3oyf1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_uiny6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ujm53"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_l0nrl"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_8qs0s"]
+
+[sub_resource type="Resource" id="Resource_qvsl5"]
+script = ExtResource("1_3oyf1")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_6w876"]
+script = ExtResource("2_uiny6")
+entries = Array[ExtResource("1_3oyf1")]([SubResource("Resource_qvsl5")])
+
+[sub_resource type="Resource" id="Resource_tfeeg"]
+script = ExtResource("3_ujm53")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_oycn3"]
+script = ExtResource("4_l0nrl")
+all_of = Array[ExtResource("3_ujm53")]([SubResource("Resource_tfeeg")])
+
+[sub_resource type="Resource" id="Resource_uk3kc"]
+script = ExtResource("1_3oyf1")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_opba5"]
+script = ExtResource("2_uiny6")
+entries = Array[ExtResource("1_3oyf1")]([SubResource("Resource_uk3kc")])
+
+[resource]
+script = ExtResource("5_8qs0s")
+id = 302
+display_name = "Gold Panner"
+type = 1
+width = 6
+height = 6
+xp_value = 1500.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_6w876")
+sell = SubResource("Resource_opba5")
+build_time_seconds = 14400.0
+prerequisites = SubResource("Resource_oycn3")
+upgrade_of_id = 0
+upgrade_only = true
+gather_recipe_id = 50302
+info_text = "Gold Rush! Assign a Villager to the Gold Panner to collect Gold. Must be placed on a Mountain Lake."

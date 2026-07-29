@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5enxv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_h2ogh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_yc434"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_vrq4x"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_t0qeb"]
+
+[sub_resource type="Resource" id="Resource_mojim"]
+script = ExtResource("1_5enxv")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_m263k"]
+script = ExtResource("2_h2ogh")
+entries = Array[ExtResource("1_5enxv")]([SubResource("Resource_mojim")])
+
+[sub_resource type="Resource" id="Resource_xddlb"]
+script = ExtResource("3_yc434")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_soas2"]
+script = ExtResource("4_vrq4x")
+all_of = Array[ExtResource("3_yc434")]([SubResource("Resource_xddlb")])
+
+[sub_resource type="Resource" id="Resource_ig1ld"]
+script = ExtResource("1_5enxv")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_ujq4t"]
+script = ExtResource("2_h2ogh")
+entries = Array[ExtResource("1_5enxv")]([SubResource("Resource_ig1ld")])
+
+[resource]
+script = ExtResource("5_t0qeb")
+id = 248
+display_name = "River Bridge"
+type = 5
+width = 3
+height = 3
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_m263k")
+sell = SubResource("Resource_ujq4t")
+prerequisites = SubResource("Resource_soas2")
+upgrade_of_id = 0
+info_text = "River Bridges grant a bonus to the XP and Gold received from all Shops by 0.5%. (500% Maximum)"

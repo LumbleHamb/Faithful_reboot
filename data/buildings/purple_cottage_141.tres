@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_x3sff"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_mhp2m"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_lftf5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_tfjup"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_aerlv"]
+
+[sub_resource type="Resource" id="Resource_qvfqv"]
+script = ExtResource("1_x3sff")
+resource_id = 0
+amount = 11.0
+
+[sub_resource type="Resource" id="Resource_wgakk"]
+script = ExtResource("2_mhp2m")
+entries = Array[ExtResource("1_x3sff")]([SubResource("Resource_qvfqv")])
+
+[sub_resource type="Resource" id="Resource_o3lbk"]
+script = ExtResource("3_lftf5")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_jhxx1"]
+script = ExtResource("3_lftf5")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_thhpw"]
+script = ExtResource("4_tfjup")
+all_of = Array[ExtResource("3_lftf5")]([SubResource("Resource_o3lbk"), SubResource("Resource_jhxx1")])
+
+[sub_resource type="Resource" id="Resource_ujcqs"]
+script = ExtResource("1_x3sff")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_tvoge"]
+script = ExtResource("1_x3sff")
+resource_id = 10
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_kajf2"]
+script = ExtResource("1_x3sff")
+resource_id = 20
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_r2ykn"]
+script = ExtResource("1_x3sff")
+resource_id = 40
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_mpngt"]
+script = ExtResource("2_mhp2m")
+entries = Array[ExtResource("1_x3sff")]([SubResource("Resource_ujcqs"), SubResource("Resource_tvoge"), SubResource("Resource_kajf2"), SubResource("Resource_r2ykn")])
+
+[resource]
+script = ExtResource("5_aerlv")
+id = 141
+display_name = "Purple Cottage"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 300.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_wgakk")
+sell = SubResource("Resource_mpngt")
+build_time_seconds = 10800.0
+prerequisites = SubResource("Resource_thhpw")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Purple Cottage houses two villagers."
+description_text = "Houses two villagers"

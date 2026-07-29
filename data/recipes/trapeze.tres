@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_swiaw"]
+
+[resource]
+script = ExtResource("1_swiaw")
+id = 68
+kind = 1
+display_name = "Trapeze"
+time_seconds = 86400.0
+input_cost = {
+1: 1500.0
+}
+reward_xp = 3500.0
+hurry_cost = 3.0
+hurry_interval_seconds = 19200.0
+compatible_lands = Array[String](["Vanilla"])

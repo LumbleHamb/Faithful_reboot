@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5sruo"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_coklb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wxuiy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pfxyv"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ex8rg"]
+
+[sub_resource type="Resource" id="Resource_veffm"]
+script = ExtResource("1_5sruo")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_jikwd"]
+script = ExtResource("1_5sruo")
+resource_id = 10
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_usyre"]
+script = ExtResource("1_5sruo")
+resource_id = 20
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_ntq1m"]
+script = ExtResource("2_coklb")
+entries = Array[ExtResource("1_5sruo")]([SubResource("Resource_veffm"), SubResource("Resource_jikwd"), SubResource("Resource_usyre")])
+
+[sub_resource type="Resource" id="Resource_r0f46"]
+script = ExtResource("3_wxuiy")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_ohuqg"]
+script = ExtResource("3_wxuiy")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_od1y2"]
+script = ExtResource("4_pfxyv")
+all_of = Array[ExtResource("3_wxuiy")]([SubResource("Resource_r0f46"), SubResource("Resource_ohuqg")])
+
+[sub_resource type="Resource" id="Resource_wsxsn"]
+script = ExtResource("1_5sruo")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_3i7ob"]
+script = ExtResource("1_5sruo")
+resource_id = 10
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_lr4af"]
+script = ExtResource("1_5sruo")
+resource_id = 20
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_tsini"]
+script = ExtResource("2_coklb")
+entries = Array[ExtResource("1_5sruo")]([SubResource("Resource_wsxsn"), SubResource("Resource_3i7ob"), SubResource("Resource_lr4af")])
+
+[resource]
+script = ExtResource("5_ex8rg")
+id = 15
+display_name = "Lumber Yard"
+width = 7
+height = 5
+xp_value = 550.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ntq1m")
+sell = SubResource("Resource_tsini")
+build_time_seconds = 21600.0
+prerequisites = SubResource("Resource_od1y2")
+upgrade_of_id = 1
+gather_recipe_id = 50015
+shop_recipe_ids = Array[int]([25])
+info_text = "The Lumber Yard processes Wood into Lumber.  Lumber is used for more advanced buildings and jobs in the Carpenter Shop."
+description_text = "Mills Wood into Lumber"

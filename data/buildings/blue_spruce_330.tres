@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_gtt33"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ugrg1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_02hop"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lxe1v"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_io5wv"]
+
+[sub_resource type="Resource" id="Resource_d1m4x"]
+script = ExtResource("1_gtt33")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_5iuw1"]
+script = ExtResource("2_ugrg1")
+entries = Array[ExtResource("1_gtt33")]([SubResource("Resource_d1m4x")])
+
+[sub_resource type="Resource" id="Resource_ckwt8"]
+script = ExtResource("3_02hop")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_r5wjw"]
+script = ExtResource("4_lxe1v")
+all_of = Array[ExtResource("3_02hop")]([SubResource("Resource_ckwt8")])
+
+[sub_resource type="Resource" id="Resource_rpsw8"]
+script = ExtResource("1_gtt33")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_pdmhc"]
+script = ExtResource("2_ugrg1")
+entries = Array[ExtResource("1_gtt33")]([SubResource("Resource_rpsw8")])
+
+[resource]
+script = ExtResource("5_io5wv")
+id = 330
+display_name = "Blue Spruce"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_5iuw1")
+sell = SubResource("Resource_pdmhc")
+prerequisites = SubResource("Resource_r5wjw")
+upgrade_of_id = 0

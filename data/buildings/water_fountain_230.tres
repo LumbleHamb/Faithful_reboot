@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8hnyw"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_77khl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_vnqpm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_5gjhi"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fly6x"]
+
+[sub_resource type="Resource" id="Resource_sbb1n"]
+script = ExtResource("1_8hnyw")
+resource_id = 0
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_dup8d"]
+script = ExtResource("2_77khl")
+entries = Array[ExtResource("1_8hnyw")]([SubResource("Resource_sbb1n")])
+
+[sub_resource type="Resource" id="Resource_ick50"]
+script = ExtResource("3_vnqpm")
+target_id = 34
+
+[sub_resource type="Resource" id="Resource_x2g3w"]
+script = ExtResource("4_5gjhi")
+all_of = Array[ExtResource("3_vnqpm")]([SubResource("Resource_ick50")])
+
+[sub_resource type="Resource" id="Resource_sboeu"]
+script = ExtResource("1_8hnyw")
+resource_id = 1
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_hwf0b"]
+script = ExtResource("2_77khl")
+entries = Array[ExtResource("1_8hnyw")]([SubResource("Resource_sboeu")])
+
+[resource]
+script = ExtResource("5_fly6x")
+id = 230
+display_name = "Water Fountain"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_dup8d")
+sell = SubResource("Resource_hwf0b")
+prerequisites = SubResource("Resource_x2g3w")
+upgrade_of_id = 0
+info_text = "Water Fountains grant a bonus to the XP and Gold received from all Shops by 2.25% (500% Maximum)"

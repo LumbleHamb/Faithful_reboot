@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_uu4it"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_mlloh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_aka4u"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_02b78"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_mtcnr"]
+
+[sub_resource type="Resource" id="Resource_ufimg"]
+script = ExtResource("2_mlloh")
+
+[sub_resource type="Resource" id="Resource_8yfph"]
+script = ExtResource("4_02b78")
+
+[sub_resource type="Resource" id="Resource_mtwxh"]
+script = ExtResource("2_mlloh")
+
+[resource]
+script = ExtResource("5_mtcnr")
+id = 306
+display_name = "Mountain Lake"
+width = 6
+height = 6
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_ufimg")
+sell = SubResource("Resource_mtwxh")
+prerequisites = SubResource("Resource_8yfph")
+upgrade_of_id = 0
+description_text = "Build a Gold Panner here to gather gold!"

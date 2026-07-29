@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_k4nl7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_k4amd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5s3on"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pqgrn"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_yhmrp"]
+
+[sub_resource type="Resource" id="Resource_ykl7i"]
+script = ExtResource("1_k4nl7")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_nipjq"]
+script = ExtResource("2_k4amd")
+entries = Array[ExtResource("1_k4nl7")]([SubResource("Resource_ykl7i")])
+
+[sub_resource type="Resource" id="Resource_p57n4"]
+script = ExtResource("3_5s3on")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_q110y"]
+script = ExtResource("4_pqgrn")
+all_of = Array[ExtResource("3_5s3on")]([SubResource("Resource_p57n4")])
+
+[sub_resource type="Resource" id="Resource_hhc13"]
+script = ExtResource("1_k4nl7")
+resource_id = 10
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_chn12"]
+script = ExtResource("2_k4amd")
+entries = Array[ExtResource("1_k4nl7")]([SubResource("Resource_hhc13")])
+
+[resource]
+script = ExtResource("5_yhmrp")
+id = 186
+display_name = "Willow"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_nipjq")
+sell = SubResource("Resource_chn12")
+prerequisites = SubResource("Resource_q110y")
+upgrade_of_id = 0
+info_text = "Willow Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

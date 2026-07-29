@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xviw4"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_yg2eq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_t17t3"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_qewji"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_snslq"]
+
+[sub_resource type="Resource" id="Resource_kpor0"]
+script = ExtResource("1_xviw4")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_1cace"]
+script = ExtResource("2_yg2eq")
+entries = Array[ExtResource("1_xviw4")]([SubResource("Resource_kpor0")])
+
+[sub_resource type="Resource" id="Resource_cymnk"]
+script = ExtResource("3_t17t3")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_gnjc1"]
+script = ExtResource("4_qewji")
+all_of = Array[ExtResource("3_t17t3")]([SubResource("Resource_cymnk")])
+
+[sub_resource type="Resource" id="Resource_8nvx0"]
+script = ExtResource("1_xviw4")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_a4kf2"]
+script = ExtResource("2_yg2eq")
+entries = Array[ExtResource("1_xviw4")]([SubResource("Resource_8nvx0")])
+
+[resource]
+script = ExtResource("5_snslq")
+id = 8
+display_name = "Logging Camp"
+type = 1
+width = 6
+height = 6
+xp_value = 30.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_1cace")
+sell = SubResource("Resource_a4kf2")
+build_time_seconds = 3.0
+prerequisites = SubResource("Resource_gnjc1")
+upgrade_of_id = 0
+upgrade_only = true
+gather_recipe_id = 50008
+info_text = "Assign a villager to the Logging Camp to collect Wood.  Must be placed on a Forest."

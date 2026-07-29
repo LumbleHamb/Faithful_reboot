@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_l4tjw"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_o4uhd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0o4i5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_4iodc"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_t2g8w"]
+
+[sub_resource type="Resource" id="Resource_xki3u"]
+script = ExtResource("1_l4tjw")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_ejvpt"]
+script = ExtResource("2_o4uhd")
+entries = Array[ExtResource("1_l4tjw")]([SubResource("Resource_xki3u")])
+
+[sub_resource type="Resource" id="Resource_8gdep"]
+script = ExtResource("3_0o4i5")
+target_id = 28
+
+[sub_resource type="Resource" id="Resource_fbdvj"]
+script = ExtResource("4_4iodc")
+all_of = Array[ExtResource("3_0o4i5")]([SubResource("Resource_8gdep")])
+
+[sub_resource type="Resource" id="Resource_2jowg"]
+script = ExtResource("1_l4tjw")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_3cuf8"]
+script = ExtResource("2_o4uhd")
+entries = Array[ExtResource("1_l4tjw")]([SubResource("Resource_2jowg")])
+
+[resource]
+script = ExtResource("5_t2g8w")
+id = 256
+display_name = "Poochie"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_ejvpt")
+sell = SubResource("Resource_3cuf8")
+prerequisites = SubResource("Resource_fbdvj")
+upgrade_of_id = 0
+info_text = "Happy Dog! Poochie grants a bonus to the XP and Gold received from all Shops by .4% (500% Maximum)"

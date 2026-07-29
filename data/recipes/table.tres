@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_bwvin"]
+
+[resource]
+script = ExtResource("1_bwvin")
+id = 10
+kind = 1
+display_name = "Table"
+time_seconds = 300.0
+input_cost = {
+10: 6.0
+}
+reward_xp = 20.0
+reward = {
+1: 40.0
+}
+hurry_cost = 1.0
+hurry_interval_seconds = 300.0
+compatible_lands = Array[String](["Vanilla"])

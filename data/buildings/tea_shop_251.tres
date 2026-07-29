@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_vrp5n"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cfo3o"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_enmhj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_a4oxw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_pe1w7"]
+
+[sub_resource type="Resource" id="Resource_pk2gh"]
+script = ExtResource("1_vrp5n")
+resource_id = 1
+amount = 10000.0
+
+[sub_resource type="Resource" id="Resource_5ktk5"]
+script = ExtResource("1_vrp5n")
+resource_id = 11
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_al62p"]
+script = ExtResource("1_vrp5n")
+resource_id = 21
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_nygmh"]
+script = ExtResource("2_cfo3o")
+entries = Array[ExtResource("1_vrp5n")]([SubResource("Resource_pk2gh"), SubResource("Resource_5ktk5"), SubResource("Resource_al62p")])
+
+[sub_resource type="Resource" id="Resource_j3y83"]
+script = ExtResource("3_enmhj")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_gru00"]
+script = ExtResource("3_enmhj")
+target_id = 44
+
+[sub_resource type="Resource" id="Resource_3xqdx"]
+script = ExtResource("4_a4oxw")
+all_of = Array[ExtResource("3_enmhj")]([SubResource("Resource_j3y83"), SubResource("Resource_gru00")])
+
+[sub_resource type="Resource" id="Resource_kgnmt"]
+script = ExtResource("1_vrp5n")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_ic5rr"]
+script = ExtResource("1_vrp5n")
+resource_id = 11
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_udnj3"]
+script = ExtResource("1_vrp5n")
+resource_id = 21
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_2vyx8"]
+script = ExtResource("2_cfo3o")
+entries = Array[ExtResource("1_vrp5n")]([SubResource("Resource_kgnmt"), SubResource("Resource_ic5rr"), SubResource("Resource_udnj3")])
+
+[resource]
+script = ExtResource("5_pe1w7")
+id = 251
+display_name = "Tea Shop"
+type = 2
+category = "shop"
+width = 5
+height = 4
+xp_value = 5000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_nygmh")
+sell = SubResource("Resource_2vyx8")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_3xqdx")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([109, 100, 101, 102, 103])
+info_text = "Use the Tea Shop to create amazing new beverages for your townspeople."
+description_text = "Exotic Teas from the Far East!"

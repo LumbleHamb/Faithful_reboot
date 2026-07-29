@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5ot4j"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7114v"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_vwjgk"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_d3mes"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_6660r"]
+
+[sub_resource type="Resource" id="Resource_tmkdm"]
+script = ExtResource("1_5ot4j")
+resource_id = 0
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_a66jj"]
+script = ExtResource("2_7114v")
+entries = Array[ExtResource("1_5ot4j")]([SubResource("Resource_tmkdm")])
+
+[sub_resource type="Resource" id="Resource_fo2i2"]
+script = ExtResource("3_vwjgk")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_lke8t"]
+script = ExtResource("3_vwjgk")
+target_id = 28
+
+[sub_resource type="Resource" id="Resource_5unme"]
+script = ExtResource("4_d3mes")
+all_of = Array[ExtResource("3_vwjgk")]([SubResource("Resource_fo2i2"), SubResource("Resource_lke8t")])
+
+[sub_resource type="Resource" id="Resource_cw0ew"]
+script = ExtResource("1_5ot4j")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_4pblj"]
+script = ExtResource("2_7114v")
+entries = Array[ExtResource("1_5ot4j")]([SubResource("Resource_cw0ew")])
+
+[resource]
+script = ExtResource("5_6660r")
+id = 156
+display_name = "Trampoline"
+type = 11
+width = 3
+height = 3
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_a66jj")
+sell = SubResource("Resource_4pblj")
+build_time_seconds = 3600.0
+prerequisites = SubResource("Resource_5unme")
+upgrade_of_id = 0
+info_text = "Assign a villager to the Trampoline and earn gold and experience for their stellar performance!"
+description_text = "Truly terrific trampoline tricks"

@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_r5tty"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_xkcrn"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xdlf0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_36tsr"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tp714"]
+
+[sub_resource type="Resource" id="Resource_nuuhw"]
+script = ExtResource("1_r5tty")
+resource_id = 0
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_f8g7w"]
+script = ExtResource("2_xkcrn")
+entries = Array[ExtResource("1_r5tty")]([SubResource("Resource_nuuhw")])
+
+[sub_resource type="Resource" id="Resource_0ud62"]
+script = ExtResource("3_xdlf0")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_8xkfw"]
+script = ExtResource("3_xdlf0")
+target_id = 35
+
+[sub_resource type="Resource" id="Resource_gmlw3"]
+script = ExtResource("4_36tsr")
+all_of = Array[ExtResource("3_xdlf0")]([SubResource("Resource_0ud62"), SubResource("Resource_8xkfw")])
+
+[sub_resource type="Resource" id="Resource_2onv8"]
+script = ExtResource("1_r5tty")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_85505"]
+script = ExtResource("2_xkcrn")
+entries = Array[ExtResource("1_r5tty")]([SubResource("Resource_2onv8")])
+
+[resource]
+script = ExtResource("5_tp714")
+id = 266
+display_name = "Sneezy"
+type = 5
+width = 2
+height = 2
+xp_value = 7500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_f8g7w")
+sell = SubResource("Resource_85505")
+prerequisites = SubResource("Resource_gmlw3")
+upgrade_of_id = 0
+info_text = "Everybody loves Sneezy the baby panda! Sneezy grants a bonus to the XP and Gold received from all Shops by 10.5% (500% Maximum)"

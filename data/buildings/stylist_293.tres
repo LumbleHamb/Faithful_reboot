@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_bibj2"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7qpo6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_vqsvr"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lwvdh"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_e6wdu"]
+
+[sub_resource type="Resource" id="Resource_b68pb"]
+script = ExtResource("1_bibj2")
+resource_id = 1
+amount = 12500.0
+
+[sub_resource type="Resource" id="Resource_s2wf7"]
+script = ExtResource("1_bibj2")
+resource_id = 11
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_vsedr"]
+script = ExtResource("1_bibj2")
+resource_id = 21
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_pkxo1"]
+script = ExtResource("2_7qpo6")
+entries = Array[ExtResource("1_bibj2")]([SubResource("Resource_b68pb"), SubResource("Resource_s2wf7"), SubResource("Resource_vsedr")])
+
+[sub_resource type="Resource" id="Resource_g3dlo"]
+script = ExtResource("3_vqsvr")
+target_id = 45
+
+[sub_resource type="Resource" id="Resource_rd4ab"]
+script = ExtResource("3_vqsvr")
+kind = 1
+target_id = 221
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_6j5lv"]
+script = ExtResource("4_lwvdh")
+all_of = Array[ExtResource("3_vqsvr")]([SubResource("Resource_g3dlo"), SubResource("Resource_rd4ab")])
+
+[sub_resource type="Resource" id="Resource_bkeax"]
+script = ExtResource("1_bibj2")
+resource_id = 1
+amount = 1250.0
+
+[sub_resource type="Resource" id="Resource_0buxy"]
+script = ExtResource("1_bibj2")
+resource_id = 11
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_tdq8f"]
+script = ExtResource("1_bibj2")
+resource_id = 21
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_r2ykt"]
+script = ExtResource("2_7qpo6")
+entries = Array[ExtResource("1_bibj2")]([SubResource("Resource_bkeax"), SubResource("Resource_0buxy"), SubResource("Resource_tdq8f")])
+
+[resource]
+script = ExtResource("5_e6wdu")
+id = 293
+display_name = "Stylist"
+type = 2
+category = "shop"
+width = 6
+height = 5
+xp_value = 4500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_pkxo1")
+sell = SubResource("Resource_r2ykt")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_6j5lv")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([117, 118, 119, 120, 121])
+info_text = "Use the Stylist to make great new hairstyles for gold and XP!"
+description_text = "Get a new hairdo at the Stylist!"

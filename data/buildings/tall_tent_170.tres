@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_bqscl"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_2nc4h"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_igh0y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_0agmn"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_wsbey"]
+
+[sub_resource type="Resource" id="Resource_76h2a"]
+script = ExtResource("1_bqscl")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_gaxgs"]
+script = ExtResource("1_bqscl")
+resource_id = 51
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_2w8a0"]
+script = ExtResource("2_2nc4h")
+entries = Array[ExtResource("1_bqscl")]([SubResource("Resource_76h2a"), SubResource("Resource_gaxgs")])
+
+[sub_resource type="Resource" id="Resource_d2woc"]
+script = ExtResource("3_igh0y")
+target_id = 23
+
+[sub_resource type="Resource" id="Resource_3j5s0"]
+script = ExtResource("4_0agmn")
+all_of = Array[ExtResource("3_igh0y")]([SubResource("Resource_d2woc")])
+
+[sub_resource type="Resource" id="Resource_748lg"]
+script = ExtResource("1_bqscl")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_jsthg"]
+script = ExtResource("1_bqscl")
+resource_id = 51
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_lfbmb"]
+script = ExtResource("2_2nc4h")
+entries = Array[ExtResource("1_bqscl")]([SubResource("Resource_748lg"), SubResource("Resource_jsthg")])
+
+[resource]
+script = ExtResource("5_wsbey")
+id = 170
+display_name = "Tall Tent"
+type = 5
+width = 2
+height = 2
+xp_value = 1525.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_2w8a0")
+sell = SubResource("Resource_lfbmb")
+prerequisites = SubResource("Resource_3j5s0")
+upgrade_of_id = 0
+info_text = "The Tall Tent grants a bonus to the XP received from the Big Top and Theater by 10%.  Only one Tall Tent will grant this bonus at a time."

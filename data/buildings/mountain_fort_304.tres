@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3kau6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_6ig5u"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_hjl7s"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8w88i"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vsfiy"]
+
+[sub_resource type="Resource" id="Resource_lirwh"]
+script = ExtResource("1_3kau6")
+resource_id = 1
+amount = 500000.0
+
+[sub_resource type="Resource" id="Resource_j083v"]
+script = ExtResource("1_3kau6")
+resource_id = 11
+amount = 50000.0
+
+[sub_resource type="Resource" id="Resource_uso85"]
+script = ExtResource("1_3kau6")
+resource_id = 21
+amount = 75000.0
+
+[sub_resource type="Resource" id="Resource_qkldf"]
+script = ExtResource("1_3kau6")
+resource_id = 51
+amount = 30000.0
+
+[sub_resource type="Resource" id="Resource_igmmq"]
+script = ExtResource("2_6ig5u")
+entries = Array[ExtResource("1_3kau6")]([SubResource("Resource_lirwh"), SubResource("Resource_j083v"), SubResource("Resource_uso85"), SubResource("Resource_qkldf")])
+
+[sub_resource type="Resource" id="Resource_rkh7r"]
+script = ExtResource("3_hjl7s")
+target_id = 30
+
+[sub_resource type="Resource" id="Resource_up7cl"]
+script = ExtResource("3_hjl7s")
+kind = 1
+target_id = 303
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_75kwm"]
+script = ExtResource("4_8w88i")
+all_of = Array[ExtResource("3_hjl7s")]([SubResource("Resource_rkh7r"), SubResource("Resource_up7cl")])
+
+[sub_resource type="Resource" id="Resource_14vkm"]
+script = ExtResource("2_6ig5u")
+
+[resource]
+script = ExtResource("5_vsfiy")
+id = 304
+display_name = "Mountain Fort"
+type = 0
+width = 14
+height = 14
+xp_value = 15000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_igmmq")
+sell = SubResource("Resource_14vkm")
+sellable = false
+prerequisites = SubResource("Resource_75kwm")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "Make yourself more comfortable with the Mountain Fort which is an upgrade to the Ridge Post. It allows you to build more advanced buildings."

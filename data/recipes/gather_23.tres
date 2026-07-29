@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_ipb4k"]
+
+[resource]
+script = ExtResource("1_ipb4k")
+id = 50023
+display_name = "Gather at Loom"
+output_resource_id = 51
+max_output_stack_size = 150.0
+worker_max = 2
+hauler_max = 2
+villager_resources_per_hour = 20.0

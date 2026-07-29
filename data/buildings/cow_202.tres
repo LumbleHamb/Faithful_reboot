@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8exbx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_rk4xu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_kabtf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_b0lgo"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_y10sv"]
+
+[sub_resource type="Resource" id="Resource_xg4k0"]
+script = ExtResource("1_8exbx")
+resource_id = 0
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_kyhbh"]
+script = ExtResource("2_rk4xu")
+entries = Array[ExtResource("1_8exbx")]([SubResource("Resource_xg4k0")])
+
+[sub_resource type="Resource" id="Resource_o2t3d"]
+script = ExtResource("3_kabtf")
+target_id = 33
+
+[sub_resource type="Resource" id="Resource_r8ll0"]
+script = ExtResource("4_b0lgo")
+all_of = Array[ExtResource("3_kabtf")]([SubResource("Resource_o2t3d")])
+
+[sub_resource type="Resource" id="Resource_2sifa"]
+script = ExtResource("1_8exbx")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_mhbu7"]
+script = ExtResource("2_rk4xu")
+entries = Array[ExtResource("1_8exbx")]([SubResource("Resource_2sifa")])
+
+[resource]
+script = ExtResource("5_y10sv")
+id = 202
+display_name = "Cow"
+type = 5
+width = 2
+height = 3
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_kyhbh")
+sell = SubResource("Resource_mhbu7")
+prerequisites = SubResource("Resource_r8ll0")
+upgrade_of_id = 0
+info_text = "Moo moo mooooo, moo moo. Moo! Cows grant a bonus to the XP and Gold received from all Shops by 1.25% (500% Maximum)"

@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_oy4pv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_n7kps"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_23vfr"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_q3d3w"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tnajg"]
+
+[sub_resource type="Resource" id="Resource_arjcu"]
+script = ExtResource("1_oy4pv")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_v874q"]
+script = ExtResource("1_oy4pv")
+resource_id = 10
+amount = 1250.0
+
+[sub_resource type="Resource" id="Resource_3o4of"]
+script = ExtResource("2_n7kps")
+entries = Array[ExtResource("1_oy4pv")]([SubResource("Resource_arjcu"), SubResource("Resource_v874q")])
+
+[sub_resource type="Resource" id="Resource_tqpqm"]
+script = ExtResource("3_23vfr")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_f042o"]
+script = ExtResource("3_23vfr")
+target_id = 18
+
+[sub_resource type="Resource" id="Resource_twgbi"]
+script = ExtResource("4_q3d3w")
+all_of = Array[ExtResource("3_23vfr")]([SubResource("Resource_tqpqm"), SubResource("Resource_f042o")])
+
+[sub_resource type="Resource" id="Resource_dedrh"]
+script = ExtResource("1_oy4pv")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_34tsm"]
+script = ExtResource("1_oy4pv")
+resource_id = 10
+amount = 125.0
+
+[sub_resource type="Resource" id="Resource_va5ay"]
+script = ExtResource("2_n7kps")
+entries = Array[ExtResource("1_oy4pv")]([SubResource("Resource_dedrh"), SubResource("Resource_34tsm")])
+
+[resource]
+script = ExtResource("5_tnajg")
+id = 212
+display_name = "Seafood Stand"
+type = 11
+width = 4
+height = 2
+xp_value = 1560.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_3o4of")
+sell = SubResource("Resource_va5ay")
+build_time_seconds = 14400.0
+prerequisites = SubResource("Resource_twgbi")
+upgrade_of_id = 0
+info_text = "Assign a villager to the Fish Stand and earn gold and experience as they sell fresh fish!"
+description_text = "Fresh fish for sale!"

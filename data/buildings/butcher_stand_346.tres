@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_d1su6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_bqf16"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_yut0c"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bw5c5"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_gbi7r"]
+
+[sub_resource type="Resource" id="Resource_sotre"]
+script = ExtResource("1_d1su6")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_jml47"]
+script = ExtResource("1_d1su6")
+resource_id = 10
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_7bmev"]
+script = ExtResource("2_bqf16")
+entries = Array[ExtResource("1_d1su6")]([SubResource("Resource_sotre"), SubResource("Resource_jml47")])
+
+[sub_resource type="Resource" id="Resource_rwc3u"]
+script = ExtResource("3_yut0c")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_ys2rq"]
+script = ExtResource("3_yut0c")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_bawxc"]
+script = ExtResource("4_bw5c5")
+all_of = Array[ExtResource("3_yut0c")]([SubResource("Resource_rwc3u"), SubResource("Resource_ys2rq")])
+
+[sub_resource type="Resource" id="Resource_yycpb"]
+script = ExtResource("1_d1su6")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_em0xd"]
+script = ExtResource("1_d1su6")
+resource_id = 10
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_pvxnt"]
+script = ExtResource("2_bqf16")
+entries = Array[ExtResource("1_d1su6")]([SubResource("Resource_yycpb"), SubResource("Resource_em0xd")])
+
+[resource]
+script = ExtResource("5_gbi7r")
+id = 346
+display_name = "Butcher Stand"
+type = 11
+width = 4
+height = 2
+xp_value = 1875.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_7bmev")
+sell = SubResource("Resource_pvxnt")
+build_time_seconds = 14400.0
+prerequisites = SubResource("Resource_bawxc")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Assign a villager to the Butcher Stand and earn gold and experience as they sell tasty meats!"
+description_text = "Tasty meat for sale."

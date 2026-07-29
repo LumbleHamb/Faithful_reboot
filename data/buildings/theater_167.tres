@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_jfrt2"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_6anp7"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_lejcp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_np4vk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_g2gs2"]
+
+[sub_resource type="Resource" id="Resource_pg065"]
+script = ExtResource("1_jfrt2")
+resource_id = 1
+amount = 5500.0
+
+[sub_resource type="Resource" id="Resource_6cuko"]
+script = ExtResource("1_jfrt2")
+resource_id = 11
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_mcubw"]
+script = ExtResource("1_jfrt2")
+resource_id = 51
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_7hok8"]
+script = ExtResource("2_6anp7")
+entries = Array[ExtResource("1_jfrt2")]([SubResource("Resource_pg065"), SubResource("Resource_6cuko"), SubResource("Resource_mcubw")])
+
+[sub_resource type="Resource" id="Resource_7c4cm"]
+script = ExtResource("3_lejcp")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_85b5g"]
+script = ExtResource("3_lejcp")
+target_id = 26
+
+[sub_resource type="Resource" id="Resource_yjqci"]
+script = ExtResource("4_np4vk")
+all_of = Array[ExtResource("3_lejcp")]([SubResource("Resource_7c4cm"), SubResource("Resource_85b5g")])
+
+[sub_resource type="Resource" id="Resource_yfd8c"]
+script = ExtResource("1_jfrt2")
+resource_id = 1
+amount = 550.0
+
+[sub_resource type="Resource" id="Resource_lcufg"]
+script = ExtResource("1_jfrt2")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_bbpc4"]
+script = ExtResource("1_jfrt2")
+resource_id = 51
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_imf5i"]
+script = ExtResource("2_6anp7")
+entries = Array[ExtResource("1_jfrt2")]([SubResource("Resource_yfd8c"), SubResource("Resource_lcufg"), SubResource("Resource_bbpc4")])
+
+[resource]
+script = ExtResource("5_g2gs2")
+id = 167
+display_name = "Theater"
+type = 2
+width = 8
+height = 8
+xp_value = 6500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_7hok8")
+sell = SubResource("Resource_imf5i")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_yjqci")
+upgrade_of_id = 0
+owned_limit = 1
+shop_recipe_ids = Array[int]([60, 61, 62, 63, 64])
+info_text = "Use the Theater to put on performances and earn lots of Experience.  Requires an Actor."
+description_text = "Put on works of comedy and drama"

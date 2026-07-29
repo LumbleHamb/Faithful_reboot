@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_j38gd"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_2g8ak"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_q2eea"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7n16e"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_qwsh2"]
+
+[sub_resource type="Resource" id="Resource_1lqkc"]
+script = ExtResource("1_j38gd")
+resource_id = 1
+amount = 850.0
+
+[sub_resource type="Resource" id="Resource_2qind"]
+script = ExtResource("1_j38gd")
+resource_id = 20
+amount = 280.0
+
+[sub_resource type="Resource" id="Resource_iqmfq"]
+script = ExtResource("2_2g8ak")
+entries = Array[ExtResource("1_j38gd")]([SubResource("Resource_1lqkc"), SubResource("Resource_2qind")])
+
+[sub_resource type="Resource" id="Resource_ocgbm"]
+script = ExtResource("3_q2eea")
+target_id = 17
+
+[sub_resource type="Resource" id="Resource_3xkhg"]
+script = ExtResource("4_7n16e")
+all_of = Array[ExtResource("3_q2eea")]([SubResource("Resource_ocgbm")])
+
+[sub_resource type="Resource" id="Resource_i43tf"]
+script = ExtResource("1_j38gd")
+resource_id = 1
+amount = 85.0
+
+[sub_resource type="Resource" id="Resource_2kxfi"]
+script = ExtResource("1_j38gd")
+resource_id = 20
+amount = 28.0
+
+[sub_resource type="Resource" id="Resource_ojlhd"]
+script = ExtResource("2_2g8ak")
+entries = Array[ExtResource("1_j38gd")]([SubResource("Resource_i43tf"), SubResource("Resource_2kxfi")])
+
+[resource]
+script = ExtResource("5_qwsh2")
+id = 144
+display_name = "Lion Statue"
+type = 5
+width = 2
+height = 2
+xp_value = 525.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_iqmfq")
+sell = SubResource("Resource_ojlhd")
+prerequisites = SubResource("Resource_3xkhg")
+upgrade_of_id = 0

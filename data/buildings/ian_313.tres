@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xo437"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hc5dw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_3kp5h"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_5id3w"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_to24b"]
+
+[sub_resource type="Resource" id="Resource_eccve"]
+script = ExtResource("1_xo437")
+resource_id = 0
+amount = 295.0
+
+[sub_resource type="Resource" id="Resource_mwrrr"]
+script = ExtResource("2_hc5dw")
+entries = Array[ExtResource("1_xo437")]([SubResource("Resource_eccve")])
+
+[sub_resource type="Resource" id="Resource_h7cmt"]
+script = ExtResource("3_3kp5h")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_6iqvb"]
+script = ExtResource("4_5id3w")
+all_of = Array[ExtResource("3_3kp5h")]([SubResource("Resource_h7cmt")])
+
+[sub_resource type="Resource" id="Resource_pf2gk"]
+script = ExtResource("1_xo437")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_yuui6"]
+script = ExtResource("2_hc5dw")
+entries = Array[ExtResource("1_xo437")]([SubResource("Resource_pf2gk")])
+
+[resource]
+script = ExtResource("5_to24b")
+id = 313
+display_name = "Ian"
+type = 5
+width = 3
+height = 3
+xp_value = 15000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_mwrrr")
+sell = SubResource("Resource_yuui6")
+prerequisites = SubResource("Resource_6iqvb")
+upgrade_of_id = 0
+info_text = "Hide your honey! Ian the Bear grants a bonus to the XP and Gold received from all Shops by 15% (500% Maximum)"

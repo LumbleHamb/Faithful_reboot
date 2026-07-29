@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_507yg"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_iv3bi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2qh1e"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ywkfg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_srjhx"]
+
+[sub_resource type="Resource" id="Resource_1qxqp"]
+script = ExtResource("1_507yg")
+resource_id = 1
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_btr7o"]
+script = ExtResource("1_507yg")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_qr81n"]
+script = ExtResource("1_507yg")
+resource_id = 20
+amount = 800.0
+
+[sub_resource type="Resource" id="Resource_u3pdq"]
+script = ExtResource("1_507yg")
+resource_id = 50
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_lqit2"]
+script = ExtResource("2_iv3bi")
+entries = Array[ExtResource("1_507yg")]([SubResource("Resource_1qxqp"), SubResource("Resource_btr7o"), SubResource("Resource_qr81n"), SubResource("Resource_u3pdq")])
+
+[sub_resource type="Resource" id="Resource_h4xr7"]
+script = ExtResource("3_2qh1e")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_vl76x"]
+script = ExtResource("3_2qh1e")
+target_id = 10
+
+[sub_resource type="Resource" id="Resource_w0xpq"]
+script = ExtResource("4_ywkfg")
+all_of = Array[ExtResource("3_2qh1e")]([SubResource("Resource_h4xr7"), SubResource("Resource_vl76x")])
+
+[sub_resource type="Resource" id="Resource_0xkdo"]
+script = ExtResource("1_507yg")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_6bol2"]
+script = ExtResource("1_507yg")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_l6mmp"]
+script = ExtResource("1_507yg")
+resource_id = 20
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_ysisy"]
+script = ExtResource("1_507yg")
+resource_id = 50
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_5aj7o"]
+script = ExtResource("2_iv3bi")
+entries = Array[ExtResource("1_507yg")]([SubResource("Resource_0xkdo"), SubResource("Resource_6bol2"), SubResource("Resource_l6mmp"), SubResource("Resource_ysisy")])
+
+[resource]
+script = ExtResource("5_srjhx")
+id = 34
+display_name = "Tailor Shop"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_lqit2")
+sell = SubResource("Resource_5aj7o")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_w0xpq")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([31, 50, 52, 51, 53, 54])
+info_text = "Use the Tailor Shop to complete jobs using Wool and Cloth."
+description_text = "Makes stylish Clothes for sale"

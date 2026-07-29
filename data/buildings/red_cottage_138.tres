@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ygaru"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_if2wb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_d3cgv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_p8lus"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lps1v"]
+
+[sub_resource type="Resource" id="Resource_c2kaa"]
+script = ExtResource("1_ygaru")
+resource_id = 0
+amount = 6.0
+
+[sub_resource type="Resource" id="Resource_cyd8m"]
+script = ExtResource("2_if2wb")
+entries = Array[ExtResource("1_ygaru")]([SubResource("Resource_c2kaa")])
+
+[sub_resource type="Resource" id="Resource_t2y3j"]
+script = ExtResource("3_d3cgv")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_50dq7"]
+script = ExtResource("4_p8lus")
+all_of = Array[ExtResource("3_d3cgv")]([SubResource("Resource_t2y3j")])
+
+[sub_resource type="Resource" id="Resource_4ttce"]
+script = ExtResource("1_ygaru")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_2ipn7"]
+script = ExtResource("1_ygaru")
+resource_id = 10
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_yv6uj"]
+script = ExtResource("1_ygaru")
+resource_id = 40
+amount = 3.0
+
+[sub_resource type="Resource" id="Resource_u8545"]
+script = ExtResource("2_if2wb")
+entries = Array[ExtResource("1_ygaru")]([SubResource("Resource_4ttce"), SubResource("Resource_2ipn7"), SubResource("Resource_yv6uj")])
+
+[resource]
+script = ExtResource("5_lps1v")
+id = 138
+display_name = "Red Cottage"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_cyd8m")
+sell = SubResource("Resource_u8545")
+build_time_seconds = 10.0
+prerequisites = SubResource("Resource_50dq7")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Red Cottage houses one villager."
+description_text = "Houses one villager"

@@ -1,17 +1,12 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" script_class="ResourceDefinition" format=3]
 
-[ext_resource path="res://resources/definitions/resource_definition.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://resources/definitions/resource_definition.gd" id="1_a7h3l"]
 
 [resource]
-script = ExtResource( 1 )
-id = 101
-name = "Wood"
+script = ExtResource("1_a7h3l")
+id = 10
+display_name = "Wood"
 tier = 1
-score_value = 1.0
-start_value = 200.0
-refines_from = -1
-icon_font_char = "W"
-stack_sprite = "wood_stack"
-single_sprite = "wood_single"
-hauler_anim_id = 1
-collect_sfx_id = 5
+score_value = 0.25
+start_value = 50.0
+icon_font_char = "~"

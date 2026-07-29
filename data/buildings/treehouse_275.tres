@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ucgio"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_426d4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_n2fkd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_uks5p"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_5df5m"]
+
+[sub_resource type="Resource" id="Resource_3blmf"]
+script = ExtResource("1_ucgio")
+resource_id = 0
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_t28dd"]
+script = ExtResource("2_426d4")
+entries = Array[ExtResource("1_ucgio")]([SubResource("Resource_3blmf")])
+
+[sub_resource type="Resource" id="Resource_g3b8a"]
+script = ExtResource("3_n2fkd")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_eenoj"]
+script = ExtResource("4_uks5p")
+all_of = Array[ExtResource("3_n2fkd")]([SubResource("Resource_g3b8a")])
+
+[sub_resource type="Resource" id="Resource_df316"]
+script = ExtResource("1_ucgio")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_vlwjr"]
+script = ExtResource("1_ucgio")
+resource_id = 11
+amount = 12.0
+
+[sub_resource type="Resource" id="Resource_cr8gv"]
+script = ExtResource("2_426d4")
+entries = Array[ExtResource("1_ucgio")]([SubResource("Resource_df316"), SubResource("Resource_vlwjr")])
+
+[resource]
+script = ExtResource("5_5df5m")
+id = 275
+display_name = "Treehouse"
+type = 5
+width = 3
+height = 3
+xp_value = 1200.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_t28dd")
+sell = SubResource("Resource_cr8gv")
+prerequisites = SubResource("Resource_eenoj")
+upgrade_of_id = 0
+info_text = "Members only. Treehouse grants a bonus to the XP and Gold received from all Shops by 4.7% (500% Maximum)"

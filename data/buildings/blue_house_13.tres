@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_w0erx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_uvlre"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ecjeb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bv4bk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tcwtq"]
+
+[sub_resource type="Resource" id="Resource_p8v1h"]
+script = ExtResource("1_w0erx")
+resource_id = 0
+amount = 26.0
+
+[sub_resource type="Resource" id="Resource_xaxx2"]
+script = ExtResource("2_uvlre")
+entries = Array[ExtResource("1_w0erx")]([SubResource("Resource_p8v1h")])
+
+[sub_resource type="Resource" id="Resource_4nyxc"]
+script = ExtResource("3_ecjeb")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_bklgt"]
+script = ExtResource("3_ecjeb")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_mvjsr"]
+script = ExtResource("4_bv4bk")
+all_of = Array[ExtResource("3_ecjeb")]([SubResource("Resource_4nyxc"), SubResource("Resource_bklgt")])
+
+[sub_resource type="Resource" id="Resource_bqp33"]
+script = ExtResource("1_w0erx")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_ynuu6"]
+script = ExtResource("1_w0erx")
+resource_id = 11
+amount = 60.0
+
+[sub_resource type="Resource" id="Resource_ila6u"]
+script = ExtResource("1_w0erx")
+resource_id = 20
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_470r3"]
+script = ExtResource("1_w0erx")
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_l7flj"]
+script = ExtResource("2_uvlre")
+entries = Array[ExtResource("1_w0erx")]([SubResource("Resource_bqp33"), SubResource("Resource_ynuu6"), SubResource("Resource_ila6u"), SubResource("Resource_470r3")])
+
+[resource]
+script = ExtResource("5_tcwtq")
+id = 13
+display_name = "Blue House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_xaxx2")
+sell = SubResource("Resource_l7flj")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_mvjsr")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Blue House houses three villagers."
+description_text = "Houses three villagers"

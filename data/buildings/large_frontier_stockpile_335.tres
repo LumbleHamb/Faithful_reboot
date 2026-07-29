@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_k5hrv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_0a4dd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_6ohve"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_p708o"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_wlsmj"]
+
+[sub_resource type="Resource" id="Resource_fhwwk"]
+script = ExtResource("1_k5hrv")
+resource_id = 0
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_fdgrn"]
+script = ExtResource("2_0a4dd")
+entries = Array[ExtResource("1_k5hrv")]([SubResource("Resource_fhwwk")])
+
+[sub_resource type="Resource" id="Resource_w4yeq"]
+script = ExtResource("3_6ohve")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_3bd0x"]
+script = ExtResource("3_6ohve")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_r8g86"]
+script = ExtResource("4_p708o")
+all_of = Array[ExtResource("3_6ohve")]([SubResource("Resource_w4yeq"), SubResource("Resource_3bd0x")])
+
+[sub_resource type="Resource" id="Resource_xvubo"]
+script = ExtResource("1_k5hrv")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_jnnq3"]
+script = ExtResource("1_k5hrv")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_c8odq"]
+script = ExtResource("2_0a4dd")
+entries = Array[ExtResource("1_k5hrv")]([SubResource("Resource_xvubo"), SubResource("Resource_jnnq3")])
+
+[resource]
+script = ExtResource("5_wlsmj")
+id = 335
+display_name = "Large Frontier Stockpile"
+type = 3
+width = 10
+height = 10
+xp_value = 675.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_fdgrn")
+sell = SubResource("Resource_c8odq")
+build_time_seconds = 28800.0
+prerequisites = SubResource("Resource_r8g86")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 10000.0,
+11: 10000.0,
+20: 10000.0,
+21: 10000.0,
+40: 10000.0,
+50: 10000.0,
+51: 10000.0
+}
+info_text = "The Large Frontier Stockpile stores up to 10,000 of each resource."
+description_text = "Stores a large amount of resources"

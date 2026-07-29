@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ft02n"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_t2cqe"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_41q3d"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_gsdel"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ois6m"]
+
+[sub_resource type="Resource" id="Resource_6qae2"]
+script = ExtResource("1_ft02n")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_gvn73"]
+script = ExtResource("1_ft02n")
+resource_id = 51
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_k4on5"]
+script = ExtResource("2_t2cqe")
+entries = Array[ExtResource("1_ft02n")]([SubResource("Resource_6qae2"), SubResource("Resource_gvn73")])
+
+[sub_resource type="Resource" id="Resource_fu8h2"]
+script = ExtResource("3_41q3d")
+target_id = 25
+
+[sub_resource type="Resource" id="Resource_yfp8v"]
+script = ExtResource("4_gsdel")
+all_of = Array[ExtResource("3_41q3d")]([SubResource("Resource_fu8h2")])
+
+[sub_resource type="Resource" id="Resource_bt53n"]
+script = ExtResource("1_ft02n")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_1gh8d"]
+script = ExtResource("1_ft02n")
+resource_id = 51
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_m32ws"]
+script = ExtResource("2_t2cqe")
+entries = Array[ExtResource("1_ft02n")]([SubResource("Resource_bt53n"), SubResource("Resource_1gh8d")])
+
+[resource]
+script = ExtResource("5_ois6m")
+id = 171
+display_name = "Short Tent"
+type = 5
+width = 4
+height = 5
+xp_value = 1800.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_k4on5")
+sell = SubResource("Resource_m32ws")
+prerequisites = SubResource("Resource_yfp8v")
+upgrade_of_id = 0
+info_text = "The Short Tent grants a bonus to the XP received from the Big Top and Theater by 10%.  Only one Short Tent will grant this bonus at a time."

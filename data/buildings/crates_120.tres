@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_hmfiy"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_36wql"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qjaes"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_0vpmg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_abosm"]
+
+[sub_resource type="Resource" id="Resource_xhv1m"]
+script = ExtResource("1_hmfiy")
+resource_id = 0
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_renfq"]
+script = ExtResource("2_36wql")
+entries = Array[ExtResource("1_hmfiy")]([SubResource("Resource_xhv1m")])
+
+[sub_resource type="Resource" id="Resource_qita3"]
+script = ExtResource("3_qjaes")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_ptd37"]
+script = ExtResource("4_0vpmg")
+all_of = Array[ExtResource("3_qjaes")]([SubResource("Resource_qita3")])
+
+[sub_resource type="Resource" id="Resource_w15fe"]
+script = ExtResource("1_hmfiy")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_iuj2p"]
+script = ExtResource("1_hmfiy")
+resource_id = 11
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_70q4o"]
+script = ExtResource("2_36wql")
+entries = Array[ExtResource("1_hmfiy")]([SubResource("Resource_w15fe"), SubResource("Resource_iuj2p")])
+
+[resource]
+script = ExtResource("5_abosm")
+id = 120
+display_name = "Crates"
+type = 5
+width = 2
+height = 2
+xp_value = 350.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_renfq")
+sell = SubResource("Resource_70q4o")
+prerequisites = SubResource("Resource_ptd37")
+upgrade_of_id = 0
+info_text = "Crates grant a bonus to the XP and Gold received from all Shops by .3% (500% Maximum)"

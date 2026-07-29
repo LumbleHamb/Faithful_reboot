@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_ne40b"]
+
+[resource]
+script = ExtResource("1_ne40b")
+id = 82
+kind = 1
+display_name = "Teddy Bear"
+time_seconds = 7200.0
+input_cost = {
+50: 95.0,
+51: 45.0
+}
+reward_xp = 350.0
+reward = {
+1: 250.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 7200.0
+compatible_lands = Array[String](["Vanilla"])

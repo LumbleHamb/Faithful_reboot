@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_jtwv6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_37y84"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_rj06w"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_rvx3o"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ydeoj"]
+
+[sub_resource type="Resource" id="Resource_bamcx"]
+script = ExtResource("2_37y84")
+
+[sub_resource type="Resource" id="Resource_ht3ob"]
+script = ExtResource("4_rvx3o")
+
+[sub_resource type="Resource" id="Resource_33dhg"]
+script = ExtResource("2_37y84")
+
+[resource]
+script = ExtResource("5_ydeoj")
+id = 6
+display_name = "Forest"
+width = 6
+height = 6
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_bamcx")
+sell = SubResource("Resource_33dhg")
+prerequisites = SubResource("Resource_ht3ob")
+upgrade_of_id = 0
+description_text = "Build Logging Camps here to gather wood"

@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_fqh1r"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qs7w8"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_aff5i"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bps2s"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ad2kc"]
+
+[sub_resource type="Resource" id="Resource_0wve6"]
+script = ExtResource("1_fqh1r")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_1xy7i"]
+script = ExtResource("1_fqh1r")
+resource_id = 10
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_gohkv"]
+script = ExtResource("2_qs7w8")
+entries = Array[ExtResource("1_fqh1r")]([SubResource("Resource_0wve6"), SubResource("Resource_1xy7i")])
+
+[sub_resource type="Resource" id="Resource_da6pj"]
+script = ExtResource("3_aff5i")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_bpsol"]
+script = ExtResource("3_aff5i")
+target_id = 16
+
+[sub_resource type="Resource" id="Resource_r3s5x"]
+script = ExtResource("4_bps2s")
+all_of = Array[ExtResource("3_aff5i")]([SubResource("Resource_da6pj"), SubResource("Resource_bpsol")])
+
+[sub_resource type="Resource" id="Resource_vxyhy"]
+script = ExtResource("1_fqh1r")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_hahiu"]
+script = ExtResource("2_qs7w8")
+entries = Array[ExtResource("1_fqh1r")]([SubResource("Resource_vxyhy")])
+
+[resource]
+script = ExtResource("5_ad2kc")
+id = 355
+display_name = "Fruit Stand"
+type = 11
+width = 4
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_gohkv")
+sell = SubResource("Resource_hahiu")
+build_time_seconds = 14400.0
+prerequisites = SubResource("Resource_r3s5x")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Assign a villager to the Fruit Stand and earn gold and experience as they sell delicious fruit!"
+description_text = "Delicious, fresh fruit!"

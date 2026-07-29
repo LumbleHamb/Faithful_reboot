@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ue4el"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_exkhu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_idl1n"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7t3t3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_80bnf"]
+
+[sub_resource type="Resource" id="Resource_qwh8i"]
+script = ExtResource("1_ue4el")
+resource_id = 1
+amount = 160.0
+
+[sub_resource type="Resource" id="Resource_iy7ot"]
+script = ExtResource("2_exkhu")
+entries = Array[ExtResource("1_ue4el")]([SubResource("Resource_qwh8i")])
+
+[sub_resource type="Resource" id="Resource_1nuyd"]
+script = ExtResource("3_idl1n")
+target_id = 7
+
+[sub_resource type="Resource" id="Resource_3no0q"]
+script = ExtResource("4_7t3t3")
+all_of = Array[ExtResource("3_idl1n")]([SubResource("Resource_1nuyd")])
+
+[sub_resource type="Resource" id="Resource_bw7fe"]
+script = ExtResource("1_ue4el")
+resource_id = 10
+amount = 32.0
+
+[sub_resource type="Resource" id="Resource_3ah47"]
+script = ExtResource("2_exkhu")
+entries = Array[ExtResource("1_ue4el")]([SubResource("Resource_bw7fe")])
+
+[resource]
+script = ExtResource("5_80bnf")
+id = 104
+display_name = "Maple"
+type = 5
+width = 2
+height = 2
+xp_value = 80.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_iy7ot")
+sell = SubResource("Resource_3ah47")
+prerequisites = SubResource("Resource_3no0q")
+upgrade_of_id = 0

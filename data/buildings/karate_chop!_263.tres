@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7lslk"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_uu606"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0xi31"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_6bwyn"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lqx6t"]
+
+[sub_resource type="Resource" id="Resource_pwhq8"]
+script = ExtResource("1_7lslk")
+resource_id = 1
+amount = 8500.0
+
+[sub_resource type="Resource" id="Resource_veptk"]
+script = ExtResource("1_7lslk")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_vr27h"]
+script = ExtResource("1_7lslk")
+resource_id = 21
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_ydddi"]
+script = ExtResource("2_uu606")
+entries = Array[ExtResource("1_7lslk")]([SubResource("Resource_pwhq8"), SubResource("Resource_veptk"), SubResource("Resource_vr27h")])
+
+[sub_resource type="Resource" id="Resource_putsa"]
+script = ExtResource("3_0xi31")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_8xt7f"]
+script = ExtResource("3_0xi31")
+target_id = 42
+
+[sub_resource type="Resource" id="Resource_0nk1t"]
+script = ExtResource("4_6bwyn")
+all_of = Array[ExtResource("3_0xi31")]([SubResource("Resource_putsa"), SubResource("Resource_8xt7f")])
+
+[sub_resource type="Resource" id="Resource_abiih"]
+script = ExtResource("1_7lslk")
+resource_id = 1
+amount = 850.0
+
+[sub_resource type="Resource" id="Resource_mscnf"]
+script = ExtResource("1_7lslk")
+resource_id = 11
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_mch8g"]
+script = ExtResource("1_7lslk")
+resource_id = 21
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_n3hbh"]
+script = ExtResource("2_uu606")
+entries = Array[ExtResource("1_7lslk")]([SubResource("Resource_abiih"), SubResource("Resource_mscnf"), SubResource("Resource_mch8g")])
+
+[resource]
+script = ExtResource("5_lqx6t")
+id = 263
+display_name = "Karate Chop!"
+type = 11
+width = 4
+height = 4
+xp_value = 4500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ydddi")
+sell = SubResource("Resource_n3hbh")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_0nk1t")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Assign a villager to the Karate Chop! and earn gold and experience for their stellar performance!"
+description_text = "Wax on, wax off, chop!"

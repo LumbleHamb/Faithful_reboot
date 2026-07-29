@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_t4fpr"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ekqep"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_cmghs"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hdfft"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_madc5"]
+
+[sub_resource type="Resource" id="Resource_t3kxu"]
+script = ExtResource("1_t4fpr")
+resource_id = 10
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_si380"]
+script = ExtResource("2_ekqep")
+entries = Array[ExtResource("1_t4fpr")]([SubResource("Resource_t3kxu")])
+
+[sub_resource type="Resource" id="Resource_bm82e"]
+script = ExtResource("3_cmghs")
+target_id = 2
+
+[sub_resource type="Resource" id="Resource_eok17"]
+script = ExtResource("4_hdfft")
+all_of = Array[ExtResource("3_cmghs")]([SubResource("Resource_bm82e")])
+
+[sub_resource type="Resource" id="Resource_qdlqb"]
+script = ExtResource("2_ekqep")
+
+[resource]
+script = ExtResource("5_madc5")
+id = 27
+display_name = "Market"
+type = 4
+width = 8
+height = 8
+xp_value = 850.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_si380")
+sell = SubResource("Resource_qdlqb")
+sellable = false
+build_time_seconds = 5.0
+prerequisites = SubResource("Resource_eok17")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Buy and sell resources at the Market!"
+description_text = "Buys and sell resources"

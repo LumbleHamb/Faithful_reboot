@@ -34,7 +34,9 @@ const ALWAYS_LOADED_FILES := [
 ## the always-loaded base file noted above, which the manifest itself does
 ## not list).
 static func parse_manifest(path: String = MANIFEST_PATH) -> Array[String]:
-	var files: Array[String] = ALWAYS_LOADED_FILES.duplicate()
+	var files: Array[String] = []
+	for f in ALWAYS_LOADED_FILES:
+		files.append(f)
 	var tree = XmlDom.parse_file(path)
 	if tree == null:
 		return files
@@ -64,7 +66,7 @@ static func parse_all() -> Dictionary:
 
 		var nodes = XmlDom.find_all(tree, "Object")
 		for node in nodes:
-			var obj := _parse_object_node(node, file_name)
+			var obj = _parse_object_node(node, file_name)
 			if obj == null:
 				errors.append("Skipped an <Object> with no valid id in %s" % file_name)
 				continue

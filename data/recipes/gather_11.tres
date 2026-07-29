@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_qn6x3"]
+
+[resource]
+script = ExtResource("1_qn6x3")
+id = 50011
+display_name = "Gather at Farm"
+output_resource_id = 40
+max_output_stack_size = 150.0
+villager_resources_per_hour = 25.0

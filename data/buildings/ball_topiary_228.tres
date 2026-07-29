@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_4103p"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_t5iid"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_bwmfu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_qegnw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_eol2x"]
+
+[sub_resource type="Resource" id="Resource_3gewa"]
+script = ExtResource("1_4103p")
+resource_id = 1
+amount = 35000.0
+
+[sub_resource type="Resource" id="Resource_xcgox"]
+script = ExtResource("2_t5iid")
+entries = Array[ExtResource("1_4103p")]([SubResource("Resource_3gewa")])
+
+[sub_resource type="Resource" id="Resource_vadc1"]
+script = ExtResource("3_bwmfu")
+target_id = 44
+
+[sub_resource type="Resource" id="Resource_n00vq"]
+script = ExtResource("4_qegnw")
+all_of = Array[ExtResource("3_bwmfu")]([SubResource("Resource_vadc1")])
+
+[sub_resource type="Resource" id="Resource_n7ygv"]
+script = ExtResource("1_4103p")
+resource_id = 1
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_5sgtd"]
+script = ExtResource("2_t5iid")
+entries = Array[ExtResource("1_4103p")]([SubResource("Resource_n7ygv")])
+
+[resource]
+script = ExtResource("5_eol2x")
+id = 228
+display_name = "Ball Topiary"
+type = 5
+width = 2
+height = 2
+xp_value = 11000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_xcgox")
+sell = SubResource("Resource_5sgtd")
+prerequisites = SubResource("Resource_n00vq")
+upgrade_of_id = 0
+info_text = "Ball Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_oh4ev"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_wr5g6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wlcnt"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_url48"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_frhwu"]
+
+[sub_resource type="Resource" id="Resource_cpmj6"]
+script = ExtResource("1_oh4ev")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_8l87b"]
+script = ExtResource("1_oh4ev")
+resource_id = 40
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_3jt0h"]
+script = ExtResource("2_wr5g6")
+entries = Array[ExtResource("1_oh4ev")]([SubResource("Resource_cpmj6"), SubResource("Resource_8l87b")])
+
+[sub_resource type="Resource" id="Resource_eg3nj"]
+script = ExtResource("3_wlcnt")
+target_id = 33
+
+[sub_resource type="Resource" id="Resource_fva8f"]
+script = ExtResource("4_url48")
+all_of = Array[ExtResource("3_wlcnt")]([SubResource("Resource_eg3nj")])
+
+[sub_resource type="Resource" id="Resource_8o76m"]
+script = ExtResource("1_oh4ev")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_3mf71"]
+script = ExtResource("1_oh4ev")
+resource_id = 40
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_f2k25"]
+script = ExtResource("2_wr5g6")
+entries = Array[ExtResource("1_oh4ev")]([SubResource("Resource_8o76m"), SubResource("Resource_3mf71")])
+
+[resource]
+script = ExtResource("5_frhwu")
+id = 203
+display_name = "Hay Bale"
+type = 5
+width = 2
+height = 2
+xp_value = 800.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_3jt0h")
+sell = SubResource("Resource_f2k25")
+prerequisites = SubResource("Resource_fva8f")
+upgrade_of_id = 0
+info_text = "Hay Bales grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

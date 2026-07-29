@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_fqgg7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_dyyvl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_b6yvm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_85sbd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ink1c"]
+
+[sub_resource type="Resource" id="Resource_844yq"]
+script = ExtResource("1_fqgg7")
+resource_id = 0
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_24dfj"]
+script = ExtResource("2_dyyvl")
+entries = Array[ExtResource("1_fqgg7")]([SubResource("Resource_844yq")])
+
+[sub_resource type="Resource" id="Resource_dkk5o"]
+script = ExtResource("3_b6yvm")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_7231q"]
+script = ExtResource("4_85sbd")
+all_of = Array[ExtResource("3_b6yvm")]([SubResource("Resource_dkk5o")])
+
+[sub_resource type="Resource" id="Resource_e30o3"]
+script = ExtResource("1_fqgg7")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_6wtvx"]
+script = ExtResource("1_fqgg7")
+resource_id = 10
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_r17bx"]
+script = ExtResource("1_fqgg7")
+resource_id = 40
+amount = 3.0
+
+[sub_resource type="Resource" id="Resource_seb0p"]
+script = ExtResource("2_dyyvl")
+entries = Array[ExtResource("1_fqgg7")]([SubResource("Resource_e30o3"), SubResource("Resource_6wtvx"), SubResource("Resource_r17bx")])
+
+[resource]
+script = ExtResource("5_ink1c")
+id = 139
+display_name = "Brown Cottage"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_24dfj")
+sell = SubResource("Resource_seb0p")
+build_time_seconds = 10.0
+prerequisites = SubResource("Resource_7231q")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Brown Cottage houses one villager."
+description_text = "Houses one villager"

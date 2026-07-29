@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_cpdkx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_nn2y4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_yqmj5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_etqr4"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_n7fbx"]
+
+[sub_resource type="Resource" id="Resource_r77pt"]
+script = ExtResource("1_cpdkx")
+resource_id = 1
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_pedcg"]
+script = ExtResource("2_nn2y4")
+entries = Array[ExtResource("1_cpdkx")]([SubResource("Resource_r77pt")])
+
+[sub_resource type="Resource" id="Resource_gaiy1"]
+script = ExtResource("3_yqmj5")
+target_id = 31
+
+[sub_resource type="Resource" id="Resource_bwvsy"]
+script = ExtResource("4_etqr4")
+all_of = Array[ExtResource("3_yqmj5")]([SubResource("Resource_gaiy1")])
+
+[sub_resource type="Resource" id="Resource_fgwda"]
+script = ExtResource("1_cpdkx")
+resource_id = 1
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_vakba"]
+script = ExtResource("2_nn2y4")
+entries = Array[ExtResource("1_cpdkx")]([SubResource("Resource_fgwda")])
+
+[resource]
+script = ExtResource("5_n7fbx")
+id = 201
+display_name = "Lamp Post"
+type = 5
+width = 2
+height = 2
+xp_value = 2000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_pedcg")
+sell = SubResource("Resource_vakba")
+prerequisites = SubResource("Resource_bwvsy")
+upgrade_of_id = 0
+info_text = "Light up your life with the Lamp Post. Lamp Posts grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

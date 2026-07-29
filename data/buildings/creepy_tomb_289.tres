@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_36817"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_f2uuw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_7nv4a"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_nyceb"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_o627q"]
+
+[sub_resource type="Resource" id="Resource_mbpnf"]
+script = ExtResource("1_36817")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_84gxb"]
+script = ExtResource("1_36817")
+resource_id = 21
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_240ng"]
+script = ExtResource("2_f2uuw")
+entries = Array[ExtResource("1_36817")]([SubResource("Resource_mbpnf"), SubResource("Resource_84gxb")])
+
+[sub_resource type="Resource" id="Resource_ewhc1"]
+script = ExtResource("3_7nv4a")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_kyrh7"]
+script = ExtResource("4_nyceb")
+all_of = Array[ExtResource("3_7nv4a")]([SubResource("Resource_ewhc1")])
+
+[sub_resource type="Resource" id="Resource_tndn7"]
+script = ExtResource("1_36817")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_2eg34"]
+script = ExtResource("1_36817")
+resource_id = 21
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_7vydy"]
+script = ExtResource("2_f2uuw")
+entries = Array[ExtResource("1_36817")]([SubResource("Resource_tndn7"), SubResource("Resource_2eg34")])
+
+[resource]
+script = ExtResource("5_o627q")
+id = 289
+display_name = "Creepy Tomb"
+type = 5
+width = 2
+height = 2
+xp_value = 800.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_240ng")
+sell = SubResource("Resource_7vydy")
+prerequisites = SubResource("Resource_kyrh7")
+upgrade_of_id = 0
+info_text = "This tombstone is very creepy. The villagers speak of strange noises in its vicinity."

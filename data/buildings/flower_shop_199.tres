@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_tv0vt"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_tme75"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qbe2a"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_6k7a0"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_w7m0t"]
+
+[sub_resource type="Resource" id="Resource_v1pwb"]
+script = ExtResource("1_tv0vt")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_uvx1m"]
+script = ExtResource("1_tv0vt")
+resource_id = 10
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_6nqma"]
+script = ExtResource("2_tme75")
+entries = Array[ExtResource("1_tv0vt")]([SubResource("Resource_v1pwb"), SubResource("Resource_uvx1m")])
+
+[sub_resource type="Resource" id="Resource_qhqx6"]
+script = ExtResource("3_qbe2a")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_d6361"]
+script = ExtResource("4_6k7a0")
+all_of = Array[ExtResource("3_qbe2a")]([SubResource("Resource_qhqx6")])
+
+[sub_resource type="Resource" id="Resource_gukgp"]
+script = ExtResource("1_tv0vt")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_s5ddl"]
+script = ExtResource("1_tv0vt")
+resource_id = 10
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_3grgv"]
+script = ExtResource("2_tme75")
+entries = Array[ExtResource("1_tv0vt")]([SubResource("Resource_gukgp"), SubResource("Resource_s5ddl")])
+
+[resource]
+script = ExtResource("5_w7m0t")
+id = 199
+display_name = "Flower Shop"
+type = 2
+category = "shop"
+width = 6
+height = 5
+xp_value = 280.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_6nqma")
+sell = SubResource("Resource_3grgv")
+build_time_seconds = 3600.0
+prerequisites = SubResource("Resource_d6361")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([69, 70, 71, 72, 73])
+info_text = "Use the Flower Shop to complete jobs using Gold."
+description_text = "Arrange beautiful flowers for sale"

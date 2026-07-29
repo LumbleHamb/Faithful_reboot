@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8dhfa"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_rem81"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_yo6bp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_jcifk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ph42d"]
+
+[sub_resource type="Resource" id="Resource_wkdjd"]
+script = ExtResource("2_rem81")
+
+[sub_resource type="Resource" id="Resource_w07vx"]
+script = ExtResource("3_yo6bp")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_2gqlm"]
+script = ExtResource("4_jcifk")
+all_of = Array[ExtResource("3_yo6bp")]([SubResource("Resource_w07vx")])
+
+[sub_resource type="Resource" id="Resource_od1ll"]
+script = ExtResource("1_8dhfa")
+resource_id = 1
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_8egm8"]
+script = ExtResource("1_8dhfa")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_knngx"]
+script = ExtResource("2_rem81")
+entries = Array[ExtResource("1_8dhfa")]([SubResource("Resource_od1ll"), SubResource("Resource_8egm8")])
+
+[resource]
+script = ExtResource("5_ph42d")
+id = 153
+display_name = "Pink Birdhouse"
+type = 5
+width = 2
+height = 2
+xp_value = 160.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_wkdjd")
+sell = SubResource("Resource_knngx")
+prerequisites = SubResource("Resource_2gqlm")
+upgrade_of_id = 0
+owned_limit = 1

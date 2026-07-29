@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_vwkat"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_j5dct"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_fsm0c"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hv5e0"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_7yv6h"]
+
+[sub_resource type="Resource" id="Resource_wmxtv"]
+script = ExtResource("1_vwkat")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_000cd"]
+script = ExtResource("1_vwkat")
+resource_id = 21
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_cvfi0"]
+script = ExtResource("2_j5dct")
+entries = Array[ExtResource("1_vwkat")]([SubResource("Resource_wmxtv"), SubResource("Resource_000cd")])
+
+[sub_resource type="Resource" id="Resource_ygm5j"]
+script = ExtResource("3_fsm0c")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_581g0"]
+script = ExtResource("4_hv5e0")
+all_of = Array[ExtResource("3_fsm0c")]([SubResource("Resource_ygm5j")])
+
+[sub_resource type="Resource" id="Resource_hioja"]
+script = ExtResource("1_vwkat")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_10ki0"]
+script = ExtResource("1_vwkat")
+resource_id = 21
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_pxydi"]
+script = ExtResource("2_j5dct")
+entries = Array[ExtResource("1_vwkat")]([SubResource("Resource_hioja"), SubResource("Resource_10ki0")])
+
+[resource]
+script = ExtResource("5_7yv6h")
+id = 215
+display_name = "Mossy Gate"
+type = 5
+height = 4
+xp_value = 100.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_cvfi0")
+sell = SubResource("Resource_pxydi")
+prerequisites = SubResource("Resource_581g0")
+upgrade_of_id = 0

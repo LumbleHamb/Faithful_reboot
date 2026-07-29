@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_83832"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_kg4de"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_t2f3u"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_tqxgm"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ohfhq"]
+
+[sub_resource type="Resource" id="Resource_6ho4j"]
+script = ExtResource("2_kg4de")
+
+[sub_resource type="Resource" id="Resource_fvt23"]
+script = ExtResource("3_t2f3u")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_i47ri"]
+script = ExtResource("3_t2f3u")
+target_id = 0
+
+[sub_resource type="Resource" id="Resource_isj4l"]
+script = ExtResource("4_tqxgm")
+all_of = Array[ExtResource("3_t2f3u")]([SubResource("Resource_fvt23"), SubResource("Resource_i47ri")])
+
+[sub_resource type="Resource" id="Resource_i5dq7"]
+script = ExtResource("2_kg4de")
+
+[resource]
+script = ExtResource("5_ohfhq")
+id = 258
+display_name = "Dragon"
+type = 5
+width = 3
+height = 3
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_6ho4j")
+sell = SubResource("Resource_i5dq7")
+prerequisites = SubResource("Resource_isj4l")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Release the Dragon! The Dragon grants a bonus to the XP and Gold received from all Shops by 3% amount. (500% Maximum)"

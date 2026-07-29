@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_gcaie"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_h3nq0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qrtv4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lraf7"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_mfsmg"]
+
+[sub_resource type="Resource" id="Resource_syy0k"]
+script = ExtResource("1_gcaie")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_hqofd"]
+script = ExtResource("1_gcaie")
+resource_id = 10
+amount = 450.0
+
+[sub_resource type="Resource" id="Resource_q1n0a"]
+script = ExtResource("2_h3nq0")
+entries = Array[ExtResource("1_gcaie")]([SubResource("Resource_syy0k"), SubResource("Resource_hqofd")])
+
+[sub_resource type="Resource" id="Resource_r2o0p"]
+script = ExtResource("3_qrtv4")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_vew36"]
+script = ExtResource("4_lraf7")
+all_of = Array[ExtResource("3_qrtv4")]([SubResource("Resource_r2o0p")])
+
+[sub_resource type="Resource" id="Resource_3gbrb"]
+script = ExtResource("1_gcaie")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_ucttt"]
+script = ExtResource("1_gcaie")
+resource_id = 10
+amount = 45.0
+
+[sub_resource type="Resource" id="Resource_xxyep"]
+script = ExtResource("2_h3nq0")
+entries = Array[ExtResource("1_gcaie")]([SubResource("Resource_3gbrb"), SubResource("Resource_ucttt")])
+
+[resource]
+script = ExtResource("5_mfsmg")
+id = 25
+display_name = "Stockpile"
+type = 3
+width = 10
+height = 10
+xp_value = 380.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_q1n0a")
+sell = SubResource("Resource_xxyep")
+build_time_seconds = 5.0
+prerequisites = SubResource("Resource_vew36")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 1000.0,
+11: 1000.0,
+20: 1000.0,
+21: 1000.0,
+40: 1000.0,
+50: 1000.0,
+51: 1000.0
+}
+info_text = "The Small Stockpile stores up to 1000 of each resource."
+description_text = "Stores a small amount of resources"

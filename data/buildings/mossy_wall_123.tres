@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_74njt"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hrobj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0k1oq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_6f431"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_2xkrt"]
+
+[sub_resource type="Resource" id="Resource_s2q7k"]
+script = ExtResource("1_74njt")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_ju31k"]
+script = ExtResource("1_74njt")
+resource_id = 21
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_kpjj8"]
+script = ExtResource("2_hrobj")
+entries = Array[ExtResource("1_74njt")]([SubResource("Resource_s2q7k"), SubResource("Resource_ju31k")])
+
+[sub_resource type="Resource" id="Resource_iamol"]
+script = ExtResource("3_0k1oq")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_4dura"]
+script = ExtResource("4_6f431")
+all_of = Array[ExtResource("3_0k1oq")]([SubResource("Resource_iamol")])
+
+[sub_resource type="Resource" id="Resource_0w2q8"]
+script = ExtResource("1_74njt")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_0rjl5"]
+script = ExtResource("1_74njt")
+resource_id = 21
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_gnq3r"]
+script = ExtResource("2_hrobj")
+entries = Array[ExtResource("1_74njt")]([SubResource("Resource_0w2q8"), SubResource("Resource_0rjl5")])
+
+[resource]
+script = ExtResource("5_2xkrt")
+id = 123
+display_name = "Mossy Wall"
+type = 5
+height = 4
+xp_value = 100.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_kpjj8")
+sell = SubResource("Resource_gnq3r")
+prerequisites = SubResource("Resource_4dura")
+upgrade_of_id = 0

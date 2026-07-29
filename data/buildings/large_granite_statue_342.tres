@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_a3nt5"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ym4wi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_g3tg4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_rdduj"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uv5ea"]
+
+[sub_resource type="Resource" id="Resource_eaa7c"]
+script = ExtResource("2_ym4wi")
+
+[sub_resource type="Resource" id="Resource_05h4v"]
+script = ExtResource("3_g3tg4")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_2pud5"]
+script = ExtResource("4_rdduj")
+all_of = Array[ExtResource("3_g3tg4")]([SubResource("Resource_05h4v")])
+
+[sub_resource type="Resource" id="Resource_s1cnb"]
+script = ExtResource("1_a3nt5")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_arosq"]
+script = ExtResource("1_a3nt5")
+resource_id = 20
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_cmld5"]
+script = ExtResource("2_ym4wi")
+entries = Array[ExtResource("1_a3nt5")]([SubResource("Resource_s1cnb"), SubResource("Resource_arosq")])
+
+[resource]
+script = ExtResource("5_uv5ea")
+id = 342
+display_name = "Large Granite Statue"
+type = 5
+width = 2
+height = 2
+xp_value = 225.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_eaa7c")
+sell = SubResource("Resource_cmld5")
+prerequisites = SubResource("Resource_2pud5")
+upgrade_of_id = 0
+owned_limit = 4
+info_text = "The Large Granite Statue (limit 4) is acquired with Z2Points, earned by playing Z2Live games, and grants a bonus to the XP and Gold received from all Shops by 0.5% (500% Maximum)"

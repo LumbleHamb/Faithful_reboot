@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_oof4e"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_v4dsu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_77arl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_sebmy"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_8scsy"]
+
+[sub_resource type="Resource" id="Resource_luvd0"]
+script = ExtResource("1_oof4e")
+resource_id = 0
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_gc6bu"]
+script = ExtResource("2_v4dsu")
+entries = Array[ExtResource("1_oof4e")]([SubResource("Resource_luvd0")])
+
+[sub_resource type="Resource" id="Resource_tqqro"]
+script = ExtResource("3_77arl")
+target_id = 11
+
+[sub_resource type="Resource" id="Resource_hiqdc"]
+script = ExtResource("4_sebmy")
+all_of = Array[ExtResource("3_77arl")]([SubResource("Resource_tqqro")])
+
+[sub_resource type="Resource" id="Resource_6s6xv"]
+script = ExtResource("1_oof4e")
+resource_id = 1
+amount = 8.0
+
+[sub_resource type="Resource" id="Resource_ragst"]
+script = ExtResource("1_oof4e")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_gxio8"]
+script = ExtResource("2_v4dsu")
+entries = Array[ExtResource("1_oof4e")]([SubResource("Resource_6s6xv"), SubResource("Resource_ragst")])
+
+[resource]
+script = ExtResource("5_8scsy")
+id = 151
+display_name = "Bench"
+type = 5
+width = 2
+height = 3
+xp_value = 750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_gc6bu")
+sell = SubResource("Resource_gxio8")
+prerequisites = SubResource("Resource_hiqdc")
+upgrade_of_id = 0
+info_text = "Benches grant a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

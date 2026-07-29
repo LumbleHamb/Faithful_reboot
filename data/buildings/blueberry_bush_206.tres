@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_w516l"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_p70bv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_tfkw0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_522qd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_by3ax"]
+
+[sub_resource type="Resource" id="Resource_vd08p"]
+script = ExtResource("1_w516l")
+resource_id = 1
+amount = 6000.0
+
+[sub_resource type="Resource" id="Resource_5sdfr"]
+script = ExtResource("2_p70bv")
+entries = Array[ExtResource("1_w516l")]([SubResource("Resource_vd08p")])
+
+[sub_resource type="Resource" id="Resource_ndc2t"]
+script = ExtResource("3_tfkw0")
+target_id = 37
+
+[sub_resource type="Resource" id="Resource_8p128"]
+script = ExtResource("4_522qd")
+all_of = Array[ExtResource("3_tfkw0")]([SubResource("Resource_ndc2t")])
+
+[sub_resource type="Resource" id="Resource_7n6s6"]
+script = ExtResource("1_w516l")
+resource_id = 1
+amount = 600.0
+
+[sub_resource type="Resource" id="Resource_virrb"]
+script = ExtResource("2_p70bv")
+entries = Array[ExtResource("1_w516l")]([SubResource("Resource_7n6s6")])
+
+[resource]
+script = ExtResource("5_by3ax")
+id = 206
+display_name = "Blueberry Bush"
+type = 5
+width = 2
+height = 2
+xp_value = 3000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_5sdfr")
+sell = SubResource("Resource_virrb")
+prerequisites = SubResource("Resource_8p128")
+upgrade_of_id = 0
+info_text = "Blueberry Bushes grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

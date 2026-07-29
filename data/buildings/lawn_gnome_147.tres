@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xn436"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_av4k8"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wjhmd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_o0fbx"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_xcd3l"]
+
+[sub_resource type="Resource" id="Resource_k1j6i"]
+script = ExtResource("1_xn436")
+resource_id = 0
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_xhwe1"]
+script = ExtResource("2_av4k8")
+entries = Array[ExtResource("1_xn436")]([SubResource("Resource_k1j6i")])
+
+[sub_resource type="Resource" id="Resource_08vo7"]
+script = ExtResource("3_wjhmd")
+target_id = 10
+
+[sub_resource type="Resource" id="Resource_mf8qh"]
+script = ExtResource("4_o0fbx")
+all_of = Array[ExtResource("3_wjhmd")]([SubResource("Resource_08vo7")])
+
+[sub_resource type="Resource" id="Resource_746i6"]
+script = ExtResource("1_xn436")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_yuclv"]
+script = ExtResource("1_xn436")
+resource_id = 20
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_r53wt"]
+script = ExtResource("2_av4k8")
+entries = Array[ExtResource("1_xn436")]([SubResource("Resource_746i6"), SubResource("Resource_yuclv")])
+
+[resource]
+script = ExtResource("5_xcd3l")
+id = 147
+display_name = "Lawn Gnome"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_xhwe1")
+sell = SubResource("Resource_r53wt")
+prerequisites = SubResource("Resource_mf8qh")
+upgrade_of_id = 0
+info_text = "Lawn Gnomes grant a bonus to the XP and Gold received from all Shops by 1.5% (500% Maximum)"

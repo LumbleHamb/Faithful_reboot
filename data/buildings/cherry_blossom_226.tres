@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_yv45l"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_q538a"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_mjmn0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_de6fb"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uu7t5"]
+
+[sub_resource type="Resource" id="Resource_0bd3h"]
+script = ExtResource("1_yv45l")
+resource_id = 0
+amount = 65.0
+
+[sub_resource type="Resource" id="Resource_pq1pr"]
+script = ExtResource("2_q538a")
+entries = Array[ExtResource("1_yv45l")]([SubResource("Resource_0bd3h")])
+
+[sub_resource type="Resource" id="Resource_rxbay"]
+script = ExtResource("3_mjmn0")
+target_id = 13
+
+[sub_resource type="Resource" id="Resource_ntkuk"]
+script = ExtResource("4_de6fb")
+all_of = Array[ExtResource("3_mjmn0")]([SubResource("Resource_rxbay")])
+
+[sub_resource type="Resource" id="Resource_l5mx0"]
+script = ExtResource("1_yv45l")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_hgfsp"]
+script = ExtResource("2_q538a")
+entries = Array[ExtResource("1_yv45l")]([SubResource("Resource_l5mx0")])
+
+[resource]
+script = ExtResource("5_uu7t5")
+id = 226
+display_name = "Cherry Blossom"
+type = 5
+width = 2
+height = 2
+xp_value = 3250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_pq1pr")
+sell = SubResource("Resource_hgfsp")
+prerequisites = SubResource("Resource_ntkuk")
+upgrade_of_id = 0
+info_text = "Cherry Blossoms grant a bonus to the XP and Gold received from all Shops by 4% (500% Maximum)"

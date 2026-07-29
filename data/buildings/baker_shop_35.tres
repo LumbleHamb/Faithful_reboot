@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_h5rcc"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_e2ste"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_6ac4i"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_3g554"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ypat2"]
+
+[sub_resource type="Resource" id="Resource_biext"]
+script = ExtResource("1_h5rcc")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_2k1dd"]
+script = ExtResource("1_h5rcc")
+resource_id = 10
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_1j7n8"]
+script = ExtResource("2_e2ste")
+entries = Array[ExtResource("1_h5rcc")]([SubResource("Resource_biext"), SubResource("Resource_2k1dd")])
+
+[sub_resource type="Resource" id="Resource_tctpp"]
+script = ExtResource("3_6ac4i")
+target_id = 2
+
+[sub_resource type="Resource" id="Resource_0pku5"]
+script = ExtResource("4_3g554")
+all_of = Array[ExtResource("3_6ac4i")]([SubResource("Resource_tctpp")])
+
+[sub_resource type="Resource" id="Resource_uxsty"]
+script = ExtResource("1_h5rcc")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_dku47"]
+script = ExtResource("1_h5rcc")
+resource_id = 10
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_drk4r"]
+script = ExtResource("2_e2ste")
+entries = Array[ExtResource("1_h5rcc")]([SubResource("Resource_uxsty"), SubResource("Resource_dku47")])
+
+[resource]
+script = ExtResource("5_ypat2")
+id = 35
+display_name = "Baker Shop"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 280.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_1j7n8")
+sell = SubResource("Resource_drk4r")
+build_time_seconds = 3600.0
+prerequisites = SubResource("Resource_0pku5")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([40, 41, 33, 42, 44, 43, 45])
+info_text = "Use the Baker Shop to complete jobs using Wheat."
+description_text = "Bake a delicious treat for sale"

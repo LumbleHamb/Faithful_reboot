@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_pcghv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vtllo"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_r88no"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_e120r"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vd4dr"]
+
+[sub_resource type="Resource" id="Resource_nya2t"]
+script = ExtResource("1_pcghv")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_l45ls"]
+script = ExtResource("2_vtllo")
+entries = Array[ExtResource("1_pcghv")]([SubResource("Resource_nya2t")])
+
+[sub_resource type="Resource" id="Resource_454h1"]
+script = ExtResource("3_r88no")
+target_id = 21
+
+[sub_resource type="Resource" id="Resource_6a6ta"]
+script = ExtResource("4_e120r")
+all_of = Array[ExtResource("3_r88no")]([SubResource("Resource_454h1")])
+
+[sub_resource type="Resource" id="Resource_evupr"]
+script = ExtResource("1_pcghv")
+resource_id = 10
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_aj3l1"]
+script = ExtResource("2_vtllo")
+entries = Array[ExtResource("1_pcghv")]([SubResource("Resource_evupr")])
+
+[resource]
+script = ExtResource("5_vd4dr")
+id = 318
+display_name = "Aspen"
+type = 5
+width = 2
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_l45ls")
+sell = SubResource("Resource_aj3l1")
+prerequisites = SubResource("Resource_6a6ta")
+upgrade_of_id = 0

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8c2wt"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_apiwd"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_sanr6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_r8lyp"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tkk8b"]
+
+[sub_resource type="Resource" id="Resource_hlr3a"]
+script = ExtResource("1_8c2wt")
+resource_id = 0
+amount = 285.0
+
+[sub_resource type="Resource" id="Resource_2rofv"]
+script = ExtResource("2_apiwd")
+entries = Array[ExtResource("1_8c2wt")]([SubResource("Resource_hlr3a")])
+
+[sub_resource type="Resource" id="Resource_t417d"]
+script = ExtResource("3_sanr6")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_tn7gl"]
+script = ExtResource("4_r8lyp")
+all_of = Array[ExtResource("3_sanr6")]([SubResource("Resource_t417d")])
+
+[sub_resource type="Resource" id="Resource_daybw"]
+script = ExtResource("1_8c2wt")
+resource_id = 1
+amount = 2850.0
+
+[sub_resource type="Resource" id="Resource_lox5y"]
+script = ExtResource("2_apiwd")
+entries = Array[ExtResource("1_8c2wt")]([SubResource("Resource_daybw")])
+
+[resource]
+script = ExtResource("5_tkk8b")
+id = 285
+display_name = "Mummy"
+type = 5
+width = 2
+height = 2
+xp_value = 14250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_2rofv")
+sell = SubResource("Resource_lox5y")
+prerequisites = SubResource("Resource_tn7gl")
+upgrade_of_id = 0
+info_text = "This mummy has never actually been to Egypt. The Mummy grants a bonus to the XP and Gold received from all Shops by 18%. (500% Maximum)"

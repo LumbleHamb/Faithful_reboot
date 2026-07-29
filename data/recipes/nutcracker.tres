@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_ynsit"]
+
+[resource]
+script = ExtResource("1_ynsit")
+id = 32
+kind = 1
+display_name = "Nutcracker"
+time_seconds = 600.0
+input_cost = {
+11: 5.0
+}
+reward_xp = 30.0
+reward = {
+1: 50.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 3600.0
+compatible_lands = Array[String](["Vanilla"])

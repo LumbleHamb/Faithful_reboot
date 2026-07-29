@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_j47ca"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_xsysj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_vvt4y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ns11f"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_y7860"]
+
+[sub_resource type="Resource" id="Resource_4cnbf"]
+script = ExtResource("1_j47ca")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_ygbta"]
+script = ExtResource("1_j47ca")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_tew8a"]
+script = ExtResource("1_j47ca")
+resource_id = 21
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_uhw5g"]
+script = ExtResource("2_xsysj")
+entries = Array[ExtResource("1_j47ca")]([SubResource("Resource_4cnbf"), SubResource("Resource_ygbta"), SubResource("Resource_tew8a")])
+
+[sub_resource type="Resource" id="Resource_u8pfd"]
+script = ExtResource("3_vvt4y")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_id0j2"]
+script = ExtResource("3_vvt4y")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_l3iox"]
+script = ExtResource("4_ns11f")
+all_of = Array[ExtResource("3_vvt4y")]([SubResource("Resource_u8pfd"), SubResource("Resource_id0j2")])
+
+[sub_resource type="Resource" id="Resource_a15bi"]
+script = ExtResource("1_j47ca")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_785un"]
+script = ExtResource("1_j47ca")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_n6hy1"]
+script = ExtResource("1_j47ca")
+resource_id = 21
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_nbhfh"]
+script = ExtResource("2_xsysj")
+entries = Array[ExtResource("1_j47ca")]([SubResource("Resource_a15bi"), SubResource("Resource_785un"), SubResource("Resource_n6hy1")])
+
+[resource]
+script = ExtResource("5_y7860")
+id = 157
+display_name = "Sunshine House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_uhw5g")
+sell = SubResource("Resource_nbhfh")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_l3iox")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Sunshine House houses four villagers."
+description_text = "Houses four villagers"

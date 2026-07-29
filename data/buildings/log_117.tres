@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_acn4e"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ra00q"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ulcp5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_0iwv5"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_yxksy"]
+
+[sub_resource type="Resource" id="Resource_k2lax"]
+script = ExtResource("1_acn4e")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_bhw4d"]
+script = ExtResource("2_ra00q")
+entries = Array[ExtResource("1_acn4e")]([SubResource("Resource_k2lax")])
+
+[sub_resource type="Resource" id="Resource_jwx2e"]
+script = ExtResource("3_ulcp5")
+target_id = 7
+
+[sub_resource type="Resource" id="Resource_e0fmi"]
+script = ExtResource("4_0iwv5")
+all_of = Array[ExtResource("3_ulcp5")]([SubResource("Resource_jwx2e")])
+
+[sub_resource type="Resource" id="Resource_hwjyn"]
+script = ExtResource("1_acn4e")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_lqa27"]
+script = ExtResource("2_ra00q")
+entries = Array[ExtResource("1_acn4e")]([SubResource("Resource_hwjyn")])
+
+[resource]
+script = ExtResource("5_yxksy")
+id = 117
+display_name = "Log"
+type = 5
+width = 2
+height = 2
+xp_value = 7.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_bhw4d")
+sell = SubResource("Resource_lqa27")
+prerequisites = SubResource("Resource_e0fmi")
+upgrade_of_id = 0

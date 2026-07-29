@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_j2hf0"]
+
+[resource]
+script = ExtResource("1_j2hf0")
+id = 60
+kind = 1
+display_name = "One Act"
+time_seconds = 3600.0
+input_cost = {
+1: 175.0
+}
+reward_xp = 600.0
+hurry_cost = 3.0
+hurry_interval_seconds = 3600.0
+compatible_lands = Array[String](["Vanilla"])

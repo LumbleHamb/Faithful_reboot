@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_cfggq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ktjg5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_j8voy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ikxyt"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_50toq"]
+
+[sub_resource type="Resource" id="Resource_16cj4"]
+script = ExtResource("1_cfggq")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_ep6tq"]
+script = ExtResource("2_ktjg5")
+entries = Array[ExtResource("1_cfggq")]([SubResource("Resource_16cj4")])
+
+[sub_resource type="Resource" id="Resource_en1ic"]
+script = ExtResource("3_j8voy")
+target_id = 23
+
+[sub_resource type="Resource" id="Resource_yepx5"]
+script = ExtResource("4_ikxyt")
+all_of = Array[ExtResource("3_j8voy")]([SubResource("Resource_en1ic")])
+
+[sub_resource type="Resource" id="Resource_m1tjb"]
+script = ExtResource("1_cfggq")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_fjivw"]
+script = ExtResource("2_ktjg5")
+entries = Array[ExtResource("1_cfggq")]([SubResource("Resource_m1tjb")])
+
+[resource]
+script = ExtResource("5_50toq")
+id = 192
+display_name = "Lilies"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_ep6tq")
+sell = SubResource("Resource_fjivw")
+prerequisites = SubResource("Resource_yepx5")
+upgrade_of_id = 0
+info_text = "Lilies grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_a3vx7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_uufka"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_r1drf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_kjqsq"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_g2rh2"]
+
+[sub_resource type="Resource" id="Resource_q4fgq"]
+script = ExtResource("1_a3vx7")
+resource_id = 1
+amount = 1250000.0
+
+[sub_resource type="Resource" id="Resource_actq6"]
+script = ExtResource("1_a3vx7")
+resource_id = 11
+amount = 6500.0
+
+[sub_resource type="Resource" id="Resource_x6rkb"]
+script = ExtResource("1_a3vx7")
+resource_id = 21
+amount = 50000.0
+
+[sub_resource type="Resource" id="Resource_l5702"]
+script = ExtResource("2_uufka")
+entries = Array[ExtResource("1_a3vx7")]([SubResource("Resource_q4fgq"), SubResource("Resource_actq6"), SubResource("Resource_x6rkb")])
+
+[sub_resource type="Resource" id="Resource_xqlph"]
+script = ExtResource("3_r1drf")
+target_id = 65
+
+[sub_resource type="Resource" id="Resource_2nnuj"]
+script = ExtResource("3_r1drf")
+kind = 1
+target_id = 221
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_wbwpe"]
+script = ExtResource("4_kjqsq")
+all_of = Array[ExtResource("3_r1drf")]([SubResource("Resource_xqlph"), SubResource("Resource_2nnuj")])
+
+[sub_resource type="Resource" id="Resource_sykht"]
+script = ExtResource("1_a3vx7")
+resource_id = 1
+amount = 125000.0
+
+[sub_resource type="Resource" id="Resource_0a6k5"]
+script = ExtResource("1_a3vx7")
+resource_id = 11
+amount = 650.0
+
+[sub_resource type="Resource" id="Resource_tlfaa"]
+script = ExtResource("1_a3vx7")
+resource_id = 21
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_na64d"]
+script = ExtResource("2_uufka")
+entries = Array[ExtResource("1_a3vx7")]([SubResource("Resource_sykht"), SubResource("Resource_0a6k5"), SubResource("Resource_tlfaa")])
+
+[resource]
+script = ExtResource("5_g2rh2")
+id = 292
+display_name = "Pool"
+type = 5
+width = 8
+height = 8
+xp_value = 18500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_l5702")
+sell = SubResource("Resource_na64d")
+prerequisites = SubResource("Resource_wbwpe")
+upgrade_of_id = 0
+info_text = "Cannonball! The Pool grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_pt6wj"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vakgk"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_gbwdi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_1xbu4"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_b08vq"]
+
+[sub_resource type="Resource" id="Resource_k6jin"]
+script = ExtResource("1_pt6wj")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_q1idh"]
+script = ExtResource("1_pt6wj")
+resource_id = 11
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_o6mkn"]
+script = ExtResource("2_vakgk")
+entries = Array[ExtResource("1_pt6wj")]([SubResource("Resource_k6jin"), SubResource("Resource_q1idh")])
+
+[sub_resource type="Resource" id="Resource_umf4y"]
+script = ExtResource("3_gbwdi")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_yefqv"]
+script = ExtResource("4_1xbu4")
+all_of = Array[ExtResource("3_gbwdi")]([SubResource("Resource_umf4y")])
+
+[sub_resource type="Resource" id="Resource_0x5h4"]
+script = ExtResource("1_pt6wj")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_v4u5e"]
+script = ExtResource("1_pt6wj")
+resource_id = 11
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_0x2ku"]
+script = ExtResource("2_vakgk")
+entries = Array[ExtResource("1_pt6wj")]([SubResource("Resource_0x5h4"), SubResource("Resource_v4u5e")])
+
+[resource]
+script = ExtResource("5_b08vq")
+id = 128
+display_name = "Barrel"
+type = 5
+width = 2
+height = 2
+xp_value = 20.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_o6mkn")
+sell = SubResource("Resource_0x2ku")
+prerequisites = SubResource("Resource_yefqv")
+upgrade_of_id = 0

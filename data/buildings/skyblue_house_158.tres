@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_h5f0p"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_s8v0u"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ng4xi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_si3re"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_dssa3"]
+
+[sub_resource type="Resource" id="Resource_x0pxd"]
+script = ExtResource("1_h5f0p")
+resource_id = 0
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_dcwju"]
+script = ExtResource("2_s8v0u")
+entries = Array[ExtResource("1_h5f0p")]([SubResource("Resource_x0pxd")])
+
+[sub_resource type="Resource" id="Resource_hcs82"]
+script = ExtResource("3_ng4xi")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_24hyi"]
+script = ExtResource("3_ng4xi")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_s1o4o"]
+script = ExtResource("4_si3re")
+all_of = Array[ExtResource("3_ng4xi")]([SubResource("Resource_hcs82"), SubResource("Resource_24hyi")])
+
+[sub_resource type="Resource" id="Resource_nnkdg"]
+script = ExtResource("1_h5f0p")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_p3ols"]
+script = ExtResource("1_h5f0p")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_1fxq4"]
+script = ExtResource("1_h5f0p")
+resource_id = 21
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_ltoec"]
+script = ExtResource("2_s8v0u")
+entries = Array[ExtResource("1_h5f0p")]([SubResource("Resource_nnkdg"), SubResource("Resource_p3ols"), SubResource("Resource_1fxq4")])
+
+[resource]
+script = ExtResource("5_dssa3")
+id = 158
+display_name = "Skyblue House"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_dcwju")
+sell = SubResource("Resource_ltoec")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_s1o4o")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Skyblue House houses four villagers."
+description_text = "Houses four villagers"

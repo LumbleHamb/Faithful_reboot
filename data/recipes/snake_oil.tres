@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_pn7qi"]
+
+[resource]
+script = ExtResource("1_pn7qi")
+id = 155
+kind = 1
+display_name = "Snake Oil"
+time_seconds = 43200.0
+input_cost = {
+1: 210.0
+}
+reward_xp = 475.0
+reward = {
+1: 550.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 12343.0
+compatible_lands = Array[String](["Frontier"])

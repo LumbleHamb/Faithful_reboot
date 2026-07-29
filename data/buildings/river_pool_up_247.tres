@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7mvu1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_bgoor"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_fk2or"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_vivvb"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ka70t"]
+
+[sub_resource type="Resource" id="Resource_bxaeg"]
+script = ExtResource("1_7mvu1")
+resource_id = 0
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_kvv8d"]
+script = ExtResource("2_bgoor")
+entries = Array[ExtResource("1_7mvu1")]([SubResource("Resource_bxaeg")])
+
+[sub_resource type="Resource" id="Resource_qlwh1"]
+script = ExtResource("3_fk2or")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_1okto"]
+script = ExtResource("4_vivvb")
+all_of = Array[ExtResource("3_fk2or")]([SubResource("Resource_qlwh1")])
+
+[sub_resource type="Resource" id="Resource_vjitc"]
+script = ExtResource("1_7mvu1")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_brcmt"]
+script = ExtResource("2_bgoor")
+entries = Array[ExtResource("1_7mvu1")]([SubResource("Resource_vjitc")])
+
+[resource]
+script = ExtResource("5_ka70t")
+id = 247
+display_name = "River Pool Up"
+type = 5
+width = 6
+height = 6
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_kvv8d")
+sell = SubResource("Resource_brcmt")
+prerequisites = SubResource("Resource_1okto")
+upgrade_of_id = 0
+info_text = "River Pools grant a bonus to the XP and Gold received from all Shops by 1%. (500% Maximum)"

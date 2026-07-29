@@ -1,0 +1,64 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_p6h4q"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_sm6i0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_fkhaa"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_llvo3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_nhi05"]
+
+[sub_resource type="Resource" id="Resource_mh668"]
+script = ExtResource("1_p6h4q")
+resource_id = 1
+amount = 12500.0
+
+[sub_resource type="Resource" id="Resource_56j1d"]
+script = ExtResource("1_p6h4q")
+resource_id = 21
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_n857w"]
+script = ExtResource("2_sm6i0")
+entries = Array[ExtResource("1_p6h4q")]([SubResource("Resource_mh668"), SubResource("Resource_56j1d")])
+
+[sub_resource type="Resource" id="Resource_uf62j"]
+script = ExtResource("3_fkhaa")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_tnqe3"]
+script = ExtResource("3_fkhaa")
+target_id = 43
+
+[sub_resource type="Resource" id="Resource_qs6jq"]
+script = ExtResource("4_llvo3")
+all_of = Array[ExtResource("3_fkhaa")]([SubResource("Resource_uf62j"), SubResource("Resource_tnqe3")])
+
+[sub_resource type="Resource" id="Resource_uvj2j"]
+script = ExtResource("1_p6h4q")
+resource_id = 1
+amount = 1250.0
+
+[sub_resource type="Resource" id="Resource_rn7j6"]
+script = ExtResource("1_p6h4q")
+resource_id = 21
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_0nlfg"]
+script = ExtResource("2_sm6i0")
+entries = Array[ExtResource("1_p6h4q")]([SubResource("Resource_uvj2j"), SubResource("Resource_rn7j6")])
+
+[resource]
+script = ExtResource("5_nhi05")
+id = 262
+display_name = "Zen Garden"
+type = 5
+width = 6
+height = 6
+xp_value = 10500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_n857w")
+sell = SubResource("Resource_0nlfg")
+prerequisites = SubResource("Resource_qs6jq")
+upgrade_of_id = 0
+info_text = "Rake sand for relaxation...a small bonus to the XP and Gold received from all Shops. (500% Maximum)"

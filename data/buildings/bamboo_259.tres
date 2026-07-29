@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_47hlj"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_84180"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_kfvq5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ginac"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ms30f"]
+
+[sub_resource type="Resource" id="Resource_88xkn"]
+script = ExtResource("1_47hlj")
+resource_id = 1
+amount = 1800.0
+
+[sub_resource type="Resource" id="Resource_ouoxf"]
+script = ExtResource("2_84180")
+entries = Array[ExtResource("1_47hlj")]([SubResource("Resource_88xkn")])
+
+[sub_resource type="Resource" id="Resource_y46cn"]
+script = ExtResource("3_kfvq5")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_upii8"]
+script = ExtResource("3_kfvq5")
+target_id = 29
+
+[sub_resource type="Resource" id="Resource_3djc3"]
+script = ExtResource("4_ginac")
+all_of = Array[ExtResource("3_kfvq5")]([SubResource("Resource_y46cn"), SubResource("Resource_upii8")])
+
+[sub_resource type="Resource" id="Resource_ejnxr"]
+script = ExtResource("1_47hlj")
+resource_id = 1
+amount = 180.0
+
+[sub_resource type="Resource" id="Resource_12f0i"]
+script = ExtResource("2_84180")
+entries = Array[ExtResource("1_47hlj")]([SubResource("Resource_ejnxr")])
+
+[resource]
+script = ExtResource("5_ms30f")
+id = 259
+display_name = "Bamboo"
+type = 5
+width = 2
+height = 2
+xp_value = 900.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ouoxf")
+sell = SubResource("Resource_12f0i")
+prerequisites = SubResource("Resource_3djc3")
+upgrade_of_id = 0
+info_text = "Bamboo, fresh from Asia! Bamboo grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

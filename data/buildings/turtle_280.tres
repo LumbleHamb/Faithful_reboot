@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_61ks3"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ylf4q"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wbq48"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_omr5p"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_4ucaj"]
+
+[sub_resource type="Resource" id="Resource_ygv0m"]
+script = ExtResource("2_ylf4q")
+
+[sub_resource type="Resource" id="Resource_45ou2"]
+script = ExtResource("3_wbq48")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_2gfdu"]
+script = ExtResource("3_wbq48")
+target_id = 0
+
+[sub_resource type="Resource" id="Resource_vr1qg"]
+script = ExtResource("4_omr5p")
+all_of = Array[ExtResource("3_wbq48")]([SubResource("Resource_45ou2"), SubResource("Resource_2gfdu")])
+
+[sub_resource type="Resource" id="Resource_brdi0"]
+script = ExtResource("2_ylf4q")
+
+[resource]
+script = ExtResource("5_4ucaj")
+id = 280
+display_name = "Turtle"
+type = 5
+width = 3
+height = 3
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ygv0m")
+sell = SubResource("Resource_brdi0")
+prerequisites = SubResource("Resource_vr1qg")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "I like turtles. The Turtle grants a bonus to the XP and Gold received from all Shops by 3% amount. (500% Maximum)"

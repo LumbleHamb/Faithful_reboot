@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_mcpp2"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_48s5t"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qx8l4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_an01o"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_1k7jy"]
+
+[sub_resource type="Resource" id="Resource_4yy5w"]
+script = ExtResource("1_mcpp2")
+resource_id = 1
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_wk8xu"]
+script = ExtResource("1_mcpp2")
+resource_id = 11
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_fkla7"]
+script = ExtResource("2_48s5t")
+entries = Array[ExtResource("1_mcpp2")]([SubResource("Resource_4yy5w"), SubResource("Resource_wk8xu")])
+
+[sub_resource type="Resource" id="Resource_bjn0l"]
+script = ExtResource("3_qx8l4")
+target_id = 24
+
+[sub_resource type="Resource" id="Resource_undw1"]
+script = ExtResource("4_an01o")
+all_of = Array[ExtResource("3_qx8l4")]([SubResource("Resource_bjn0l")])
+
+[sub_resource type="Resource" id="Resource_63t61"]
+script = ExtResource("1_mcpp2")
+resource_id = 1
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_d8kuy"]
+script = ExtResource("1_mcpp2")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_wrwva"]
+script = ExtResource("2_48s5t")
+entries = Array[ExtResource("1_mcpp2")]([SubResource("Resource_63t61"), SubResource("Resource_d8kuy")])
+
+[resource]
+script = ExtResource("5_1k7jy")
+id = 268
+display_name = "Outhouse"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_fkla7")
+sell = SubResource("Resource_wrwva")
+prerequisites = SubResource("Resource_undw1")
+upgrade_of_id = 0
+info_text = "Outhouses grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

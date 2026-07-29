@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_qjmjq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_k0nsl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_jkm3p"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_s8idm"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_7wfy7"]
+
+[sub_resource type="Resource" id="Resource_d1xab"]
+script = ExtResource("2_k0nsl")
+
+[sub_resource type="Resource" id="Resource_rmarc"]
+script = ExtResource("4_s8idm")
+
+[sub_resource type="Resource" id="Resource_c7i4q"]
+script = ExtResource("2_k0nsl")
+
+[resource]
+script = ExtResource("5_7wfy7")
+id = 303
+display_name = "Ridge Post"
+type = 0
+width = 14
+height = 14
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_d1xab")
+sell = SubResource("Resource_c7i4q")
+sellable = false
+prerequisites = SubResource("Resource_rmarc")
+upgrade_of_id = 0
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The humble Ridge Post overlooks your new mountain land and is the start of a new and bright future for your villagers."

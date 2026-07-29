@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/resource_definition.gd" id="1_biba6"]
+
+[resource]
+script = ExtResource("1_biba6")
+id = 51
+display_name = "Cloth"
+tier = 2
+refines_from_id = 50
+icon_font_char = "{"

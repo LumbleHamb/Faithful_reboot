@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_dptuj"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_efy2t"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_cwkgs"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_mrrma"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_qhby4"]
+
+[sub_resource type="Resource" id="Resource_talko"]
+script = ExtResource("1_dptuj")
+resource_id = 0
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_f6rmk"]
+script = ExtResource("2_efy2t")
+entries = Array[ExtResource("1_dptuj")]([SubResource("Resource_talko")])
+
+[sub_resource type="Resource" id="Resource_qg44g"]
+script = ExtResource("3_cwkgs")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_jdfa7"]
+script = ExtResource("3_cwkgs")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_uj58v"]
+script = ExtResource("4_mrrma")
+all_of = Array[ExtResource("3_cwkgs")]([SubResource("Resource_qg44g"), SubResource("Resource_jdfa7")])
+
+[sub_resource type="Resource" id="Resource_6uhwt"]
+script = ExtResource("1_dptuj")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_gh5u0"]
+script = ExtResource("1_dptuj")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_k5ddi"]
+script = ExtResource("2_efy2t")
+entries = Array[ExtResource("1_dptuj")]([SubResource("Resource_6uhwt"), SubResource("Resource_gh5u0")])
+
+[resource]
+script = ExtResource("5_qhby4")
+id = 164
+display_name = "Windmill"
+type = 5
+width = 8
+height = 8
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_f6rmk")
+sell = SubResource("Resource_k5ddi")
+build_time_seconds = 43200.0
+prerequisites = SubResource("Resource_uj58v")
+upgrade_of_id = 0
+info_text = "The Windmill increases the production abilities of up to three nearby Farms by 33%"
+description_text = "Increases production of Farms"

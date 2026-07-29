@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2exe3"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_f027o"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_3meti"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_3xb2x"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_b3rl4"]
+
+[sub_resource type="Resource" id="Resource_ellhi"]
+script = ExtResource("1_2exe3")
+resource_id = 1
+amount = 8.0
+
+[sub_resource type="Resource" id="Resource_eegyo"]
+script = ExtResource("2_f027o")
+entries = Array[ExtResource("1_2exe3")]([SubResource("Resource_ellhi")])
+
+[sub_resource type="Resource" id="Resource_cdytu"]
+script = ExtResource("3_3meti")
+target_id = 2
+
+[sub_resource type="Resource" id="Resource_rv80x"]
+script = ExtResource("4_3xb2x")
+all_of = Array[ExtResource("3_3meti")]([SubResource("Resource_cdytu")])
+
+[sub_resource type="Resource" id="Resource_adpgk"]
+script = ExtResource("1_2exe3")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_atm1m"]
+script = ExtResource("2_f027o")
+entries = Array[ExtResource("1_2exe3")]([SubResource("Resource_adpgk")])
+
+[resource]
+script = ExtResource("5_b3rl4")
+id = 129
+display_name = "Yellow Pot"
+type = 5
+width = 2
+height = 2
+xp_value = 20.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_eegyo")
+sell = SubResource("Resource_atm1m")
+prerequisites = SubResource("Resource_rv80x")
+upgrade_of_id = 0

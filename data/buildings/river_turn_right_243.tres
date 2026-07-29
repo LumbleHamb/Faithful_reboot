@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ijyi1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_aun6f"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_7bi1s"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_t70ls"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_jbo65"]
+
+[sub_resource type="Resource" id="Resource_o8k57"]
+script = ExtResource("1_ijyi1")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_llj8a"]
+script = ExtResource("2_aun6f")
+entries = Array[ExtResource("1_ijyi1")]([SubResource("Resource_o8k57")])
+
+[sub_resource type="Resource" id="Resource_1qvtq"]
+script = ExtResource("3_7bi1s")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_f8vyb"]
+script = ExtResource("4_t70ls")
+all_of = Array[ExtResource("3_7bi1s")]([SubResource("Resource_1qvtq")])
+
+[sub_resource type="Resource" id="Resource_u8p75"]
+script = ExtResource("1_ijyi1")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_28alo"]
+script = ExtResource("2_aun6f")
+entries = Array[ExtResource("1_ijyi1")]([SubResource("Resource_u8p75")])
+
+[resource]
+script = ExtResource("5_jbo65")
+id = 243
+display_name = "River Turn Right"
+type = 5
+width = 3
+height = 3
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_llj8a")
+sell = SubResource("Resource_28alo")
+prerequisites = SubResource("Resource_f8vyb")
+upgrade_of_id = 0
+info_text = "Rivers grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

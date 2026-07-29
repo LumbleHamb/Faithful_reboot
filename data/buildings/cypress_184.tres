@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3ba2w"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_rl5oc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xndk4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_sbgnl"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_0ngsv"]
+
+[sub_resource type="Resource" id="Resource_i5tkw"]
+script = ExtResource("1_3ba2w")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_gt1mv"]
+script = ExtResource("2_rl5oc")
+entries = Array[ExtResource("1_3ba2w")]([SubResource("Resource_i5tkw")])
+
+[sub_resource type="Resource" id="Resource_s25ro"]
+script = ExtResource("3_xndk4")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_tbcta"]
+script = ExtResource("4_sbgnl")
+all_of = Array[ExtResource("3_xndk4")]([SubResource("Resource_s25ro")])
+
+[sub_resource type="Resource" id="Resource_psubp"]
+script = ExtResource("1_3ba2w")
+resource_id = 10
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_nn8gv"]
+script = ExtResource("2_rl5oc")
+entries = Array[ExtResource("1_3ba2w")]([SubResource("Resource_psubp")])
+
+[resource]
+script = ExtResource("5_0ngsv")
+id = 184
+display_name = "Cypress"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_gt1mv")
+sell = SubResource("Resource_nn8gv")
+prerequisites = SubResource("Resource_tbcta")
+upgrade_of_id = 0
+info_text = "Cypress Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

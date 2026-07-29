@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ky31i"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_y7h1x"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_nype4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ca4gt"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_c4ibb"]
+
+[sub_resource type="Resource" id="Resource_qgmmq"]
+script = ExtResource("1_ky31i")
+resource_id = 1
+amount = 1000000.0
+
+[sub_resource type="Resource" id="Resource_kvu6d"]
+script = ExtResource("1_ky31i")
+resource_id = 11
+amount = 200000.0
+
+[sub_resource type="Resource" id="Resource_4cruq"]
+script = ExtResource("1_ky31i")
+resource_id = 21
+amount = 250000.0
+
+[sub_resource type="Resource" id="Resource_hr1r8"]
+script = ExtResource("1_ky31i")
+resource_id = 51
+amount = 75000.0
+
+[sub_resource type="Resource" id="Resource_gp647"]
+script = ExtResource("2_y7h1x")
+entries = Array[ExtResource("1_ky31i")]([SubResource("Resource_qgmmq"), SubResource("Resource_kvu6d"), SubResource("Resource_4cruq"), SubResource("Resource_hr1r8")])
+
+[sub_resource type="Resource" id="Resource_skbkq"]
+script = ExtResource("3_nype4")
+target_id = 40
+
+[sub_resource type="Resource" id="Resource_blnc7"]
+script = ExtResource("3_nype4")
+kind = 1
+target_id = 304
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_5thmm"]
+script = ExtResource("4_ca4gt")
+all_of = Array[ExtResource("3_nype4")]([SubResource("Resource_skbkq"), SubResource("Resource_blnc7")])
+
+[sub_resource type="Resource" id="Resource_na75u"]
+script = ExtResource("2_y7h1x")
+
+[resource]
+script = ExtResource("5_c4ibb")
+id = 305
+display_name = "Sierra Palisade"
+type = 0
+width = 14
+height = 14
+xp_value = 35000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_gp647")
+sell = SubResource("Resource_na75u")
+sellable = false
+prerequisites = SubResource("Resource_5thmm")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "Enjoy your mountain lifestyle! The Sierra Palisade is an upgrade to the Mountain Fort. It allows you to build more advanced buildings."

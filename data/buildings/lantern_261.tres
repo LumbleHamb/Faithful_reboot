@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_jlvul"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_itdba"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wrw0y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_d8p2m"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lr7xr"]
+
+[sub_resource type="Resource" id="Resource_n2no3"]
+script = ExtResource("1_jlvul")
+resource_id = 1
+amount = 7500.0
+
+[sub_resource type="Resource" id="Resource_og417"]
+script = ExtResource("2_itdba")
+entries = Array[ExtResource("1_jlvul")]([SubResource("Resource_n2no3")])
+
+[sub_resource type="Resource" id="Resource_6fw1x"]
+script = ExtResource("3_wrw0y")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_dyean"]
+script = ExtResource("3_wrw0y")
+target_id = 37
+
+[sub_resource type="Resource" id="Resource_qy01q"]
+script = ExtResource("4_d8p2m")
+all_of = Array[ExtResource("3_wrw0y")]([SubResource("Resource_6fw1x"), SubResource("Resource_dyean")])
+
+[sub_resource type="Resource" id="Resource_d86uj"]
+script = ExtResource("1_jlvul")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_xbi8t"]
+script = ExtResource("2_itdba")
+entries = Array[ExtResource("1_jlvul")]([SubResource("Resource_d86uj")])
+
+[resource]
+script = ExtResource("5_lr7xr")
+id = 261
+display_name = "Lantern"
+type = 5
+width = 2
+height = 2
+xp_value = 3500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_og417")
+sell = SubResource("Resource_xbi8t")
+prerequisites = SubResource("Resource_qy01q")
+upgrade_of_id = 0
+info_text = "Let there be light! ...with this lantern that grants a small bonus to the XP and Gold received from all Shops. (500% Maximum)"

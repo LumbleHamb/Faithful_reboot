@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_sdymb"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ncgl0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_lfhvy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_1ggms"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_048a8"]
+
+[sub_resource type="Resource" id="Resource_j4jn1"]
+script = ExtResource("1_sdymb")
+resource_id = 1
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_otrkk"]
+script = ExtResource("2_ncgl0")
+entries = Array[ExtResource("1_sdymb")]([SubResource("Resource_j4jn1")])
+
+[sub_resource type="Resource" id="Resource_5h43i"]
+script = ExtResource("3_lfhvy")
+target_id = 11
+
+[sub_resource type="Resource" id="Resource_gb4s7"]
+script = ExtResource("4_1ggms")
+all_of = Array[ExtResource("3_lfhvy")]([SubResource("Resource_5h43i")])
+
+[sub_resource type="Resource" id="Resource_4wvxt"]
+script = ExtResource("1_sdymb")
+resource_id = 1
+amount = 4.0
+
+[sub_resource type="Resource" id="Resource_gpmnp"]
+script = ExtResource("2_ncgl0")
+entries = Array[ExtResource("1_sdymb")]([SubResource("Resource_4wvxt")])
+
+[resource]
+script = ExtResource("5_048a8")
+id = 126
+display_name = "Red Pot"
+type = 5
+width = 2
+height = 2
+xp_value = 20.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_otrkk")
+sell = SubResource("Resource_gpmnp")
+prerequisites = SubResource("Resource_gb4s7")
+upgrade_of_id = 0

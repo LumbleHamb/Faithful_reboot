@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8c5yl"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_w3lsy"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ptklv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_wcfmq"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ltsda"]
+
+[sub_resource type="Resource" id="Resource_w85ln"]
+script = ExtResource("1_8c5yl")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_yv2u3"]
+script = ExtResource("1_8c5yl")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_njppt"]
+script = ExtResource("2_w3lsy")
+entries = Array[ExtResource("1_8c5yl")]([SubResource("Resource_w85ln"), SubResource("Resource_yv2u3")])
+
+[sub_resource type="Resource" id="Resource_6quea"]
+script = ExtResource("3_ptklv")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_w6heh"]
+script = ExtResource("4_wcfmq")
+all_of = Array[ExtResource("3_ptklv")]([SubResource("Resource_6quea")])
+
+[sub_resource type="Resource" id="Resource_h4upr"]
+script = ExtResource("1_8c5yl")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_6q1xp"]
+script = ExtResource("1_8c5yl")
+resource_id = 10
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_4no16"]
+script = ExtResource("2_w3lsy")
+entries = Array[ExtResource("1_8c5yl")]([SubResource("Resource_h4upr"), SubResource("Resource_6q1xp")])
+
+[resource]
+script = ExtResource("5_ltsda")
+id = 11
+display_name = "Farm"
+type = 1
+width = 6
+height = 6
+xp_value = 65.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_njppt")
+sell = SubResource("Resource_4no16")
+build_time_seconds = 3.0
+prerequisites = SubResource("Resource_w6heh")
+upgrade_of_id = 0
+gather_recipe_id = 50011
+info_text = "Assign a villager to the Farm to harvest Wheat!"

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_741sh"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_042pb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_nmehe"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_mnyn8"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_5348p"]
+
+[sub_resource type="Resource" id="Resource_nb5y7"]
+script = ExtResource("1_741sh")
+resource_id = 0
+amount = 95.0
+
+[sub_resource type="Resource" id="Resource_2yv77"]
+script = ExtResource("2_042pb")
+entries = Array[ExtResource("1_741sh")]([SubResource("Resource_nb5y7")])
+
+[sub_resource type="Resource" id="Resource_oq33k"]
+script = ExtResource("3_nmehe")
+target_id = 32
+
+[sub_resource type="Resource" id="Resource_rku0d"]
+script = ExtResource("4_mnyn8")
+all_of = Array[ExtResource("3_nmehe")]([SubResource("Resource_oq33k")])
+
+[sub_resource type="Resource" id="Resource_2d2or"]
+script = ExtResource("1_741sh")
+resource_id = 1
+amount = 950.0
+
+[sub_resource type="Resource" id="Resource_rilnx"]
+script = ExtResource("2_042pb")
+entries = Array[ExtResource("1_741sh")]([SubResource("Resource_2d2or")])
+
+[resource]
+script = ExtResource("5_5348p")
+id = 353
+display_name = "Sam"
+type = 5
+width = 2
+height = 2
+xp_value = 950.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_2yv77")
+sell = SubResource("Resource_rilnx")
+prerequisites = SubResource("Resource_rku0d")
+upgrade_of_id = 0
+info_text = "Sam the Sheep Dog does not like wily coyotes. Sam grants a bonus to the XP and Gold received from all Shops by 7% (500% Maximum)"

@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ffhu7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hwcmq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_72ks6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_k1s8i"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_juiav"]
+
+[sub_resource type="Resource" id="Resource_54fq7"]
+script = ExtResource("1_ffhu7")
+resource_id = 1
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_rjd8h"]
+script = ExtResource("2_hwcmq")
+entries = Array[ExtResource("1_ffhu7")]([SubResource("Resource_54fq7")])
+
+[sub_resource type="Resource" id="Resource_xyf4m"]
+script = ExtResource("3_72ks6")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_1wpr0"]
+script = ExtResource("4_k1s8i")
+all_of = Array[ExtResource("3_72ks6")]([SubResource("Resource_xyf4m")])
+
+[sub_resource type="Resource" id="Resource_781y0"]
+script = ExtResource("1_ffhu7")
+resource_id = 1
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_f1ypd"]
+script = ExtResource("2_hwcmq")
+entries = Array[ExtResource("1_ffhu7")]([SubResource("Resource_781y0")])
+
+[resource]
+script = ExtResource("5_juiav")
+id = 111
+display_name = "Holiday Tree"
+type = 5
+width = 5
+height = 5
+xp_value = 1750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_rjd8h")
+sell = SubResource("Resource_f1ypd")
+prerequisites = SubResource("Resource_1wpr0")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Get in the holiday spirit with the Holiday Tree! The Holiday Tree grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_m7vc8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_iv27y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_pd1yq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_2ok4g"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_8n2fc"]
+
+[sub_resource type="Resource" id="Resource_c2hpl"]
+script = ExtResource("1_m7vc8")
+resource_id = 1
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_5gd5h"]
+script = ExtResource("2_iv27y")
+entries = Array[ExtResource("1_m7vc8")]([SubResource("Resource_c2hpl")])
+
+[sub_resource type="Resource" id="Resource_dun3t"]
+script = ExtResource("3_pd1yq")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_1gjfp"]
+script = ExtResource("3_pd1yq")
+target_id = 32
+
+[sub_resource type="Resource" id="Resource_iy40x"]
+script = ExtResource("4_2ok4g")
+all_of = Array[ExtResource("3_pd1yq")]([SubResource("Resource_dun3t"), SubResource("Resource_1gjfp")])
+
+[sub_resource type="Resource" id="Resource_6o0sx"]
+script = ExtResource("1_m7vc8")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_86qht"]
+script = ExtResource("2_iv27y")
+entries = Array[ExtResource("1_m7vc8")]([SubResource("Resource_6o0sx")])
+
+[resource]
+script = ExtResource("5_8n2fc")
+id = 169
+display_name = "Firebreather"
+type = 11
+width = 4
+height = 4
+xp_value = 2500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_5gd5h")
+sell = SubResource("Resource_86qht")
+build_time_seconds = 3600.0
+prerequisites = SubResource("Resource_iy40x")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Assign a villager to be a Firebreather and earn gold and experience for their stellar performance!"
+description_text = "Don't stand too close!"

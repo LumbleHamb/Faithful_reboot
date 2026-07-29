@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_icjvf"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_2r1bg"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_8ltsj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_xxqgo"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_g3y6e"]
+
+[sub_resource type="Resource" id="Resource_xbiej"]
+script = ExtResource("2_2r1bg")
+
+[sub_resource type="Resource" id="Resource_l200w"]
+script = ExtResource("4_xxqgo")
+
+[sub_resource type="Resource" id="Resource_4yrrh"]
+script = ExtResource("2_2r1bg")
+
+[resource]
+script = ExtResource("5_g3y6e")
+id = 7
+display_name = "Mountain"
+width = 6
+height = 6
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_xbiej")
+sell = SubResource("Resource_4yrrh")
+prerequisites = SubResource("Resource_l200w")
+upgrade_of_id = 0
+description_text = "Build Quarries here to gather rock"

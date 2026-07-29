@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_k56ck"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_jeapk"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_khh5b"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_muenw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_wkwjm"]
+
+[sub_resource type="Resource" id="Resource_8jtgs"]
+script = ExtResource("1_k56ck")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_c7j16"]
+script = ExtResource("2_jeapk")
+entries = Array[ExtResource("1_k56ck")]([SubResource("Resource_8jtgs")])
+
+[sub_resource type="Resource" id="Resource_rvwvl"]
+script = ExtResource("3_khh5b")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_ra1ec"]
+script = ExtResource("4_muenw")
+all_of = Array[ExtResource("3_khh5b")]([SubResource("Resource_rvwvl")])
+
+[sub_resource type="Resource" id="Resource_60xsv"]
+script = ExtResource("2_jeapk")
+
+[resource]
+script = ExtResource("5_wkwjm")
+id = 233
+display_name = "Traveling Merchant"
+type = 5
+width = 8
+height = 5
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_c7j16")
+sell = SubResource("Resource_60xsv")
+build_time_seconds = 3.0
+prerequisites = SubResource("Resource_ra1ec")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "The Traveling Merchant has returned and brought back something special from the North Pole! He also still has wares from earlier travels to the Far East. The Traveling Merchant grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_u2bby"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_orm28"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_l7mmt"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_an2qg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fy2dd"]
+
+[sub_resource type="Resource" id="Resource_adm85"]
+script = ExtResource("1_u2bby")
+resource_id = 0
+amount = 115.0
+
+[sub_resource type="Resource" id="Resource_l3qm2"]
+script = ExtResource("2_orm28")
+entries = Array[ExtResource("1_u2bby")]([SubResource("Resource_adm85")])
+
+[sub_resource type="Resource" id="Resource_spjot"]
+script = ExtResource("3_l7mmt")
+target_id = 24
+
+[sub_resource type="Resource" id="Resource_de1ms"]
+script = ExtResource("4_an2qg")
+all_of = Array[ExtResource("3_l7mmt")]([SubResource("Resource_spjot")])
+
+[sub_resource type="Resource" id="Resource_w6x63"]
+script = ExtResource("1_u2bby")
+resource_id = 1
+amount = 1150.0
+
+[sub_resource type="Resource" id="Resource_qt3cn"]
+script = ExtResource("2_orm28")
+entries = Array[ExtResource("1_u2bby")]([SubResource("Resource_w6x63")])
+
+[resource]
+script = ExtResource("5_fy2dd")
+id = 316
+display_name = "Laddie"
+type = 5
+width = 3
+height = 3
+xp_value = 2150.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_l3qm2")
+sell = SubResource("Resource_qt3cn")
+prerequisites = SubResource("Resource_de1ms")
+upgrade_of_id = 0
+info_text = "What is it, Laddie? Did Uncle Ben fall down the well again?! Laddie the St. Bernard grants a bonus to the XP and Gold received from all Shops by 7.5% (500% Maximum)"

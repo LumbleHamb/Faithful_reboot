@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_lxbbs"]
+
+[resource]
+script = ExtResource("1_lxbbs")
+id = 80
+kind = 1
+display_name = "Ragdoll"
+time_seconds = 50400.0
+input_cost = {
+50: 95.0,
+51: 110.0
+}
+reward_xp = 910.0
+reward = {
+1: 700.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 12343.0
+compatible_lands = Array[String](["Vanilla"])

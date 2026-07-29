@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xuv8i"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_t5asv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_mhehe"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_mchb8"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fpo3c"]
+
+[sub_resource type="Resource" id="Resource_uywf2"]
+script = ExtResource("1_xuv8i")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_hdpwe"]
+script = ExtResource("1_xuv8i")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_0w2rt"]
+script = ExtResource("1_xuv8i")
+resource_id = 20
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_cqlqc"]
+script = ExtResource("2_t5asv")
+entries = Array[ExtResource("1_xuv8i")]([SubResource("Resource_uywf2"), SubResource("Resource_hdpwe"), SubResource("Resource_0w2rt")])
+
+[sub_resource type="Resource" id="Resource_n2o7h"]
+script = ExtResource("3_mhehe")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_hgdg1"]
+script = ExtResource("4_mchb8")
+all_of = Array[ExtResource("3_mhehe")]([SubResource("Resource_n2o7h")])
+
+[sub_resource type="Resource" id="Resource_r10op"]
+script = ExtResource("1_xuv8i")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_fsdue"]
+script = ExtResource("1_xuv8i")
+resource_id = 11
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_p6w3a"]
+script = ExtResource("1_xuv8i")
+resource_id = 20
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_qtpsv"]
+script = ExtResource("2_t5asv")
+entries = Array[ExtResource("1_xuv8i")]([SubResource("Resource_r10op"), SubResource("Resource_fsdue"), SubResource("Resource_p6w3a")])
+
+[resource]
+script = ExtResource("5_fpo3c")
+id = 309
+display_name = "Hot Beverage Shop"
+type = 2
+category = "shop"
+width = 7
+height = 7
+xp_value = 3000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_cqlqc")
+sell = SubResource("Resource_qtpsv")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_hgdg1")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([147, 148, 149, 150, 151])
+info_text = "Use the Hot Beverage Shop to complete jobs using different resources. Requires a cheery Barista."
+description_text = "Create drinks for your villagers"

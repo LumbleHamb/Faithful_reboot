@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_g42ob"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_66i2g"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2ieia"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_oysno"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_iltbd"]
+
+[sub_resource type="Resource" id="Resource_5djty"]
+script = ExtResource("1_g42ob")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_1dbts"]
+script = ExtResource("2_66i2g")
+entries = Array[ExtResource("1_g42ob")]([SubResource("Resource_5djty")])
+
+[sub_resource type="Resource" id="Resource_ja1w0"]
+script = ExtResource("3_2ieia")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_hyt0b"]
+script = ExtResource("4_oysno")
+all_of = Array[ExtResource("3_2ieia")]([SubResource("Resource_ja1w0")])
+
+[sub_resource type="Resource" id="Resource_natha"]
+script = ExtResource("1_g42ob")
+resource_id = 10
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_6uced"]
+script = ExtResource("2_66i2g")
+entries = Array[ExtResource("1_g42ob")]([SubResource("Resource_natha")])
+
+[resource]
+script = ExtResource("5_iltbd")
+id = 324
+display_name = "Larch"
+type = 5
+width = 2
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_1dbts")
+sell = SubResource("Resource_6uced")
+prerequisites = SubResource("Resource_hyt0b")
+upgrade_of_id = 0

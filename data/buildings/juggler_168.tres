@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_t2r6j"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_a7eaa"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_dqwjh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7ci2b"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_05e4o"]
+
+[sub_resource type="Resource" id="Resource_fhp0n"]
+script = ExtResource("1_t2r6j")
+resource_id = 0
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_w3lo3"]
+script = ExtResource("2_a7eaa")
+entries = Array[ExtResource("1_t2r6j")]([SubResource("Resource_fhp0n")])
+
+[sub_resource type="Resource" id="Resource_31xq5"]
+script = ExtResource("3_dqwjh")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_75dwg"]
+script = ExtResource("3_dqwjh")
+target_id = 24
+
+[sub_resource type="Resource" id="Resource_pwceg"]
+script = ExtResource("4_7ci2b")
+all_of = Array[ExtResource("3_dqwjh")]([SubResource("Resource_31xq5"), SubResource("Resource_75dwg")])
+
+[sub_resource type="Resource" id="Resource_mwdcd"]
+script = ExtResource("1_t2r6j")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_8obbn"]
+script = ExtResource("2_a7eaa")
+entries = Array[ExtResource("1_t2r6j")]([SubResource("Resource_mwdcd")])
+
+[resource]
+script = ExtResource("5_05e4o")
+id = 168
+display_name = "Juggler"
+type = 11
+width = 4
+height = 4
+xp_value = 1250.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_w3lo3")
+sell = SubResource("Resource_8obbn")
+build_time_seconds = 3600.0
+prerequisites = SubResource("Resource_pwceg")
+upgrade_of_id = 0
+info_text = "Assign a villager to be a Juggler and earn gold and experience for their stellar performance!"
+description_text = "All this time, not a single ball dropped."

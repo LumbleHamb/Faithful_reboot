@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_v7aj8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_o4l35"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_mm0tl"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_qiru2"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_10rw2"]
+
+[sub_resource type="Resource" id="Resource_h8xcj"]
+script = ExtResource("1_v7aj8")
+resource_id = 0
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_uapfr"]
+script = ExtResource("2_o4l35")
+entries = Array[ExtResource("1_v7aj8")]([SubResource("Resource_h8xcj")])
+
+[sub_resource type="Resource" id="Resource_51ecb"]
+script = ExtResource("3_mm0tl")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_cmfep"]
+script = ExtResource("4_qiru2")
+all_of = Array[ExtResource("3_mm0tl")]([SubResource("Resource_51ecb")])
+
+[sub_resource type="Resource" id="Resource_a2iox"]
+script = ExtResource("1_v7aj8")
+resource_id = 1
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_rp1qu"]
+script = ExtResource("1_v7aj8")
+resource_id = 10
+amount = 45.0
+
+[sub_resource type="Resource" id="Resource_pjmwy"]
+script = ExtResource("2_o4l35")
+entries = Array[ExtResource("1_v7aj8")]([SubResource("Resource_a2iox"), SubResource("Resource_rp1qu")])
+
+[resource]
+script = ExtResource("5_10rw2")
+id = 334
+display_name = "Frontier Stockpile"
+type = 3
+width = 10
+height = 10
+xp_value = 380.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_uapfr")
+sell = SubResource("Resource_pjmwy")
+build_time_seconds = 5.0
+prerequisites = SubResource("Resource_cmfep")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 1500.0,
+11: 1500.0,
+20: 1500.0,
+21: 1500.0,
+40: 1500.0,
+50: 1500.0,
+51: 1500.0
+}
+info_text = "The Frontier Stockpile stores up to 1,500 of each resource."
+description_text = "Stores a small amount of resources"

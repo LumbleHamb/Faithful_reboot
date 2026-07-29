@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_vecnm"]
+
+[resource]
+script = ExtResource("1_vecnm")
+id = 65
+kind = 1
+display_name = "Firebreather"
+time_seconds = 3600.0
+input_cost = {
+1: 100.0
+}
+reward_xp = 500.0
+hurry_cost = 3.0
+hurry_interval_seconds = 7200.0
+compatible_lands = Array[String](["Vanilla"])

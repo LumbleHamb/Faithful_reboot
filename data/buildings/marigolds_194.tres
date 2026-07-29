@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_u4w0j"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ve8fq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5utln"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_nv5v6"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vexgg"]
+
+[sub_resource type="Resource" id="Resource_18a5j"]
+script = ExtResource("1_u4w0j")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_pai7v"]
+script = ExtResource("2_ve8fq")
+entries = Array[ExtResource("1_u4w0j")]([SubResource("Resource_18a5j")])
+
+[sub_resource type="Resource" id="Resource_0j6xb"]
+script = ExtResource("3_5utln")
+target_id = 26
+
+[sub_resource type="Resource" id="Resource_r4gym"]
+script = ExtResource("4_nv5v6")
+all_of = Array[ExtResource("3_5utln")]([SubResource("Resource_0j6xb")])
+
+[sub_resource type="Resource" id="Resource_7yoh4"]
+script = ExtResource("1_u4w0j")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_if1nw"]
+script = ExtResource("2_ve8fq")
+entries = Array[ExtResource("1_u4w0j")]([SubResource("Resource_7yoh4")])
+
+[resource]
+script = ExtResource("5_vexgg")
+id = 194
+display_name = "Marigolds"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_pai7v")
+sell = SubResource("Resource_if1nw")
+prerequisites = SubResource("Resource_r4gym")
+upgrade_of_id = 0
+info_text = "Marigolds grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

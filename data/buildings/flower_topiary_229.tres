@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3np42"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vxwm6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_88lnj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8u7k1"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_7puoo"]
+
+[sub_resource type="Resource" id="Resource_qocv0"]
+script = ExtResource("1_3np42")
+resource_id = 1
+amount = 40000.0
+
+[sub_resource type="Resource" id="Resource_60ak7"]
+script = ExtResource("2_vxwm6")
+entries = Array[ExtResource("1_3np42")]([SubResource("Resource_qocv0")])
+
+[sub_resource type="Resource" id="Resource_w3ifc"]
+script = ExtResource("3_88lnj")
+target_id = 46
+
+[sub_resource type="Resource" id="Resource_5bbtd"]
+script = ExtResource("4_8u7k1")
+all_of = Array[ExtResource("3_88lnj")]([SubResource("Resource_w3ifc")])
+
+[sub_resource type="Resource" id="Resource_32o54"]
+script = ExtResource("1_3np42")
+resource_id = 1
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_fpu1j"]
+script = ExtResource("2_vxwm6")
+entries = Array[ExtResource("1_3np42")]([SubResource("Resource_32o54")])
+
+[resource]
+script = ExtResource("5_7puoo")
+id = 229
+display_name = "Flower Topiary"
+type = 5
+width = 2
+height = 2
+xp_value = 12000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_60ak7")
+sell = SubResource("Resource_fpu1j")
+prerequisites = SubResource("Resource_5bbtd")
+upgrade_of_id = 0
+info_text = "Flower Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_rs6nd"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_om6i4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_dijpn"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_atmt6"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_yblvt"]
+
+[sub_resource type="Resource" id="Resource_i3jcq"]
+script = ExtResource("1_rs6nd")
+resource_id = 1
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_5iobi"]
+script = ExtResource("2_om6i4")
+entries = Array[ExtResource("1_rs6nd")]([SubResource("Resource_i3jcq")])
+
+[sub_resource type="Resource" id="Resource_6lt30"]
+script = ExtResource("3_dijpn")
+target_id = 5
+
+[sub_resource type="Resource" id="Resource_w36gc"]
+script = ExtResource("4_atmt6")
+all_of = Array[ExtResource("3_dijpn")]([SubResource("Resource_6lt30")])
+
+[sub_resource type="Resource" id="Resource_8uaua"]
+script = ExtResource("1_rs6nd")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_n54pd"]
+script = ExtResource("2_om6i4")
+entries = Array[ExtResource("1_rs6nd")]([SubResource("Resource_8uaua")])
+
+[resource]
+script = ExtResource("5_yblvt")
+id = 131
+display_name = "Orange Pot"
+type = 5
+width = 2
+height = 2
+xp_value = 20.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_5iobi")
+sell = SubResource("Resource_n54pd")
+prerequisites = SubResource("Resource_w36gc")
+upgrade_of_id = 0

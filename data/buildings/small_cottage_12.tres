@@ -1,0 +1,72 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_nvdlh"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_xoi1x"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4u7qv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_x11mm"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_rpfox"]
+
+[sub_resource type="Resource" id="Resource_ne3oy"]
+script = ExtResource("1_nvdlh")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_0kfh6"]
+script = ExtResource("1_nvdlh")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_x1bgv"]
+script = ExtResource("1_nvdlh")
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_mp3mb"]
+script = ExtResource("2_xoi1x")
+entries = Array[ExtResource("1_nvdlh")]([SubResource("Resource_ne3oy"), SubResource("Resource_0kfh6"), SubResource("Resource_x1bgv")])
+
+[sub_resource type="Resource" id="Resource_3gqb7"]
+script = ExtResource("3_4u7qv")
+target_id = 1
+
+[sub_resource type="Resource" id="Resource_ve1ab"]
+script = ExtResource("4_x11mm")
+all_of = Array[ExtResource("3_4u7qv")]([SubResource("Resource_3gqb7")])
+
+[sub_resource type="Resource" id="Resource_su2dp"]
+script = ExtResource("1_nvdlh")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_3a4eb"]
+script = ExtResource("1_nvdlh")
+resource_id = 10
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_dfkoe"]
+script = ExtResource("1_nvdlh")
+resource_id = 40
+amount = 3.0
+
+[sub_resource type="Resource" id="Resource_vymxl"]
+script = ExtResource("2_xoi1x")
+entries = Array[ExtResource("1_nvdlh")]([SubResource("Resource_su2dp"), SubResource("Resource_3a4eb"), SubResource("Resource_dfkoe")])
+
+[resource]
+script = ExtResource("5_rpfox")
+id = 12
+display_name = "Small Cottage"
+type = 6
+category = "house"
+width = 5
+height = 4
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_mp3mb")
+sell = SubResource("Resource_vymxl")
+build_time_seconds = 3.0
+prerequisites = SubResource("Resource_ve1ab")
+upgrade_of_id = 1
+house_capacity = 2
+info_text = "The Small Cottage houses one villager."
+description_text = "Houses one villager"

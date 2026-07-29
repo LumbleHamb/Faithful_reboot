@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_fqe55"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ow4vx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_87bxw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_yj38q"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_njldv"]
+
+[sub_resource type="Resource" id="Resource_c20v4"]
+script = ExtResource("1_fqe55")
+resource_id = 0
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_a32dx"]
+script = ExtResource("2_ow4vx")
+entries = Array[ExtResource("1_fqe55")]([SubResource("Resource_c20v4")])
+
+[sub_resource type="Resource" id="Resource_u67sq"]
+script = ExtResource("3_87bxw")
+target_id = 40
+
+[sub_resource type="Resource" id="Resource_6inx8"]
+script = ExtResource("4_yj38q")
+all_of = Array[ExtResource("3_87bxw")]([SubResource("Resource_u67sq")])
+
+[sub_resource type="Resource" id="Resource_krgfi"]
+script = ExtResource("1_fqe55")
+resource_id = 1
+amount = 7500.0
+
+[sub_resource type="Resource" id="Resource_i6mei"]
+script = ExtResource("2_ow4vx")
+entries = Array[ExtResource("1_fqe55")]([SubResource("Resource_krgfi")])
+
+[resource]
+script = ExtResource("5_njldv")
+id = 279
+display_name = "Elvis"
+type = 5
+width = 2
+height = 2
+xp_value = 37500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_a32dx")
+sell = SubResource("Resource_i6mei")
+prerequisites = SubResource("Resource_6inx8")
+upgrade_of_id = 0
+info_text = "Elvis lives!...as a very, very spoiled Poodle. He has papers. Elvis grants a bonus to the XP and Gold received from all Shops by 75% (500% Maximum)"

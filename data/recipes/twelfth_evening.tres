@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_mbi7h"]
+
+[resource]
+script = ExtResource("1_mbi7h")
+id = 62
+kind = 1
+display_name = "Twelfth Evening"
+time_seconds = 18000.0
+input_cost = {
+1: 450.0
+}
+reward_xp = 1300.0
+hurry_cost = 3.0
+hurry_interval_seconds = 3600.0
+compatible_lands = Array[String](["Vanilla"])

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_atioi"]
+
+[resource]
+script = ExtResource("1_atioi")
+id = 156
+kind = 1
+display_name = "Juju Remedy"
+time_seconds = 86400.0
+input_cost = {
+1: 300.0,
+51: 20.0
+}
+reward_xp = 825.0
+reward = {
+1: 875.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 19200.0
+compatible_lands = Array[String](["Frontier"])

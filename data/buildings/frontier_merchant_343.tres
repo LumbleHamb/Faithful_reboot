@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_hygdc"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_c304r"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_pajih"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_455pv"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fvlxa"]
+
+[sub_resource type="Resource" id="Resource_x18ui"]
+script = ExtResource("1_hygdc")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_0aqxp"]
+script = ExtResource("2_c304r")
+entries = Array[ExtResource("1_hygdc")]([SubResource("Resource_x18ui")])
+
+[sub_resource type="Resource" id="Resource_vf534"]
+script = ExtResource("3_pajih")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_kmdmj"]
+script = ExtResource("4_455pv")
+all_of = Array[ExtResource("3_pajih")]([SubResource("Resource_vf534")])
+
+[sub_resource type="Resource" id="Resource_pi54g"]
+script = ExtResource("2_c304r")
+
+[resource]
+script = ExtResource("5_fvlxa")
+id = 343
+display_name = "Frontier Merchant"
+type = 5
+width = 8
+height = 5
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_0aqxp")
+sell = SubResource("Resource_pi54g")
+build_time_seconds = 3.0
+prerequisites = SubResource("Resource_kmdmj")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "The Traveling Merchant is visiting your Frontier land and has brought back something special from the North Pole! The Frontier Merchant grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

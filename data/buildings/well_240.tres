@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_rh3h1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_kbcae"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_tmqgs"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_bqcwi"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_s4kwn"]
+
+[sub_resource type="Resource" id="Resource_6sr45"]
+script = ExtResource("1_rh3h1")
+resource_id = 0
+amount = 95.0
+
+[sub_resource type="Resource" id="Resource_iumjm"]
+script = ExtResource("2_kbcae")
+entries = Array[ExtResource("1_rh3h1")]([SubResource("Resource_6sr45")])
+
+[sub_resource type="Resource" id="Resource_m8rmq"]
+script = ExtResource("3_tmqgs")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_500p2"]
+script = ExtResource("4_bqcwi")
+all_of = Array[ExtResource("3_tmqgs")]([SubResource("Resource_m8rmq")])
+
+[sub_resource type="Resource" id="Resource_jvcem"]
+script = ExtResource("1_rh3h1")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_hhlk3"]
+script = ExtResource("2_kbcae")
+entries = Array[ExtResource("1_rh3h1")]([SubResource("Resource_jvcem")])
+
+[resource]
+script = ExtResource("5_s4kwn")
+id = 240
+display_name = "Well"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_iumjm")
+sell = SubResource("Resource_hhlk3")
+prerequisites = SubResource("Resource_500p2")
+upgrade_of_id = 0
+info_text = "Build a well in your village and the proceeds will be donated to charity: water to build wells in developing nations!"

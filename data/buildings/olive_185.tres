@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3xl51"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_p0do4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_46l4v"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_klxaf"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ifddd"]
+
+[sub_resource type="Resource" id="Resource_uus74"]
+script = ExtResource("1_3xl51")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_4h67b"]
+script = ExtResource("2_p0do4")
+entries = Array[ExtResource("1_3xl51")]([SubResource("Resource_uus74")])
+
+[sub_resource type="Resource" id="Resource_3ftil"]
+script = ExtResource("3_46l4v")
+target_id = 24
+
+[sub_resource type="Resource" id="Resource_mbnaa"]
+script = ExtResource("4_klxaf")
+all_of = Array[ExtResource("3_46l4v")]([SubResource("Resource_3ftil")])
+
+[sub_resource type="Resource" id="Resource_xwlb7"]
+script = ExtResource("1_3xl51")
+resource_id = 10
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_pyduk"]
+script = ExtResource("2_p0do4")
+entries = Array[ExtResource("1_3xl51")]([SubResource("Resource_xwlb7")])
+
+[resource]
+script = ExtResource("5_ifddd")
+id = 185
+display_name = "Olive"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_4h67b")
+sell = SubResource("Resource_pyduk")
+prerequisites = SubResource("Resource_mbnaa")
+upgrade_of_id = 0
+info_text = "Olive Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_jlnsw"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ofmjm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_cf346"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_w0mxd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ww0u4"]
+
+[sub_resource type="Resource" id="Resource_kwvag"]
+script = ExtResource("1_jlnsw")
+resource_id = 1
+amount = 18000.0
+
+[sub_resource type="Resource" id="Resource_0d72b"]
+script = ExtResource("1_jlnsw")
+resource_id = 11
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_hejo5"]
+script = ExtResource("2_ofmjm")
+entries = Array[ExtResource("1_jlnsw")]([SubResource("Resource_kwvag"), SubResource("Resource_0d72b")])
+
+[sub_resource type="Resource" id="Resource_udio4"]
+script = ExtResource("3_cf346")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_uhpk8"]
+script = ExtResource("3_cf346")
+target_id = 36
+
+[sub_resource type="Resource" id="Resource_x42pw"]
+script = ExtResource("4_w0mxd")
+all_of = Array[ExtResource("3_cf346")]([SubResource("Resource_udio4"), SubResource("Resource_uhpk8")])
+
+[sub_resource type="Resource" id="Resource_tiin1"]
+script = ExtResource("1_jlnsw")
+resource_id = 1
+amount = 1800.0
+
+[sub_resource type="Resource" id="Resource_xkg8h"]
+script = ExtResource("1_jlnsw")
+resource_id = 11
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_n4m3b"]
+script = ExtResource("2_ofmjm")
+entries = Array[ExtResource("1_jlnsw")]([SubResource("Resource_tiin1"), SubResource("Resource_xkg8h")])
+
+[resource]
+script = ExtResource("5_ww0u4")
+id = 260
+display_name = "Torii"
+type = 5
+width = 4
+xp_value = 8000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_hejo5")
+sell = SubResource("Resource_n4m3b")
+prerequisites = SubResource("Resource_x42pw")
+upgrade_of_id = 0
+info_text = "A very cool gate, imported straight from Japan. The Torii grants a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

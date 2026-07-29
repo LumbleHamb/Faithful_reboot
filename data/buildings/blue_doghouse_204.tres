@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_kgmx1"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_2kc7t"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_26j3p"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_jfdgg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_bn5tq"]
+
+[sub_resource type="Resource" id="Resource_wx2hy"]
+script = ExtResource("1_kgmx1")
+resource_id = 0
+amount = 70.0
+
+[sub_resource type="Resource" id="Resource_k8eim"]
+script = ExtResource("2_2kc7t")
+entries = Array[ExtResource("1_kgmx1")]([SubResource("Resource_wx2hy")])
+
+[sub_resource type="Resource" id="Resource_g8nsx"]
+script = ExtResource("3_26j3p")
+target_id = 15
+
+[sub_resource type="Resource" id="Resource_u3rs5"]
+script = ExtResource("4_jfdgg")
+all_of = Array[ExtResource("3_26j3p")]([SubResource("Resource_g8nsx")])
+
+[sub_resource type="Resource" id="Resource_26igd"]
+script = ExtResource("1_kgmx1")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_wm3ky"]
+script = ExtResource("2_2kc7t")
+entries = Array[ExtResource("1_kgmx1")]([SubResource("Resource_26igd")])
+
+[resource]
+script = ExtResource("5_bn5tq")
+id = 204
+display_name = "Blue Doghouse"
+type = 5
+width = 5
+height = 4
+xp_value = 3500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_k8eim")
+sell = SubResource("Resource_wm3ky")
+prerequisites = SubResource("Resource_u3rs5")
+upgrade_of_id = 0
+info_text = "Man's Best Friend.  The Doghouse grants a bonus to the XP and Gold received from all Shops by 4.25% (500% Maximum)"

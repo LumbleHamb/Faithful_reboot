@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_4t5px"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cu3re"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_j1h3k"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_j4ynd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_xofp0"]
+
+[sub_resource type="Resource" id="Resource_7hm0u"]
+script = ExtResource("1_4t5px")
+resource_id = 1
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_0k144"]
+script = ExtResource("2_cu3re")
+entries = Array[ExtResource("1_4t5px")]([SubResource("Resource_7hm0u")])
+
+[sub_resource type="Resource" id="Resource_wvbij"]
+script = ExtResource("3_j1h3k")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_wy0vo"]
+script = ExtResource("4_j4ynd")
+all_of = Array[ExtResource("3_j1h3k")]([SubResource("Resource_wvbij")])
+
+[sub_resource type="Resource" id="Resource_lxfad"]
+script = ExtResource("1_4t5px")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_rtbxu"]
+script = ExtResource("2_cu3re")
+entries = Array[ExtResource("1_4t5px")]([SubResource("Resource_lxfad")])
+
+[resource]
+script = ExtResource("5_xofp0")
+id = 295
+display_name = "Turkey"
+type = 5
+width = 3
+height = 3
+xp_value = 2500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_0k144")
+sell = SubResource("Resource_rtbxu")
+prerequisites = SubResource("Resource_wy0vo")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Gobble, gobble! The Turkey grants a bonus to the XP and Gold received from all Shops by 1%. (500% Maximum)"

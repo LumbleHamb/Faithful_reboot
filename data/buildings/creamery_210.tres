@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_anrpq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_k4wf7"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_rgnqq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_gnie7"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_cd658"]
+
+[sub_resource type="Resource" id="Resource_l8q5c"]
+script = ExtResource("1_anrpq")
+resource_id = 1
+amount = 6000.0
+
+[sub_resource type="Resource" id="Resource_y6uv6"]
+script = ExtResource("1_anrpq")
+resource_id = 11
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_e48tk"]
+script = ExtResource("1_anrpq")
+resource_id = 21
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_8ckvb"]
+script = ExtResource("2_k4wf7")
+entries = Array[ExtResource("1_anrpq")]([SubResource("Resource_l8q5c"), SubResource("Resource_y6uv6"), SubResource("Resource_e48tk")])
+
+[sub_resource type="Resource" id="Resource_eccot"]
+script = ExtResource("3_rgnqq")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_qyf65"]
+script = ExtResource("3_rgnqq")
+target_id = 34
+
+[sub_resource type="Resource" id="Resource_cl1jh"]
+script = ExtResource("4_gnie7")
+all_of = Array[ExtResource("3_rgnqq")]([SubResource("Resource_eccot"), SubResource("Resource_qyf65")])
+
+[sub_resource type="Resource" id="Resource_l55n2"]
+script = ExtResource("1_anrpq")
+resource_id = 1
+amount = 600.0
+
+[sub_resource type="Resource" id="Resource_npxdi"]
+script = ExtResource("1_anrpq")
+resource_id = 11
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_fyxik"]
+script = ExtResource("1_anrpq")
+resource_id = 21
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_hvlot"]
+script = ExtResource("2_k4wf7")
+entries = Array[ExtResource("1_anrpq")]([SubResource("Resource_l55n2"), SubResource("Resource_npxdi"), SubResource("Resource_fyxik")])
+
+[resource]
+script = ExtResource("5_cd658")
+id = 210
+display_name = "Creamery"
+type = 2
+category = "shop"
+width = 6
+height = 8
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_8ckvb")
+sell = SubResource("Resource_hvlot")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_cl1jh")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([75, 74, 77, 78, 76])
+info_text = "Use the Creamery to complete jobs using Wheat."
+description_text = "Makes milky goodness for sale"

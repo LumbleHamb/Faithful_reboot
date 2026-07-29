@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_r5b34"]
+
+[resource]
+script = ExtResource("1_r5b34")
+id = 63
+kind = 1
+display_name = "The Merchant of Nations"
+time_seconds = 36000.0
+input_cost = {
+1: 900.0
+}
+reward_xp = 2300.0
+hurry_cost = 3.0
+hurry_interval_seconds = 3600.0
+compatible_lands = Array[String](["Vanilla"])

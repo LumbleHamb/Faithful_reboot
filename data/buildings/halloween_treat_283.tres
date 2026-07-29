@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_xgtrp"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_hh4g8"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_pw5ee"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_wte3a"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uydy5"]
+
+[sub_resource type="Resource" id="Resource_gom31"]
+script = ExtResource("1_xgtrp")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_d72ha"]
+script = ExtResource("2_hh4g8")
+entries = Array[ExtResource("1_xgtrp")]([SubResource("Resource_gom31")])
+
+[sub_resource type="Resource" id="Resource_wmx3m"]
+script = ExtResource("3_pw5ee")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_okv8d"]
+script = ExtResource("4_wte3a")
+all_of = Array[ExtResource("3_pw5ee")]([SubResource("Resource_wmx3m")])
+
+[sub_resource type="Resource" id="Resource_ehii7"]
+script = ExtResource("1_xgtrp")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_w87bn"]
+script = ExtResource("2_hh4g8")
+entries = Array[ExtResource("1_xgtrp")]([SubResource("Resource_ehii7")])
+
+[resource]
+script = ExtResource("5_uydy5")
+id = 283
+display_name = "Halloween Treat"
+type = 8
+width = 2
+height = 2
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_d72ha")
+sell = SubResource("Resource_w87bn")
+prerequisites = SubResource("Resource_okv8d")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Trick or treat!"

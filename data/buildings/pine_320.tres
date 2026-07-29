@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_b4074"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_4m01g"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_8ds7v"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_2wl0w"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_mk871"]
+
+[sub_resource type="Resource" id="Resource_ylrl5"]
+script = ExtResource("1_b4074")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_qx2xk"]
+script = ExtResource("2_4m01g")
+entries = Array[ExtResource("1_b4074")]([SubResource("Resource_ylrl5")])
+
+[sub_resource type="Resource" id="Resource_1w4fr"]
+script = ExtResource("3_8ds7v")
+target_id = 24
+
+[sub_resource type="Resource" id="Resource_8fkfn"]
+script = ExtResource("4_2wl0w")
+all_of = Array[ExtResource("3_8ds7v")]([SubResource("Resource_1w4fr")])
+
+[sub_resource type="Resource" id="Resource_m7kda"]
+script = ExtResource("1_b4074")
+resource_id = 10
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_fljxw"]
+script = ExtResource("2_4m01g")
+entries = Array[ExtResource("1_b4074")]([SubResource("Resource_m7kda")])
+
+[resource]
+script = ExtResource("5_mk871")
+id = 320
+display_name = "Pine"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_qx2xk")
+sell = SubResource("Resource_fljxw")
+prerequisites = SubResource("Resource_8fkfn")
+upgrade_of_id = 0

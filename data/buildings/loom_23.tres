@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_v32e6"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_t8ctp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ruqs1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lhy8j"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_jkkac"]
+
+[sub_resource type="Resource" id="Resource_7xhsb"]
+script = ExtResource("1_v32e6")
+resource_id = 1
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_qemwm"]
+script = ExtResource("1_v32e6")
+resource_id = 11
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_vx4tf"]
+script = ExtResource("1_v32e6")
+resource_id = 21
+amount = 900.0
+
+[sub_resource type="Resource" id="Resource_3tl0q"]
+script = ExtResource("1_v32e6")
+resource_id = 50
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_1fb66"]
+script = ExtResource("2_t8ctp")
+entries = Array[ExtResource("1_v32e6")]([SubResource("Resource_7xhsb"), SubResource("Resource_qemwm"), SubResource("Resource_vx4tf"), SubResource("Resource_3tl0q")])
+
+[sub_resource type="Resource" id="Resource_hwc7o"]
+script = ExtResource("3_ruqs1")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_fodht"]
+script = ExtResource("3_ruqs1")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_6jmeh"]
+script = ExtResource("4_lhy8j")
+all_of = Array[ExtResource("3_ruqs1")]([SubResource("Resource_hwc7o"), SubResource("Resource_fodht")])
+
+[sub_resource type="Resource" id="Resource_kb7u7"]
+script = ExtResource("1_v32e6")
+resource_id = 1
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_2ej8y"]
+script = ExtResource("1_v32e6")
+resource_id = 11
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_t3xye"]
+script = ExtResource("1_v32e6")
+resource_id = 21
+amount = 90.0
+
+[sub_resource type="Resource" id="Resource_1mdc4"]
+script = ExtResource("1_v32e6")
+resource_id = 50
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_sngb8"]
+script = ExtResource("2_t8ctp")
+entries = Array[ExtResource("1_v32e6")]([SubResource("Resource_kb7u7"), SubResource("Resource_2ej8y"), SubResource("Resource_t3xye"), SubResource("Resource_1mdc4")])
+
+[resource]
+script = ExtResource("5_jkkac")
+id = 23
+display_name = "Loom"
+width = 7
+height = 5
+xp_value = 4250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_1fb66")
+sell = SubResource("Resource_sngb8")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_6jmeh")
+upgrade_of_id = 0
+gather_recipe_id = 50023
+shop_recipe_ids = Array[int]([27])
+info_text = "The Loom weaves Wool into Cloth.  Cloth is used for more advanced buildings and jobs in the Tailor Shop."
+description_text = "Weaves Wool into Cloth"

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_7nu6q"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qifw1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_f52ft"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_sfje7"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_52461"]
+
+[sub_resource type="Resource" id="Resource_x4fh0"]
+script = ExtResource("1_7nu6q")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_lyltg"]
+script = ExtResource("2_qifw1")
+entries = Array[ExtResource("1_7nu6q")]([SubResource("Resource_x4fh0")])
+
+[sub_resource type="Resource" id="Resource_0tnmf"]
+script = ExtResource("3_f52ft")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_apkbq"]
+script = ExtResource("4_sfje7")
+all_of = Array[ExtResource("3_f52ft")]([SubResource("Resource_0tnmf")])
+
+[sub_resource type="Resource" id="Resource_pyj5v"]
+script = ExtResource("1_7nu6q")
+resource_id = 10
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_w6md6"]
+script = ExtResource("2_qifw1")
+entries = Array[ExtResource("1_7nu6q")]([SubResource("Resource_pyj5v")])
+
+[resource]
+script = ExtResource("5_52461")
+id = 319
+display_name = "Ash"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_lyltg")
+sell = SubResource("Resource_w6md6")
+prerequisites = SubResource("Resource_apkbq")
+upgrade_of_id = 0

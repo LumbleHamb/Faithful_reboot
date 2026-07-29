@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_84u7c"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7oiy0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_d6jxx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_c5sv4"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_rdnsr"]
+
+[sub_resource type="Resource" id="Resource_nwech"]
+script = ExtResource("1_84u7c")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_fk6hv"]
+script = ExtResource("2_7oiy0")
+entries = Array[ExtResource("1_84u7c")]([SubResource("Resource_nwech")])
+
+[sub_resource type="Resource" id="Resource_mg6y6"]
+script = ExtResource("3_d6jxx")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_vdc1u"]
+script = ExtResource("4_c5sv4")
+all_of = Array[ExtResource("3_d6jxx")]([SubResource("Resource_mg6y6")])
+
+[sub_resource type="Resource" id="Resource_bexbj"]
+script = ExtResource("1_84u7c")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_j6et6"]
+script = ExtResource("2_7oiy0")
+entries = Array[ExtResource("1_84u7c")]([SubResource("Resource_bexbj")])
+
+[resource]
+script = ExtResource("5_rdnsr")
+id = 322
+display_name = "Cottonwood"
+type = 5
+width = 2
+height = 2
+xp_value = 1250.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_fk6hv")
+sell = SubResource("Resource_j6et6")
+prerequisites = SubResource("Resource_vdc1u")
+upgrade_of_id = 0

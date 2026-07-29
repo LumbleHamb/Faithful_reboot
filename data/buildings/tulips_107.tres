@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_spmmx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_1osbx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2sata"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_qrbjm"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_5pfvt"]
+
+[sub_resource type="Resource" id="Resource_5kpeg"]
+script = ExtResource("1_spmmx")
+resource_id = 1
+amount = 180.0
+
+[sub_resource type="Resource" id="Resource_ttgsb"]
+script = ExtResource("2_1osbx")
+entries = Array[ExtResource("1_spmmx")]([SubResource("Resource_5kpeg")])
+
+[sub_resource type="Resource" id="Resource_exnoq"]
+script = ExtResource("3_2sata")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_jgd66"]
+script = ExtResource("4_qrbjm")
+all_of = Array[ExtResource("3_2sata")]([SubResource("Resource_exnoq")])
+
+[sub_resource type="Resource" id="Resource_2in2y"]
+script = ExtResource("1_spmmx")
+resource_id = 1
+amount = 18.0
+
+[sub_resource type="Resource" id="Resource_bmopv"]
+script = ExtResource("2_1osbx")
+entries = Array[ExtResource("1_spmmx")]([SubResource("Resource_2in2y")])
+
+[resource]
+script = ExtResource("5_5pfvt")
+id = 107
+display_name = "Tulips"
+type = 5
+width = 2
+height = 2
+xp_value = 90.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ttgsb")
+sell = SubResource("Resource_bmopv")
+prerequisites = SubResource("Resource_jgd66")
+upgrade_of_id = 0

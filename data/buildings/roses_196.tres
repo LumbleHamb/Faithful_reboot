@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_yw2ov"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ekgl0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4w6ca"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_klmf0"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_l5v6a"]
+
+[sub_resource type="Resource" id="Resource_xo7vr"]
+script = ExtResource("1_yw2ov")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_c47ht"]
+script = ExtResource("2_ekgl0")
+entries = Array[ExtResource("1_yw2ov")]([SubResource("Resource_xo7vr")])
+
+[sub_resource type="Resource" id="Resource_qnmom"]
+script = ExtResource("3_4w6ca")
+target_id = 29
+
+[sub_resource type="Resource" id="Resource_bfptf"]
+script = ExtResource("4_klmf0")
+all_of = Array[ExtResource("3_4w6ca")]([SubResource("Resource_qnmom")])
+
+[sub_resource type="Resource" id="Resource_8kw53"]
+script = ExtResource("1_yw2ov")
+resource_id = 1
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_jma8q"]
+script = ExtResource("2_ekgl0")
+entries = Array[ExtResource("1_yw2ov")]([SubResource("Resource_8kw53")])
+
+[resource]
+script = ExtResource("5_l5v6a")
+id = 196
+display_name = "Roses"
+type = 5
+width = 2
+height = 2
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_c47ht")
+sell = SubResource("Resource_jma8q")
+prerequisites = SubResource("Resource_bfptf")
+upgrade_of_id = 0
+info_text = "Roses grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

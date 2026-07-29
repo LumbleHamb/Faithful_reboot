@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_5gsvb"]
+
+[resource]
+script = ExtResource("1_5gsvb")
+id = 160
+kind = 1
+display_name = "Barrel Rings"
+time_seconds = 43200.0
+input_cost = {
+1: 325.0
+}
+reward_xp = 490.0
+reward = {
+1: 725.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 12343.0
+compatible_lands = Array[String](["Frontier"])

@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_56ns0"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_eptea"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qsjpj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_kwfs5"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_yv0s5"]
+
+[sub_resource type="Resource" id="Resource_0dan5"]
+script = ExtResource("1_56ns0")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_8orjd"]
+script = ExtResource("1_56ns0")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_nkeu7"]
+script = ExtResource("2_eptea")
+entries = Array[ExtResource("1_56ns0")]([SubResource("Resource_0dan5"), SubResource("Resource_8orjd")])
+
+[sub_resource type="Resource" id="Resource_3fg1g"]
+script = ExtResource("3_qsjpj")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_4sbkh"]
+script = ExtResource("4_kwfs5")
+all_of = Array[ExtResource("3_qsjpj")]([SubResource("Resource_3fg1g")])
+
+[sub_resource type="Resource" id="Resource_wa8jd"]
+script = ExtResource("1_56ns0")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_kdvdu"]
+script = ExtResource("1_56ns0")
+resource_id = 10
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_oicey"]
+script = ExtResource("2_eptea")
+entries = Array[ExtResource("1_56ns0")]([SubResource("Resource_wa8jd"), SubResource("Resource_kdvdu")])
+
+[resource]
+script = ExtResource("5_yv0s5")
+id = 267
+display_name = "Iron Fence"
+type = 5
+height = 4
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_nkeu7")
+sell = SubResource("Resource_oicey")
+prerequisites = SubResource("Resource_4sbkh")
+upgrade_of_id = 0

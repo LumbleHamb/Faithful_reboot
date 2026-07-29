@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_yymko"]
+
+[resource]
+script = ExtResource("1_yymko")
+id = 114
+kind = 1
+display_name = "Juggling 101"
+time_seconds = 43200.0
+input_cost = {
+1: 400.0
+}
+reward_xp = 1150.0
+hurry_cost = 3.0
+hurry_interval_seconds = 12343.0
+compatible_lands = Array[String](["Vanilla"])

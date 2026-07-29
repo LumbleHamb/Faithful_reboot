@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_gpb5s"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_bqxon"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5jjt8"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_1fxqu"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_trarf"]
+
+[sub_resource type="Resource" id="Resource_kwu73"]
+script = ExtResource("1_gpb5s")
+resource_id = 1
+amount = 230.0
+
+[sub_resource type="Resource" id="Resource_0cf8p"]
+script = ExtResource("1_gpb5s")
+resource_id = 20
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_45kap"]
+script = ExtResource("2_bqxon")
+entries = Array[ExtResource("1_gpb5s")]([SubResource("Resource_kwu73"), SubResource("Resource_0cf8p")])
+
+[sub_resource type="Resource" id="Resource_qu8vd"]
+script = ExtResource("3_5jjt8")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_mtr5t"]
+script = ExtResource("4_1fxqu")
+all_of = Array[ExtResource("3_5jjt8")]([SubResource("Resource_qu8vd")])
+
+[sub_resource type="Resource" id="Resource_p1bka"]
+script = ExtResource("1_gpb5s")
+resource_id = 1
+amount = 23.0
+
+[sub_resource type="Resource" id="Resource_20ob4"]
+script = ExtResource("1_gpb5s")
+resource_id = 20
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_hrcea"]
+script = ExtResource("2_bqxon")
+entries = Array[ExtResource("1_gpb5s")]([SubResource("Resource_p1bka"), SubResource("Resource_20ob4")])
+
+[resource]
+script = ExtResource("5_trarf")
+id = 146
+display_name = "Bird Bath"
+type = 5
+width = 2
+height = 2
+xp_value = 150.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_45kap")
+sell = SubResource("Resource_hrcea")
+prerequisites = SubResource("Resource_mtr5t")
+upgrade_of_id = 0

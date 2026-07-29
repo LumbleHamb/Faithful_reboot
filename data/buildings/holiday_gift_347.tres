@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_j6y34"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_k0k1i"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_gedml"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_jp1tr"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_4hd8s"]
+
+[sub_resource type="Resource" id="Resource_elrxs"]
+script = ExtResource("1_j6y34")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_2swck"]
+script = ExtResource("2_k0k1i")
+entries = Array[ExtResource("1_j6y34")]([SubResource("Resource_elrxs")])
+
+[sub_resource type="Resource" id="Resource_vovia"]
+script = ExtResource("3_gedml")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_7ksn7"]
+script = ExtResource("4_jp1tr")
+all_of = Array[ExtResource("3_gedml")]([SubResource("Resource_vovia")])
+
+[sub_resource type="Resource" id="Resource_hbs4n"]
+script = ExtResource("1_j6y34")
+resource_id = 1
+
+[sub_resource type="Resource" id="Resource_4p1af"]
+script = ExtResource("2_k0k1i")
+entries = Array[ExtResource("1_j6y34")]([SubResource("Resource_hbs4n")])
+
+[resource]
+script = ExtResource("5_4hd8s")
+id = 347
+display_name = "Holiday Gift"
+type = 8
+width = 2
+height = 2
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_2swck")
+sell = SubResource("Resource_4p1af")
+prerequisites = SubResource("Resource_7ksn7")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Hoppy Holidays! The Holiday Gift will be ready to open on December 25th, or you can choose to hurry it and receive it early! The Holiday Gift grants a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

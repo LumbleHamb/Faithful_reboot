@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_afpbx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_8dlr2"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_c7g48"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_nlk5x"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_xyjlc"]
+
+[sub_resource type="Resource" id="Resource_hjyoo"]
+script = ExtResource("1_afpbx")
+resource_id = 1
+amount = 30000.0
+
+[sub_resource type="Resource" id="Resource_k0a1o"]
+script = ExtResource("2_8dlr2")
+entries = Array[ExtResource("1_afpbx")]([SubResource("Resource_hjyoo")])
+
+[sub_resource type="Resource" id="Resource_lles2"]
+script = ExtResource("3_c7g48")
+target_id = 42
+
+[sub_resource type="Resource" id="Resource_h1s6m"]
+script = ExtResource("4_nlk5x")
+all_of = Array[ExtResource("3_c7g48")]([SubResource("Resource_lles2")])
+
+[sub_resource type="Resource" id="Resource_wbsww"]
+script = ExtResource("1_afpbx")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_wxwsp"]
+script = ExtResource("2_8dlr2")
+entries = Array[ExtResource("1_afpbx")]([SubResource("Resource_wbsww")])
+
+[resource]
+script = ExtResource("5_xyjlc")
+id = 227
+display_name = "Spiral Topiary"
+type = 5
+width = 2
+height = 2
+xp_value = 10000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_k0a1o")
+sell = SubResource("Resource_wxwsp")
+prerequisites = SubResource("Resource_h1s6m")
+upgrade_of_id = 0
+info_text = "Spiral Topiaries grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

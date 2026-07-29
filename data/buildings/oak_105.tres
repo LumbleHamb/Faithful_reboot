@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_co6mn"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_6it1q"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_1b1ny"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_r6l5p"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_rxa7k"]
+
+[sub_resource type="Resource" id="Resource_27ehg"]
+script = ExtResource("1_co6mn")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_xtcvl"]
+script = ExtResource("2_6it1q")
+entries = Array[ExtResource("1_co6mn")]([SubResource("Resource_27ehg")])
+
+[sub_resource type="Resource" id="Resource_gddgs"]
+script = ExtResource("3_1b1ny")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_ku4sc"]
+script = ExtResource("4_r6l5p")
+all_of = Array[ExtResource("3_1b1ny")]([SubResource("Resource_gddgs")])
+
+[sub_resource type="Resource" id="Resource_7canx"]
+script = ExtResource("1_co6mn")
+resource_id = 10
+amount = 44.0
+
+[sub_resource type="Resource" id="Resource_v1hrr"]
+script = ExtResource("2_6it1q")
+entries = Array[ExtResource("1_co6mn")]([SubResource("Resource_7canx")])
+
+[resource]
+script = ExtResource("5_rxa7k")
+id = 105
+display_name = "Oak"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_xtcvl")
+sell = SubResource("Resource_v1hrr")
+prerequisites = SubResource("Resource_ku4sc")
+upgrade_of_id = 0
+info_text = "Oak Trees grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)"

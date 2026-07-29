@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_pisc8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_5xx7m"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_65joh"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_176ly"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vf1wq"]
+
+[sub_resource type="Resource" id="Resource_uk28o"]
+script = ExtResource("1_pisc8")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_wihls"]
+script = ExtResource("2_5xx7m")
+entries = Array[ExtResource("1_pisc8")]([SubResource("Resource_uk28o")])
+
+[sub_resource type="Resource" id="Resource_x2imf"]
+script = ExtResource("3_65joh")
+target_id = 26
+
+[sub_resource type="Resource" id="Resource_gkxn3"]
+script = ExtResource("4_176ly")
+all_of = Array[ExtResource("3_65joh")]([SubResource("Resource_x2imf")])
+
+[sub_resource type="Resource" id="Resource_j7j8x"]
+script = ExtResource("1_pisc8")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_y144h"]
+script = ExtResource("2_5xx7m")
+entries = Array[ExtResource("1_pisc8")]([SubResource("Resource_j7j8x")])
+
+[resource]
+script = ExtResource("5_vf1wq")
+id = 323
+display_name = "Mountain Maple"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_wihls")
+sell = SubResource("Resource_y144h")
+prerequisites = SubResource("Resource_gkxn3")
+upgrade_of_id = 0
+info_text = "Mmm... maple syrup! Mountain Maples grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)"

@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_1nwsg"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_y1wem"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4v3uq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_t3g1c"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_n5yqn"]
+
+[sub_resource type="Resource" id="Resource_5ty51"]
+script = ExtResource("1_1nwsg")
+resource_id = 1
+amount = 10000.0
+
+[sub_resource type="Resource" id="Resource_mmdfm"]
+script = ExtResource("1_1nwsg")
+resource_id = 11
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_2dwh6"]
+script = ExtResource("1_1nwsg")
+resource_id = 21
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_c7dtx"]
+script = ExtResource("2_y1wem")
+entries = Array[ExtResource("1_1nwsg")]([SubResource("Resource_5ty51"), SubResource("Resource_mmdfm"), SubResource("Resource_2dwh6")])
+
+[sub_resource type="Resource" id="Resource_kyyu2"]
+script = ExtResource("3_4v3uq")
+target_id = 10
+
+[sub_resource type="Resource" id="Resource_sgu53"]
+script = ExtResource("3_4v3uq")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_mbuij"]
+script = ExtResource("4_t3g1c")
+all_of = Array[ExtResource("3_4v3uq")]([SubResource("Resource_kyyu2"), SubResource("Resource_sgu53")])
+
+[sub_resource type="Resource" id="Resource_vlsdl"]
+script = ExtResource("2_y1wem")
+
+[resource]
+script = ExtResource("5_n5yqn")
+id = 4
+display_name = "Fort"
+type = 0
+width = 14
+height = 14
+xp_value = 2500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_c7dtx")
+sell = SubResource("Resource_vlsdl")
+sellable = false
+prerequisites = SubResource("Resource_mbuij")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The Fort is an upgrade to the Keep.  It allows you to build more advanced buildings."

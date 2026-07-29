@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_cp060"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_wkb5i"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2btb0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_voean"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fmiki"]
+
+[sub_resource type="Resource" id="Resource_k4ua0"]
+script = ExtResource("1_cp060")
+resource_id = 1
+amount = 260.0
+
+[sub_resource type="Resource" id="Resource_n2jrb"]
+script = ExtResource("2_wkb5i")
+entries = Array[ExtResource("1_cp060")]([SubResource("Resource_k4ua0")])
+
+[sub_resource type="Resource" id="Resource_vid7j"]
+script = ExtResource("3_2btb0")
+target_id = 17
+
+[sub_resource type="Resource" id="Resource_lt2sj"]
+script = ExtResource("4_voean")
+all_of = Array[ExtResource("3_2btb0")]([SubResource("Resource_vid7j")])
+
+[sub_resource type="Resource" id="Resource_mmavv"]
+script = ExtResource("1_cp060")
+resource_id = 1
+amount = 26.0
+
+[sub_resource type="Resource" id="Resource_kw0kl"]
+script = ExtResource("2_wkb5i")
+entries = Array[ExtResource("1_cp060")]([SubResource("Resource_mmavv")])
+
+[resource]
+script = ExtResource("5_fmiki")
+id = 130
+display_name = "Potted Lupins"
+type = 5
+width = 2
+height = 2
+xp_value = 130.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_n2jrb")
+sell = SubResource("Resource_kw0kl")
+prerequisites = SubResource("Resource_lt2sj")
+upgrade_of_id = 0

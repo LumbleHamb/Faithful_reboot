@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_to1iy"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vam3g"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_f0trv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_s7m60"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_debcw"]
+
+[sub_resource type="Resource" id="Resource_pf5df"]
+script = ExtResource("1_to1iy")
+resource_id = 1
+amount = 7500.0
+
+[sub_resource type="Resource" id="Resource_mivno"]
+script = ExtResource("1_to1iy")
+resource_id = 11
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_vbrxa"]
+script = ExtResource("1_to1iy")
+resource_id = 51
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_h5tlh"]
+script = ExtResource("2_vam3g")
+entries = Array[ExtResource("1_to1iy")]([SubResource("Resource_pf5df"), SubResource("Resource_mivno"), SubResource("Resource_vbrxa")])
+
+[sub_resource type="Resource" id="Resource_usum6"]
+script = ExtResource("3_f0trv")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_vdqkt"]
+script = ExtResource("3_f0trv")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_ubdok"]
+script = ExtResource("4_s7m60")
+all_of = Array[ExtResource("3_f0trv")]([SubResource("Resource_usum6"), SubResource("Resource_vdqkt")])
+
+[sub_resource type="Resource" id="Resource_d4i18"]
+script = ExtResource("1_to1iy")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_l64p2"]
+script = ExtResource("1_to1iy")
+resource_id = 11
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_h3lwq"]
+script = ExtResource("1_to1iy")
+resource_id = 51
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_m8j08"]
+script = ExtResource("2_vam3g")
+entries = Array[ExtResource("1_to1iy")]([SubResource("Resource_d4i18"), SubResource("Resource_l64p2"), SubResource("Resource_h3lwq")])
+
+[resource]
+script = ExtResource("5_debcw")
+id = 165
+display_name = "Book Shop"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 5250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_h5tlh")
+sell = SubResource("Resource_m8j08")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_ubdok")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([34, 35, 36, 37, 38])
+info_text = "Use the Book Shop to complete jobs using Wood and Cloth."
+description_text = "Creates works of literary genius."

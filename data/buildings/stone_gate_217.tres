@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_arqab"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_um72n"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_j3db5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_laeao"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_0iok4"]
+
+[sub_resource type="Resource" id="Resource_1xnpu"]
+script = ExtResource("1_arqab")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_yupy8"]
+script = ExtResource("1_arqab")
+resource_id = 20
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_3er74"]
+script = ExtResource("2_um72n")
+entries = Array[ExtResource("1_arqab")]([SubResource("Resource_1xnpu"), SubResource("Resource_yupy8")])
+
+[sub_resource type="Resource" id="Resource_e8dmt"]
+script = ExtResource("3_j3db5")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_gnnfa"]
+script = ExtResource("4_laeao")
+all_of = Array[ExtResource("3_j3db5")]([SubResource("Resource_e8dmt")])
+
+[sub_resource type="Resource" id="Resource_c57iv"]
+script = ExtResource("1_arqab")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_u205w"]
+script = ExtResource("1_arqab")
+resource_id = 20
+amount = 4.0
+
+[sub_resource type="Resource" id="Resource_x7gnc"]
+script = ExtResource("2_um72n")
+entries = Array[ExtResource("1_arqab")]([SubResource("Resource_c57iv"), SubResource("Resource_u205w")])
+
+[resource]
+script = ExtResource("5_0iok4")
+id = 217
+display_name = "Stone Gate"
+type = 5
+height = 4
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_3er74")
+sell = SubResource("Resource_x7gnc")
+prerequisites = SubResource("Resource_gnnfa")
+upgrade_of_id = 0

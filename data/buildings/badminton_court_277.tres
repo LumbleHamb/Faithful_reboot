@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5x25l"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7sgf0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_shhc3"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_4fsfw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_utwr5"]
+
+[sub_resource type="Resource" id="Resource_hfd3k"]
+script = ExtResource("1_5x25l")
+resource_id = 0
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_nndg5"]
+script = ExtResource("2_7sgf0")
+entries = Array[ExtResource("1_5x25l")]([SubResource("Resource_hfd3k")])
+
+[sub_resource type="Resource" id="Resource_r1a5h"]
+script = ExtResource("3_shhc3")
+target_id = 55
+
+[sub_resource type="Resource" id="Resource_4bem6"]
+script = ExtResource("3_shhc3")
+kind = 1
+target_id = 221
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_oeyx0"]
+script = ExtResource("4_4fsfw")
+all_of = Array[ExtResource("3_shhc3")]([SubResource("Resource_r1a5h"), SubResource("Resource_4bem6")])
+
+[sub_resource type="Resource" id="Resource_bsrtc"]
+script = ExtResource("1_5x25l")
+resource_id = 1
+amount = 1950.0
+
+[sub_resource type="Resource" id="Resource_b8vds"]
+script = ExtResource("1_5x25l")
+resource_id = 11
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_ghnpo"]
+script = ExtResource("2_7sgf0")
+entries = Array[ExtResource("1_5x25l")]([SubResource("Resource_bsrtc"), SubResource("Resource_b8vds")])
+
+[resource]
+script = ExtResource("5_utwr5")
+id = 277
+display_name = "Badminton Court"
+type = 5
+width = 9
+height = 5
+xp_value = 9750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_nndg5")
+sell = SubResource("Resource_ghnpo")
+prerequisites = SubResource("Resource_oeyx0")
+upgrade_of_id = 0
+info_text = "Tennis? No. Volleyball? Nope. Badminton? Yes! Badminton Court grants a bonus to the XP and Gold received from all Shops by 10% (500% Maximum)"

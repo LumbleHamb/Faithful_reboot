@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_opund"]
+
+[resource]
+script = ExtResource("1_opund")
+id = 96
+kind = 1
+display_name = "Emerald Ring"
+time_seconds = 28800.0
+input_cost = {
+20: 525.0
+}
+reward_xp = 575.0
+reward = {
+1: 650.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 11520.0
+compatible_lands = Array[String](["Vanilla"])

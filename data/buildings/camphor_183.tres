@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ie43q"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_45iae"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_87tgp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ec4os"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_8jc7k"]
+
+[sub_resource type="Resource" id="Resource_2i11f"]
+script = ExtResource("1_ie43q")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_1l5pv"]
+script = ExtResource("2_45iae")
+entries = Array[ExtResource("1_ie43q")]([SubResource("Resource_2i11f")])
+
+[sub_resource type="Resource" id="Resource_hdd5y"]
+script = ExtResource("3_87tgp")
+target_id = 19
+
+[sub_resource type="Resource" id="Resource_qguq7"]
+script = ExtResource("4_ec4os")
+all_of = Array[ExtResource("3_87tgp")]([SubResource("Resource_hdd5y")])
+
+[sub_resource type="Resource" id="Resource_56bce"]
+script = ExtResource("1_ie43q")
+resource_id = 10
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_sc8fr"]
+script = ExtResource("2_45iae")
+entries = Array[ExtResource("1_ie43q")]([SubResource("Resource_56bce")])
+
+[resource]
+script = ExtResource("5_8jc7k")
+id = 183
+display_name = "Camphor"
+type = 5
+width = 2
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_1l5pv")
+sell = SubResource("Resource_sc8fr")
+prerequisites = SubResource("Resource_qguq7")
+upgrade_of_id = 0
+info_text = "Camphor Trees grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

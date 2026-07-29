@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_hv36v"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7bve6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_dqt0e"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7mu6j"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_e07po"]
+
+[sub_resource type="Resource" id="Resource_4rlla"]
+script = ExtResource("1_hv36v")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_8pqv8"]
+script = ExtResource("1_hv36v")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_qyamf"]
+script = ExtResource("1_hv36v")
+resource_id = 20
+amount = 1250.0
+
+[sub_resource type="Resource" id="Resource_kfn0v"]
+script = ExtResource("2_7bve6")
+entries = Array[ExtResource("1_hv36v")]([SubResource("Resource_4rlla"), SubResource("Resource_8pqv8"), SubResource("Resource_qyamf")])
+
+[sub_resource type="Resource" id="Resource_m75yl"]
+script = ExtResource("3_dqt0e")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_gv1ln"]
+script = ExtResource("3_dqt0e")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_5bj7c"]
+script = ExtResource("4_7mu6j")
+all_of = Array[ExtResource("3_dqt0e")]([SubResource("Resource_m75yl"), SubResource("Resource_gv1ln")])
+
+[sub_resource type="Resource" id="Resource_7vyct"]
+script = ExtResource("1_hv36v")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_8tuhb"]
+script = ExtResource("1_hv36v")
+resource_id = 11
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_il0j7"]
+script = ExtResource("1_hv36v")
+resource_id = 20
+amount = 125.0
+
+[sub_resource type="Resource" id="Resource_cya4x"]
+script = ExtResource("2_7bve6")
+entries = Array[ExtResource("1_hv36v")]([SubResource("Resource_7vyct"), SubResource("Resource_8tuhb"), SubResource("Resource_il0j7")])
+
+[resource]
+script = ExtResource("5_e07po")
+id = 17
+display_name = "Stone Cutter"
+width = 7
+height = 5
+xp_value = 2750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_kfn0v")
+sell = SubResource("Resource_cya4x")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_5bj7c")
+upgrade_of_id = 0
+gather_recipe_id = 50017
+shop_recipe_ids = Array[int]([26])
+info_text = "The Stone Cutter shapes Rock into Cut Stone.  Cut Stone is used for more advanced buildings and jobs in the Sculptor Shop."
+description_text = "Shapes Rock into Cut Stone"

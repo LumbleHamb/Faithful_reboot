@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_0iox0"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_3yrqi"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_8ym21"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_gjamh"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_r7whb"]
+
+[sub_resource type="Resource" id="Resource_8dsbq"]
+script = ExtResource("1_0iox0")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_pcy72"]
+script = ExtResource("2_3yrqi")
+entries = Array[ExtResource("1_0iox0")]([SubResource("Resource_8dsbq")])
+
+[sub_resource type="Resource" id="Resource_0irqt"]
+script = ExtResource("3_8ym21")
+target_id = 21
+
+[sub_resource type="Resource" id="Resource_5koyk"]
+script = ExtResource("4_gjamh")
+all_of = Array[ExtResource("3_8ym21")]([SubResource("Resource_0irqt")])
+
+[sub_resource type="Resource" id="Resource_34q16"]
+script = ExtResource("1_0iox0")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_ldpeg"]
+script = ExtResource("2_3yrqi")
+entries = Array[ExtResource("1_0iox0")]([SubResource("Resource_34q16")])
+
+[resource]
+script = ExtResource("5_r7whb")
+id = 190
+display_name = "Lilacs"
+type = 5
+width = 2
+height = 2
+xp_value = 1000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_pcy72")
+sell = SubResource("Resource_ldpeg")
+prerequisites = SubResource("Resource_5koyk")
+upgrade_of_id = 0
+info_text = "Lilacs grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_vlotr"]
+
+[resource]
+script = ExtResource("1_vlotr")
+id = 157
+kind = 1
+display_name = "Hammer"
+time_seconds = 600.0
+input_cost = {
+1: 25.0,
+10: 20.0
+}
+reward_xp = 60.0
+reward = {
+1: 80.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 600.0
+compatible_lands = Array[String](["Frontier"])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_8l244"]
+
+[resource]
+script = ExtResource("1_8l244")
+id = 30
+kind = 1
+display_name = "Malt"
+time_seconds = 43200.0
+input_cost = {
+40: 300.0
+}
+reward_xp = 400.0
+reward = {
+1: 485.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 12343.0
+compatible_lands = Array[String](["Vanilla"])

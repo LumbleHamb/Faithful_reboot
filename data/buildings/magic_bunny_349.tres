@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_i8mmi"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_1qfg4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_s4x7d"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7mvwk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_lcdls"]
+
+[sub_resource type="Resource" id="Resource_kf8hd"]
+script = ExtResource("1_i8mmi")
+resource_id = 0
+amount = 295.0
+
+[sub_resource type="Resource" id="Resource_p7nce"]
+script = ExtResource("2_1qfg4")
+entries = Array[ExtResource("1_i8mmi")]([SubResource("Resource_kf8hd")])
+
+[sub_resource type="Resource" id="Resource_aay58"]
+script = ExtResource("3_s4x7d")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_kmcb3"]
+script = ExtResource("4_7mvwk")
+all_of = Array[ExtResource("3_s4x7d")]([SubResource("Resource_aay58")])
+
+[sub_resource type="Resource" id="Resource_qlwfy"]
+script = ExtResource("1_i8mmi")
+resource_id = 1
+amount = 2950.0
+
+[sub_resource type="Resource" id="Resource_vlh0n"]
+script = ExtResource("2_1qfg4")
+entries = Array[ExtResource("1_i8mmi")]([SubResource("Resource_qlwfy")])
+
+[resource]
+script = ExtResource("5_lcdls")
+id = 349
+display_name = "Magic Bunny"
+type = 5
+width = 2
+height = 2
+xp_value = 2950.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_p7nce")
+sell = SubResource("Resource_vlh0n")
+prerequisites = SubResource("Resource_kmcb3")
+upgrade_of_id = 0
+info_text = "The Magic Bunny is best friends with the Magic Stallion! The Magic Bunny is so magical that she grants a bonus to the XP and Gold received from all Shops by 32.0%!! (500% Maximum)"

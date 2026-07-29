@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_8afpr"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_dx8fc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_2rjrq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8u1bw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tgag1"]
+
+[sub_resource type="Resource" id="Resource_douwa"]
+script = ExtResource("1_8afpr")
+resource_id = 1
+amount = 1200.0
+
+[sub_resource type="Resource" id="Resource_c753q"]
+script = ExtResource("1_8afpr")
+resource_id = 11
+amount = 300.0
+
+[sub_resource type="Resource" id="Resource_nviqi"]
+script = ExtResource("1_8afpr")
+resource_id = 20
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_ia2ws"]
+script = ExtResource("1_8afpr")
+resource_id = 50
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_52803"]
+script = ExtResource("2_dx8fc")
+entries = Array[ExtResource("1_8afpr")]([SubResource("Resource_douwa"), SubResource("Resource_c753q"), SubResource("Resource_nviqi"), SubResource("Resource_ia2ws")])
+
+[sub_resource type="Resource" id="Resource_7g5p6"]
+script = ExtResource("3_2rjrq")
+target_id = 8
+
+[sub_resource type="Resource" id="Resource_57p7s"]
+script = ExtResource("3_2rjrq")
+kind = 1
+target_id = 3
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_aausa"]
+script = ExtResource("4_8u1bw")
+all_of = Array[ExtResource("3_2rjrq")]([SubResource("Resource_7g5p6"), SubResource("Resource_57p7s")])
+
+[sub_resource type="Resource" id="Resource_1en81"]
+script = ExtResource("1_8afpr")
+resource_id = 1
+amount = 120.0
+
+[sub_resource type="Resource" id="Resource_sduaf"]
+script = ExtResource("1_8afpr")
+resource_id = 11
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_41dct"]
+script = ExtResource("1_8afpr")
+resource_id = 20
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_bfxre"]
+script = ExtResource("1_8afpr")
+resource_id = 50
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_3a1lm"]
+script = ExtResource("2_dx8fc")
+entries = Array[ExtResource("1_8afpr")]([SubResource("Resource_1en81"), SubResource("Resource_sduaf"), SubResource("Resource_41dct"), SubResource("Resource_bfxre")])
+
+[resource]
+script = ExtResource("5_tgag1")
+id = 272
+display_name = "Schoolhouse"
+type = 2
+width = 7
+height = 8
+xp_value = 1800.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_52803")
+sell = SubResource("Resource_3a1lm")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_aausa")
+upgrade_of_id = 0
+owned_limit = 1
+shop_recipe_ids = Array[int]([110, 111, 112, 113, 114])
+info_text = "Use the Schoolhouse to teach your villagers life skills and earn lots of Experience. Requires a Teacher."
+description_text = "Don't be a fool, stay in school!"

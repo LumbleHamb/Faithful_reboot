@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_weqcg"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_y5awt"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_y842y"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_p5vby"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_uubxv"]
+
+[sub_resource type="Resource" id="Resource_vt5a4"]
+script = ExtResource("2_y5awt")
+
+[sub_resource type="Resource" id="Resource_ipt3p"]
+script = ExtResource("3_y842y")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_21oes"]
+script = ExtResource("4_p5vby")
+all_of = Array[ExtResource("3_y842y")]([SubResource("Resource_ipt3p")])
+
+[sub_resource type="Resource" id="Resource_js3s5"]
+script = ExtResource("1_weqcg")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_c4jdq"]
+script = ExtResource("2_y5awt")
+entries = Array[ExtResource("1_weqcg")]([SubResource("Resource_js3s5")])
+
+[resource]
+script = ExtResource("5_uubxv")
+id = 148
+display_name = "Pond"
+type = 5
+width = 5
+height = 8
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_vt5a4")
+sell = SubResource("Resource_c4jdq")
+prerequisites = SubResource("Resource_21oes")
+upgrade_of_id = 0
+info_text = "The Pond is acquired with Z2Points, earned by playing Z2Live games, and grants a bonus to the XP and Gold received from all Shops by 2.25% (500% Maximum)"

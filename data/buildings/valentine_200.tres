@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_l7a7n"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_pqofq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_taxt1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_srvbw"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_pq1kw"]
+
+[sub_resource type="Resource" id="Resource_dsx20"]
+script = ExtResource("1_l7a7n")
+resource_id = 1
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_kfrmi"]
+script = ExtResource("2_pqofq")
+entries = Array[ExtResource("1_l7a7n")]([SubResource("Resource_dsx20")])
+
+[sub_resource type="Resource" id="Resource_p2cew"]
+script = ExtResource("3_taxt1")
+target_id = 3
+
+[sub_resource type="Resource" id="Resource_tcnd0"]
+script = ExtResource("4_srvbw")
+all_of = Array[ExtResource("3_taxt1")]([SubResource("Resource_p2cew")])
+
+[sub_resource type="Resource" id="Resource_yhlcb"]
+script = ExtResource("1_l7a7n")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_u75v1"]
+script = ExtResource("2_pqofq")
+entries = Array[ExtResource("1_l7a7n")]([SubResource("Resource_yhlcb")])
+
+[resource]
+script = ExtResource("5_pq1kw")
+id = 200
+display_name = "Valentine"
+type = 8
+width = 3
+height = 3
+xp_value = 5.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_kfrmi")
+sell = SubResource("Resource_u75v1")
+build_time_seconds = 10.0
+prerequisites = SubResource("Resource_tcnd0")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Happy Valentine's Day from the Trade Nations team! Do not open before 2/14/2011! (Unless you're in a hurry...)"

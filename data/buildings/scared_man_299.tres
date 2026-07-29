@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_icbs4"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_nk2as"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_pwmtt"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_4g04r"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_cq0ww"]
+
+[sub_resource type="Resource" id="Resource_4on1a"]
+script = ExtResource("1_icbs4")
+resource_id = 1
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_klkgy"]
+script = ExtResource("2_nk2as")
+entries = Array[ExtResource("1_icbs4")]([SubResource("Resource_4on1a")])
+
+[sub_resource type="Resource" id="Resource_20n6r"]
+script = ExtResource("3_pwmtt")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_csuaq"]
+script = ExtResource("4_4g04r")
+all_of = Array[ExtResource("3_pwmtt")]([SubResource("Resource_20n6r")])
+
+[sub_resource type="Resource" id="Resource_y6rkq"]
+script = ExtResource("1_icbs4")
+resource_id = 1
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_t10nb"]
+script = ExtResource("2_nk2as")
+entries = Array[ExtResource("1_icbs4")]([SubResource("Resource_y6rkq")])
+
+[resource]
+script = ExtResource("5_cq0ww")
+id = 299
+display_name = "Scared Man"
+type = 5
+width = 2
+height = 2
+xp_value = 250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_klkgy")
+sell = SubResource("Resource_t10nb")
+prerequisites = SubResource("Resource_csuaq")
+upgrade_of_id = 0
+info_text = "This villager ain't afraid of no ghost! Wait, yes he is."

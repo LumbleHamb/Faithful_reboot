@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3t7aa"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vr2s4"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_eerqu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_qcmo3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_2opvn"]
+
+[sub_resource type="Resource" id="Resource_lg1hf"]
+script = ExtResource("1_3t7aa")
+resource_id = 1
+amount = 500000.0
+
+[sub_resource type="Resource" id="Resource_q633b"]
+script = ExtResource("1_3t7aa")
+resource_id = 21
+amount = 75000.0
+
+[sub_resource type="Resource" id="Resource_qj0t7"]
+script = ExtResource("1_3t7aa")
+resource_id = 11
+amount = 50000.0
+
+[sub_resource type="Resource" id="Resource_a128r"]
+script = ExtResource("1_3t7aa")
+resource_id = 51
+amount = 30000.0
+
+[sub_resource type="Resource" id="Resource_rdxtd"]
+script = ExtResource("2_vr2s4")
+entries = Array[ExtResource("1_3t7aa")]([SubResource("Resource_lg1hf"), SubResource("Resource_q633b"), SubResource("Resource_qj0t7"), SubResource("Resource_a128r")])
+
+[sub_resource type="Resource" id="Resource_5r6hf"]
+script = ExtResource("3_eerqu")
+target_id = 30
+
+[sub_resource type="Resource" id="Resource_i37v0"]
+script = ExtResource("3_eerqu")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_jcffu"]
+script = ExtResource("4_qcmo3")
+all_of = Array[ExtResource("3_eerqu")]([SubResource("Resource_5r6hf"), SubResource("Resource_i37v0")])
+
+[sub_resource type="Resource" id="Resource_am4ue"]
+script = ExtResource("2_vr2s4")
+
+[resource]
+script = ExtResource("5_2opvn")
+id = 221
+display_name = "Citadel"
+type = 0
+width = 14
+height = 14
+xp_value = 200000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_rdxtd")
+sell = SubResource("Resource_am4ue")
+sellable = false
+prerequisites = SubResource("Resource_jcffu")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The Citadel is an upgrade to the Castle.  It's epic."

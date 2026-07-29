@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_s7h3f"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_saod1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xqmlx"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_484y3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_braty"]
+
+[sub_resource type="Resource" id="Resource_lhuc2"]
+script = ExtResource("1_s7h3f")
+resource_id = 1
+amount = 4000.0
+
+[sub_resource type="Resource" id="Resource_32hpg"]
+script = ExtResource("1_s7h3f")
+resource_id = 11
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_ue704"]
+script = ExtResource("1_s7h3f")
+resource_id = 21
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_dbwqg"]
+script = ExtResource("2_saod1")
+entries = Array[ExtResource("1_s7h3f")]([SubResource("Resource_lhuc2"), SubResource("Resource_32hpg"), SubResource("Resource_ue704")])
+
+[sub_resource type="Resource" id="Resource_rdyu3"]
+script = ExtResource("3_xqmlx")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_vhujr"]
+script = ExtResource("3_xqmlx")
+target_id = 32
+
+[sub_resource type="Resource" id="Resource_v2vfw"]
+script = ExtResource("4_484y3")
+all_of = Array[ExtResource("3_xqmlx")]([SubResource("Resource_rdyu3"), SubResource("Resource_vhujr")])
+
+[sub_resource type="Resource" id="Resource_cj727"]
+script = ExtResource("1_s7h3f")
+resource_id = 1
+amount = 400.0
+
+[sub_resource type="Resource" id="Resource_bhgv3"]
+script = ExtResource("1_s7h3f")
+resource_id = 11
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_r80fx"]
+script = ExtResource("1_s7h3f")
+resource_id = 21
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_3qsdv"]
+script = ExtResource("2_saod1")
+entries = Array[ExtResource("1_s7h3f")]([SubResource("Resource_cj727"), SubResource("Resource_bhgv3"), SubResource("Resource_r80fx")])
+
+[resource]
+script = ExtResource("5_braty")
+id = 235
+display_name = "Cobbler"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 5000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_dbwqg")
+sell = SubResource("Resource_3qsdv")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_v2vfw")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([89, 90, 91, 92, 93])
+info_text = "Use the Cobbler to create footwear for your villagers."
+description_text = "Create fashionable footwear for sale"

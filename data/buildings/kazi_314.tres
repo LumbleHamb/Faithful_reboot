@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_sdu7x"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_w52g0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_uvvbm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hfsci"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_1vkhy"]
+
+[sub_resource type="Resource" id="Resource_qqyue"]
+script = ExtResource("1_sdu7x")
+resource_id = 0
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_1ljwj"]
+script = ExtResource("2_w52g0")
+entries = Array[ExtResource("1_sdu7x")]([SubResource("Resource_qqyue")])
+
+[sub_resource type="Resource" id="Resource_eti48"]
+script = ExtResource("3_uvvbm")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_6o3q1"]
+script = ExtResource("4_hfsci")
+all_of = Array[ExtResource("3_uvvbm")]([SubResource("Resource_eti48")])
+
+[sub_resource type="Resource" id="Resource_mkq5s"]
+script = ExtResource("1_sdu7x")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_js0wq"]
+script = ExtResource("2_w52g0")
+entries = Array[ExtResource("1_sdu7x")]([SubResource("Resource_mkq5s")])
+
+[resource]
+script = ExtResource("5_1vkhy")
+id = 314
+display_name = "Kazi"
+type = 5
+width = 3
+height = 3
+xp_value = 3750.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_1ljwj")
+sell = SubResource("Resource_js0wq")
+prerequisites = SubResource("Resource_6o3q1")
+upgrade_of_id = 0
+info_text = "Kazi the Ibex like to eat... well... anything, and grants a bonus to the XP and Gold received from all Shops by 4.5% (500% Maximum)"

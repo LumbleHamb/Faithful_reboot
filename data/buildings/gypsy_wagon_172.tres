@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_oeuxm"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_jqvup"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_b5en6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_activ"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_sicln"]
+
+[sub_resource type="Resource" id="Resource_qi55e"]
+script = ExtResource("1_oeuxm")
+resource_id = 1
+amount = 3500.0
+
+[sub_resource type="Resource" id="Resource_nyitb"]
+script = ExtResource("1_oeuxm")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_i112u"]
+script = ExtResource("2_jqvup")
+entries = Array[ExtResource("1_oeuxm")]([SubResource("Resource_qi55e"), SubResource("Resource_nyitb")])
+
+[sub_resource type="Resource" id="Resource_5ksgq"]
+script = ExtResource("3_b5en6")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_oyo5y"]
+script = ExtResource("4_activ")
+all_of = Array[ExtResource("3_b5en6")]([SubResource("Resource_5ksgq")])
+
+[sub_resource type="Resource" id="Resource_oupkg"]
+script = ExtResource("1_oeuxm")
+resource_id = 1
+amount = 350.0
+
+[sub_resource type="Resource" id="Resource_ednkl"]
+script = ExtResource("1_oeuxm")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_qmtke"]
+script = ExtResource("2_jqvup")
+entries = Array[ExtResource("1_oeuxm")]([SubResource("Resource_oupkg"), SubResource("Resource_ednkl")])
+
+[resource]
+script = ExtResource("5_sicln")
+id = 172
+display_name = "Gypsy Wagon"
+type = 5
+width = 4
+height = 4
+xp_value = 2125.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_i112u")
+sell = SubResource("Resource_qmtke")
+prerequisites = SubResource("Resource_oyo5y")
+upgrade_of_id = 0
+info_text = "The Gypsy Wagon grants a bonus to the XP received from the Big Top and Theater by 10%.  Only one Gypsy Wagon will grant this bonus at a time."

@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_qdi2e"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_thtty"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_sxku0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_goa7v"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_84ifb"]
+
+[sub_resource type="Resource" id="Resource_ndc8f"]
+script = ExtResource("1_qdi2e")
+resource_id = 1
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_2ncf3"]
+script = ExtResource("1_qdi2e")
+resource_id = 11
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_rkais"]
+script = ExtResource("1_qdi2e")
+resource_id = 20
+amount = 1200.0
+
+[sub_resource type="Resource" id="Resource_ocbyr"]
+script = ExtResource("1_qdi2e")
+resource_id = 40
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_e06d4"]
+script = ExtResource("2_thtty")
+entries = Array[ExtResource("1_qdi2e")]([SubResource("Resource_ndc8f"), SubResource("Resource_2ncf3"), SubResource("Resource_rkais"), SubResource("Resource_ocbyr")])
+
+[sub_resource type="Resource" id="Resource_7itsy"]
+script = ExtResource("3_sxku0")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_hrlee"]
+script = ExtResource("3_sxku0")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_3y3pv"]
+script = ExtResource("4_goa7v")
+all_of = Array[ExtResource("3_sxku0")]([SubResource("Resource_7itsy"), SubResource("Resource_hrlee")])
+
+[sub_resource type="Resource" id="Resource_bely6"]
+script = ExtResource("2_thtty")
+
+[resource]
+script = ExtResource("5_84ifb")
+id = 3
+display_name = "Keep"
+type = 0
+width = 14
+height = 14
+xp_value = 1000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_e06d4")
+sell = SubResource("Resource_bely6")
+sellable = false
+prerequisites = SubResource("Resource_3y3pv")
+upgrade_of_id = 0
+upgrade_only = true
+owned_limit = 1
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The Keep is an upgrade to the Tower.  It allows you to build more advanced buildings."

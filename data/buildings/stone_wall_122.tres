@@ -1,0 +1,56 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_kqixy"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_6phiw"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_y0adj"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_dwlkd"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_y584o"]
+
+[sub_resource type="Resource" id="Resource_pqojd"]
+script = ExtResource("1_kqixy")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_4bhnn"]
+script = ExtResource("1_kqixy")
+resource_id = 20
+amount = 40.0
+
+[sub_resource type="Resource" id="Resource_378gx"]
+script = ExtResource("2_6phiw")
+entries = Array[ExtResource("1_kqixy")]([SubResource("Resource_pqojd"), SubResource("Resource_4bhnn")])
+
+[sub_resource type="Resource" id="Resource_3raqy"]
+script = ExtResource("3_y0adj")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_60rdk"]
+script = ExtResource("4_dwlkd")
+all_of = Array[ExtResource("3_y0adj")]([SubResource("Resource_3raqy")])
+
+[sub_resource type="Resource" id="Resource_wjek2"]
+script = ExtResource("1_kqixy")
+resource_id = 1
+amount = 7.0
+
+[sub_resource type="Resource" id="Resource_r0upj"]
+script = ExtResource("1_kqixy")
+resource_id = 20
+amount = 4.0
+
+[sub_resource type="Resource" id="Resource_8d6yj"]
+script = ExtResource("2_6phiw")
+entries = Array[ExtResource("1_kqixy")]([SubResource("Resource_wjek2"), SubResource("Resource_r0upj")])
+
+[resource]
+script = ExtResource("5_y584o")
+id = 122
+display_name = "Stone Wall"
+type = 5
+height = 4
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_378gx")
+sell = SubResource("Resource_8d6yj")
+prerequisites = SubResource("Resource_60rdk")
+upgrade_of_id = 0

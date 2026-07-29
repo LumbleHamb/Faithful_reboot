@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_or746"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_r2lsb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0fwme"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_dm8ep"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ajfwq"]
+
+[sub_resource type="Resource" id="Resource_tv4wc"]
+script = ExtResource("1_or746")
+resource_id = 1
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_lh6y0"]
+script = ExtResource("2_r2lsb")
+entries = Array[ExtResource("1_or746")]([SubResource("Resource_tv4wc")])
+
+[sub_resource type="Resource" id="Resource_asyw6"]
+script = ExtResource("3_0fwme")
+target_id = 9
+
+[sub_resource type="Resource" id="Resource_avxvm"]
+script = ExtResource("4_dm8ep")
+all_of = Array[ExtResource("3_0fwme")]([SubResource("Resource_asyw6")])
+
+[sub_resource type="Resource" id="Resource_y1c33"]
+script = ExtResource("1_or746")
+resource_id = 1
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_emnax"]
+script = ExtResource("2_r2lsb")
+entries = Array[ExtResource("1_or746")]([SubResource("Resource_y1c33")])
+
+[resource]
+script = ExtResource("5_ajfwq")
+id = 125
+display_name = "Potted Daisies"
+type = 5
+width = 2
+height = 2
+xp_value = 75.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_lh6y0")
+sell = SubResource("Resource_emnax")
+prerequisites = SubResource("Resource_avxvm")
+upgrade_of_id = 0

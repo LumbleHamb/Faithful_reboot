@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2yh0b"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_mpo6i"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_sdhsn"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_a2co0"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_tagdr"]
+
+[sub_resource type="Resource" id="Resource_p56x7"]
+script = ExtResource("1_2yh0b")
+resource_id = 1
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_tpyov"]
+script = ExtResource("1_2yh0b")
+resource_id = 20
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_o7mmr"]
+script = ExtResource("2_mpo6i")
+entries = Array[ExtResource("1_2yh0b")]([SubResource("Resource_p56x7"), SubResource("Resource_tpyov")])
+
+[sub_resource type="Resource" id="Resource_w0kv0"]
+script = ExtResource("3_sdhsn")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_6g85f"]
+script = ExtResource("4_a2co0")
+all_of = Array[ExtResource("3_sdhsn")]([SubResource("Resource_w0kv0")])
+
+[sub_resource type="Resource" id="Resource_cw2xk"]
+script = ExtResource("1_2yh0b")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_bb6a7"]
+script = ExtResource("1_2yh0b")
+resource_id = 20
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_qk87a"]
+script = ExtResource("2_mpo6i")
+entries = Array[ExtResource("1_2yh0b")]([SubResource("Resource_cw2xk"), SubResource("Resource_bb6a7")])
+
+[resource]
+script = ExtResource("5_tagdr")
+id = 134
+display_name = "Road Turn Down"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_o7mmr")
+sell = SubResource("Resource_qk87a")
+prerequisites = SubResource("Resource_6g85f")
+upgrade_of_id = 0

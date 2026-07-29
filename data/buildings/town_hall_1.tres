@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_0lujy"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ueejv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_rl8xr"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_xg5io"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_25cto"]
+
+[sub_resource type="Resource" id="Resource_157kg"]
+script = ExtResource("2_ueejv")
+
+[sub_resource type="Resource" id="Resource_ux4if"]
+script = ExtResource("4_xg5io")
+
+[sub_resource type="Resource" id="Resource_jcht6"]
+script = ExtResource("2_ueejv")
+
+[resource]
+script = ExtResource("5_25cto")
+id = 1
+display_name = "Town Hall"
+type = 0
+width = 14
+height = 14
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_157kg")
+sell = SubResource("Resource_jcht6")
+sellable = false
+prerequisites = SubResource("Resource_ux4if")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 0.0,
+11: 0.0,
+20: 0.0,
+21: 0.0,
+40: 0.0,
+50: 0.0
+}
+info_text = "The humble Town Hall."

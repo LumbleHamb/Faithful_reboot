@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ihc5t"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_6rl7h"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qj28d"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_5ji0s"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ipupw"]
+
+[sub_resource type="Resource" id="Resource_qcayo"]
+script = ExtResource("1_ihc5t")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_m2kau"]
+script = ExtResource("2_6rl7h")
+entries = Array[ExtResource("1_ihc5t")]([SubResource("Resource_qcayo")])
+
+[sub_resource type="Resource" id="Resource_7qvch"]
+script = ExtResource("3_qj28d")
+target_id = 17
+
+[sub_resource type="Resource" id="Resource_hgcdg"]
+script = ExtResource("4_5ji0s")
+all_of = Array[ExtResource("3_qj28d")]([SubResource("Resource_7qvch")])
+
+[sub_resource type="Resource" id="Resource_764mj"]
+script = ExtResource("1_ihc5t")
+resource_id = 1
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_4iybv"]
+script = ExtResource("2_6rl7h")
+entries = Array[ExtResource("1_ihc5t")]([SubResource("Resource_764mj")])
+
+[resource]
+script = ExtResource("5_ipupw")
+id = 198
+display_name = "Sunflowers"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_m2kau")
+sell = SubResource("Resource_4iybv")
+prerequisites = SubResource("Resource_hgcdg")
+upgrade_of_id = 0
+info_text = "Sunflowers grant a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)"

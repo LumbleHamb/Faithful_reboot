@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_st646"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_wqwea"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_g6b1x"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_8fp54"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_2iyrk"]
+
+[sub_resource type="Resource" id="Resource_wy55w"]
+script = ExtResource("1_st646")
+resource_id = 0
+amount = 35.0
+
+[sub_resource type="Resource" id="Resource_p0cpb"]
+script = ExtResource("2_wqwea")
+entries = Array[ExtResource("1_st646")]([SubResource("Resource_wy55w")])
+
+[sub_resource type="Resource" id="Resource_88osl"]
+script = ExtResource("3_g6b1x")
+target_id = 14
+
+[sub_resource type="Resource" id="Resource_d3ys8"]
+script = ExtResource("4_8fp54")
+all_of = Array[ExtResource("3_g6b1x")]([SubResource("Resource_88osl")])
+
+[sub_resource type="Resource" id="Resource_etk4l"]
+script = ExtResource("1_st646")
+resource_id = 1
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_q21i3"]
+script = ExtResource("1_st646")
+resource_id = 20
+amount = 26.0
+
+[sub_resource type="Resource" id="Resource_cbfuw"]
+script = ExtResource("2_wqwea")
+entries = Array[ExtResource("1_st646")]([SubResource("Resource_etk4l"), SubResource("Resource_q21i3")])
+
+[resource]
+script = ExtResource("5_2iyrk")
+id = 150
+display_name = "Fountain"
+type = 5
+width = 7
+height = 7
+xp_value = 1750.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_p0cpb")
+sell = SubResource("Resource_cbfuw")
+prerequisites = SubResource("Resource_d3ys8")
+upgrade_of_id = 0
+info_text = "Fountains grant a bonus to the XP and Gold received from all Shops by 2% (500% Maximum)"

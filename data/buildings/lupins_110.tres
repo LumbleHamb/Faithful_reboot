@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_yvme5"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_unf73"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_5ljwb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_giy0u"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_wfv62"]
+
+[sub_resource type="Resource" id="Resource_djusy"]
+script = ExtResource("1_yvme5")
+resource_id = 0
+amount = 6.0
+
+[sub_resource type="Resource" id="Resource_7bsr6"]
+script = ExtResource("2_unf73")
+entries = Array[ExtResource("1_yvme5")]([SubResource("Resource_djusy")])
+
+[sub_resource type="Resource" id="Resource_m2y8x"]
+script = ExtResource("3_5ljwb")
+target_id = 5
+
+[sub_resource type="Resource" id="Resource_b26vv"]
+script = ExtResource("4_giy0u")
+all_of = Array[ExtResource("3_5ljwb")]([SubResource("Resource_m2y8x")])
+
+[sub_resource type="Resource" id="Resource_qng15"]
+script = ExtResource("1_yvme5")
+resource_id = 1
+amount = 14.0
+
+[sub_resource type="Resource" id="Resource_2d2vs"]
+script = ExtResource("2_unf73")
+entries = Array[ExtResource("1_yvme5")]([SubResource("Resource_qng15")])
+
+[resource]
+script = ExtResource("5_wfv62")
+id = 110
+display_name = "Lupins"
+type = 5
+width = 2
+height = 2
+xp_value = 300.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_7bsr6")
+sell = SubResource("Resource_2d2vs")
+prerequisites = SubResource("Resource_b26vv")
+upgrade_of_id = 0
+info_text = "Lupins grant a bonus to the XP and Gold received from all Shops by .25% (500% Maximum)"

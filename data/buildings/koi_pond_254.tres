@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_h38hm"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_rtpx1"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_84k60"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_73k2a"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_p1ayy"]
+
+[sub_resource type="Resource" id="Resource_go4yj"]
+script = ExtResource("1_h38hm")
+resource_id = 0
+amount = 30.0
+
+[sub_resource type="Resource" id="Resource_g0n6a"]
+script = ExtResource("2_rtpx1")
+entries = Array[ExtResource("1_h38hm")]([SubResource("Resource_go4yj")])
+
+[sub_resource type="Resource" id="Resource_ydbn1"]
+script = ExtResource("3_84k60")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_vabs3"]
+script = ExtResource("3_84k60")
+target_id = 40
+
+[sub_resource type="Resource" id="Resource_npguu"]
+script = ExtResource("4_73k2a")
+all_of = Array[ExtResource("3_84k60")]([SubResource("Resource_ydbn1"), SubResource("Resource_vabs3")])
+
+[sub_resource type="Resource" id="Resource_vrhtd"]
+script = ExtResource("1_h38hm")
+resource_id = 1
+amount = 3000.0
+
+[sub_resource type="Resource" id="Resource_etky2"]
+script = ExtResource("2_rtpx1")
+entries = Array[ExtResource("1_h38hm")]([SubResource("Resource_vrhtd")])
+
+[resource]
+script = ExtResource("5_p1ayy")
+id = 254
+display_name = "Koi Pond"
+type = 5
+width = 8
+height = 5
+xp_value = 1500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_g0n6a")
+sell = SubResource("Resource_etky2")
+prerequisites = SubResource("Resource_npguu")
+upgrade_of_id = 0
+info_text = "The Koi Pond is the epitome of serenity, and grants a bonus to the XP and Gold received from all Shops of 1.2% (500% Maximum)"

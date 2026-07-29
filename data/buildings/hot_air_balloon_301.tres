@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ma8bf"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_5ou1q"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_yrelg"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_vds5c"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_2np4o"]
+
+[sub_resource type="Resource" id="Resource_mkacp"]
+script = ExtResource("1_ma8bf")
+resource_id = 1
+amount = 2000.0
+
+[sub_resource type="Resource" id="Resource_iwd1p"]
+script = ExtResource("1_ma8bf")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_nfhv0"]
+script = ExtResource("1_ma8bf")
+resource_id = 51
+amount = 25000.0
+
+[sub_resource type="Resource" id="Resource_bvl8y"]
+script = ExtResource("2_5ou1q")
+entries = Array[ExtResource("1_ma8bf")]([SubResource("Resource_mkacp"), SubResource("Resource_iwd1p"), SubResource("Resource_nfhv0")])
+
+[sub_resource type="Resource" id="Resource_a7o6y"]
+script = ExtResource("3_yrelg")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_rdtwc"]
+script = ExtResource("3_yrelg")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_j1g4e"]
+script = ExtResource("4_vds5c")
+all_of = Array[ExtResource("3_yrelg")]([SubResource("Resource_a7o6y"), SubResource("Resource_rdtwc")])
+
+[sub_resource type="Resource" id="Resource_qx7tf"]
+script = ExtResource("1_ma8bf")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_11kei"]
+script = ExtResource("1_ma8bf")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_1tejj"]
+script = ExtResource("1_ma8bf")
+resource_id = 51
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_7xkvj"]
+script = ExtResource("2_5ou1q")
+entries = Array[ExtResource("1_ma8bf")]([SubResource("Resource_qx7tf"), SubResource("Resource_11kei"), SubResource("Resource_1tejj")])
+
+[resource]
+script = ExtResource("5_2np4o")
+id = 301
+display_name = "Hot Air Balloon"
+width = 6
+height = 6
+xp_value = 10000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_bvl8y")
+sell = SubResource("Resource_7xkvj")
+build_time_seconds = 604800.0
+prerequisites = SubResource("Resource_j1g4e")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "The Hot Air Balloon brings you to amazing far away lands!"

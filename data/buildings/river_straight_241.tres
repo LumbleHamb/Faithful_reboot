@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_357cc"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_2falu"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_ctb0n"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lqhxy"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_7otgk"]
+
+[sub_resource type="Resource" id="Resource_gqr1o"]
+script = ExtResource("1_357cc")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_8sfy8"]
+script = ExtResource("2_2falu")
+entries = Array[ExtResource("1_357cc")]([SubResource("Resource_gqr1o")])
+
+[sub_resource type="Resource" id="Resource_egw14"]
+script = ExtResource("3_ctb0n")
+target_id = 27
+
+[sub_resource type="Resource" id="Resource_kvxun"]
+script = ExtResource("4_lqhxy")
+all_of = Array[ExtResource("3_ctb0n")]([SubResource("Resource_egw14")])
+
+[sub_resource type="Resource" id="Resource_sot6y"]
+script = ExtResource("1_357cc")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_2md2p"]
+script = ExtResource("2_2falu")
+entries = Array[ExtResource("1_357cc")]([SubResource("Resource_sot6y")])
+
+[resource]
+script = ExtResource("5_7otgk")
+id = 241
+display_name = "River Straight"
+type = 5
+width = 3
+height = 3
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_8sfy8")
+sell = SubResource("Resource_2md2p")
+prerequisites = SubResource("Resource_kvxun")
+upgrade_of_id = 0
+info_text = "Rivers grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

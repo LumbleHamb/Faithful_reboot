@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_l11kc"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vqqdf"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_knvf6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_laxqh"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_e22ai"]
+
+[sub_resource type="Resource" id="Resource_2cdl1"]
+script = ExtResource("1_l11kc")
+resource_id = 1
+amount = 220.0
+
+[sub_resource type="Resource" id="Resource_b5dd0"]
+script = ExtResource("1_l11kc")
+resource_id = 10
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_byb3o"]
+script = ExtResource("1_l11kc")
+resource_id = 11
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_h7m67"]
+script = ExtResource("2_vqqdf")
+entries = Array[ExtResource("1_l11kc")]([SubResource("Resource_2cdl1"), SubResource("Resource_b5dd0"), SubResource("Resource_byb3o")])
+
+[sub_resource type="Resource" id="Resource_w1ebw"]
+script = ExtResource("3_knvf6")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_rrrwi"]
+script = ExtResource("4_laxqh")
+all_of = Array[ExtResource("3_knvf6")]([SubResource("Resource_w1ebw")])
+
+[sub_resource type="Resource" id="Resource_ix4d4"]
+script = ExtResource("1_l11kc")
+resource_id = 1
+amount = 22.0
+
+[sub_resource type="Resource" id="Resource_vmmi0"]
+script = ExtResource("1_l11kc")
+resource_id = 10
+amount = 3.0
+
+[sub_resource type="Resource" id="Resource_m18mt"]
+script = ExtResource("1_l11kc")
+resource_id = 11
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_i4pm1"]
+script = ExtResource("2_vqqdf")
+entries = Array[ExtResource("1_l11kc")]([SubResource("Resource_ix4d4"), SubResource("Resource_vmmi0"), SubResource("Resource_m18mt")])
+
+[resource]
+script = ExtResource("5_e22ai")
+id = 276
+display_name = "Seesaw"
+type = 5
+width = 2
+height = 4
+xp_value = 150.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_h7m67")
+sell = SubResource("Resource_i4pm1")
+prerequisites = SubResource("Resource_rrrwi")
+upgrade_of_id = 0
+info_text = "Up. Down. Up. Down. Up. Down... The Seesaw grants a bonus to the XP received from the Schoolhouse by 5%. Only one Seesaw will grant this bonus at a time."

@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_5gogq"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_43rln"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_wfucr"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_gfnew"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_62qni"]
+
+[sub_resource type="Resource" id="Resource_1c1vr"]
+script = ExtResource("2_43rln")
+
+[sub_resource type="Resource" id="Resource_s46xu"]
+script = ExtResource("3_wfucr")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_tb1vr"]
+script = ExtResource("4_gfnew")
+all_of = Array[ExtResource("3_wfucr")]([SubResource("Resource_s46xu")])
+
+[sub_resource type="Resource" id="Resource_wkrkm"]
+script = ExtResource("1_5gogq")
+resource_id = 1
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_nro17"]
+script = ExtResource("1_5gogq")
+resource_id = 10
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_pcakx"]
+script = ExtResource("2_43rln")
+entries = Array[ExtResource("1_5gogq")]([SubResource("Resource_wkrkm"), SubResource("Resource_nro17")])
+
+[resource]
+script = ExtResource("5_62qni")
+id = 152
+display_name = "Blue Birdhouse"
+type = 5
+width = 2
+height = 2
+xp_value = 160.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_1c1vr")
+sell = SubResource("Resource_pcakx")
+prerequisites = SubResource("Resource_tb1vr")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Rockin' robin, tweet. The Blue Birdhouse grant a bonus to the XP and Gold received from all Shops by 1% (500% Maximum)"

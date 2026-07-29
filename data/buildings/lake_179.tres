@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_mdbtd"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_8mvr3"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_6m44s"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pcydc"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ujr0n"]
+
+[sub_resource type="Resource" id="Resource_jhd3d"]
+script = ExtResource("1_mdbtd")
+resource_id = 0
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_6yvrp"]
+script = ExtResource("2_8mvr3")
+entries = Array[ExtResource("1_mdbtd")]([SubResource("Resource_jhd3d")])
+
+[sub_resource type="Resource" id="Resource_7oy1x"]
+script = ExtResource("3_6m44s")
+target_id = 20
+
+[sub_resource type="Resource" id="Resource_2nahd"]
+script = ExtResource("4_pcydc")
+all_of = Array[ExtResource("3_6m44s")]([SubResource("Resource_7oy1x")])
+
+[sub_resource type="Resource" id="Resource_tjd10"]
+script = ExtResource("1_mdbtd")
+resource_id = 1
+amount = 1000.0
+
+[sub_resource type="Resource" id="Resource_3xn5e"]
+script = ExtResource("2_8mvr3")
+entries = Array[ExtResource("1_mdbtd")]([SubResource("Resource_tjd10")])
+
+[resource]
+script = ExtResource("5_ujr0n")
+id = 179
+display_name = "Lake"
+type = 11
+width = 12
+height = 14
+xp_value = 4000.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_6yvrp")
+sell = SubResource("Resource_3xn5e")
+prerequisites = SubResource("Resource_2nahd")
+upgrade_of_id = 0
+info_text = "Assign a villager to the Lake and earn gold and experience as they catch fish!  Increases XP and Gold for all Shops by 5% (500% Maximum)"
+description_text = "A peaceful lake."

@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2ph3p"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_epot5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_hpgft"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_58u63"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_3myur"]
+
+[sub_resource type="Resource" id="Resource_au87j"]
+script = ExtResource("1_2ph3p")
+resource_id = 1
+amount = 200000.0
+
+[sub_resource type="Resource" id="Resource_1n3ld"]
+script = ExtResource("1_2ph3p")
+resource_id = 11
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_5mwqa"]
+script = ExtResource("1_2ph3p")
+resource_id = 21
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_ov27o"]
+script = ExtResource("2_epot5")
+entries = Array[ExtResource("1_2ph3p")]([SubResource("Resource_au87j"), SubResource("Resource_1n3ld"), SubResource("Resource_5mwqa")])
+
+[sub_resource type="Resource" id="Resource_asec2"]
+script = ExtResource("3_hpgft")
+kind = 1
+target_id = 5
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_bfg37"]
+script = ExtResource("3_hpgft")
+target_id = 32
+
+[sub_resource type="Resource" id="Resource_oii8d"]
+script = ExtResource("4_58u63")
+all_of = Array[ExtResource("3_hpgft")]([SubResource("Resource_asec2"), SubResource("Resource_bfg37")])
+
+[sub_resource type="Resource" id="Resource_ft342"]
+script = ExtResource("1_2ph3p")
+resource_id = 1
+amount = 20000.0
+
+[sub_resource type="Resource" id="Resource_hig33"]
+script = ExtResource("1_2ph3p")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_o30av"]
+script = ExtResource("1_2ph3p")
+resource_id = 21
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_446b6"]
+script = ExtResource("2_epot5")
+entries = Array[ExtResource("1_2ph3p")]([SubResource("Resource_ft342"), SubResource("Resource_hig33"), SubResource("Resource_o30av")])
+
+[resource]
+script = ExtResource("5_3myur")
+id = 219
+display_name = "Mayor's Villa"
+type = 6
+width = 5
+height = 6
+xp_value = 20000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ov27o")
+sell = SubResource("Resource_446b6")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_oii8d")
+upgrade_of_id = 0
+owned_limit = 1
+house_capacity = 2
+info_text = "The Mayor's Villa houses six villagers.  The Mayor pulled some strings in the permitting office, so his villa doesn't count towards your house limit."
+description_text = "Houses six villagers"

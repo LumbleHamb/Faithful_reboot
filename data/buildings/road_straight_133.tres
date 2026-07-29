@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_jhvob"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_5q2s0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_xyat0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_1sn7g"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_hee30"]
+
+[sub_resource type="Resource" id="Resource_nc312"]
+script = ExtResource("1_jhvob")
+resource_id = 1
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_hnnok"]
+script = ExtResource("1_jhvob")
+resource_id = 20
+amount = 2.0
+
+[sub_resource type="Resource" id="Resource_aqlij"]
+script = ExtResource("2_5q2s0")
+entries = Array[ExtResource("1_jhvob")]([SubResource("Resource_nc312"), SubResource("Resource_hnnok")])
+
+[sub_resource type="Resource" id="Resource_rkyog"]
+script = ExtResource("3_xyat0")
+target_id = 4
+
+[sub_resource type="Resource" id="Resource_agltr"]
+script = ExtResource("4_1sn7g")
+all_of = Array[ExtResource("3_xyat0")]([SubResource("Resource_rkyog")])
+
+[sub_resource type="Resource" id="Resource_w4c3d"]
+script = ExtResource("1_jhvob")
+resource_id = 1
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_ahkg1"]
+script = ExtResource("1_jhvob")
+resource_id = 20
+amount = 1.0
+
+[sub_resource type="Resource" id="Resource_nj7t6"]
+script = ExtResource("2_5q2s0")
+entries = Array[ExtResource("1_jhvob")]([SubResource("Resource_w4c3d"), SubResource("Resource_ahkg1")])
+
+[resource]
+script = ExtResource("5_hee30")
+id = 133
+display_name = "Road Straight"
+type = 5
+width = 2
+height = 2
+xp_value = 5.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_aqlij")
+sell = SubResource("Resource_nj7t6")
+prerequisites = SubResource("Resource_agltr")
+upgrade_of_id = 0

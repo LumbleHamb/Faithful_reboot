@@ -1,0 +1,76 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_0njkt"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_bc475"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_dnj0c"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_mbn65"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_kgxji"]
+
+[sub_resource type="Resource" id="Resource_iuo65"]
+script = ExtResource("1_0njkt")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_5ypys"]
+script = ExtResource("1_0njkt")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_ygj7k"]
+script = ExtResource("2_bc475")
+entries = Array[ExtResource("1_0njkt")]([SubResource("Resource_iuo65"), SubResource("Resource_5ypys")])
+
+[sub_resource type="Resource" id="Resource_83g3i"]
+script = ExtResource("3_dnj0c")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_bwxay"]
+script = ExtResource("3_dnj0c")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_b7erh"]
+script = ExtResource("4_mbn65")
+all_of = Array[ExtResource("3_dnj0c")]([SubResource("Resource_83g3i"), SubResource("Resource_bwxay")])
+
+[sub_resource type="Resource" id="Resource_xfcmo"]
+script = ExtResource("1_0njkt")
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="Resource_ikle6"]
+script = ExtResource("1_0njkt")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_6ud7u"]
+script = ExtResource("2_bc475")
+entries = Array[ExtResource("1_0njkt")]([SubResource("Resource_xfcmo"), SubResource("Resource_ikle6")])
+
+[resource]
+script = ExtResource("5_kgxji")
+id = 26
+display_name = "Large Stockpile"
+type = 3
+width = 10
+height = 10
+xp_value = 675.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ygj7k")
+sell = SubResource("Resource_6ud7u")
+build_time_seconds = 28800.0
+prerequisites = SubResource("Resource_b7erh")
+upgrade_of_id = 0
+storage_capacities = {
+1: -1.0,
+10: 3500.0,
+11: 3500.0,
+20: 3500.0,
+21: 3500.0,
+40: 3500.0,
+50: 3500.0,
+51: 3500.0
+}
+info_text = "The Large Stockpile stores up to 3500 of each resource."
+description_text = "Stores a large amount of resources"

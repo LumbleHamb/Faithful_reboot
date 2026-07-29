@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_kn8u7"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_10t5k"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_mipv5"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_pmftu"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_qqj72"]
+
+[sub_resource type="Resource" id="Resource_s7opm"]
+script = ExtResource("1_kn8u7")
+resource_id = 10
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_gja8e"]
+script = ExtResource("2_10t5k")
+entries = Array[ExtResource("1_kn8u7")]([SubResource("Resource_s7opm")])
+
+[sub_resource type="Resource" id="Resource_ympps"]
+script = ExtResource("3_mipv5")
+target_id = 2
+
+[sub_resource type="Resource" id="Resource_guwpp"]
+script = ExtResource("4_pmftu")
+all_of = Array[ExtResource("3_mipv5")]([SubResource("Resource_ympps")])
+
+[sub_resource type="Resource" id="Resource_mwg4p"]
+script = ExtResource("2_10t5k")
+
+[resource]
+script = ExtResource("5_qqj72")
+id = 329
+display_name = "Frontier Market"
+type = 4
+width = 8
+height = 8
+xp_value = 850.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_gja8e")
+sell = SubResource("Resource_mwg4p")
+sellable = false
+build_time_seconds = 5.0
+prerequisites = SubResource("Resource_guwpp")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Buy and sell resources at the Market!"
+description_text = "Buys and sell resources"

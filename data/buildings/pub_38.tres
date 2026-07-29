@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_mb1tv"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ab410"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_opn6h"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_riips"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_luoh2"]
+
+[sub_resource type="Resource" id="Resource_a4vee"]
+script = ExtResource("1_mb1tv")
+resource_id = 1
+amount = 6000.0
+
+[sub_resource type="Resource" id="Resource_c4gg8"]
+script = ExtResource("1_mb1tv")
+resource_id = 11
+amount = 2500.0
+
+[sub_resource type="Resource" id="Resource_clv4y"]
+script = ExtResource("1_mb1tv")
+resource_id = 21
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_cimaf"]
+script = ExtResource("2_ab410")
+entries = Array[ExtResource("1_mb1tv")]([SubResource("Resource_a4vee"), SubResource("Resource_c4gg8"), SubResource("Resource_clv4y")])
+
+[sub_resource type="Resource" id="Resource_hyrb5"]
+script = ExtResource("3_opn6h")
+kind = 1
+target_id = 4
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_qkr51"]
+script = ExtResource("3_opn6h")
+target_id = 16
+
+[sub_resource type="Resource" id="Resource_fjtet"]
+script = ExtResource("4_riips")
+all_of = Array[ExtResource("3_opn6h")]([SubResource("Resource_hyrb5"), SubResource("Resource_qkr51")])
+
+[sub_resource type="Resource" id="Resource_6mdmh"]
+script = ExtResource("1_mb1tv")
+resource_id = 1
+amount = 600.0
+
+[sub_resource type="Resource" id="Resource_0ykac"]
+script = ExtResource("1_mb1tv")
+resource_id = 11
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_e6r06"]
+script = ExtResource("1_mb1tv")
+resource_id = 21
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_bgome"]
+script = ExtResource("2_ab410")
+entries = Array[ExtResource("1_mb1tv")]([SubResource("Resource_6mdmh"), SubResource("Resource_0ykac"), SubResource("Resource_e6r06")])
+
+[resource]
+script = ExtResource("5_luoh2")
+id = 38
+display_name = "Pub"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 2000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_cimaf")
+sell = SubResource("Resource_bgome")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_fjtet")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([16, 19, 18, 30, 17])
+info_text = "Use the Pub to complete jobs using Wheat."
+description_text = "Brew yummy drinks for sale."

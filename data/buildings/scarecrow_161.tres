@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_lsurx"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_85cch"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_tefuq"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_iso0r"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ficlt"]
+
+[sub_resource type="Resource" id="Resource_fruyp"]
+script = ExtResource("1_lsurx")
+resource_id = 0
+amount = 15.0
+
+[sub_resource type="Resource" id="Resource_hdcxy"]
+script = ExtResource("2_85cch")
+entries = Array[ExtResource("1_lsurx")]([SubResource("Resource_fruyp")])
+
+[sub_resource type="Resource" id="Resource_4e2dg"]
+script = ExtResource("3_tefuq")
+target_id = 12
+
+[sub_resource type="Resource" id="Resource_v6iwt"]
+script = ExtResource("4_iso0r")
+all_of = Array[ExtResource("3_tefuq")]([SubResource("Resource_4e2dg")])
+
+[sub_resource type="Resource" id="Resource_2v85t"]
+script = ExtResource("1_lsurx")
+resource_id = 1
+amount = 80.0
+
+[sub_resource type="Resource" id="Resource_kc0ne"]
+script = ExtResource("1_lsurx")
+resource_id = 10
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_blth3"]
+script = ExtResource("2_85cch")
+entries = Array[ExtResource("1_lsurx")]([SubResource("Resource_2v85t"), SubResource("Resource_kc0ne")])
+
+[resource]
+script = ExtResource("5_ficlt")
+id = 161
+display_name = "Scarecrow"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_hdcxy")
+sell = SubResource("Resource_blth3")
+prerequisites = SubResource("Resource_v6iwt")
+upgrade_of_id = 0
+info_text = "Scarecrows grant a bonus to the XP and Gold received from all Shops by .7% (500% Maximum)"

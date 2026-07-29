@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_ac6fk"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_dx2qv"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_sow81"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_lfkhg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_fgf6r"]
+
+[sub_resource type="Resource" id="Resource_8vbxl"]
+script = ExtResource("1_ac6fk")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_7d63y"]
+script = ExtResource("2_dx2qv")
+entries = Array[ExtResource("1_ac6fk")]([SubResource("Resource_8vbxl")])
+
+[sub_resource type="Resource" id="Resource_im2il"]
+script = ExtResource("3_sow81")
+target_id = 21
+
+[sub_resource type="Resource" id="Resource_5negk"]
+script = ExtResource("4_lfkhg")
+all_of = Array[ExtResource("3_sow81")]([SubResource("Resource_im2il")])
+
+[sub_resource type="Resource" id="Resource_u7qx5"]
+script = ExtResource("1_ac6fk")
+resource_id = 1
+amount = 100.0
+
+[sub_resource type="Resource" id="Resource_vpio7"]
+script = ExtResource("2_dx2qv")
+entries = Array[ExtResource("1_ac6fk")]([SubResource("Resource_u7qx5")])
+
+[resource]
+script = ExtResource("5_fgf6r")
+id = 208
+display_name = "Hedges"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_7d63y")
+sell = SubResource("Resource_vpio7")
+prerequisites = SubResource("Resource_5negk")
+upgrade_of_id = 0
+info_text = "Hedges grant a bonus to the XP and Gold received from all Shops by .4% (500% Maximum)"

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_s1iam"]
+
+[resource]
+script = ExtResource("1_s1iam")
+id = 37
+kind = 1
+display_name = "The Lord of the Donuts"
+time_seconds = 28800.0
+input_cost = {
+10: 300.0,
+51: 15.0
+}
+reward_xp = 375.0
+reward = {
+1: 485.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 11520.0
+compatible_lands = Array[String](["Vanilla"])

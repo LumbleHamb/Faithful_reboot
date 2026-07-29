@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_oegxh"]
+
+[resource]
+script = ExtResource("1_oegxh")
+id = 23
+kind = 1
+display_name = "Lawn Gnome"
+time_seconds = 10800.0
+input_cost = {
+21: 55.0
+}
+reward_xp = 400.0
+reward = {
+1: 300.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 11520.0
+compatible_lands = Array[String](["Vanilla"])

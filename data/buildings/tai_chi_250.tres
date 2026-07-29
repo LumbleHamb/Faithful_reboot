@@ -1,0 +1,77 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_2s6ww"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_vlc74"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_0dxt7"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_wb4x3"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_nn3on"]
+
+[sub_resource type="Resource" id="Resource_437o2"]
+script = ExtResource("1_2s6ww")
+resource_id = 1
+amount = 7500.0
+
+[sub_resource type="Resource" id="Resource_iuxhm"]
+script = ExtResource("1_2s6ww")
+resource_id = 11
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_8pu63"]
+script = ExtResource("1_2s6ww")
+resource_id = 51
+amount = 1500.0
+
+[sub_resource type="Resource" id="Resource_4x1w7"]
+script = ExtResource("2_vlc74")
+entries = Array[ExtResource("1_2s6ww")]([SubResource("Resource_437o2"), SubResource("Resource_iuxhm"), SubResource("Resource_8pu63")])
+
+[sub_resource type="Resource" id="Resource_asbte"]
+script = ExtResource("3_0dxt7")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_fr8wk"]
+script = ExtResource("3_0dxt7")
+target_id = 39
+
+[sub_resource type="Resource" id="Resource_cbdii"]
+script = ExtResource("4_wb4x3")
+all_of = Array[ExtResource("3_0dxt7")]([SubResource("Resource_asbte"), SubResource("Resource_fr8wk")])
+
+[sub_resource type="Resource" id="Resource_sm5oh"]
+script = ExtResource("1_2s6ww")
+resource_id = 1
+amount = 750.0
+
+[sub_resource type="Resource" id="Resource_8b3cd"]
+script = ExtResource("1_2s6ww")
+resource_id = 11
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_yflev"]
+script = ExtResource("1_2s6ww")
+resource_id = 51
+amount = 150.0
+
+[sub_resource type="Resource" id="Resource_jdwks"]
+script = ExtResource("2_vlc74")
+entries = Array[ExtResource("1_2s6ww")]([SubResource("Resource_sm5oh"), SubResource("Resource_8b3cd"), SubResource("Resource_yflev")])
+
+[resource]
+script = ExtResource("5_nn3on")
+id = 250
+display_name = "Tai Chi"
+type = 11
+width = 4
+height = 3
+xp_value = 3500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_4x1w7")
+sell = SubResource("Resource_jdwks")
+build_time_seconds = 86400.0
+prerequisites = SubResource("Resource_cbdii")
+upgrade_of_id = 0
+owned_limit = 1
+info_text = "Assign a villager to Tai Chi and earn gold and experience for their spiritual relaxation!"
+description_text = "Calm the body and Soul with Tai Chi."

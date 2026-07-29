@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_vppsj"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_7wx4h"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_edp0j"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_xj7yg"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_u7bqm"]
+
+[sub_resource type="Resource" id="Resource_kr7vl"]
+script = ExtResource("1_vppsj")
+resource_id = 0
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_0mdo5"]
+script = ExtResource("2_7wx4h")
+entries = Array[ExtResource("1_vppsj")]([SubResource("Resource_kr7vl")])
+
+[sub_resource type="Resource" id="Resource_wht7x"]
+script = ExtResource("3_edp0j")
+kind = 1
+target_id = 233
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_qshjf"]
+script = ExtResource("3_edp0j")
+target_id = 38
+
+[sub_resource type="Resource" id="Resource_ka7a3"]
+script = ExtResource("4_xj7yg")
+all_of = Array[ExtResource("3_edp0j")]([SubResource("Resource_wht7x"), SubResource("Resource_qshjf")])
+
+[sub_resource type="Resource" id="Resource_n13au"]
+script = ExtResource("1_vppsj")
+resource_id = 1
+amount = 5000.0
+
+[sub_resource type="Resource" id="Resource_okpt5"]
+script = ExtResource("2_7wx4h")
+entries = Array[ExtResource("1_vppsj")]([SubResource("Resource_n13au")])
+
+[resource]
+script = ExtResource("5_u7bqm")
+id = 255
+display_name = "Ling"
+type = 5
+width = 3
+height = 3
+xp_value = 30000.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_0mdo5")
+sell = SubResource("Resource_okpt5")
+prerequisites = SubResource("Resource_ka7a3")
+upgrade_of_id = 0
+info_text = "Cute Panda! Ling, mother of Sneezy the baby panda, grants a bonus to the XP and Gold received from all Shops by 33.3%! (500% Maximum)"

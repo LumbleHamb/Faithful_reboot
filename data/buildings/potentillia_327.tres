@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_uhkjd"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_8rfxc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_4uvav"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_s5bnb"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_67noj"]
+
+[sub_resource type="Resource" id="Resource_chw75"]
+script = ExtResource("1_uhkjd")
+resource_id = 1
+amount = 1300.0
+
+[sub_resource type="Resource" id="Resource_v5wmm"]
+script = ExtResource("2_8rfxc")
+entries = Array[ExtResource("1_uhkjd")]([SubResource("Resource_chw75")])
+
+[sub_resource type="Resource" id="Resource_pdex5"]
+script = ExtResource("3_4uvav")
+target_id = 23
+
+[sub_resource type="Resource" id="Resource_wud06"]
+script = ExtResource("4_s5bnb")
+all_of = Array[ExtResource("3_4uvav")]([SubResource("Resource_pdex5")])
+
+[sub_resource type="Resource" id="Resource_prd6i"]
+script = ExtResource("1_uhkjd")
+resource_id = 1
+amount = 130.0
+
+[sub_resource type="Resource" id="Resource_n08dg"]
+script = ExtResource("2_8rfxc")
+entries = Array[ExtResource("1_uhkjd")]([SubResource("Resource_prd6i")])
+
+[resource]
+script = ExtResource("5_67noj")
+id = 327
+display_name = "Potentillia"
+type = 5
+width = 2
+height = 2
+xp_value = 600.0
+compatible_lands = Array[String](["Frontier"])
+cost = SubResource("Resource_v5wmm")
+sell = SubResource("Resource_n08dg")
+prerequisites = SubResource("Resource_wud06")
+upgrade_of_id = 0

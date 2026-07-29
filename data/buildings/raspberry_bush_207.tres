@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_3v8n4"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_1x4bm"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qpk8u"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_h62oy"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_vmxo0"]
+
+[sub_resource type="Resource" id="Resource_ai3ft"]
+script = ExtResource("1_3v8n4")
+resource_id = 1
+amount = 6500.0
+
+[sub_resource type="Resource" id="Resource_kxuos"]
+script = ExtResource("2_1x4bm")
+entries = Array[ExtResource("1_3v8n4")]([SubResource("Resource_ai3ft")])
+
+[sub_resource type="Resource" id="Resource_cegrq"]
+script = ExtResource("3_qpk8u")
+target_id = 39
+
+[sub_resource type="Resource" id="Resource_imkh6"]
+script = ExtResource("4_h62oy")
+all_of = Array[ExtResource("3_qpk8u")]([SubResource("Resource_cegrq")])
+
+[sub_resource type="Resource" id="Resource_65jim"]
+script = ExtResource("1_3v8n4")
+resource_id = 1
+amount = 650.0
+
+[sub_resource type="Resource" id="Resource_b0pew"]
+script = ExtResource("2_1x4bm")
+entries = Array[ExtResource("1_3v8n4")]([SubResource("Resource_65jim")])
+
+[resource]
+script = ExtResource("5_vmxo0")
+id = 207
+display_name = "Raspberry Bush"
+type = 5
+width = 2
+height = 2
+xp_value = 3250.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_kxuos")
+sell = SubResource("Resource_b0pew")
+prerequisites = SubResource("Resource_imkh6")
+upgrade_of_id = 0
+info_text = "Raspberry Bushes grant a bonus to the XP and Gold received from all Shops by a small amount. (500% Maximum)"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProductionRecipe" format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/production_recipe.gd" id="1_0b3f5"]
+
+[resource]
+script = ExtResource("1_0b3f5")
+id = 118
+kind = 1
+display_name = "Pompadour"
+time_seconds = 7200.0
+input_cost = {
+1: 135.0
+}
+reward_xp = 320.0
+reward = {
+1: 400.0
+}
+hurry_cost = 3.0
+hurry_interval_seconds = 7200.0
+compatible_lands = Array[String](["Vanilla"])

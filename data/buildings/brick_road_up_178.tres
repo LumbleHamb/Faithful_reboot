@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_bsrte"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_ur2dn"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_nqfd0"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_85l13"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_pv8o3"]
+
+[sub_resource type="Resource" id="Resource_nm0jh"]
+script = ExtResource("1_bsrte")
+resource_id = 1
+amount = 200.0
+
+[sub_resource type="Resource" id="Resource_eprlv"]
+script = ExtResource("1_bsrte")
+resource_id = 21
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_ff5y1"]
+script = ExtResource("2_ur2dn")
+entries = Array[ExtResource("1_bsrte")]([SubResource("Resource_nm0jh"), SubResource("Resource_eprlv")])
+
+[sub_resource type="Resource" id="Resource_jagb8"]
+script = ExtResource("3_nqfd0")
+target_id = 22
+
+[sub_resource type="Resource" id="Resource_fn5s4"]
+script = ExtResource("4_85l13")
+all_of = Array[ExtResource("3_nqfd0")]([SubResource("Resource_jagb8")])
+
+[sub_resource type="Resource" id="Resource_2stin"]
+script = ExtResource("1_bsrte")
+resource_id = 1
+amount = 20.0
+
+[sub_resource type="Resource" id="Resource_2xkmi"]
+script = ExtResource("1_bsrte")
+resource_id = 21
+amount = 5.0
+
+[sub_resource type="Resource" id="Resource_4j5p4"]
+script = ExtResource("2_ur2dn")
+entries = Array[ExtResource("1_bsrte")]([SubResource("Resource_2stin"), SubResource("Resource_2xkmi")])
+
+[resource]
+script = ExtResource("5_pv8o3")
+id = 178
+display_name = "Brick Road Up"
+type = 5
+width = 2
+height = 2
+xp_value = 200.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_ff5y1")
+sell = SubResource("Resource_4j5p4")
+prerequisites = SubResource("Resource_fn5s4")
+upgrade_of_id = 0
+info_text = "Brick Roads grant a bonus to the XP and Gold received from all Shops by a small amount.(500% Maximum)"

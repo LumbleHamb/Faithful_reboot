@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_27cob"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cwhkg"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_un26w"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_ethoh"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_g08ou"]
+
+[sub_resource type="Resource" id="Resource_juqph"]
+script = ExtResource("1_27cob")
+resource_id = 1
+amount = 120.0
+
+[sub_resource type="Resource" id="Resource_qqbpi"]
+script = ExtResource("2_cwhkg")
+entries = Array[ExtResource("1_27cob")]([SubResource("Resource_juqph")])
+
+[sub_resource type="Resource" id="Resource_y7775"]
+script = ExtResource("3_un26w")
+target_id = 5
+
+[sub_resource type="Resource" id="Resource_l81ig"]
+script = ExtResource("4_ethoh")
+all_of = Array[ExtResource("3_un26w")]([SubResource("Resource_y7775")])
+
+[sub_resource type="Resource" id="Resource_vfqks"]
+script = ExtResource("1_27cob")
+resource_id = 10
+amount = 24.0
+
+[sub_resource type="Resource" id="Resource_trarg"]
+script = ExtResource("2_cwhkg")
+entries = Array[ExtResource("1_27cob")]([SubResource("Resource_vfqks")])
+
+[resource]
+script = ExtResource("5_g08ou")
+id = 103
+display_name = "Birch"
+type = 5
+width = 2
+height = 2
+xp_value = 60.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_qqbpi")
+sell = SubResource("Resource_trarg")
+prerequisites = SubResource("Resource_l81ig")
+upgrade_of_id = 0

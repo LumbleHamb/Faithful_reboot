@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_wwgcn"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qgxxp"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_qg2jc"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_7sndv"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_71jmx"]
+
+[sub_resource type="Resource" id="Resource_c8tim"]
+script = ExtResource("1_wwgcn")
+resource_id = 0
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_k8k8v"]
+script = ExtResource("2_qgxxp")
+entries = Array[ExtResource("1_wwgcn")]([SubResource("Resource_c8tim")])
+
+[sub_resource type="Resource" id="Resource_5h7ks"]
+script = ExtResource("3_qg2jc")
+target_id = 19
+
+[sub_resource type="Resource" id="Resource_dv5qt"]
+script = ExtResource("4_7sndv")
+all_of = Array[ExtResource("3_qg2jc")]([SubResource("Resource_5h7ks")])
+
+[sub_resource type="Resource" id="Resource_tm3e0"]
+script = ExtResource("1_wwgcn")
+resource_id = 1
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_i38y7"]
+script = ExtResource("2_qgxxp")
+entries = Array[ExtResource("1_wwgcn")]([SubResource("Resource_tm3e0")])
+
+[resource]
+script = ExtResource("5_71jmx")
+id = 236
+display_name = "Chicken Coop"
+type = 5
+width = 4
+height = 3
+xp_value = 2500.0
+compatible_lands = Array[String](["All"])
+cost = SubResource("Resource_k8k8v")
+sell = SubResource("Resource_i38y7")
+prerequisites = SubResource("Resource_dv5qt")
+upgrade_of_id = 0
+info_text = "Chicken Coops grant a bonus to the XP and Gold received from all Shops by 2.75% (500% Maximum)"

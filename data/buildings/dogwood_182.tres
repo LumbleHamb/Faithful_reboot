@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_sah3c"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_gdise"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_sy2q6"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_h6djk"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_malih"]
+
+[sub_resource type="Resource" id="Resource_o7q8x"]
+script = ExtResource("1_sah3c")
+resource_id = 0
+amount = 10.0
+
+[sub_resource type="Resource" id="Resource_basuo"]
+script = ExtResource("2_gdise")
+entries = Array[ExtResource("1_sah3c")]([SubResource("Resource_o7q8x")])
+
+[sub_resource type="Resource" id="Resource_2de1m"]
+script = ExtResource("3_sy2q6")
+target_id = 16
+
+[sub_resource type="Resource" id="Resource_sm5ys"]
+script = ExtResource("4_h6djk")
+all_of = Array[ExtResource("3_sy2q6")]([SubResource("Resource_2de1m")])
+
+[sub_resource type="Resource" id="Resource_qgrya"]
+script = ExtResource("1_sah3c")
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_ecwhb"]
+script = ExtResource("2_gdise")
+entries = Array[ExtResource("1_sah3c")]([SubResource("Resource_qgrya")])
+
+[resource]
+script = ExtResource("5_malih")
+id = 182
+display_name = "Dogwood"
+type = 5
+width = 2
+height = 2
+xp_value = 500.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_basuo")
+sell = SubResource("Resource_ecwhb")
+prerequisites = SubResource("Resource_sm5ys")
+upgrade_of_id = 0
+info_text = "This is a Dogwood.  You can tell it's a Dogwood because of the way it is. Grants a bonus to the XP and Gold received from all Shops by 0.4% (500% Maximum)"

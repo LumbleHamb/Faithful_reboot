@@ -1,0 +1,78 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" format=3]
+
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="1_r2kr8"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_qh4y8"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_entry.gd" id="3_jg0yo"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="4_hgqcp"]
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="5_ggukj"]
+
+[sub_resource type="Resource" id="Resource_gevu1"]
+script = ExtResource("1_r2kr8")
+resource_id = 1
+amount = 600.0
+
+[sub_resource type="Resource" id="Resource_qd0hr"]
+script = ExtResource("1_r2kr8")
+resource_id = 11
+amount = 500.0
+
+[sub_resource type="Resource" id="Resource_et71h"]
+script = ExtResource("1_r2kr8")
+resource_id = 20
+amount = 250.0
+
+[sub_resource type="Resource" id="Resource_85f1g"]
+script = ExtResource("2_qh4y8")
+entries = Array[ExtResource("1_r2kr8")]([SubResource("Resource_gevu1"), SubResource("Resource_qd0hr"), SubResource("Resource_et71h")])
+
+[sub_resource type="Resource" id="Resource_7ciro"]
+script = ExtResource("3_jg0yo")
+kind = 1
+target_id = 2
+required_count = 0
+
+[sub_resource type="Resource" id="Resource_2n66s"]
+script = ExtResource("3_jg0yo")
+target_id = 6
+
+[sub_resource type="Resource" id="Resource_du6kf"]
+script = ExtResource("4_hgqcp")
+all_of = Array[ExtResource("3_jg0yo")]([SubResource("Resource_7ciro"), SubResource("Resource_2n66s")])
+
+[sub_resource type="Resource" id="Resource_7wc60"]
+script = ExtResource("1_r2kr8")
+resource_id = 1
+amount = 60.0
+
+[sub_resource type="Resource" id="Resource_7avr0"]
+script = ExtResource("1_r2kr8")
+resource_id = 11
+amount = 50.0
+
+[sub_resource type="Resource" id="Resource_txqso"]
+script = ExtResource("1_r2kr8")
+resource_id = 20
+amount = 25.0
+
+[sub_resource type="Resource" id="Resource_3utv0"]
+script = ExtResource("2_qh4y8")
+entries = Array[ExtResource("1_r2kr8")]([SubResource("Resource_7wc60"), SubResource("Resource_7avr0"), SubResource("Resource_txqso")])
+
+[resource]
+script = ExtResource("5_ggukj")
+id = 32
+display_name = "Carpenter Shop"
+type = 2
+category = "shop"
+width = 5
+height = 5
+xp_value = 600.0
+compatible_lands = Array[String](["Vanilla"])
+cost = SubResource("Resource_85f1g")
+sell = SubResource("Resource_3utv0")
+build_time_seconds = 28800.0
+prerequisites = SubResource("Resource_du6kf")
+upgrade_of_id = 0
+shop_recipe_ids = Array[int]([10, 32, 12, 14, 13, 11])
+info_text = "Use the Carpenter Shop to complete jobs using Wood and Lumber."
+description_text = "Makes useful and decorative woodwork for sale"
