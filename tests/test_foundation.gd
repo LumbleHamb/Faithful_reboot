@@ -280,5 +280,18 @@ func _test_land_expansions_and_premium_offers() -> void:
 	_check(expand_ok, "SocialManager.buy_land_expansion() upgraded playable dimensions successfully using Gold")
 	_check(test_save.player_state.active_land_size == 56, "active_land_size is successfully enlarged to 56")
 	
+	# Test skin purchase & assignment
+	test_save.inventory.resource_amounts[1] = 3000.0 # Gold
+	test_save.inventory.resource_amounts[101] = 500.0 # Wood
+	test_save.inventory.resource_amounts[40] = 200.0 # Wheat
+	
+	var skin_ok = SocialManager.buy_skin("Winter")
+	_check(skin_ok, "SocialManager.buy_skin() purchased seasonal skin successfully using raw resources")
+	_check(test_save.player_state.unlocked_skins.has("Winter"), "unlocked_skins list updated correctly")
+	
+	var active_ok = SocialManager.set_active_skin("Winter")
+	_check(active_ok, "SocialManager.set_active_skin() assigned active theme successfully")
+	_check(test_save.player_state.active_skin == "Winter", "active_skin property updated to Winter")
+	
 	# Restore original save game
 	SaveManager.current_save = original_save

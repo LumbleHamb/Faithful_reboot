@@ -615,3 +615,75 @@ func buy_land_expansion(upgrade_id: int, pay_with_beans: bool = false) -> bool:
 	print("[SocialManager] Upgraded land boundary footprint to %dx%d!" % [target_size, target_size])
 	AudioManager.play_sfx(4) # fanfare level up chime sfx
 	return true
+
+## Purchases a seasonal skin theme using gathered raw resources to keep the economy balanced
+func buy_skin(skin_name: String) -> bool:
+	var save = _get_save()
+	if not save or not save.player_state:
+		return false
+		
+	# Check if already unlocked
+	if save.player_state.unlocked_skins.has(skin_name):
+		return false
+		
+	var gold_cost = 0.0
+	var wood_cost = 0.0
+	var wheat_cost = 0.0
+	
+	match skin_name:
+		"Winter":
+			gold_cost = 3000.0
+			wood_cost = 500.0
+			wheat_cost = 200.0
+		"Halloween":
+			gold_cost = 4000.0
+			wood_cost = 600.0
+			wheat_cost = 300.0
+		"FrontierWinter":
+			gold_cost = 5000.0
+			wood_cost = 800.0
+			wheat_cost = 400.0
+		_:
+			return false
+			
+	# Validate players can afford
+	if InventoryManager.amount(1) < gold_cost: # Gold (ID 1)
+		return false
+	if InventoryManager.amount(101) < wood_cost: # Wood (ID 101)
+		return false
+	if InventoryManager.amount(40) < wheat_cost: # Wheat (ID 40)
+		return false
+		
+	# Deduct costs
+	InventoryManager.remove(1, gold_cost)
+	InventoryManager.remove(101, wood_cost)
+	InventoryManager.remove(40, wheat_cost)
+	
+	# Unlock skin
+	save.player_state.unlocked_skins.append(skin_name)
+	
+	# Emit event
+	EventBus.resource_changed.emit(1, InventoryManager.amount(1))
+	
+	# Play nice fanfare sound
+	print("[SocialManager] Unlocked seasonal skin theme: %s!" % skin_name)
+	AudioManager.play_sfx(4) # fanfare sfx
+	return true
+
+## Sets the player's active visual skin theme if unlocked
+func set_active_skin(skin_name: String) -> bool:
+	var save = _get_save()
+	if not save or not save.player_state:
+		return false
+		
+	# Verify skin is unlocked
+	if not save.player_state.unlocked_skins.has(skin_name) and skin_name != "Vanilla":
+		return false
+		
+	# Set active skin
+	save.player_state.active_skin = skin_name
+	print("[SocialManager] Active skin theme updated to: %s!" % skin_name)
+	
+	# Play nice click sound
+	AudioManager.play_sfx(17) # complete/buy chime
+	return true

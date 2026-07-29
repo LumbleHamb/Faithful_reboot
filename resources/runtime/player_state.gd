@@ -25,3 +25,6 @@ extends Resource
 
 ## The active visual skin theme (e.g. "Vanilla", "Winter")
 @export var active_skin: String = "Vanilla"
+
+## The list of unlocked/purchased skin themes
+@export var unlocked_skins: Array[String] = ["Vanilla"]
