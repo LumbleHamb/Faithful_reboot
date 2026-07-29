@@ -29,6 +29,7 @@ func _ready() -> void:
 	
 	EventBus.building_selected_for_placement.connect(_on_building_selected_for_placement)
 	EventBus.building_instance_selected.connect(_on_building_instance_selected)
+	EventBus.spawn_floating_text.connect(_on_spawn_floating_text)
 
 	_initialize_world_layout()
 
@@ -197,4 +198,24 @@ func _on_toggle_build_menu_pressed() -> void:
 
 func _on_building_instance_selected(instance: BuildingInstance) -> void:
 	building_popup.show_for_building(instance)
+
+func _on_spawn_floating_text(text: String, global_pos: Vector2, color: Color) -> void:
+	var label = Label.new()
+	label.text = text
+	label.position = global_pos
+	
+	# Add beautiful contrast outlining so the numbers are highly visible over grass/terrain
+	label.add_theme_color_override("font_color", color)
+	label.add_theme_color_override("font_outline_color", Color.BLACK)
+	label.add_theme_constant_override("outline_size", 5)
+	label.add_theme_font_size_override("font_size", 20)
+	
+	world_container.add_child(label)
+	
+	# Animate float & fade cleanly using Godot 4.7 tweens
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(label, "position:y", global_pos.y - 65.0, 1.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(label, "modulate:a", 0.0, 1.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	
+	tween.chain().tween_callback(label.queue_free)
 

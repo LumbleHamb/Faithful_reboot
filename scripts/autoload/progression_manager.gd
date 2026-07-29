@@ -55,3 +55,5 @@ func _on_building_placed(building_instance: BuildingInstance) -> void:
 	var building_def = DataManager.get_building_definition(building_instance.def_id)
 	if building_def and building_def.xp_value > 0:
 		add_xp(building_def.xp_value)
+		var world_pos = Vector2(building_instance.x * 64 + 32, building_instance.y * 64 + 16)
+		EventBus.spawn_floating_text.emit("+%d XP" % building_def.xp_value, world_pos, Color.GOLD)

@@ -2,6 +2,7 @@
 extends Node2D
 
 var building_instance: BuildingInstance
+var _harvest_bubble: Panel = null
 
 @onready var color_rect: ColorRect = $ColorRect
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -10,6 +11,64 @@ var building_instance: BuildingInstance
 
 func _ready() -> void:
 	area_2d.input_event.connect(_on_input_event)
+	_create_harvest_bubble()
+
+func _create_harvest_bubble() -> void:
+	_harvest_bubble = Panel.new()
+	_harvest_bubble.name = "HarvestBubble"
+	_harvest_bubble.custom_minimum_size = Vector2(40, 40)
+	
+	var sb = StyleBoxFlat.new()
+	sb.bg_color = Color(1.0, 0.84, 0.0, 0.95) # Gold
+	sb.corner_radius_top_left = 20
+	sb.corner_radius_top_right = 20
+	sb.corner_radius_bottom_left = 20
+	sb.corner_radius_bottom_right = 20
+	sb.shadow_color = Color(0, 0, 0, 0.3)
+	sb.shadow_size = 4
+	_harvest_bubble.add_theme_stylebox_override("panel", sb)
+	
+	var label = Label.new()
+	label.text = "!"
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_color_override("font_color", Color.BLACK)
+	label.add_theme_color_override("font_outline_color", Color.WHITE)
+	label.add_theme_constant_override("outline_size", 3)
+	label.add_theme_font_size_override("font_size", 22)
+	label.set_anchors_preset(Control.PRESET_FULL_RECT)
+	label.grow_horizontal = Control.GROW_DIRECTION_BOTH
+	label.grow_vertical = Control.GROW_DIRECTION_BOTH
+	
+	_harvest_bubble.add_child(label)
+	add_child(_harvest_bubble)
+	_harvest_bubble.visible = false
+
+func _process(delta: float) -> void:
+	if not building_instance:
+		return
+		
+	# Check if building has any stored resources to display the harvest bubble
+	var has_stored = false
+	for res_id in building_instance.stored_resources.keys():
+		if building_instance.stored_resources[res_id] >= 1.0:
+			has_stored = true
+			break
+			
+	if has_stored and building_instance.construction_complete:
+		_harvest_bubble.visible = true
+		var tile_size = 64
+		var building_def = DataManager.get_building_definition(building_instance.def_id)
+		var width = building_def.width if building_def else 1
+		var height = building_def.height if building_def else 1
+		var building_size = Vector2(width * tile_size, height * tile_size)
+		
+		var target_pos = Vector2(building_size.x / 2 - 20, -32)
+		# Gentle bouncing animation
+		target_pos.y += sin(Time.get_ticks_msec() / 150.0) * 6.0
+		_harvest_bubble.position = target_pos
+	else:
+		_harvest_bubble.visible = false
 
 func set_building(instance: BuildingInstance):
 	# Resolve child nodes on-demand in case set_building is called before add_child

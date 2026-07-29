@@ -69,6 +69,12 @@ func _process_haulers(delta: float) -> void:
 				
 				if amount_hauled > 0:
 					print("[EconomyManager] Hauled %f of resource %d from %s" % [amount_hauled, res_id, instance.instance_id])
+					var res_def = DataManager.get_resource_definition(res_id)
+					var res_name = res_def.name if res_def else "Resource"
+					var color = Color.GOLD if res_id == 1 else (Color.YELLOW if res_id == 40 else Color.SPRING_GREEN)
+					
+					var world_pos = Vector2(instance.x * 64 + 32, instance.y * 64 + 16)
+					EventBus.spawn_floating_text.emit("+%d %s" % [floor(amount_hauled), res_name], world_pos, color)
 				
 				# If storage was full and is now not, resume production
 				var was_paused = not _active_producers.has(instance.instance_id)

@@ -53,3 +53,9 @@ signal level_up(new_level)
 # Emitted when the player's total XP changes.
 # - new_xp_total: The new total XP amount.
 signal xp_changed(new_xp_total)
+
+# Emitted to spawn visual floating text above buildings or coordinates
+# - text: The string to show (e.g. "+5 Wood")
+# - global_position: Where to spawn the floating text in 2D space
+# - color: The visual color of the text
+signal spawn_floating_text(text: String, global_position: Vector2, color: Color)
