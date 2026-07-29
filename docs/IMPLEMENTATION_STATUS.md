@@ -66,13 +66,13 @@ This document provides a high-level summary of the implementation status of the 
 
 ---
 
-## Phase 5: Polish & Long-Term (NOT STARTED)
+## Phase 5: Polish & Long-Term (SUBSTANTIALLY COMPLETE)
 
 **Goal:** Integrate final assets and implement secondary/long-term features.
 
-*   **Status:** Not Started.
+*   **Status:** Substantially Complete.
 *   **Key Tasks:**
-    *   Integrate final, converted art and audio assets.
-    *   Implement advanced production chains (crafting).
-    *   Implement villager simulation features (e.g., hunger).
-    *   Implement self-hosted social/multiplayer features.
+    *   **[COMPLETE]** Integrate final, converted art and audio assets (dynamic building sprites, menu/popup previews, and IMA4-to-WAV decoded audio).
+    *   **[COMPLETE]** Implement self-hosted/simulated social/multiplayer features (SocialManager with dynamic market supply/demand walk, persistent virtual AI friends with level progression, trading board, mail inbox gifting, and leaderboards).
+    *   **[PENDING]** Implement advanced production chains (crafting).
+    *   **[PENDING]** Implement villager simulation features (e.g., hunger).

@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 EventBus="*res://scripts/autoload/event_bus.gd"
 AudioManager="*res://scripts/autoload/audio_manager.gd"
+SocialManager="*res://scripts/autoload/social_manager.gd"
 DataManager="*res://scripts/autoload/data_manager.gd"
 TimeManager="*res://scripts/autoload/time_manager.gd"
 SaveManager="*res://scripts/autoload/save_manager.gd"

@@ -19,6 +19,7 @@ func run_all() -> bool:
 	_test_save_round_trip()
 	_test_time_advances()
 	_test_building_art_loading()
+	_test_social_manager_features()
 
 	if _failures.is_empty():
 		print("[FoundationTests] ALL TESTS PASSED")
@@ -43,6 +44,7 @@ func _test_managers_present() -> void:
 	_check(TimeManager != null, "TimeManager autoload is present")
 	_check(GameManager != null, "GameManager autoload is present")
 	_check(AudioManager != null, "AudioManager autoload is present")
+	_check(SocialManager != null, "SocialManager autoload is present")
 	_check(
 		GameManager.current_state == GameManager.State.MAIN_MENU,
 		"GameManager reached MAIN_MENU after boot"
@@ -114,3 +116,68 @@ func _test_building_art_loading() -> void:
 		_check(color_rect.color.a < 1.0, "Footprint ColorRect opacity is reduced for a texture-loaded building")
 	
 	building_node.queue_free()
+
+
+func _test_social_manager_features() -> void:
+	# Create a mock save game and attach it to SaveManager so SocialManager can execute
+	var original_save = SaveManager.current_save
+	var test_save = SaveManager.create_new_save()
+	
+	# Give the player initial Gold, Wood, Wheat
+	test_save.inventory.resource_amounts[1] = 500.0 # 500 Gold
+	test_save.inventory.resource_amounts[101] = 50.0 # 50 Wood
+	test_save.inventory.resource_capacity[101] = 100.0
+	test_save.inventory.resource_amounts[40] = 50.0 # 50 Wheat
+	test_save.inventory.resource_capacity[40] = 100.0
+	
+	# Verify pricing loaded and initialized
+	var prices = SocialManager.get_market_prices()
+	_check(prices.has(101) and prices.has(40), "SocialManager initialized market prices correctly")
+	
+	# Test buy from market
+	var prev_gold = test_save.inventory.resource_amounts[1]
+	var prev_wood = test_save.inventory.resource_amounts[101]
+	var buy_ok = SocialManager.buy_from_market(101, 10)
+	_check(buy_ok, "SocialManager.buy_from_market() executed successfully")
+	_check(test_save.inventory.resource_amounts[101] == prev_wood + 10, "Inventory added purchased resource")
+	_check(test_save.inventory.resource_amounts[1] < prev_gold, "Inventory deducted Gold for market purchase")
+	
+	# Test sell to market
+	prev_gold = test_save.inventory.resource_amounts[1]
+	prev_wood = test_save.inventory.resource_amounts[101]
+	var sell_ok = SocialManager.sell_to_market(101, 5)
+	_check(sell_ok, "SocialManager.sell_to_market() executed successfully")
+	_check(test_save.inventory.resource_amounts[101] == prev_wood - 5, "Inventory removed sold resource")
+	_check(test_save.inventory.resource_amounts[1] > prev_gold, "Inventory added Gold for market sale")
+	
+	# Test friends list
+	var friends = SocialManager.get_friends_list()
+	_check(friends.size() == 4, "SocialManager loaded exactly 4 simulated virtual friends")
+	
+	# Test leaderboard compilation
+	var leaderboard = SocialManager.get_leaderboard()
+	_check(leaderboard.size() == 5, "SocialManager constructed leaderboard with 5 ranked participants (4 friends + player)")
+	_check(leaderboard[0].has("name") and leaderboard[0].has("level"), "Leaderboard entries are formatted correctly")
+	
+	# Test accepting trades
+	var trades = SocialManager.get_active_trades()
+	_check(trades.size() > 0, "SocialManager generated simulated trades on trade board")
+	if trades.size() > 0:
+		var trade = trades[0]
+		# Mock player inventory so they can afford the trade
+		test_save.inventory.resource_amounts[trade["receive_id"]] = trade["receive_amount"] + 10
+		test_save.inventory.resource_amounts[trade["give_id"]] = 0.0
+		var accept_ok = SocialManager.accept_trade(trade["id"])
+		_check(accept_ok, "SocialManager.accept_trade() processed valid trade offer successfully")
+	
+	# Test inbox claiming
+	var messages = SocialManager.get_inbox_messages()
+	_check(messages.size() == 2, "SocialManager initialized 2 startup inbox messages")
+	var mail_with_gift = messages[0] # mail_1 has wood
+	test_save.inventory.resource_amounts[101] = 0.0
+	var claim_ok = SocialManager.claim_gift(mail_with_gift["id"])
+	_check(claim_ok, "SocialManager.claim_gift() claimed resource attachment successfully")
+	_check(test_save.inventory.resource_amounts[101] == 25.0, "Resource attachment deposited into player inventory")
+	
+	# Restore original save game
+	SaveManager.current_save = original_save
