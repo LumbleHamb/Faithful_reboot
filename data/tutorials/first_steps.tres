@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Tutorial" load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/tutorial.gd" id="1_t"]
+[ext_resource type="Script" path="res://resources/definitions/tutorial_objective.gd" id="2_to"]
+
+[sub_resource type="Resource" id="obj1"]
+script = ExtResource("2_to")
+type = 0 # BUILD
+text = "Build a Small Cottage to attract a new villager."
+target_def_id = 101 # BuildingDefinition ID for Small Cottage
+quantity = 1
+
+[sub_resource type="Resource" id="obj2"]
+script = ExtResource("2_to")
+type = 0 # BUILD
+text = "Build a Logging Camp to start gathering wood."
+target_def_id = 201 # BuildingDefinition ID for Logging Camp
+quantity = 1
+
+[sub_resource type="Resource" id="obj3"]
+script = ExtResource("2_to")
+type = 1 # ASSIGN_WORKER
+text = "Assign a worker to the Logging Camp."
+target_def_id = 201 # BuildingDefinition ID for Logging Camp
+quantity = 1
+
+[resource]
+script = ExtResource("1_t")
+id = 1
+title = "First Steps"
+objectives = [SubResource("obj1"), SubResource("obj2"), SubResource("obj3")]

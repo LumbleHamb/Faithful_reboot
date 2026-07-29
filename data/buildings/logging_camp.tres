@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://resources/definitions/building_definition.gd" type="Script" id=1]
+[ext_resource path="res://resources/shared/cost_bundle.gd" type="Script" id=2]
+[ext_resource path="res://resources/shared/prerequisite_set.gd" type="Script" id=3]
+
+[resource]
+script = ExtResource( 1 )
+id = 201
+display_name = "Logging Camp"
+type = 1
+category = "BASIC"
+width = 2
+height = 2
+xp_value = 100
+icon_path = "res://assets/art/converted/LUMBERYARD.png"
+compatible_lands = [ "Vanilla" ]
+cost = ExtResource( 2 ).new()
+sell = ExtResource( 2 ).new()
+sellable = true
+build_time_seconds = 60
+prerequisites = ExtResource( 3 ).new()
+upgrade_of_id = -1
+upgrade_only = false
+owned_limit = -1
+storage_capacities = {
+}
+gather_recipe_id = 1
+shop_recipe_ids = [  ]
+info_text = "Gathers wood from the forest."
+description_text = "A camp for logging."
+

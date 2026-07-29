@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://resources/definitions/building_definition.gd" type="Script" id=1]
+[ext_resource path="res://resources/shared/cost_bundle.gd" type="Script" id=2]
+[ext_resource path="res://resources/shared/prerequisite_set.gd" type="Script" id=3]
+
+[resource]
+script = ExtResource( 1 )
+id = 1
+display_name = "Town Hall"
+type = 0
+category = "TOWNHALL"
+width = 3
+height = 3
+xp_value = 0
+icon_path = "res://assets/art/converted/TOWNHALL.png"
+compatible_lands = [ "Vanilla" ]
+cost = ExtResource( 2 ).new()
+sell = ExtResource( 2 ).new()
+sellable = false
+build_time_seconds = 0
+prerequisites = ExtResource( 3 ).new()
+upgrade_of_id = -1
+upgrade_only = false
+owned_limit = 1
+storage_capacities = {
+101: 500
+}
+gather_recipe_id = -1
+shop_recipe_ids = [  ]
+info_text = "The center of your town."
+description_text = "Your Town Hall."

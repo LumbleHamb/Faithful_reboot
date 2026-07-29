@@ -1,0 +1,42 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://resources/runtime/town_layout.gd" type="Script" id=1]
+[ext_resource path="res://resources/runtime/building_instance.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+instance_id = "town_hall_01"
+def_id = 1
+land = "Vanilla"
+x = 0
+y = 0
+flipped = false
+construction_started_at = -1.0
+construction_complete = true
+stored_resources = {}
+active_recipe_id = -1
+recipe_started_at = -1.0
+assigned_worker_ids = []
+assigned_hauler_ids = []
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+instance_id = "logging_camp_01"
+def_id = 201
+land = "Vanilla"
+x = 4
+y = 0
+flipped = false
+construction_started_at = -1.0
+construction_complete = true
+stored_resources = {}
+active_recipe_id = -1
+recipe_started_at = -1.0
+assigned_worker_ids = []
+assigned_hauler_ids = []
+
+[resource]
+script = ExtResource( 1 )
+land = "Vanilla"
+resource_tiles = []
+starting_objects = [ SubResource( 1 ), SubResource( 2 ) ]

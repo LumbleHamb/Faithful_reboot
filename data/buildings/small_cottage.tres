@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="BuildingDefinition" load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/building_definition.gd" id="1_bdef"]
+[ext_resource type="Script" path="res://resources/shared/cost_bundle.gd" id="2_cb"]
+[ext_resource type="Script" path="res://resources/shared/prerequisite_set.gd" id="3_ps"]
+[ext_resource type="Script" path="res://resources/shared/cost_entry.gd" id="4_ce"]
+
+[sub_resource type="Resource" id="cost_gold"]
+script = ExtResource("4_ce")
+kind = 1 # GOLD
+resource_id = 1
+amount = 75.0
+
+[sub_resource type="Resource" id="cost_wood"]
+script = ExtResource("4_ce")
+kind = 0 # RESOURCE
+resource_id = 10
+amount = 50.0
+
+[sub_resource type="Resource" id="cost_wheat"]
+script = ExtResource("4_ce")
+kind = 0 # RESOURCE
+resource_id = 40
+amount = 25.0
+
+[sub_resource type="Resource" id="cost_bundle_main"]
+script = ExtResource("2_cb")
+entries = [SubResource("cost_gold"), SubResource("cost_wood"), SubResource("cost_wheat")]
+
+[resource]
+script = ExtResource("1_bdef")
+id = 101
+display_name = "Small Cottage"
+type = 6 # HOUSE
+category = "HOUSE"
+width = 2
+height = 2
+xp_value = 25
+icon_path = "res://assets/art/converted/LITTLECOTTAGE.png"
+compatible_lands = ["Vanilla"]
+cost = SubResource("cost_bundle_main")
+prerequisites = ExtResource("3_ps").new()
+build_time_seconds = 30.0
+info_text = "Provides housing for your villagers."
+description_text = "A cozy cottage for a villager to live in."

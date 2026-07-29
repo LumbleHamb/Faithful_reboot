@@ -61,7 +61,7 @@ Two distinct production mechanics coexist:
    (Logging Camp, Quarry, Farm, Pen, later Gold Panner) has one `<Produce>` block:
    - `hurryCost` — energy/currency cost to instantly finish current production.
    - `<Output resource_id maxOutputStackSize>` — what it makes and the max it can
-     bank before a hauler must clear it.
+     bank before a hauler must clear it. Video analysis confirms the Logging Camp has an internal storage limit (i.e., `maxOutputStackSize`) of 150 Wood.
    - `<Rate resourcesPerHour villagerResourcesPerHour mayorResources
      mayorResourcesNoEnergy>` — passive production rate is 0 in every sampled
      example; production only happens via an assigned villager
@@ -87,11 +87,14 @@ Two distinct production mechanics coexist:
    - `<HurryCost timeInterval="S">N</HurryCost>` — cost (implied currency/energy) to
      skip `timeInterval` seconds of remaining time
    - `Prerequisite type="level"` gating which recipes are available yet
-   - Confirmed example chain (Baker Shop): Cookies (45s, 1 Wheat → 5 XP + 10 Gold),
-     Tarts (300s, 4 Wheat → 15 XP + 25 Gold), Donuts (3600s, 30 Wheat → 60 XP + 110
-     Gold), Cupcakes (14400s, 200 Wheat → 200 XP + 200 Gold), Eclair (43200s, 350
-     Wheat → ...). Reward scales sub-linearly with cost as time increases — a
-     deliberate idle-game pacing curve, not a fixed ratio.
+   - Confirmed example chain (Baker Shop, from video analysis):
+     - **Cookies**: 45s, 1 Wheat → 10 Gold, 5 XP
+     - **Tarts**: 5m, 4 Wheat → 25 Gold, 15 XP
+     - **Donuts**: 60m, 30 Wheat → 110 Gold, 60 XP
+     - **Cupcakes**: 4h, 200 Wheat → 200 Gold, 200 XP
+     - **Eclair**: 12h, 350 Wheat → 410 Gold, 350 XP
+     - **Cake**: 24h, 600 Wheat → 750 Gold, 650 XP
+   - The reward-to-cost ratio diminishes as crafting time increases, a classic idle-game pacing curve.
    - This is the actual "trade nations" economic engine: shops are where raw/refined
      resources convert into Gold and XP, and decorations buff this conversion (see
      Decorations/Buffs below).

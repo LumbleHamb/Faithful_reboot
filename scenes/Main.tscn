@@ -1,10 +1,39 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xusf7"]
+[ext_resource type="PackedScene" uid="uid://build_menu_scene_1" path="res://scenes/ui/build_menu.tscn" id="2_e2vaf"]
+[ext_resource type="PackedScene" uid="uid://building_popup_scene_1" path="res://scenes/ui/building_popup.tscn" id="3_abcde"]
+[ext_resource type="PackedScene" uid="uid://resource_hud_scene_1" path="res://scenes/ui/resource_hud.tscn" id="4_fghij"]
+[ext_resource type="PackedScene" uid="uid://tutorial_popup_scene_1" path="res://scenes/ui/tutorial_popup.tscn" id="5_klmno"]
+
 
 [node name="Main" type="Node"]
-script = ExtResource("1")
+script = ExtResource("1_xusf7")
 
 [node name="WorldContainer" type="Node2D" parent="."]
 
 [node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="ResourceHud" parent="UILayer" instance=ExtResource("4_fghij")]
+
+[node name="BuildMenu" parent="UILayer" instance=ExtResource("2_e2vaf")]
+visible = false
+
+[node name="BuildingPopup" parent="UILayer" instance=ExtResource("3_abcde")]
+
+[node name="TutorialPopup" parent="UILayer" instance=ExtResource("5_klmno")]
+
+[node name="ToggleBuildMenuButton" type="Button" parent="UILayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -40.0
+offset_right = 60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Build"
+
+[connection signal="pressed" from="UILayer/ToggleBuildMenuButton" to="." method="_on_toggle_build_menu_pressed"]

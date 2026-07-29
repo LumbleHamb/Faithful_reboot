@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://resources/definitions/production_recipe.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 1
+kind = 0
+display_name = "Gather Wood"
+output_resource_id = 10
+max_output_stack_size = 150.0
+worker_type_label = "Wood Cutter"
+worker_max = 2
+hauler_max = 1
+resources_per_hour_passive = 0.0
+villager_resources_per_hour = 10.0
+mayor_resources = 5.0
+mayor_resources_no_energy = 0.0
+hurry_cost = 1.0

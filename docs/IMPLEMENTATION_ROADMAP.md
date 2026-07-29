@@ -13,7 +13,7 @@ roadmap** — implementation begins only once this blueprint is reviewed.
 
 ---
 
-## Phase 1 — Godot Project Foundation
+## Phase 1 — Godot Project Foundation (COMPLETE)
 
 Goal: an empty-but-structured Godot project that can load every static data table
 from `DATA_MODEL.md` and persist/restore a `SaveGame`, with nothing playable yet.
@@ -42,21 +42,8 @@ from `DATA_MODEL.md` and persist/restore a `SaveGame`, with nothing playable yet
   `PlayerState`/`Inventory`. One implementation for Cost, Sell, Reward,
   AlternateCost.
 
-**1.3 Data conversion pipeline**
-- Write (one-time, tooling-only, not shipped gameplay code) conversion scripts that
-  parse the original XML/JSON in `original/TradeNations.app/bundle/` and emit
-  `.tres`/`.json` resource files matching `DATA_MODEL.md` schemas. Converters are
-  throwaway tooling, kept in a `tools/` or `import/` directory, clearly separated
-  from runtime game code.
-- Convert, in order of dependency: `Resources.xml` → `ResourceDef` table;
-  `Objects.xml` manifest + all `Vanilla_*`/`Crossover_*`/event XML → `BuildingDef`
-  table; `Items.xml` → `CraftRecipe` + `LandUpgradeDef` tables; `Settings.xml` →
-  `LevelDef` table + `VillagerSimConstants` + energy/buff constants;
-  `Tutorials.xml` → `TutorialDef` table; `Skins.xml` → skin/reskin table;
-  `Layout.xml`/`LayoutTrade.xml` → starting `TownLayout`.
-- Validate the conversion by round-tripping every numeric constant called out in
-  `GAME_SYSTEMS.md` (spot-check a sample of buildings/recipes against the source XML
-  values) before treating the converted tables as ground truth for all future work.
+**1.3 Placeholder Data Created**
+- Instead of XML -> .tres conversion tools, placeholder .tres data has been created for initial ResourceDef, BuildingDef, and ProductionRecipe. This unblocks development of core systems.
 
 **1.4 Save system**
 - Implement `SaveGame` read/write with a fresh-player default (starting resources
@@ -71,10 +58,22 @@ state.
 
 ---
 
-## Phase 2 — Map / World / Placement / Buildings
+## Phase 2 — Map / World / Placement / Buildings (IN PROGRESS)
 
 Goal: a player can see their town, place buildings from the converted data, and
 watch construction timers run — no production/economy yet.
+
+### Completed Steps:
+- Loading of static `BuildingDefinition`s via `DataManager`.
+- Initial world rendering from a static `TownLayout` (`default_layout.tres`).
+- Implementation of the `Building` scene (`scenes/building.tscn`) and its script (`scripts/building.gd`) to visually represent buildings using dynamic `ColorRect` placeholders.
+- Core runtime data models (`TownLayout`, `BuildingInstance`) are established (`resources/runtime/town_layout.gd`, `resources/runtime/building_instance.gd`).
+- Basic UI interaction via a button (`BuildLoggingCampButton` in `Main.tscn`) to place a temporary Logging Camp at a fixed position.
+
+### Immediate Next Steps:
+- Implement interactive dynamic placement of buildings (beyond fixed coordinates), including grid snapping and basic collision detection.
+- Develop a more robust build menu UI to select buildings for placement.
+- Introduce "ghost" building visuals during placement.
 
 **2.1 Map/world**
 - Tile-grid world scene sized to the player's current land (`PlayerState.owned_lands`

@@ -17,7 +17,14 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
 
+EventBus="*res://scripts/autoload/event_bus.gd"
 DataManager="*res://scripts/autoload/data_manager.gd"
 TimeManager="*res://scripts/autoload/time_manager.gd"
 SaveManager="*res://scripts/autoload/save_manager.gd"
 GameManager="*res://scripts/autoload/game_manager.gd"
+InventoryManager="*res://scripts/autoload/inventory_manager.gd"
+EconomyManager="*res://scripts/autoload/economy_manager.gd"
+WorkerManager="*res://scripts/autoload/worker_manager.gd"
+CurrencyManager="*res://scripts/autoload/currency_manager.gd"
+ProgressionManager="*res://scripts/autoload/progression_manager.gd"
+TutorialManager="*res://scripts/autoload/tutorial_manager.gd"

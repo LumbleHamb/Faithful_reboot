@@ -133,11 +133,18 @@ they query managers and listen to `EventBus` signals, then render. This means:
   time — this is what makes `SaveManager` reload deterministic (see §2.3).
 
 `EventBus` (autoload, no dependencies) is a pure signal-relay singleton — managers
-emit domain events here (`building_placed`, `resource_changed`,
-`recipe_completed`, `level_up`, `tutorial_objective_progressed`, ...) instead of
-holding direct references to each other or to scenes. This decouples, e.g.,
-`BuildingManager` from needing to know `TutorialManager` exists at all — Tutorial
-just listens.
+emit domain events here instead of holding direct references to each other or to
+scenes. This decouples, e.g., `BuildingManager` from needing to know
+`TutorialManager` exists at all — Tutorial just listens.
+
+Examples of domain events to be emitted include:
+- `building_placed(instance_id)`
+- `resource_changed(resource_id, new_amount)`
+- `recipe_completed(instance_id, recipe_id, reward)`
+- `level_up(new_level)`
+- `tutorial_objective_progressed(tutorial_id, objective_index)`
+
+The video analysis reinforces this event-driven design, suggesting a similar set of events based on observed gameplay: `OnBuildingPlaced`, `OnVillagerAssigned`, `OnRecipeStarted`, `OnProductionCompleted`, and `OnResourceTraded`. These map well to the proposed signals.
 
 ---
 
@@ -145,7 +152,7 @@ just listens.
 
 **Responsibility**: overall game/app state machine and scene transitions. The
 single entry point that decides "what is the player looking at right now" and
-"is there an active game session."
+"is there an active game session." `scripts/main.gd` (the root Main scene) orchestrates the initial world state by loading the default town layout, retrieving building definitions from `DataManager`, and instantiating building scenes.
 
 **State machine** (`GameManager.State` enum): `BOOT → MAIN_MENU → LOADING_SAVE →
 IN_GAME → PAUSED → (back to MAIN_MENU on quit-to-menu)`.
@@ -581,6 +588,8 @@ designer and never shipped in `data/` — they're created empty by
 `SaveManager.create_new_save()` and mutated only through manager methods, then
 serialized to a save slot. Same base class (`Resource`), completely different
 lifecycle and folder (`data_model/runtime/`, never `data/`).
+
+Crucially, the `resources/runtime/town_layout.gd` (class `TownLayout`) resource serves as the container for active layout information, holding references to individual placed buildings. Each placed building in turn is represented by a `resources/runtime/building_instance.gd` (class `BuildingInstance`) resource, which acts as the data model for an individual placed building at runtime, storing its definition ID, position, and other dynamic state.
 
 ---
 

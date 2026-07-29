@@ -13,3 +13,6 @@ Thumbs.db
 # Python
 __pycache__/
 *.pyc
+
+# Executables
+*.exe

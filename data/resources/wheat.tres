@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ResourceDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/definitions/resource_definition.gd" id="1_1"]
+
+[resource]
+script = ExtResource("1_1")
+id = 40
+name = "Wheat"
+tier = 1
+score_value = 1.0
+start_value = 50.0
+refines_from = -1
+icon_font_char = "w"
+stack_sprite = ""
+single_sprite = ""
+hauler_anim_id = 0
+collect_sfx_id = 0

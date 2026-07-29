@@ -1,22 +1,9 @@
-## BuildingDefinition
-## Static content schema for one placeable building/decoration. Mirrors the
-## original's single overloaded <Object> tag (Objects.xml manifest +
-## Vanilla_*/Crossover_*/seasonal XML) — one schema covers town halls, mines,
-## shops, storage, market, houses, decorations, etc. via `type` + optional
-## fields, matching how the source data itself is structured.
-## See docs/GAME_SYSTEMS.md §3/§4 and docs/DATA_MODEL.md §2.
-##
-## Phase 1: schema only. No .tres instances exist yet in data/buildings/ —
-## no gameplay content has been authored (see docs/IMPLEMENTATION_STATUS.md).
-##
-## Cost/prerequisite fields use plain Dictionary/Array shapes rather than
-## dedicated CostBundle/PrerequisiteSet Resource types (docs/DATA_MODEL.md
-## §0) — those shared primitives are introduced once a second definition
-## type actually needs them, to avoid building shared infrastructure ahead
-## of a real second consumer. ProductionRecipe uses the same plain-Dictionary
-## convention for the same reason.
-class_name BuildingDefinition
+# resources/definitions/building_definition.gd
 extends Resource
+class_name BuildingDefinition
+
+const CostBundle = preload("res://resources/shared/cost_bundle.gd")
+const PrerequisiteSet = preload("res://resources/shared/prerequisite_set.gd")
 
 ## Observed `type=` values across the original's Object XML.
 enum BuildingType {
@@ -41,25 +28,23 @@ enum BuildingType {
 ## One-time XP granted on construction.
 @export var xp_value: float = 0.0
 
+## Path to the visual representation in assets/art/converted/
+@export var icon_path: String = ""
+
 ## e.g. ["Vanilla"], ["Frontier"], or ["All"].
 @export var compatible_lands: Array[String] = []
 
-## { resource_id: int -> amount: float }. Key "magic_beans" is reserved for
-## the premium-currency portion of a cost, matching the original's
-## <MagicBeans> tag alongside <Resource> costs.
-@export var cost: Dictionary = {}
+@export var cost: CostBundle = CostBundle.new()
 
 ## Same shape as `cost`. Empty (and `sellable = false`) for buildings the
 ## original never allows selling (e.g. every Town Hall tier).
-@export var sell: Dictionary = {}
+@export var sell: CostBundle = CostBundle.new()
 @export var sellable: bool = true
 
 @export var build_time_seconds: float = 0.0
 
-## Each entry: { "kind": "level"|"building"|"tutorial"|"land_upgrade"|
-## "reward_unlockable", "target_id": int, "min_value": int }. All entries
-## are ANDed together, matching the original's multiple-<Prerequisite> tags.
-@export var prerequisites: Array[Dictionary] = []
+## Defines the set of prerequisites for this building to be available.
+@export var prerequisites: PrerequisiteSet = PrerequisiteSet.new()
 
 ## -1 = this building is not an upgrade of anything.
 @export var upgrade_of_id: int = -1

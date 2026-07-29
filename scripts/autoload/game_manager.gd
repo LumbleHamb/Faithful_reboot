@@ -34,6 +34,7 @@ func start_new_game() -> SaveGame:
 	var save := SaveManager.create_new_save()
 	current_state = State.IN_GAME
 	print("[GameManager] New game started.")
+	TutorialManager.start_tutorials()
 	# TODO (Phase 2): instantiate World.tscn for the starting land once
 	# BuildingDefinition content and a starting TownLayout exist.
 	return save

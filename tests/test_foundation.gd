@@ -18,6 +18,7 @@ func run_all() -> bool:
 	_test_data_manager_loads()
 	_test_save_round_trip()
 	_test_time_advances()
+	_test_building_art_loading()
 
 	if _failures.is_empty():
 		print("[FoundationTests] ALL TESTS PASSED")
@@ -89,3 +90,26 @@ func _test_time_advances() -> void:
 
 	var remaining := TimeManager.seconds_remaining(started_at, 60.0)
 	_check(remaining > 0.0 and remaining <= 60.0, "seconds_remaining() returns a sane in-range value")
+
+
+func _test_building_art_loading() -> void:
+	var BuildingScene = load("res://scenes/building.tscn")
+	var BuildingInstance = load("res://resources/runtime/building_instance.gd")
+	
+	var building_node = BuildingScene.instantiate()
+	var instance = BuildingInstance.new()
+	instance.def_id = 101 # Small Cottage
+	
+	building_node.set_building(instance)
+	
+	var sprite: Sprite2D = building_node.get_node("Sprite2D")
+	_check(sprite != null, "Building scene contains a Sprite2D child")
+	
+	if sprite != null:
+		_check(sprite.texture != null, "Building Sprite2D loaded Cottage icon texture successfully")
+		_check(sprite.visible, "Building Sprite2D is visible when valid texture is loaded")
+		
+		var color_rect: ColorRect = building_node.get_node("ColorRect")
+		_check(color_rect.color.a < 1.0, "Footprint ColorRect opacity is reduced for a texture-loaded building")
+	
+	building_node.queue_free()

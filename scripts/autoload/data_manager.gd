@@ -16,11 +16,13 @@ const RESOURCE_DEFINITIONS_PATH := "res://data/resources/"
 const BUILDING_DEFINITIONS_PATH := "res://data/buildings/"
 const PRODUCTION_RECIPES_PATH := "res://data/recipes/"
 const WORKER_DEFINITIONS_PATH := "res://data/workers/"
+const LAYOUTS_PATH := "res://data/layouts/"
 
 var resource_definitions: Dictionary = {}   # { id: ResourceDefinition }
 var building_definitions: Dictionary = {}   # { id: BuildingDefinition }
 var production_recipes: Dictionary = {}     # { id: ProductionRecipe }
 var worker_definitions: Dictionary = {}     # { id: WorkerDefinition }
+var starting_layouts: Dictionary = {}       # { name: TownLayout }
 
 var _is_loaded: bool = false
 
@@ -33,12 +35,15 @@ func load_all() -> void:
 	building_definitions = _load_definitions(BUILDING_DEFINITIONS_PATH, "id")
 	production_recipes = _load_definitions(PRODUCTION_RECIPES_PATH, "id")
 	worker_definitions = _load_definitions(WORKER_DEFINITIONS_PATH, "id")
+	starting_layouts = _load_definitions(LAYOUTS_PATH, "resource_name") # Indexed by filename
+	
 	_is_loaded = true
-	print("[DataManager] Loaded %d resource defs, %d building defs, %d recipes, %d worker defs." % [
+	print("[DataManager] Loaded %d resource defs, %d building defs, %d recipes, %d worker defs, %d layouts." % [
 		resource_definitions.size(),
 		building_definitions.size(),
 		production_recipes.size(),
 		worker_definitions.size(),
+		starting_layouts.size(),
 	])
 
 
@@ -48,6 +53,10 @@ func is_loaded() -> bool:
 
 func get_resource_definition(id: int) -> ResourceDefinition:
 	return resource_definitions.get(id, null)
+
+
+func get_all_resource_definitions() -> Array:
+	return resource_definitions.values()
 
 
 func get_building_definition(id: int) -> BuildingDefinition:
@@ -60,6 +69,22 @@ func get_production_recipe(id: int) -> ProductionRecipe:
 
 func get_worker_definition(id: String) -> WorkerDefinition:
 	return worker_definitions.get(id, null)
+
+
+func get_all_building_definitions() -> Array:
+	return building_definitions.values()
+
+
+func get_starting_layout(layout_name: String) -> TownLayout:
+	var key = layout_name.to_lower()
+	if starting_layouts.has(key):
+		return starting_layouts[key]
+	
+	if starting_layouts.has(key + ".tres"): # try with extension
+		return starting_layouts[key + ".tres"]
+
+	push_warning("[DataManager] Could not find starting layout: " + layout_name)
+	return null
 
 
 ## Generic loader: scans [param folder_path] for .tres Resource files and

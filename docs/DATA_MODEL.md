@@ -261,7 +261,8 @@ extends Resource
 class_name Villager                             # per-instance runtime state, not a static def
 extends Resource
 
-enum Role { UNASSIGNED, WORKER, HAULER }        # [original]
+# [original] Roles observed in video analysis. WORKER/HAULER are generic fallbacks.
+enum Role { UNASSIGNED, WORKER, HAULER, WOOD_CUTTER, WOOD_HAULER, FARMER, WHEAT_HAULER }
 enum Gender { MALE, FEMALE }                    # [original] drives VillagerSounds selection + sprite set
 
 @export var villager_id: String                 # [new] unique instance id (save-file scoped)

@@ -1,41 +1,74 @@
 ## SaveManager (autoload)
-## Serializes/deserializes SaveGame to disk. See docs/ARCHITECTURE.md §2.3.
-##
-## Save format: Godot native Resource serialization (.tres — human-readable
-## and diffable for development). An export build can switch to compressed
-## binary via ResourceSaver flags later with no schema change; see
-## docs/ARCHITECTURE.md §2.3 for the full reasoning. This is a development
-## convenience, not something dictated by the original game's own (opaque,
-## server-synced) save format — see docs/ARCHITECTURE.md §6, assumption 10.
-##
-## IMPORTANT: saves are written to user://saves/, never res://saves/.
-## res://saves/ (inside the project source tree) is reserved for potential
-## bundled/example save data later; it is NOT a runtime write target — once
-## a game is exported, res:// is packed read-only, so writing there would
-## work in-editor and silently fail in a real build. See
-## docs/IMPLEMENTATION_STATUS.md for this decision.
-##
-## Phase 1: PlayerState + InventoryState only round-trip. SaveGame.world_state
-## stays an empty Dictionary (reserved for Phase 2) — see save_game.gd.
+## Serializes/deserializes SaveGame to disk and handles new game creation.
+## See docs/ARCHITECTURE.md §2.3.
 extends Node
 
 const SAVE_DIR := "user://saves/"
 const SLOT_FILENAME_FORMAT := "slot_%d.tres"
 
+const SaveGame = preload("res://resources/runtime/save_game.gd")
+const PlayerState = preload("res://resources/runtime/player_state.gd")
+const InventoryState = preload("res://resources/runtime/inventory_state.gd")
+const Villager = preload("res://resources/runtime/villager.gd")
+const TownLayout = preload("res://resources/runtime/town_layout.gd")
+const TutorialProgress = preload("res://resources/runtime/tutorial_progress.gd")
+
 var current_save: SaveGame = null
 
 
-## Builds a fresh SaveGame with default PlayerState/InventoryState and makes
-## it the current save. Does not write to disk — call save_to_slot() after.
+## Builds a fresh, fully-populated SaveGame and makes it the current save.
+## Does not write to disk — call save_to_slot() after.
 func create_new_save() -> SaveGame:
-	var save := SaveGame.new()
+	var save = SaveGame.new()
 	save.save_version = 1
 	save.created_at_unix = TimeManager.now()
 	save.last_saved_at_unix = save.created_at_unix
+	
+	# Create and populate sub-resources
 	save.player_state = PlayerState.new()
-	save.inventory = InventoryState.new()
+	save.inventory = _create_starting_inventory()
+	save.villagers = _create_starting_villagers()
+	save.tutorial_progress = TutorialProgress.new()
+	
+	# Set starting layout
+	var default_layout = DataManager.get_starting_layout("default_layout")
+	if default_layout:
+		save.town_layouts["Vanilla"] = default_layout.duplicate(true)
+	else:
+		push_error("[SaveManager] Could not load 'default_layout' to create new save.")
+		save.town_layouts["Vanilla"] = TownLayout.new()
+
 	current_save = save
+	print("[SaveManager] New game state created with starting resources and villagers.")
 	return save
+
+
+func _create_starting_inventory() -> InventoryState:
+	var inventory = InventoryState.new()
+	inventory.resource_amounts.clear()
+	var all_resources = DataManager.get_all_resource_definitions()
+	for res_def in all_resources:
+		if res_def.start_value > 0:
+			inventory.resource_amounts[res_def.id] = res_def.start_value
+	return inventory
+
+
+func _create_starting_villagers() -> Array[Villager]:
+	var villagers: Array[Villager] = []
+	
+	var v1 = Villager.new()
+	v1.villager_id = "villager_1"
+	v1.villager_name = "Destiny Shaw" # Name from video analysis
+	v1.gender = Villager.Gender.FEMALE
+	villagers.append(v1)
+	
+	var v2 = Villager.new()
+	v2.villager_id = "villager_2"
+	v2.villager_name = "Adam"
+	v2.gender = Villager.Gender.MALE
+	villagers.append(v2)
+	
+	return villagers
 
 
 func save_to_slot(slot: int) -> bool:
