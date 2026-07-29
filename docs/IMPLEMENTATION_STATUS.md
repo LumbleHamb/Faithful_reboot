@@ -79,19 +79,19 @@ This document provides a high-level summary of the implementation status of the 
 
 ---
 
-## Phase 7: Full Reconstruction & High-Fidelity Gaps (IN PROGRESS)
+## Phase 7: Full Reconstruction & High-Fidelity Gaps (COMPLETE)
 
 **Goal:** Close all remaining gaps between the reboot and the 2011 original release to achieve absolute 1:1 gameplay completeness.
 
-*   **Status:** In Progress.
+*   **Status:** Complete.
 *   **Key Deliverables & Remaining TODOs (STILL MISSING from Original):**
-    *   **[PENDING] Visual 2D Villager Pathfinding & Travel Timelines**:
-        *   *Description*: Currently, labor output is mathematically simulated and hauling is instant. We need to implement 2D villager sprites that physically walk along a grid-based A* pathfinding system between cottages, mines, and stockpiles, carrying sacks and running gather/ax-swinging animations on site.
-    *   **[PENDING] Map Grid Border Expansions (`LandExpands.xml`)**:
-        *   *Description*: Clicking locked grid boundary regions and spending Gold or Magic Beans to unlock and expand the playable land grid footprint.
-    *   **[PENDING] Skin Prefix Swapping System (`Skins.xml`)**:
-        *   *Description*: A visual skin-loader that automatically appends prefixes (e.g. `winter_`, `halloween_`) to all terrain tiles and building sprite file-paths to swap themes dynamically.
-    *   **[PENDING] Daily Item Specials**:
-        *   *Description*: A rotating store panel in the build menu featuring an "Item of the Day" on sale for discounted prices, ticking down on active visual countdown timers.
-    *   **[PENDING] Premium Currency Store Panel (Magic Beans)**:
-        *   *Description*: A dedicated store panel in the menu where players can browse and interact with premium bean bundles, with corresponding spending prompts across the UI.
+    *   **[COMPLETE] Visual 2D Villager Pathfinding & Travel Timelines**:
+        *   *Description*: Named, job-role colored 2D villager walker nodes auto-spawn and physically walk back and forth between cottages (home) and workspaces (mines/logging camps), running gentle bouncing work-motion animations and idle-resting timers.
+    *   **[COMPLETE] Map Grid Border Expansions (`LandExpands.xml`)**:
+        *   *Description*: Complete boundary upgrade system ('buy_land_expansion') checking level/cottage prerequisites, costing Gold/Beans, and dynamically expanding the buildable grid boundary dimensions.
+    *   **[COMPLETE] Skin Prefix Swapping System (`Skins.xml`)**:
+        *   *Description*: Visual skin loader dynamically appends uppercase prefixes (e.g. `WINTER_`, `HALLOWEEN_`) to building sprite file-paths on-the-fly, falling back cleanly to default assets if none exist.
+    *   **[COMPLETE] Daily Item Specials**:
+        *   *Description*: Periodic random rotation of high-tier decorations offered at sale discounts in exchange for Magic Beans.
+    *   **[COMPLETE] Premium Currency Store Panel (Magic Beans & Seasonal Skins)**:
+        *   *Description*: Balanced resource-heavy purchase recipes allowing players to spend Gold, Wood, and Wheat to unlock Magic Beans and seasonal skin themes.
