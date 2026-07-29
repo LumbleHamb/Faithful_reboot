@@ -66,13 +66,32 @@ This document provides a high-level summary of the implementation status of the 
 
 ---
 
-## Phase 5: Polish & Long-Term (SUBSTANTIALLY COMPLETE)
+## Phase 5: Polish & Long-Term (COMPLETE)
 
 **Goal:** Integrate final assets and implement secondary/long-term features.
 
-*   **Status:** Substantially Complete.
+*   **Status:** Complete.
 *   **Key Tasks:**
     *   **[COMPLETE]** Integrate final, converted art and audio assets (dynamic building sprites, menu/popup previews, and IMA4-to-WAV decoded audio).
     *   **[COMPLETE]** Implement self-hosted/simulated social/multiplayer features (SocialManager with dynamic market supply/demand walk, persistent virtual AI friends with level progression, trading board, mail inbox gifting, and leaderboards).
-    *   **[PENDING]** Implement advanced production chains (crafting).
-    *   **[PENDING]** Implement villager simulation features (e.g., hunger).
+    *   **[COMPLETE]** Implement advanced production chains (crafting database and shop-style crafting queues fully populated).
+    *   **[COMPLETE]** Implement villager simulation features (hunger cycles, automatic eating behavior, and productivity-halving homelessness).
+
+---
+
+## Phase 7: Full Reconstruction & High-Fidelity Gaps (IN PROGRESS)
+
+**Goal:** Close all remaining gaps between the reboot and the 2011 original release to achieve absolute 1:1 gameplay completeness.
+
+*   **Status:** In Progress.
+*   **Key Deliverables & Remaining TODOs (STILL MISSING from Original):**
+    *   **[PENDING] Visual 2D Villager Pathfinding & Travel Timelines**:
+        *   *Description*: Currently, labor output is mathematically simulated and hauling is instant. We need to implement 2D villager sprites that physically walk along a grid-based A* pathfinding system between cottages, mines, and stockpiles, carrying sacks and running gather/ax-swinging animations on site.
+    *   **[PENDING] Map Grid Border Expansions (`LandExpands.xml`)**:
+        *   *Description*: Clicking locked grid boundary regions and spending Gold or Magic Beans to unlock and expand the playable land grid footprint.
+    *   **[PENDING] Skin Prefix Swapping System (`Skins.xml`)**:
+        *   *Description*: A visual skin-loader that automatically appends prefixes (e.g. `winter_`, `halloween_`) to all terrain tiles and building sprite file-paths to swap themes dynamically.
+    *   **[PENDING] Daily Item Specials**:
+        *   *Description*: A rotating store panel in the build menu featuring an "Item of the Day" on sale for discounted prices, ticking down on active visual countdown timers.
+    *   **[PENDING] Premium Currency Store Panel (Magic Beans)**:
+        *   *Description*: A dedicated store panel in the menu where players can browse and interact with premium bean bundles, with corresponding spending prompts across the UI.
