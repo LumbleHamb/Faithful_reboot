@@ -28,3 +28,6 @@ extends Resource
 
 ## The list of unlocked/purchased skin themes
 @export var unlocked_skins: Array[String] = ["Vanilla"]
+
+## The player's active profile picture/avatar (e.g. "Mayor", "Woodcutter", "Rose")
+@export var profile_avatar: String = "Mayor"

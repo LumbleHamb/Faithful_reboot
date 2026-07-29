@@ -59,3 +59,10 @@ signal xp_changed(new_xp_total)
 # - global_position: Where to spawn the floating text in 2D space
 # - color: The visual color of the text
 signal spawn_floating_text(text: String, global_position: Vector2, color: Color)
+
+# Emitted when the player requests to visit a friend's town map
+# - friend_name: The name of the friend to visit
+signal visit_friend_requested(friend_name: String)
+
+# Emitted when the player requests to return home from visiting
+signal return_home_requested()

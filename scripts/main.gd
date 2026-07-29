@@ -23,6 +23,9 @@ var _next_instance_id: int = 1
 @onready var tutorial_popup = $UILayer/TutorialPopup
 
 
+var _visiting_friend_name: String = ""
+var _return_home_btn: Button = null
+
 func _ready() -> void:
 	print("[Main] Scene ready. GameManager state = %s" % GameManager.State.keys()[GameManager.current_state])
 	TutorialManager.set_tutorial_popup(tutorial_popup)
@@ -32,6 +35,8 @@ func _ready() -> void:
 	EventBus.spawn_floating_text.connect(_on_spawn_floating_text)
 	EventBus.worker_assigned.connect(_on_worker_or_hauler_assigned.bind(1))
 	EventBus.hauler_assigned.connect(_on_worker_or_hauler_assigned.bind(2))
+	EventBus.visit_friend_requested.connect(_on_visit_friend_requested)
+	EventBus.return_home_requested.connect(_on_return_home_requested)
 
 	_initialize_world_layout()
 
@@ -252,4 +257,85 @@ func _on_worker_or_hauler_assigned(villager: Villager, instance: BuildingInstanc
 	
 	# Add to world container so it's drawn on map
 	world_container.add_child(walker)
+
+func _on_visit_friend_requested(friend_name: String) -> void:
+	_visiting_friend_name = friend_name
+	print("[Main] Visiting town of: %s!" % friend_name)
+	
+	# Clear player's building nodes
+	for child in world_container.get_children():
+		child.queue_free()
+		
+	# Spawn mock structures based on which friend we visit
+	# We can use our newly materialized IDs: ID 1 is Town Hall, ID 101 is Cottage, ID 201 is Logging Camp
+	var mock_instances = []
+	
+	# Town Hall (ID 1) at (2, 2)
+	var th = BuildingInstance.new()
+	th.instance_id = "mock_th"
+	th.def_id = 1
+	th.x = 2
+	th.y = 2
+	mock_instances.append(th)
+	
+	if friend_name == "Alice" or friend_name == "Daisy":
+		# Add Cottage and Farms/Special decorations
+		var cot = BuildingInstance.new()
+		cot.instance_id = "mock_cot1"
+		cot.def_id = 101 # Cottage
+		cot.x = 5
+		cot.y = 2
+		mock_instances.append(cot)
+		
+		var fountain = BuildingInstance.new()
+		fountain.instance_id = "mock_fountain"
+		fountain.def_id = 150 # Fountain decoration!
+		fountain.x = 8
+		fountain.y = 2
+		mock_instances.append(fountain)
+	else:
+		# Bob or Charlie: lumber cutters!
+		var camp = BuildingInstance.new()
+		camp.instance_id = "mock_camp"
+		camp.def_id = 201 # Logging Camp
+		camp.x = 6
+		camp.y = 2
+		mock_instances.append(camp)
+		
+	# Instantiate mock buildings
+	for instance in mock_instances:
+		_create_building_node(instance)
+		
+	# Show "Return Home" button on UILayer
+	if _return_home_btn == null:
+		_return_home_btn = Button.new()
+		_return_home_btn.text = "Return Home"
+		_return_home_btn.custom_minimum_size = Vector2(150, 40)
+		_return_home_btn.position = Vector2(20, 20) # Top-left
+		_return_home_btn.pressed.connect(func(): EventBus.return_home_requested.emit())
+		$UILayer.add_child(_return_home_btn)
+
+func _on_return_home_requested() -> void:
+	if _visiting_friend_name == "":
+		return
+		
+	print("[Main] Returning home from visiting %s." % _visiting_friend_name)
+	_visiting_friend_name = ""
+	
+	# Clear mock buildings
+	for child in world_container.get_children():
+		child.queue_free()
+		
+	# Reload player's own buildings
+	var layout = SaveManager.current_save.town_layouts.get("Vanilla")
+	if layout:
+		for instance in layout.starting_objects:
+			_create_building_node(instance)
+			
+	# Remove Return Home button
+	if _return_home_btn:
+		_return_home_btn.queue_free()
+		_return_home_btn = null
+		
+	AudioManager.play_sfx(17) # select chime
 
