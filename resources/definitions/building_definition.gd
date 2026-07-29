@@ -53,6 +53,9 @@ enum BuildingType {
 ## -1 = unlimited; otherwise the max number of this building the player may own.
 @export var owned_limit: int = -1
 
+## How much population capacity this building provides (for HOUSE types).
+@export var house_capacity: int = 0
+
 ## { resource_id: int -> capacity: float (-1 = unlimited) }. Present when
 ## this building stores resources (Town Hall, Stockpile, Warehouse, ...).
 @export var storage_capacities: Dictionary = {}

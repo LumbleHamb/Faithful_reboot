@@ -41,5 +41,6 @@ compatible_lands = ["Vanilla"]
 cost = SubResource("cost_bundle_main")
 prerequisites = ExtResource("3_ps").new()
 build_time_seconds = 30.0
+house_capacity = 2
 info_text = "Provides housing for your villagers."
 description_text = "A cozy cottage for a villager to live in."

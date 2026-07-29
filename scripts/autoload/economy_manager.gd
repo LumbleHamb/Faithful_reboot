@@ -30,8 +30,20 @@ func _process_producers(delta: float) -> void:
 			print("[EconomyManager] %s internal storage is full. Pausing production." % building_def.display_name)
 			continue
 			
-		var num_workers = instance.assigned_worker_ids.size()
-		var total_rate_per_hour = recipe.villager_resources_per_hour * num_workers
+		var total_worker_efficiency = 0.0
+		for worker_id in instance.assigned_worker_ids:
+			var villager = _find_villager_by_id(worker_id)
+			if villager:
+				if villager.is_hungry:
+					total_worker_efficiency += 0.0 # Hungry workers do not produce
+				elif villager.is_homeless:
+					total_worker_efficiency += 0.5 # Homelessness halves efficiency
+				else:
+					total_worker_efficiency += 1.0 # Standard efficiency
+			else:
+				total_worker_efficiency += 1.0
+
+		var total_rate_per_hour = recipe.villager_resources_per_hour * total_worker_efficiency
 		var production_this_frame = delta * (total_rate_per_hour / 3600.0)
 		var new_stored_amount = min(current_stored + production_this_frame, recipe.max_output_stack_size)
 		
@@ -100,3 +112,10 @@ func apply_cost(cost_bundle: CostBundle) -> void:
 
 
 func grant_reward(reward) -> void: print("[EconomyManager] Granting reward (TODO)")
+
+func _find_villager_by_id(id: String) -> Villager:
+	if not SaveManager.current_save: return null
+	for v in SaveManager.current_save.villagers:
+		if v.villager_id == id:
+			return v
+	return null

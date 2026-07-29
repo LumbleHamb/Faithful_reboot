@@ -84,6 +84,39 @@ func _find_idle_villager() -> Villager:
 			return villager
 	return null
 
+func _process(delta: float) -> void:
+	if not SaveManager.current_save:
+		return
+		
+	var save = SaveManager.current_save
+	var max_capacity = housing_capacity()
+	
+	# Assign homelessness: the first max_capacity villagers are housed, the rest are homeless
+	var index = 0
+	for villager in save.villagers:
+		if index < max_capacity:
+			villager.is_homeless = false
+		else:
+			villager.is_homeless = true
+		index += 1
+		
+		# Assigned workers/haulers accumulate hunger over time
+		if villager.role != Villager.Role.UNASSIGNED:
+			villager.hunger_timer += delta
+			
+			if villager.hunger_timer >= 60.0:
+				# Try to consume 1 Wheat (ID 40)
+				if InventoryManager.amount(40) >= 1.0:
+					InventoryManager.remove(40, 1.0)
+					villager.hunger_timer = 0.0
+					villager.is_hungry = false
+					print("[WorkerManager] %s ate 1 Wheat to satisfy hunger." % villager.villager_name)
+				else:
+					villager.is_hungry = true
+					villager.hunger_timer = 60.0 # Clamp
+			else:
+				villager.is_hungry = false
+
 # --- Placeholder Functions from Architecture ---
 
 func total_population() -> int:
@@ -92,8 +125,19 @@ func total_population() -> int:
 	return 0
 
 func housing_capacity() -> int:
-	# TODO: Implement by summing capacity from all owned houses
-	return 0
+	if not SaveManager.current_save:
+		return 0
+		
+	var layout = SaveManager.current_save.town_layouts.get("Vanilla")
+	if not layout:
+		return 0
+		
+	var total_capacity = 0
+	for instance in layout.starting_objects:
+		var building_def = DataManager.get_building_definition(instance.def_id)
+		if building_def:
+			total_capacity += building_def.house_capacity
+	return total_capacity
 
 func idle_villagers() -> Array:
 	var idle = []

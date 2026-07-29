@@ -20,6 +20,7 @@ func run_all() -> bool:
 	_test_time_advances()
 	_test_building_art_loading()
 	_test_social_manager_features()
+	_test_villager_needs_and_efficiency()
 
 	if _failures.is_empty():
 		print("[FoundationTests] ALL TESTS PASSED")
@@ -178,6 +179,53 @@ func _test_social_manager_features() -> void:
 	var claim_ok = SocialManager.claim_gift(mail_with_gift["id"])
 	_check(claim_ok, "SocialManager.claim_gift() claimed resource attachment successfully")
 	_check(test_save.inventory.resource_amounts[101] == 25.0, "Resource attachment deposited into player inventory")
+	
+	# Restore original save game
+	SaveManager.current_save = original_save
+
+
+func _test_villager_needs_and_efficiency() -> void:
+	var original_save = SaveManager.current_save
+	var test_save = SaveManager.create_new_save()
+	
+	# Empty out all starting houses from the Vanilla layout to test homelessness
+	test_save.town_layouts["Vanilla"].starting_objects.clear()
+	
+	# Verify that since housing capacity = 0, our 2 starting villagers are homeless
+	WorkerManager._process(0.0) # Tick to assign flags
+	
+	var v1 = test_save.villagers[0]
+	var v2 = test_save.villagers[1]
+	_check(v1.is_homeless and v2.is_homeless, "Villagers are marked as homeless when there are no cottages")
+	
+	# Test housing assignment by adding a Small Cottage
+	var cottage = BuildingInstance.new()
+	cottage.instance_id = "test_cottage_1"
+	cottage.def_id = 101 # Small Cottage (provides capacity 2)
+	test_save.town_layouts["Vanilla"].starting_objects.append(cottage)
+	
+	WorkerManager._process(0.0) # Tick to re-evaluate flags
+	_check(not v1.is_homeless and not v2.is_homeless, "Villagers are housed successfully when a cottage is built")
+	
+	# Test hunger accumulation and eating behavior
+	# Assigned workers get hungry. Let's make v1 a worker
+	v1.role = Villager.Role.WORKER
+	v1.hunger_timer = 59.0 # Almost hungry
+	
+	# Player has 0 Wheat (ID 40) initially
+	test_save.inventory.resource_amounts[40] = 0.0
+	
+	# Tick 2 seconds. v1 should exceed 60.0, attempt to eat, fail, and become hungry!
+	WorkerManager._process(2.0)
+	_check(v1.is_hungry, "Villager is marked as hungry when food runs out")
+	
+	# Now give the player 10 Wheat (Food)
+	test_save.inventory.resource_amounts[40] = 10.0
+	
+	# Tick again. v1 should successfully eat 1 Wheat, reset hunger_timer to 0.0, and clear is_hungry!
+	WorkerManager._process(1.0)
+	_check(not v1.is_hungry, "Villager eats food and clears hungry state when food is available again")
+	_check(test_save.inventory.resource_amounts[40] == 9.0, "Player inventory deducted exactly 1 food (Wheat) for eating")
 	
 	# Restore original save game
 	SaveManager.current_save = original_save
