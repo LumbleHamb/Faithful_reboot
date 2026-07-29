@@ -42,6 +42,7 @@ func _test_managers_present() -> void:
 	_check(SaveManager != null, "SaveManager autoload is present")
 	_check(TimeManager != null, "TimeManager autoload is present")
 	_check(GameManager != null, "GameManager autoload is present")
+	_check(AudioManager != null, "AudioManager autoload is present")
 	_check(
 		GameManager.current_state == GameManager.State.MAIN_MENU,
 		"GameManager reached MAIN_MENU after boot"
