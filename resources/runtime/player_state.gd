@@ -22,3 +22,6 @@ extends Resource
 
 ## The active buildable grid dimensions (e.g. 48 represents a 48x48 tile region)
 @export var active_land_size: int = 48
+
+## The active visual skin theme (e.g. "Vanilla", "Winter")
+@export var active_skin: String = "Vanilla"

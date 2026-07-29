@@ -30,6 +30,8 @@ func _ready() -> void:
 	EventBus.building_selected_for_placement.connect(_on_building_selected_for_placement)
 	EventBus.building_instance_selected.connect(_on_building_instance_selected)
 	EventBus.spawn_floating_text.connect(_on_spawn_floating_text)
+	EventBus.worker_assigned.connect(_on_worker_or_hauler_assigned.bind(1))
+	EventBus.hauler_assigned.connect(_on_worker_or_hauler_assigned.bind(2))
 
 	_initialize_world_layout()
 
@@ -227,4 +229,27 @@ func _on_spawn_floating_text(text: String, global_pos: Vector2, color: Color) ->
 	tween.tween_property(label, "modulate:a", 0.0, 1.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	
 	tween.chain().tween_callback(label.queue_free)
+
+func _on_worker_or_hauler_assigned(villager: Villager, instance: BuildingInstance, role_type: int) -> void:
+	# Find home cottage position (fallback to Town Hall if no cottage is available)
+	var home_pos = Vector2(2 * 64 + 32, 2 * 64 + 32) # Default near center
+	var work_pos = Vector2(instance.x * 64 + 32, instance.y * 64 + 32)
+	
+	if SaveManager.current_save:
+		var layout = SaveManager.current_save.town_layouts.get("Vanilla")
+		if layout:
+			for obj in layout.starting_objects:
+				var def = DataManager.get_building_definition(obj.def_id)
+				if def and def.type == 6: # HOUSE / Cottage
+					home_pos = Vector2(obj.x * 64 + 32, obj.y * 64 + 32)
+					break
+					
+	# Instantiate villager walker
+	var walker = VillagerWalker.new()
+	walker.home_pos = home_pos
+	walker.work_pos = work_pos
+	walker.configure(villager.villager_id, villager.villager_name, role_type, home_pos, work_pos)
+	
+	# Add to world container so it's drawn on map
+	world_container.add_child(walker)
 

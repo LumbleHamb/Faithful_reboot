@@ -109,16 +109,28 @@ func set_building(instance: BuildingInstance):
 		_:
 			color_rect.color = Color(0.3, 0.3, 0.3, 0.25)
 
-	# Try to load and apply real art asset texture
+	# Try to load and apply real art asset texture (supporting seasonal skin-swaps)
 	if building_def.icon_path != "":
-		var texture = load(building_def.icon_path)
+		var texture_path = building_def.icon_path
+		
+		# Check for active skin overrides (e.g. Winter / Halloween)
+		if SaveManager.current_save and SaveManager.current_save.player_state:
+			var active_skin = SaveManager.current_save.player_state.active_skin
+			if active_skin != "Vanilla":
+				var dir_path = building_def.icon_path.get_base_dir() + "/"
+				var file_name = building_def.icon_path.get_file()
+				var skin_path = dir_path + active_skin.to_upper() + "_" + file_name
+				if FileAccess.file_exists(skin_path):
+					texture_path = skin_path
+					
+		var texture = load(texture_path)
 		if texture:
 			sprite_2d.texture = texture
 			# Center the sprite on the building footprint
 			sprite_2d.position = building_size / 2
 			sprite_2d.visible = true
 		else:
-			push_warning("[Building] Failed to load icon texture: %s" % building_def.icon_path)
+			push_warning("[Building] Failed to load icon texture: %s" % texture_path)
 			sprite_2d.visible = false
 			color_rect.color.a = 1.0
 	else:

@@ -273,5 +273,12 @@ func _test_land_expansions_and_premium_offers() -> void:
 	_check(test_save.player_state.currency_magic_beans == 0.0, "Deducted exact Magic Bean costs")
 	_check(test_save.town_layouts["Vanilla"].starting_objects.size() == starting_objs_count + 1, "Spawned the special decoration directly on the map")
 	
+	# Test land expansions
+	test_save.inventory.resource_amounts[1] = 5000.0 # Gold
+	test_save.player_state.active_land_size = 48
+	var expand_ok = SocialManager.buy_land_expansion(1) # Expand to 56
+	_check(expand_ok, "SocialManager.buy_land_expansion() upgraded playable dimensions successfully using Gold")
+	_check(test_save.player_state.active_land_size == 56, "active_land_size is successfully enlarged to 56")
+	
 	# Restore original save game
 	SaveManager.current_save = original_save
