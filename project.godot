@@ -30,3 +30,7 @@ WorkerManager="*res://scripts/autoload/worker_manager.gd"
 CurrencyManager="*res://scripts/autoload/currency_manager.gd"
 ProgressionManager="*res://scripts/autoload/progression_manager.gd"
 TutorialManager="*res://scripts/autoload/tutorial_manager.gd"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.25, 0.45, 0.25, 1.0)
