@@ -46,6 +46,8 @@ func _get_save() -> SaveGame:
 			_initialize_default_trades(save)
 		if save.inbox_messages.is_empty():
 			_initialize_default_inbox(save)
+		if save.daily_special.is_empty():
+			_initialize_default_special(save)
 	return save
 
 func _initialize_default_prices(save: SaveGame) -> void:
@@ -88,6 +90,31 @@ func _initialize_default_inbox(save: SaveGame) -> void:
 		}
 	]
 
+func _initialize_default_special(save: SaveGame) -> void:
+	save.daily_special = {
+		"def_id": 150, # Fountain (ID 150)
+		"name": "Fountain",
+		"cost_beans": 5, # Sale price
+		"expires": 20
+	}
+
+func _spawn_new_special(save: SaveGame) -> void:
+	var decorations = []
+	for b_def in DataManager.get_all_building_definitions():
+		if b_def.type == 5: # DECORATION
+			decorations.append(b_def)
+			
+	if not decorations.is_empty():
+		var selected = decorations[randi() % decorations.size()]
+		save.daily_special = {
+			"def_id": selected.id,
+			"name": selected.display_name,
+			"cost_beans": int(randf_range(3.0, 15.0)),
+			"expires": 20
+		}
+	else:
+		_initialize_default_special(save)
+
 func _simulate_social_tick(save: SaveGame) -> void:
 	# 1. Fluctuate Market Prices slightly
 	for res_id in save.market_prices.keys():
@@ -126,6 +153,12 @@ func _simulate_social_tick(save: SaveGame) -> void:
 	# 4. Randomly spawn an inbox gift message (10% chance per tick)
 	if randf() < 0.1:
 		_spawn_random_gift(save)
+		
+	# 5. Tick down Daily Special offer
+	if save.daily_special.has("expires"):
+		save.daily_special["expires"] -= 1
+		if save.daily_special["expires"] <= 0:
+			_spawn_new_special(save)
 
 func _spawn_random_trade(save: SaveGame) -> void:
 	var friends = ["Bob", "Alice", "Charlie", "Daisy"]
@@ -409,4 +442,94 @@ func send_gift_to_friend(friend_name: String, resource_id: int, amount: int) -> 
 	save.inbox_messages.append(reply_mail)
 	
 	AudioManager.play_sfx(3) # menu_select
+	return true
+
+## Purchases Magic Beans using gathered raw resources (Gold, Wood, Wheat) to balance the economy
+func buy_magic_beans(tier: int) -> bool:
+	var save = _get_save()
+	if not save or not save.player_state:
+		return false
+		
+	var gold_cost = 0.0
+	var wood_cost = 0.0
+	var wheat_cost = 0.0
+	var beans_granted = 0.0
+	
+	match tier:
+		1:
+			gold_cost = 500.0
+			wood_cost = 100.0
+			wheat_cost = 50.0
+			beans_granted = 5.0
+		2:
+			gold_cost = 900.0
+			wood_cost = 180.0
+			wheat_cost = 90.0
+			beans_granted = 10.0
+		3:
+			gold_cost = 2000.0
+			wood_cost = 400.0
+			wheat_cost = 200.0
+			beans_granted = 25.0
+		_:
+			return false
+			
+	# Validate affordability
+	if InventoryManager.amount(1) < gold_cost:
+		return false
+	if InventoryManager.amount(101) < wood_cost:
+		return false
+	if InventoryManager.amount(40) < wheat_cost:
+		return false
+		
+	# Deduct costs
+	InventoryManager.remove(1, gold_cost)
+	InventoryManager.remove(101, wood_cost)
+	InventoryManager.remove(40, wheat_cost)
+	
+	# Add Magic Beans
+	save.player_state.currency_magic_beans += beans_granted
+	
+	# Emit event
+	EventBus.resource_changed.emit(1, InventoryManager.amount(1))
+	
+	AudioManager.play_sfx(17) # buy/sell chime sfx
+	return true
+
+## Purchases the active Daily Special item using premium Magic Beans
+func buy_daily_special() -> bool:
+	var save = _get_save()
+	if not save or not save.player_state or save.daily_special.is_empty():
+		return false
+		
+	var special = save.daily_special
+	var cost = special["cost_beans"]
+	
+	# Validate Magic Beans
+	if save.player_state.currency_magic_beans < cost:
+		return false
+		
+	# Deduct premium currency
+	save.player_state.currency_magic_beans -= cost
+	
+	# Instantly place this decoration into their town layout starting_objects
+	var new_instance = BuildingInstance.new()
+	new_instance.instance_id = "special_%d" % int(TimeManager.now() + randi())
+	new_instance.def_id = special["def_id"]
+	new_instance.x = int(randf_range(2.0, 10.0))
+	new_instance.y = int(randf_range(2.0, 10.0))
+	new_instance.rotation_degrees = 0.0
+	new_instance.construction_complete = true # Instant build!
+	
+	save.town_layouts["Vanilla"].starting_objects.append(new_instance)
+	
+	# Instantiates it on the screen immediately
+	EventBus.building_placed.emit(new_instance)
+	
+	print("[SocialManager] Daily special purchased: %s!" % special["name"])
+	
+	# Select a new special
+	_spawn_new_special(save)
+	
+	AudioManager.play_sfx(4) # fanfare level up sfx
 	return true

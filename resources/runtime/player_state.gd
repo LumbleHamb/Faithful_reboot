@@ -19,3 +19,6 @@ extends Resource
 ## MagicBeans has no ResourceDefinition id in the original data (it's a
 ## premium currency, not a storable resource) — it lives only here.
 @export var currency_magic_beans: float = 0.0
+
+## The active buildable grid dimensions (e.g. 48 represents a 48x48 tile region)
+@export var active_land_size: int = 48

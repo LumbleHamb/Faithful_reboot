@@ -8,6 +8,7 @@ class_name BuildingInstance
 @export var x: int = 0
 @export var y: int = 0
 @export var flipped: bool = false
+@export var rotation_degrees: float = 0.0
 @export var construction_started_at: float = -1.0
 @export var construction_complete: bool = true
 @export var stored_resources: Dictionary = {}

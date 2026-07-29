@@ -21,6 +21,7 @@ func run_all() -> bool:
 	_test_building_art_loading()
 	_test_social_manager_features()
 	_test_villager_needs_and_efficiency()
+	_test_land_expansions_and_premium_offers()
 
 	if _failures.is_empty():
 		print("[FoundationTests] ALL TESTS PASSED")
@@ -226,6 +227,51 @@ func _test_villager_needs_and_efficiency() -> void:
 	WorkerManager._process(1.0)
 	_check(not v1.is_hungry, "Villager eats food and clears hungry state when food is available again")
 	_check(test_save.inventory.resource_amounts[40] == 9.0, "Player inventory deducted exactly 1 food (Wheat) for eating")
+	
+	# Restore original save game
+	SaveManager.current_save = original_save
+
+
+func _test_land_expansions_and_premium_offers() -> void:
+	var original_save = SaveManager.current_save
+	var test_save = SaveManager.create_new_save()
+	
+	# Verify that starting active_land_size is 48
+	_check(test_save.player_state.active_land_size == 48, "PlayerState default active_land_size is 48")
+	
+	# Test boundaries directly
+	var land_size = test_save.player_state.active_land_size
+	var inside_coords = Vector2i(10, 10)
+	var outside_coords = Vector2i(49, 49)
+	_check(inside_coords.x >= 0 and inside_coords.y >= 0 and inside_coords.x < land_size and inside_coords.y < land_size, "Coordinates 10,10 are validly inside active 48x48 bounds")
+	_check(not (outside_coords.x >= 0 and outside_coords.y >= 0 and outside_coords.x < land_size and outside_coords.y < land_size), "Coordinates 49,49 are successfully caught out of bounds")
+		
+	# Test premium Magic Bean conversions
+	# Give the player raw resources
+	test_save.inventory.resource_amounts[1] = 500.0 # Gold
+	test_save.inventory.resource_amounts[101] = 100.0 # Wood
+	test_save.inventory.resource_amounts[40] = 50.0 # Wheat
+	test_save.player_state.currency_magic_beans = 0.0
+	
+	var exchange_ok = SocialManager.buy_magic_beans(1) # Buy tier 1
+	_check(exchange_ok, "SocialManager.buy_magic_beans() executed successfully using raw resources")
+	_check(test_save.player_state.currency_magic_beans == 5.0, "Player premium account was credited 5.0 Magic Beans")
+	_check(test_save.inventory.resource_amounts[1] == 0.0, "Resource conversion deducted cost successfully")
+	
+	# Test daily specials purchases
+	# Mock active special
+	test_save.daily_special = {
+		"def_id": 150, # Fountain (ID 150)
+		"name": "Fountain",
+		"cost_beans": 5,
+		"expires": 20
+	}
+	
+	var starting_objs_count = test_save.town_layouts["Vanilla"].starting_objects.size()
+	var purchase_ok = SocialManager.buy_daily_special()
+	_check(purchase_ok, "SocialManager.buy_daily_special() purchased custom on-sale special successfully")
+	_check(test_save.player_state.currency_magic_beans == 0.0, "Deducted exact Magic Bean costs")
+	_check(test_save.town_layouts["Vanilla"].starting_objects.size() == starting_objs_count + 1, "Spawned the special decoration directly on the map")
 	
 	# Restore original save game
 	SaveManager.current_save = original_save

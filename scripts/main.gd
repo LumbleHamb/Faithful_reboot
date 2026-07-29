@@ -128,9 +128,18 @@ func _check_placement_validity() -> bool:
 		width = building_def.height
 		height = building_def.width
 
+	var land_size = 48
+	if SaveManager.current_save and SaveManager.current_save.player_state:
+		land_size = SaveManager.current_save.player_state.active_land_size
+
 	for x in range(width):
 		for y in range(height):
 			var cell_to_check = grid_pos + Vector2i(x, y)
+			# Boundary limits check
+			if cell_to_check.x < 0 or cell_to_check.y < 0 or cell_to_check.x >= land_size or cell_to_check.y >= land_size:
+				_ghost_building.modulate = Color(1.0, 0.5, 0.5, 0.7)
+				return false
+			# Overlapping checks
 			if _occupied_coords.has(cell_to_check):
 				_ghost_building.modulate = Color(1.0, 0.5, 0.5, 0.7)
 				return false

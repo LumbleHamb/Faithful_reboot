@@ -23,7 +23,7 @@ func populate_build_menu():
 
     for building_def in all_buildings:
         # Skip buildings with no category or that shouldn't be in the menu.
-        if not building_def or not hasattr(building_def, "category") or building_def.category.is_empty():
+        if not building_def or not "category" in building_def or building_def.category.is_empty():
             continue
 
         if not buildings_by_category.has(building_def.category):

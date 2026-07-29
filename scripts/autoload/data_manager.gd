@@ -67,6 +67,10 @@ func get_production_recipe(id: int) -> ProductionRecipe:
 	return production_recipes.get(id, null)
 
 
+func get_all_production_recipes() -> Array:
+	return production_recipes.values()
+
+
 func get_worker_definition(id: String) -> WorkerDefinition:
 	return worker_definitions.get(id, null)
 
