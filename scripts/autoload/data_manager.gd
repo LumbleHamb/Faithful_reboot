@@ -35,7 +35,7 @@ func load_all() -> void:
 	building_definitions = _load_definitions(BUILDING_DEFINITIONS_PATH, "id")
 	production_recipes = _load_definitions(PRODUCTION_RECIPES_PATH, "id")
 	worker_definitions = _load_definitions(WORKER_DEFINITIONS_PATH, "id")
-	starting_layouts = _load_definitions(LAYOUTS_PATH, "resource_name") # Indexed by filename
+	starting_layouts = _load_definitions(LAYOUTS_PATH, "filename") # Indexed by filename
 	
 	_is_loaded = true
 	print("[DataManager] Loaded %d resource defs, %d building defs, %d recipes, %d worker defs, %d layouts." % [
@@ -106,10 +106,16 @@ func _load_definitions(folder_path: String, id_field: String) -> Dictionary:
 		if not dir.current_is_dir() and file_name.ends_with(".tres"):
 			var full_path := folder_path.path_join(file_name)
 			var res: Resource = ResourceLoader.load(full_path)
-			if res != null and (id_field in res):
-				index[res.get(id_field)] = res
+			if res != null:
+				if id_field == "filename":
+					var key = file_name.get_basename().to_lower()
+					index[key] = res
+				elif id_field in res:
+					index[res.get(id_field)] = res
+				else:
+					push_warning("[DataManager] Skipped '%s' — missing '%s' field." % [full_path, id_field])
 			else:
-				push_warning("[DataManager] Skipped '%s' — missing '%s' field or failed to load." % [full_path, id_field])
+				push_warning("[DataManager] Skipped '%s' — failed to load." % full_path)
 		file_name = dir.get_next()
 	dir.list_dir_end()
 
